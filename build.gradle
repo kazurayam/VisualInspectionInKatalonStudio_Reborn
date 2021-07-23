@@ -1,20 +1,198 @@
+// VisualTestingInKatalonStudio_revive/build.gradle
+
 plugins {
-  id 'java'
-  id "com.katalon.gradle-plugin" version "0.0.7"
+    id 'groovy'
+    id "com.katalon.gradle-plugin" version "0.0.7"
+}
+
+version = "0.1.0"
+
+ext {
+    groovyVersion = '2.4.7'
+
+    VT_EXTERNAL_LIBRARY_PREFIX = 'VT-'
+    VT_DIST_GRADLEW_PREFIX     = 'distributable-gradlew'
+    VT_DIST_COMPONENTS_PREFIX  = 'vt-components'
+    VT_DIST_EXAMPLE_PREFIX     = 'vt-example'
+
+    materialstoreVersion = '0.1.0'
+    ExecutionProfilesLoaderVersion = "1.2.0"
+}
+
+// ---------------------------------------------------------------------
+// codes to import external jar files into the Drivers directory
+import java.nio.file.Path
+import java.nio.file.Paths
+
+task deleteJarsInDriversDir(type: Delete) {
+    delete fileTree('Drivers') {
+        include '**/*.jar'
+    }
+}
+
+def downloadFile = { remoteUrl, localDir = 'Drivers' ->
+    Path outFile = Paths.get(localDir).resolve("${VT_EXTERNAL_LIBRARY_PREFIX}${remoteUrl.tokenize('/')[-1]}")
+    outFile.toFile().withOutputStream { out ->
+        new URL(remoteUrl).withInputStream { from ->
+            out << from
+        }
+    }
+    println "downloaded ${remoteUrl} into ${localDir} directory as ${outFile.getFileName()}"
+}
+
+task downloadJarsIntoDriversDir {
+    doLast {
+      downloadFile('https://repo1.maven.org/maven2/ru/yandex/qatools/ashot/ashot/1.5.4/ashot-1.5.4.jar')
+      downloadFile('https://github.com/kazurayam/junit4ks/releases/download/1.6/junit4ks-all.jar')
+      downloadFile("https://github.com/kazurayam/materialstore/releases/download/${materialstoreVersion}/materialstore-${materialstoreVersion}.jar")
+      downloadFile("https://github.com/kazurayam/ExecutionProfilesLoader/releases/download/${ExecutionProfilesLoaderVersion}/ExecutionProfilesLoader-${ExecutionProfilesLoaderVersion}.jar")
+    }
+}
+
+task drivers {
+    dependsOn 'deleteJarsInDriversDir'
+    dependsOn 'downloadJarsIntoDriversDir'
+    tasks.findByName('downloadJarsIntoDriversDir').mustRunAfter 'deleteJarsInDriversDir'
+}
+
+
+task driversFromMavenLocal(type: Copy) {
+    from file("${System.getProperty('user.home')}/.m2/repository/com/kazurayam/materialstore/${materialstoreVersion}/Materials-${materialstoreVersion}.jar")
+    into file("$projectDir/Drivers")
+}
+
+// ---------------------------------------------------------------------
+// codes to generate groovydoc
+
+sourceSets {
+    main {
+        groovy {
+            srcDirs = [ 'Keywords', 'Include/scripts/groovy' ]
+            srcDir 'Libs'
+        }
+    }
+}
+
+configurations {
+    generateDocs
 }
 
 repositories {
-  mavenCentral()
+    jcenter()
 }
 
 dependencies {
-  // sample dependencies
-  // rest-assured
-  // compile 'io.rest-assured:rest-assured:3.2.0'
-  // JsonPath
-  // compile 'io.rest-assured:json-path:3.2.0'
-  // XmlPath
-  // compile 'io.rest-assured:json-path:3.2.0'
-  // JSON Schema Validation
-  // compile 'io.rest-assured:json-schema-validator:3.2.0'
+    generateDocs "org.codehaus.groovy:groovy-all:${groovyVersion}"
 }
+
+task groovydoc(type: Groovydoc, overwrite: true) {
+    source = sourceSets.main.groovy
+    classpath = configurations.compile
+    groovyClasspath = project.configurations.generateDocs
+    include 'com/kazurayam/visualtesting/*'
+    exclude '**/*Test.groovy'
+}
+
+task publishGroovydoc(type: Copy) {
+    from 'build/docs/groovydoc'
+    into 'docs/api'
+}
+
+groovydoc.finalizedBy publishGroovydoc
+
+// ---------------------------------------------------------------------
+
+String DIST = "${project.buildDir}/dist"
+
+task createDist {
+    doLast {
+        project.mkdir "${DIST}"
+    }
+}
+
+task cleanDist(type: Delete) {
+    def dirName = "${DIST}"
+    project.file( dirName).list().each { f ->
+        delete "${dirName}/${f}"
+    }
+}
+cleanDist.dependsOn(createDist)
+
+task createDistributableGradlew(type:Zip) {
+    archiveFileName = "${VT_DIST_GRADLEW_PREFIX}.zip"
+    destinationDirectory = file("${DIST}")
+    from(".") {
+        // include the Gradle Wrapper
+        include "gradlew"
+        include "gradlew.bat"
+        include "gradlewks.bat"    // custom launcher that uses Java in %KATALONSTUDIO_HOME%\jre
+        include "gradle/**/*"
+    }
+}
+task createDistributableGradlewWithVersion {
+    doLast {
+        new File("${DIST}/${VT_DIST_GRADLEW_PREFIX}.zip")
+            .renameTo("${DIST}/${VT_DIST_GRADLEW_PREFIX}-${project.version}.zip")
+    }
+}
+createDistributableGradlewWithVersion.dependsOn(createDistributableGradlew)
+
+
+// tasks to create vt-components-X.X.X.zip
+task createVTComponents(type:Zip) {
+    archiveFileName = "${VT_DIST_COMPONENTS_PREFIX}.zip"
+    destinationDirectory = file("${DIST}")
+    from(".") {
+        // include the Visual Testing components
+        include "Test Cases/VT/**"
+        include "Scripts/VT/**"
+        include "Test Listeners/**/VT*"
+        include "Test Suites/VT/**"
+        include "Keywords/com/kazurayam/visualtesting/**"
+        include "Drivers/**"
+    }
+}
+task createVTComponentsWithVersion {
+    doLast {
+        new File("${DIST}/${VT_DIST_COMPONENTS_PREFIX}.zip")
+            .renameTo("${DIST}/${VT_DIST_COMPONENTS_PREFIX}-${project.version}.zip")
+    }
+}
+createVTComponentsWithVersion.dependsOn(createVTComponents)
+
+
+// tasks to create vt-example-X.X.X.zip
+task createVTExample(type: Zip) {
+    archiveFileName = "${VT_DIST_EXAMPLE_PREFIX}.zip"
+    destinationDirectory = file("${DIST}")
+    from(".") {
+        // include the sample Visual Testing for the CURA web site
+        include "Profiles/CURA*"
+        include "Test Cases/CURA/**"
+        include "Object Repository/CURA/**"
+        include "Test Suites/CURA/**"
+        include "Scripts/CURA/**"
+        include "vt-config.json"
+        include "vt-run-CURA*"
+    }
+}
+task createVTExampleWithVersion {
+    doLast {
+        new File("${DIST}/${VT_DIST_EXAMPLE_PREFIX}.zip")
+            .renameTo("${DIST}/${VT_DIST_EXAMPLE_PREFIX}-${project.version}.zip")
+    }
+}
+createVTExampleWithVersion.dependsOn(createVTExample)
+
+task distributables() {
+    dependsOn 'cleanDist'
+    dependsOn 'createDistributableGradlewWithVersion'
+    dependsOn 'createVTComponentsWithVersion'
+    dependsOn 'createVTExampleWithVersion'
+    tasks.findByName('createDistributableGradlewWithVersion').mustRunAfter 'cleanDist'
+    tasks.findByName('createVTComponents').mustRunAfter 'cleanDist'
+    tasks.findByName('createVTExample').mustRunAfter 'cleanDist'
+}
+
+
+defaultTasks = [ 'distributables' ]
