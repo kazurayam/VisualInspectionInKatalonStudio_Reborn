@@ -52,6 +52,7 @@ takeScreenshotAndSavePageSourceUsingBuiltinKeyword(store, jobName, jobTimestamp,
 	"URL": url.toString(),       // "https://katalon-demo-cura.herokuapp.com/"
 	"URL.host": url.getHost(),   // "katalon-demo-cura.herokuapp.com"
 	"URL.file": url.getFile(),   // "/"
+	"URL#fragment": ""
 	]))
 
 WebUI.click(findTestObject('CURA/Page_CURA Healthcare Service/top/a_Make Appointment'))
@@ -76,7 +77,8 @@ takeScreenshotAndSavePageSourceUsingAShot(store, jobName, jobTimestamp, new Meta
 	"profile": profile,          // "CURA_ProdcutionEnv" or "CURA_DevelopmentEnv"
 	"URL": url.toString(),       // "https://katalon-demo-cura.herokuapp.com/profile.php#login"
 	"URL.host": url.getHost(),   // "katalon-demo-cura.herokuapp.com"
-	"URL.file": url.getFile(),   // "/profile.php#login"
+	"URL.file": url.getFile(),   // "/profile.php"
+	"URL#fragment": "login"
 	]))
 
 WebUI.click(findTestObject('CURA/Page_CURA Healthcare Service/login/button_Login'))
@@ -105,6 +107,7 @@ takeScreenshotAndSavePageSourceUsingAShot(store, jobName, jobTimestamp, new Meta
 	"URL": url.toString(),       // "https://katalon-demo-cura.herokuapp.com/#appointment"
 	"URL.host": url.getHost(),   // "katalon-demo-cura.herokuapp.com"
 	"URL.file": url.getFile(),   // "/#appointment"
+	"URL#fragment": "appointment"
 	]))
 
 WebUI.click(findTestObject('CURA/Page_CURA Healthcare Service/appointment/button_Book Appointment'))
@@ -118,6 +121,7 @@ takeScreenshotAndSavePageSourceUsingAShot(store, jobName, jobTimestamp, new Meta
 	"URL": url.toString(),       // "https://katalon-demo-cura.herokuapp.com/appointment.php#summary"
 	"URL.host": url.getHost(),   // "katalon-demo-cura.herokuapp.com"
 	"URL.file": url.getFile(),   // "/appointment.php#summary"
+	"URL#fragment": "summary"
 	]))
 
 WebUI.click(findTestObject('CURA/Page_CURA Healthcare Service/summary/a_Go to Homepage'))

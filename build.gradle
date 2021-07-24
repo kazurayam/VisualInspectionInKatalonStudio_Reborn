@@ -43,6 +43,7 @@ def downloadFile = { remoteUrl, localDir = 'Drivers' ->
 task downloadJarsIntoDriversDir {
     doLast {
       downloadFile('https://repo1.maven.org/maven2/ru/yandex/qatools/ashot/ashot/1.5.4/ashot-1.5.4.jar')
+      downloadFile('https://repo1.maven.org/maven2/io/github/java-diff-utils/java-diff-utils/4.9/java-diff-utils-4.9.jar')
       downloadFile('https://github.com/kazurayam/junit4ks/releases/download/1.6/junit4ks-all.jar')
       downloadFile("https://github.com/kazurayam/materialstore/releases/download/${materialstoreVersion}/materialstore-${materialstoreVersion}.jar")
       downloadFile("https://github.com/kazurayam/ExecutionProfilesLoader/releases/download/${ExecutionProfilesLoaderVersion}/ExecutionProfilesLoader-${ExecutionProfilesLoaderVersion}.jar")
