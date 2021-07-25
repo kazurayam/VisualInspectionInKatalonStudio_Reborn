@@ -6,6 +6,7 @@ import java.nio.file.Paths
 
 import com.kazurayam.ks.globalvariable.ExecutionProfilesLoader
 import com.kazurayam.materialstore.store.DiffArtifact
+import com.kazurayam.materialstore.store.DiffArtifacts
 import com.kazurayam.materialstore.store.DiffReporter
 import com.kazurayam.materialstore.store.JobName
 import com.kazurayam.materialstore.store.JobTimestamp
@@ -61,14 +62,12 @@ List<Material> actual = store.select(jobName, jobTimestamp,
 			new MetadataPattern([ "profile": profile2 ]))
 
 // make diff
-List<DiffArtifact> stuffedDiffArtifacts =
-	store.makeDiff(expected, actual, ["URL.file"] as Set)
+DiffArtifacts stuffedDiffArtifacts =
+	store.makeDiff(expected, actual, ["URL.file", "URL#fragment"] as Set)
+int warnings = stuffedDiffArtifacts.countWarnings(0.0d)
 
 // compile HTML report
-DiffReporter reporter = store.newReporter(jobName)
-int warnings = reporter.reportDiffs(stuffedDiffArtifacts, "index.html")
-
-Path reportFile = root.resolve("index.html")
+Path reportFile = store.reportDiffs(jobName, stuffedDiffArtifacts, "index.html")
 assert Files.exists(reportFile)
 
 if (warnings > 0) {
