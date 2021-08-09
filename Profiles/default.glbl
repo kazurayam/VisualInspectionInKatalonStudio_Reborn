@@ -9,4 +9,14 @@
       <initValue>true</initValue>
       <name>SAVE_PAGE_SOURCE</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>CURRENT_TESTSUITE_NAME</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Test Listener TL1 initiializes this</description>
+      <initValue>''</initValue>
+      <name>CURRENT_TESTCASE_NAME</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

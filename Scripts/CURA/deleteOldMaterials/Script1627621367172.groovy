@@ -2,10 +2,10 @@ import java.nio.file.Path
 import java.nio.file.Paths
 import java.time.temporal.ChronoUnit
 
-import com.kazurayam.materialstore.store.JobName
-import com.kazurayam.materialstore.store.JobTimestamp
-import com.kazurayam.materialstore.store.Store
-import com.kazurayam.materialstore.store.Stores
+import com.kazurayam.materialstore.JobName
+import com.kazurayam.materialstore.JobTimestamp
+import com.kazurayam.materialstore.Store
+import com.kazurayam.materialstore.Stores
 import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
@@ -19,8 +19,8 @@ Path root = projectDir.resolve("Materials")
 Store store = Stores.newInstance(root)
 JobTimestamp currentTimestamp = JobTimestamp.now()
 
-deleteOldMaterialsOf(store, new JobName("VisualTestingTwins"), currentTimestamp)
-deleteOldMaterialsOf(store, new JobName("VisualTestingChronos"), currentTimestamp)
+deleteOldMaterialsOf(store, new JobName("CURA_VisualTestingTwins"), currentTimestamp)
+deleteOldMaterialsOf(store, new JobName("CURA_VisualTestingChronos"), currentTimestamp)
 
 /*
  * To save disk space, we will delete the "<JobName>/<JobTimestamp>" dirs

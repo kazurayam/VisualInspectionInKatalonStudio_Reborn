@@ -11,12 +11,13 @@ import org.openqa.selenium.WebDriver
 
 import com.kazurayam.materialstore.selenium.AShotWrapper
 import com.kazurayam.materialstore.selenium.DevicePixelRatioResolver
-import com.kazurayam.materialstore.store.FileType
-import com.kazurayam.materialstore.store.JobName
-import com.kazurayam.materialstore.store.JobTimestamp
-import com.kazurayam.materialstore.store.Material
-import com.kazurayam.materialstore.store.Metadata
-import com.kazurayam.materialstore.store.Store
+import com.kazurayam.materialstore.FileType
+import com.kazurayam.materialstore.JobName
+import com.kazurayam.materialstore.JobTimestamp
+import com.kazurayam.materialstore.Material
+import com.kazurayam.materialstore.Metadata
+import com.kazurayam.materialstore.MetadataImpl
+import com.kazurayam.materialstore.Store
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
@@ -47,13 +48,13 @@ WebUI.navigateToUrl("http://${GlobalVariable.Hostname}/")
 
 // take the screenshot and the page source, save them into the store; using the Katalon keyword
 URL url = new URL(WebUI.getUrl())
-takeScreenshotAndSavePageSourceUsingBuiltinKeyword(store, jobName, jobTimestamp, new Metadata([
-	"profile": profile,          // "CURA_ProdcutionEnv" or "CURA_DevelopmentEnv"
-	"URL": url.toString(),       // "https://katalon-demo-cura.herokuapp.com/"
-	"URL.host": url.getHost(),   // "katalon-demo-cura.herokuapp.com"
-	"URL.file": url.getFile(),   // "/"
-	"URL#fragment": ""
-	]))
+takeScreenshotAndSavePageSourceUsingBuiltinKeyword(store, jobName, jobTimestamp,
+	new MetadataImpl.Builder(url)
+		.put("profile", profile)          // "CURA_ProdcutionEnv" or "CURA_DevelopmentEnv"
+		.put("selector", "body")
+		.build()
+	)
+
 
 WebUI.click(findTestObject('CURA/Page_CURA Healthcare Service/top/a_Make Appointment'))
 
@@ -73,14 +74,13 @@ WebUI.setText(findTestObject('CURA/Page_CURA Healthcare Service/login/input_Pass
 
 // take the screenshot and the page source, save them into the store; using the AShot library
 url = new URL(WebUI.getUrl())
-takeScreenshotAndSavePageSourceUsingAShot(store, jobName, jobTimestamp, new Metadata([
-	"profile": profile,          // "CURA_ProdcutionEnv" or "CURA_DevelopmentEnv"
-	"URL": url.toString(),       // "https://katalon-demo-cura.herokuapp.com/profile.php#login"
-	"URL.host": url.getHost(),   // "katalon-demo-cura.herokuapp.com"
-	"URL.file": url.getFile(),   // "/profile.php"
-	"URL#fragment": "login"
-	]))
-
+takeScreenshotAndSavePageSourceUsingAShot(store, jobName, jobTimestamp, 
+	new MetadataImpl.Builder(url)
+		.put("profile", profile)
+		.put("selector", "#login")
+		.build()
+	)
+	
 WebUI.click(findTestObject('CURA/Page_CURA Healthcare Service/login/button_Login'))
 
 // -------- The appointment page is open ------------------------------
@@ -102,13 +102,12 @@ WebUI.setText(findTestObject('CURA/Page_CURA Healthcare Service/appointment/text
 
 // take the screenshot and the page source, save them into the store; using the AShot library
 url = new URL(WebUI.getUrl())
-takeScreenshotAndSavePageSourceUsingAShot(store, jobName, jobTimestamp, new Metadata([
-	"profile": profile,          // "CURA_ProdcutionEnv" or "CURA_DevelopmentEnv"
-	"URL": url.toString(),       // "https://katalon-demo-cura.herokuapp.com/#appointment"
-	"URL.host": url.getHost(),   // "katalon-demo-cura.herokuapp.com"
-	"URL.file": url.getFile(),   // "/#appointment"
-	"URL#fragment": "appointment"
-	]))
+takeScreenshotAndSavePageSourceUsingAShot(store, jobName, jobTimestamp, 
+	new MetadataImpl.Builder(url)
+		.put("profile", profile)
+		.put("selector", "#appointment")
+		.build()
+	)
 
 WebUI.click(findTestObject('CURA/Page_CURA Healthcare Service/appointment/button_Book Appointment'))
 
@@ -116,14 +115,13 @@ WebUI.click(findTestObject('CURA/Page_CURA Healthcare Service/appointment/button
 
 // take the screenshot and the page source, save them into the store; using the AShot library
 url = new URL(WebUI.getUrl())
-takeScreenshotAndSavePageSourceUsingAShot(store, jobName, jobTimestamp, new Metadata([
-	"profile": profile,          // "CURA_ProdcutionEnv" or "CURA_DevelopmentEnv"
-	"URL": url.toString(),       // "https://katalon-demo-cura.herokuapp.com/appointment.php#summary"
-	"URL.host": url.getHost(),   // "katalon-demo-cura.herokuapp.com"
-	"URL.file": url.getFile(),   // "/appointment.php#summary"
-	"URL#fragment": "summary"
-	]))
-
+takeScreenshotAndSavePageSourceUsingAShot(store, jobName, jobTimestamp,
+	new MetadataImpl.Builder(url)
+		.put("profile", profile)
+		.put("selector", "#summary")
+		.build()
+	)
+	
 WebUI.click(findTestObject('CURA/Page_CURA Healthcare Service/summary/a_Go to Homepage'))
 
 // we are done

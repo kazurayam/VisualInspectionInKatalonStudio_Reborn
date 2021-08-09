@@ -7,23 +7,23 @@ import java.nio.file.Paths
 import java.time.temporal.ChronoUnit
 
 import com.kazurayam.ks.globalvariable.ExecutionProfilesLoader
-import com.kazurayam.materialstore.store.DiffArtifacts
-import com.kazurayam.materialstore.store.JobName
-import com.kazurayam.materialstore.store.JobTimestamp
-import com.kazurayam.materialstore.store.Material
-import com.kazurayam.materialstore.store.MetadataPattern
-import com.kazurayam.materialstore.store.MetadataIgnoredKeys
-import com.kazurayam.materialstore.store.Store
-import com.kazurayam.materialstore.store.Stores
+import com.kazurayam.materialstore.DiffArtifacts
+import com.kazurayam.materialstore.JobName
+import com.kazurayam.materialstore.JobTimestamp
+import com.kazurayam.materialstore.Material
+import com.kazurayam.materialstore.MetadataPattern
+import com.kazurayam.materialstore.MetadataIgnoredKeys
+import com.kazurayam.materialstore.Store
+import com.kazurayam.materialstore.Stores
 import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-
+import internal.GlobalVariable
 
 Path projectDir = Paths.get(RunConfiguration.getProjectDir())
 Path root = projectDir.resolve("Materials")
 Store store = Stores.newInstance(root)
-JobName jobName = new JobName("VisualTestingTwins")
+JobName jobName = new JobName(GlobalVariable.CURRENT_TESTCASE_NAME)
 JobTimestamp jobTimestamp = JobTimestamp.now()
 ExecutionProfilesLoader profilesLoader = new ExecutionProfilesLoader()
 
@@ -57,10 +57,12 @@ WebUI.callTestCase(
 	
 // pickup the materials that belongs to the 2 "profiles"
 List<Material> left = store.select(jobName, jobTimestamp,
-			new MetadataPattern([ "profile": profile1 ]))
+			new MetadataPattern.Builder([ "profile": profile1 ]).build()
+			)
 
 List<Material> right = store.select(jobName, jobTimestamp,
-			new MetadataPattern([ "profile": profile2 ]))
+			new MetadataPattern.Builder([ "profile": profile2 ]).build()
+			)
 
 // difference greater than the criteria should be warned
 double criteria = 0.0d
@@ -76,7 +78,7 @@ DiffArtifacts stuffedDiffArtifacts =
 int warnings = stuffedDiffArtifacts.countWarnings(criteria)
 
 // compile HTML report
-Path reportFile = store.reportDiffs(jobName, stuffedDiffArtifacts, criteria, "index-twins.html")
+Path reportFile = store.reportDiffs(jobName, stuffedDiffArtifacts, criteria, jobName.toString() + "-index.html")
 assert Files.exists(reportFile)
 WebUI.comment("The report can be found ${reportFile.toString()}")
 

@@ -5,22 +5,23 @@ import java.nio.file.Path
 import java.nio.file.Paths
 
 import com.kazurayam.ks.globalvariable.ExecutionProfilesLoader
-import com.kazurayam.materialstore.store.DiffArtifacts
-import com.kazurayam.materialstore.store.JobName
-import com.kazurayam.materialstore.store.JobTimestamp
-import com.kazurayam.materialstore.store.Material
-import com.kazurayam.materialstore.store.MetadataIgnoredKeys
-import com.kazurayam.materialstore.store.MetadataPattern
-import com.kazurayam.materialstore.store.Store
-import com.kazurayam.materialstore.store.StoreImpl
+import com.kazurayam.materialstore.DiffArtifacts
+import com.kazurayam.materialstore.JobName
+import com.kazurayam.materialstore.JobTimestamp
+import com.kazurayam.materialstore.Material
+import com.kazurayam.materialstore.MetadataIgnoredKeys
+import com.kazurayam.materialstore.MetadataPattern
+import com.kazurayam.materialstore.Store
+import com.kazurayam.materialstore.StoreImpl
 import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import internal.GlobalVariable
 
 Path projectDir = Paths.get(RunConfiguration.getProjectDir())
 Path root = projectDir.resolve("Materials")
 Store store = new StoreImpl(root)
-JobName jobName = new JobName("VisualTestingChronos")
+JobName jobName = new JobName(GlobalVariable.CURRENT_TESTCASE_NAME)
 JobTimestamp currentTimestamp = JobTimestamp.now()
 ExecutionProfilesLoader profilesLoader = new ExecutionProfilesLoader()
 
@@ -66,7 +67,7 @@ DiffArtifacts stuffedDiffArtifacts =
 int warnings = stuffedDiffArtifacts.countWarnings(criteria)
 
 // compile HTML report
-Path reportFile = store.reportDiffs(jobName, stuffedDiffArtifacts, criteria, "index-chronos.html")
+Path reportFile = store.reportDiffs(jobName, stuffedDiffArtifacts, criteria, jobName + "-index.html")
 assert Files.exists(reportFile)
 WebUI.comment("The report can be found at ${reportFile.toString()}")
 

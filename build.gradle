@@ -15,7 +15,7 @@ ext {
     VT_DIST_COMPONENTS_PREFIX  = 'vt-components'
     VT_DIST_EXAMPLE_PREFIX     = 'vt-example'
 
-    materialstoreVersion = '0.1.0'
+    materialstoreVersion = '0.1.0-SNAPSHOT'
     ExecutionProfilesLoaderVersion = "1.2.0"
 }
 
@@ -44,6 +44,7 @@ task downloadJarsIntoDriversDir {
     doLast {
       downloadFile('https://repo1.maven.org/maven2/ru/yandex/qatools/ashot/ashot/1.5.4/ashot-1.5.4.jar')
       downloadFile('https://repo1.maven.org/maven2/io/github/java-diff-utils/java-diff-utils/4.9/java-diff-utils-4.9.jar')
+      downloadFile('https://repo1.maven.org/maven2/org/jsoup/jsoup/1.7.2/jsoup-1.7.2.jar')
       downloadFile('https://github.com/kazurayam/junit4ks/releases/download/1.6/junit4ks-all.jar')
       downloadFile("https://github.com/kazurayam/materialstore/releases/download/${materialstoreVersion}/materialstore-${materialstoreVersion}.jar")
       downloadFile("https://github.com/kazurayam/ExecutionProfilesLoader/releases/download/${ExecutionProfilesLoaderVersion}/ExecutionProfilesLoader-${ExecutionProfilesLoaderVersion}.jar")
