@@ -26,20 +26,19 @@ JobTimestamp currentTimestamp = JobTimestamp.now()
 ExecutionProfilesLoader profilesLoader = new ExecutionProfilesLoader()
 
 //-----------------------------------------------------------------------------
+String profile = "CURA_DevelopmentEnv"
+profilesLoader.loadProfile(profile)
+WebUI.comment("Execution Profile ${profile} was loaded")
 
-// visit the Development environment, store page screenshots and HTML sources into the Store 
-String profile1 = "CURA_DevelopmentEnv"
-profilesLoader.loadProfile(profile1)
-WebUI.comment("Execution Profile ${profile1} was loaded")
+// visit "http://demoaut-mimic.katalon.com", take screenshots and page source 
+
 WebUI.callTestCase(
-	findTestCase("Test Cases/CURA/visitSite"),
-	["profile": profile1, "store": store, "jobName": jobName,
-		"jobTimestamp": currentTimestamp]
-	)
+	findTestCase("CURA/visitCURA"),
+	[ "store": store, "jobName": jobName, "jobTimestamp": currentTimestamp ]
+)
 
-//-----------------------------------------------------------------------------
 	
-// compare the previous materials and the latest materials, produce a diff report
+// compare the latest materials with those taken in the previous run, produce a diff report
 
 // identify the last jobTimestamp that were created previously
 JobTimestamp lastTimestamp = store.findJobTimestampPriorTo(jobName, currentTimestamp)
@@ -67,7 +66,7 @@ DiffArtifacts stuffedDiffArtifacts =
 int warnings = stuffedDiffArtifacts.countWarnings(criteria)
 
 // compile HTML report
-Path reportFile = store.reportDiffs(jobName, stuffedDiffArtifacts, criteria, jobName + "-index.html")
+Path reportFile = store.reportDiffs(jobName, stuffedDiffArtifacts, criteria, jobName.toString() + "-index.html")
 assert Files.exists(reportFile)
 WebUI.comment("The report can be found at ${reportFile.toString()}")
 
