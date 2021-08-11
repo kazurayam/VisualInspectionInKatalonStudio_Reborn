@@ -1,0 +1,10 @@
+{
+  "keywordFileContentHash": "7BE14AA93A538886861DD1AC6231735D",
+  "keywordClasses": [
+    {
+      "name": "my.StringUtils",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": true
+}

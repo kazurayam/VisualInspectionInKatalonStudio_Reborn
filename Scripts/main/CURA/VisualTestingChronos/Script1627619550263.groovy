@@ -16,6 +16,7 @@ import com.kazurayam.materialstore.StoreImpl
 import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
 import internal.GlobalVariable
 
 Path projectDir = Paths.get(RunConfiguration.getProjectDir())
@@ -33,7 +34,7 @@ WebUI.comment("Execution Profile ${profile} was loaded")
 // visit "http://demoaut-mimic.katalon.com", take screenshots and page source 
 
 WebUI.callTestCase(
-	findTestCase("CURA/visitCURA"),
+	findTestCase("main/CURA/visitCURA"),
 	[ "store": store, "jobName": jobName, "jobTimestamp": currentTimestamp ]
 )
 

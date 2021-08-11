@@ -32,7 +32,7 @@ WebUI.verifyElementPresent(img, 10)
 // take the screenshot and the page source, save them into the store; using the Katalon keyword
 URL url = new URL(WebUI.getUrl())
 
-WebUI.callTestCase(findTestCase("common/takeScreenshotAndPageSource"), 
+WebUI.callTestCase(findTestCase("main/common/takeScreenshotAndPageSource"), 
 	[
 		"store": store,
 		"jobName": jobName,

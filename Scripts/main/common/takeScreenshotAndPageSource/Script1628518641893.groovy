@@ -1,6 +1,8 @@
 import java.nio.file.Files
 import java.nio.file.Path
 
+import org.jsoup.Jsoup
+import org.jsoup.nodes.Document
 import org.openqa.selenium.WebDriver
 
 import com.kazurayam.materialstore.FileType
@@ -26,6 +28,6 @@ assert image != null
 
 // save the page source HTML into the materialstore
 WebDriver driver = DriverFactory.getWebDriver()
-String pageSource = driver.getPageSource()
-Material html = store.write(jobName, jobTimestamp, FileType.HTML, metadata, pageSource)
+Document doc = Jsoup.parse(driver.getPageSource())
+Material html = store.write(jobName, jobTimestamp, FileType.HTML, metadata, doc.toString())
 assert html != null

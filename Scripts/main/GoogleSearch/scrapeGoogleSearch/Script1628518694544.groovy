@@ -2,6 +2,8 @@ import java.nio.file.Files
 import java.nio.file.Path
 import java.nio.file.Paths
 
+import org.jsoup.Jsoup
+import org.jsoup.nodes.Document
 import org.openqa.selenium.Keys
 import org.openqa.selenium.WebDriver
 
@@ -19,9 +21,6 @@ import com.kms.katalon.core.testobject.ConditionType
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-
-import my.MetadataUtils
-import my.StringUtils
 
 import internal.GlobalVariable
 
@@ -95,7 +94,8 @@ def takeFullPageScreenshotAndSavePageSourceUsingBuiltinKeyword(Store store, JobN
 	assert image != null
 	// save the page source HTML
 	WebDriver driver = DriverFactory.getWebDriver()
-	String pageSource = StringUtils.tidyHtmlString(driver.getPageSource())
+	Document doc = Jsoup.parse(driver.getPageSource())
+	String pageSource = doc.toString()
 	Material html = store.write(jobName, jobTimestamp, FileType.HTML, metadata, pageSource)
 	assert html != null
 }

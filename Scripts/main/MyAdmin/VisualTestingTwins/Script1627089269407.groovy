@@ -34,7 +34,7 @@ profilesLoader.loadProfile(profile1)
 WebUI.comment("Execution Profile ${profile1} was loaded")
 
 WebUI.callTestCase(
-	findTestCase("MyAdmin/visitMyAdminTopPage"),
+	findTestCase("main/MyAdmin/visitMyAdminTopPage"),
 	["profile": profile1, "store": store, "jobName": jobName, "jobTimestamp": jobTimestamp]
 )
 
@@ -45,7 +45,7 @@ profilesLoader.loadProfile(profile2)
 WebUI.comment("Execution Profile ${profile2} was loaded")
 
 WebUI.callTestCase(
-	findTestCase("MyAdmin/visitMyAdminTopPage"),
+	findTestCase("main/MyAdmin/visitMyAdminTopPage"),
 	["profile": profile2, "store": store, "jobName": jobName, "jobTimestamp": jobTimestamp]
 )
 	
