@@ -19,6 +19,9 @@ build
 
 settings
 
-# 
+# Visual Studio Code
+.vscode
+
+#
 Drivers/
 Materials/
