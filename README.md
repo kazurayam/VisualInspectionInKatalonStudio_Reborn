@@ -143,7 +143,9 @@ store
 └── scrapeGoogleSearch.html
 ```
 
-- The `store/scrapeGoogleSearch.html` renders a view of the stored 6 files. You can see an working example here: [pls. click here](docs/store/scrapeGoogleSearch.html). ![scrapeGoogleSearch.html](docs/images/scrapeGoogleSearch.html.png)
+- The `store/scrapeGoogleSearch.html` renders a view of the stored 6 files. You can see an working example here: [pls. click here](https://kazurayam.github.io/VisualTestingInKatalonStudio_revive/store/scrapeGoogleSearch.html).
+
+![scrapeGoogleSearch.html](docs/images/scrapeGoogleSearch.html.png)
 
 - Under the `store/scrapeGoogleSearch/yyyyMMdd_hhmmss/objects/` directory, there are 6 files. You can find 3 files with postfix `png`. As you can guess, these are PNG image files. These are the page screenshots. You can find 3 files with postfix `html`. These are Web page sources. The file name is 40 hex-decimal characters (SHA1 hash value of each file contents) appended with extension `.png`, `.html`.
 
