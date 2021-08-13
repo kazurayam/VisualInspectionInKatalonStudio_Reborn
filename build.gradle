@@ -1,21 +1,18 @@
 // VisualTestingInKatalonStudio_revive/build.gradle
-
 plugins {
     id 'groovy'
     id "com.katalon.gradle-plugin" version "0.0.7"
 }
 
 group = 'com.kazurayam'
-
 version = "0.1.0-SNAPSHOT"
 
 ext {
-    groovyVersion = '2.4.7'
+    ExecutionProfilesLoaderVersion = "1.2.0"
     materialstoreVersion = '0.1.0-SNAPSHOT'
     ashotVersion = '1.5.4'
     javadiffutilsVersion= '4.9'
     jsoupVersion = '1.7.2'
-    ExecutionProfilesLoaderVersion = "1.2.0"
 }
 
 repositories {
@@ -24,18 +21,14 @@ repositories {
 }
 
 dependencies {
+    compile group: 'com.kazurayam', name: 'materialstore', version: "${materialstoreVersion}"
+    compile group: 'com.kazurayam', name: 'ExecutionProfilesLoader', version: "${ExecutionProfilesLoaderVersion}"
     // https://mvnrepository.com/artifact/ru.yandex.qatools.ashot/ashot
     compile group: 'ru.yandex.qatools.ashot', name: 'ashot', version: "${ashotVersion}"
-
     // https://mvnrepository.com/artifact/io.github.java-diff-utils/java-diff-utils
     compile group: 'io.github.java-diff-utils', name: 'java-diff-utils', version: "${javadiffutilsVersion}"
-
     // https://mvnrepository.com/artifact/org.jsoup/jsoup
     compile group: 'org.jsoup', name: 'jsoup', version: "${jsoupVersion}"
-
-    compile group: 'com.kazurayam', name: 'materialstore', version: "${materialstoreVersion}"
-    
-    compile group: 'com.kazurayam', name: 'ExecutionProfilesLoader', version: "${ExecutionProfilesLoaderVersion}"
 }
 
 // gradle katalonCopyDependencies
