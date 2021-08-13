@@ -75,65 +75,29 @@ You can make a new Katalon Studio project, import the required external dependen
 
 >I will write a symbol `$projectDir` to express this project directory.
 
-3. create `$projectDir/build.gradle` as follows:
+3. create `$projectDir/build.gradle`. You should copy and paste the source of:
 
-```
-plugins {
-    id "com.katalon.gradle-plugin" version "0.0.7"
-}
-
-ext {
-    ExecutionProfilesLoaderVersion = "1.2.0"
-    materialstoreVersion = '0.1.0'
-    ashotVersion = '1.5.4'
-    javadiffutilsVersion= '4.9'
-    jsoupVersion = '1.7.2'
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    compile group: 'com.kazurayam', name: 'materialstore', version: "${materialstoreVersion}"
-    compile group: 'com.kazurayam', name: 'ExecutionProfilesLoader', version: "${ExecutionProfilesLoaderVersion}"
-    // https://mvnrepository.com/artifact/ru.yandex.qatools.ashot/ashot
-    compile group: 'ru.yandex.qatools.ashot', name: 'ashot', version: "${ashotVersion}"
-    // https://mvnrepository.com/artifact/io.github.java-diff-utils/java-diff-utils
-    compile group: 'io.github.java-diff-utils', name: 'java-diff-utils', version: "${javadiffutilsVersion}"
-    // https://mvnrepository.com/artifact/org.jsoup/jsoup
-    compile group: 'org.jsoup', name: 'jsoup', version: "${jsoupVersion}"
-}
-
-```
+- [build.gradle](build.gradle)
 
 4. In the commandline you want to execute the following command:
 
 ```
 $ cd $projectDir
-$ gradle katalonCopyDependencies
+$ gradle driver
 ```
 
-5. The command will display bunch of messages in 10-20 seconds, and will finish successfully.
+5. The `gradle driver` will display some lines of messages in 10 seconds, and will finish successfully.
 
 ```
-Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
-Use '--warning-mode all' to show the individual deprecation warnings.
-See https://docs.gradle.org/6.4.1/userguide/command_line_interface.html#sec:command_line_warnings
-
 BUILD SUCCESSFUL in 1s
 1 actionable task: 1 executed
 ```
 
->Please don't mind *"Deprecated Gradle features were used ..."* message. It's another issue. It will not annoy you.
+6. Once the command finished, in the `$projectDir/Drivers` directory, you will find some jar files are automatically imported. These are downloaded from the Maven Central Repositry. These are required to run the "Visual Testing" code in your new project in Katalon Studio locally.
 
-
-6. Once the command finished, you will find a lot of jar files (more then 40 in fact) are automatically donwloded in the `$projectDir/Drivers` directory. These are neccessary anyway. You don't have to worry about what's in there.
-
->If you are storing this project into Git repository, you should `.gitignore` the `Drivers/` directory, as those jars should not be included.
+>If you are going to push this project into Git repository, you should write the `.gitignore` file so that it ignores the `Drivers/` directory.
 
 7. You have resolved external dependencies. Now you can start writing a Test Case.
-
 
 ### Sample1: simply visit a URL and scrape
 
@@ -145,11 +109,53 @@ You want to newly create a Test Case `Test Cases/main/GoogleSearch/scrapeGoogleS
 
 Once you have created the Test Case, you want to run it as usual by clicking the green button ![run button](docs/images/run_katalon_test.png) in Katalon Studio GUI.
 
-When done, you will find a new directory `$projectDir/store` is newly created. In there you will find a tree of directories and files, like this:
+When the Test Case finished, you will find a new directory `$projectDir/store` is created. In there you will find a tree of directories and files, like this:
 
 ```
+$ tree store
+store
+├── scrapeGoogleSearch
+│   └── 20210813_221052
+│       ├── index
+│       └── objects
+│           ├── 01014deef318115a75ac1c3ab0f9844832c81c86.html
+│           ├── 02625f7607199d99ca58b803d6fe51b7c94835e7.html
+│           ├── 2563a225cb7bcd438ae12a6126b2091eb8e09e7d.png
+│           ├── 5c002fbe44438341d3d92832d1e004198153976b.png
+│           ├── 8370ecd0081e1fb9ce8aaecb1618ee0fc16b6924.html
+│           └── efaed8443417a62faf35ee9d9b858592cd67bbae.png
+└── scrapeGoogleSearch.html
+```
+
+- The `store/scrapeGoogleSearch.html` renders a view of the stored 6 files. You can see an working example here: [pls. click here](docs/store/scrapeGoogleSearch.html). ![scrapeGoogleSearch.html](docs/images/scrapeGoogleSearch.html.png)
+
+- Under the `store/scrapeGoogleSearch/yyyyMMdd_hhmmss/objects/` directory, there are 6 files. You can find 3 files with postfix `png`. As you can guess, these are PNG image files. These are the page screenshots. You can find 3 files with postfix `html`. These are Web page sources. The file name is 40 hex-decimal characters (SHA1 hash value of each file contents) appended with extension `.png`, `.html`.
+
+- The `store/scrapeGoogleSearch/yyyyMMdd_hhmmss/index` file would be most interesting part. It look like [this](docs/store/scrapeGoogleSearch/20210813_221052/index):
 
 ```
+8370ecd0081e1fb9ce8aaecb1618ee0fc16b6924	html	{"URL.host":"www.google.com", "URL.path":"/", "URL.protocol":"https"}
+2563a225cb7bcd438ae12a6126b2091eb8e09e7d	png	{"URL.host":"www.google.com", "URL.path":"/", "URL.protocol":"https"}
+...
+```
+
+The `index` file is a plain text file. Each lines corresponds to each files stored in the `objects` directory. An line of the `index` file has 3 parts delimited TAB characters.
+
+```
+<SHA1 Hash value of each file>\t<file type>\t<metadata>
+```
+
+In the test Case script, the code created  *metadata* for each objects. Typically a metadata will include information derived from the URL of the source Web Page. For example, the URL `http://www.google.com/` will be digested to for a metadata `{"URL.host":"www.google.com", "URL.path":"/", "URL.protocol":"https"}`. You can add any element into the metadata as you like.
+
+The lines in the `index` file are sorted by the ascending order of *metadata* text.
+
+The `materialstore` controls that the *metadata* text must be unique. Your code can not create multiple objects (multiple lines in the `index` file) with the same *metadata* value.
+
+The 40 hex-decimal string (I call this "ID") of each file name is derived from the file content (without compression) by SHA1 algorithm. Yes, you can read every file by the ID but it is not convenient. The `materialstore` API provides method for your code to retrieve files in the `objects` directory by specifying a single *metadata* value. or a *pattern* that match the *metadata* of each objects.
+
+The `index` file and the `materialstore` API provides a simple "object storage" indexed by *metadata*.
+
+This object storage enables flexible control over the object stored in the `store` directory.
 
 ### Sample2: Visual Testing in Chronos mode
 
