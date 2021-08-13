@@ -1,13 +1,12 @@
 // VisualTestingInKatalonStudio_revive/build.gradle
-plugins {
-    id "com.katalon.gradle-plugin" version "0.0.7"
-}
+// $ gradle drivers
 
 ext {
-    ExecutionProfilesLoaderVersion = "1.2.0"
+    AUTO_IMPORTED_JAR_PREFIX = 'AI_'
+    ExecutionProfilesLoaderVersion = "1.2.2-SNAPSHOT"
     materialstoreVersion = '0.1.0-SNAPSHOT'
+    subprocessjVersion = '0.1.0'
     ashotVersion = '1.5.4'
-    javadiffutilsVersion= '4.9'
     jsoupVersion = '1.7.2'
 }
 
@@ -16,15 +15,43 @@ repositories {
     mavenLocal()
 }
 
-dependencies {
-    compile group: 'com.kazurayam', name: 'materialstore', version: "${materialstoreVersion}"
-    compile group: 'com.kazurayam', name: 'ExecutionProfilesLoader', version: "${ExecutionProfilesLoaderVersion}"
-    // https://mvnrepository.com/artifact/ru.yandex.qatools.ashot/ashot
-    compile group: 'ru.yandex.qatools.ashot', name: 'ashot', version: "${ashotVersion}"
-    // https://mvnrepository.com/artifact/io.github.java-diff-utils/java-diff-utils
-    compile group: 'io.github.java-diff-utils', name: 'java-diff-utils', version: "${javadiffutilsVersion}"
-    // https://mvnrepository.com/artifact/org.jsoup/jsoup
-    compile group: 'org.jsoup', name: 'jsoup', version: "${jsoupVersion}"
+configurations {
+    myconf
 }
 
-// gradle katalonCopyDependencies
+dependencies {
+    myconf group: 'com.kazurayam', name: 'materialstore',
+                    version: "${materialstoreVersion}"
+    myconf group: 'com.kazurayam', name: 'ExecutionProfilesLoader',
+                    version: "${ExecutionProfilesLoaderVersion}"
+    myconf group: 'com.kazurayam', name: 'subprocessj',
+                    version: "${subprocessjVersion}"
+    myconf group: 'ru.yandex.qatools.ashot', name: 'ashot',
+                    version: "${ashotVersion}"
+    myconf group: 'org.jsoup', name: 'jsoup', version: "${jsoupVersion}"
+}
+
+task drivers {
+    doFirst {
+        delete fileTree("Drivers") {
+            include("**/" + AUTO_IMPORTED_JAR_PREFIX + "*")
+        }
+    }
+    doLast {
+        copy { copySpec ->
+            copySpec
+                .from(project.getConfigurations().getByName("myconf"))
+                .into("Drivers")
+                .include(
+                    "**/materialstore*.jar",
+                    "**/ExecutionProfilesLoader*.jar",
+                    "**/ashot*.jar",
+                    "**/jsoup*.jar",
+                    "**/subprocessj*.jar",
+                    )
+                .rename({ s ->
+                    AUTO_IMPORTED_JAR_PREFIX + s
+                    })
+        }
+    }
+}
