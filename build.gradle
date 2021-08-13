@@ -3,7 +3,7 @@
 
 ext {
     AUTO_IMPORTED_JAR_PREFIX = 'AI_'
-    ExecutionProfilesLoaderVersion = "1.2.2-SNAPSHOT"
+    ExecutionProfilesLoaderVersion = "1.2.1"
     materialstoreVersion = '0.1.0-SNAPSHOT'
     subprocessjVersion = '0.1.0'
     ashotVersion = '1.5.4'
