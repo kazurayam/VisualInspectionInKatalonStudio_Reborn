@@ -1,7 +1,10 @@
 # Visual Testing in Katalon Studio Revived
 
 - @date Aug 2021
-- @authro kazurayam
+- @author kazurayam
+
+<!-- START doctoc -->
+<!-- END doctoc -->
 
 ## History
 
@@ -9,9 +12,9 @@ Sep 2018, I published a project named "Visual Testing in Katalon Studio" at
 
 - https://github.com/kazurayam/VisualTestingInKatalonStudio
 
-Please have a look at the "Motivation" section in its README document to know what Problems I wanted to solve. I tried to implement what I called "Visual Testing" in Katalon Studio. The project worked for me.
+Please have a look at the "Motivation" section in its README document to know what problems I wanted to solve. I tried to implement what I called "Visual Testing" in Katalon Studio. The project worked for me.
 
-But I wasn't satisfied with it. Why? I can enumerate 3 problems about this project.
+But I wasn't satisfied with it. Why? I would enumerate 3 problems about this project.
 
 1. The codeset of [Visual Testing In katalon Studio](https://github.com/kazurayam/VisualTestingInKatalonStudio) project is too complicated. The project contains 28 Test Cases, 7 Test Suites, 4 Test Suite Collections, 1 Test Listener, 12 Keywords. After 3 years, I forgot them and unable to maintein them any longer.
 2. The project enables me comparing a pair of 2 screenshots of Web pages in PNG image format. That's all. Poor functinality! More often I wanted to compare 2 texts obtained from web. E.g, 2 HTML files as Web Page source; 2 JSON (or XML) files downloaded from Web Services.
@@ -43,31 +46,32 @@ The artifact of `materialstore` is distributed as a jar file. The jar file is av
 
 The `materialstore`'s jar has no immediate dependency on the Katalon Studio API. It can be used in any Java/Groovy project, not only in Katalon Studio. I can use it in a plain [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/)-based WebUI automated test project. I can use it in a plain [Appium Java Client](https://github.com/appium/java-client)-based Mobile UI automated test project. I can use it in a plain [Apache HttpClient](https://hc.apache.org/httpcomponents-client-5.1.x/)-based Web Service automated test project.
 
-## Description
 
-I would publish 2 sets of documentation how to use the `materialstore` library to implement "Visual Testing".
+I would publish 2 sets of documentation with examples to describe how to use the `materialstore` library to implement "Visual Testing".
 
-### Outside KS description
+## mateialstore-examples project
 
 The following repository contains sample codes and documentation for "Out of KS" cases.
 
-- [materialstore-esample](https://github.com/kazurayam/materialstore-examples)
+- [materialstore-examples](https://github.com/kazurayam/materialstore-examples)
 
 The examples run on Gradle + Selenium WebDriver + Apache HttpClient, not inside Katalon Studio.
 
 Detail tutorials of making use of the `materialstore` API will be included here. (yet TODO)
 
-### Inside KS description
+## VisualTestingInKatalonStudio_revive project
 
 Here I will explatin 3 examples of "Visual Testing Revived" in Kataloon Studio.
 
-#### How to start with
+### create a project, resolve dependencies
 
 You can make a new Katalon Studio project, import the required external dependencies, and write your Test Cases for "Visual Testing". Let me describe it first.
 
-1. Install "Gradle" build tool into your PC. Please follow this [guide](https://gradle.org/install/) to install Gradle on your machine.
+1. Install "Gradle" build tool into your PC. Please follow this [guide](https://gradle.org/install/) to install Gradle on your machine. Version 6.x is required.
 
-2. create a new Katalon Studio project as usual in whichever directory you like. 
+>Using Gradle v7.x, the following instruction may fail.
+
+2. Open Katalon Studio GUI. Create a new project as usual in whichever directory you like.
 
 >I will write a symbol `$projectDir` to express this project directory.
 
@@ -88,7 +92,6 @@ ext {
 
 repositories {
     mavenCentral()
-    mavenLocal()
 }
 
 dependencies {
@@ -111,7 +114,7 @@ $ cd $projectDir
 $ gradle katalonCopyDependencies
 ```
 
-5. The command will display bunch of messages for 10 or 20 seconds, and will finish successfully.
+5. The command will display bunch of messages in 10-20 seconds, and will finish successfully.
 
 ```
 Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
@@ -125,56 +128,34 @@ BUILD SUCCESSFUL in 1s
 >Please don't mind *"Deprecated Gradle features were used ..."* message. It's another issue. It will not annoy you.
 
 
-6. Once the command finished, you will find a lot of jar files are automatically donwloded in the `$projectDir/Drivers` directory.
+6. Once the command finished, you will find a lot of jar files (more then 40 in fact) are automatically donwloded in the `$projectDir/Drivers` directory. These are neccessary anyway. You don't have to worry about what's in there.
 
-```
-$ tree ./Drivers
-./Drivers
-├── katalon_generated_ExecutionProfilesLoader-1.2.0.jar
-├── katalon_generated_animal-sniffer-annotations-1.14.jar
-├── katalon_generated_ashot-1.5.4.jar
-├── katalon_generated_byte-buddy-1.8.15.jar
-├── katalon_generated_checker-compat-qual-2.0.0.jar
-├── katalon_generated_commons-codec-1.13.jar
-├── katalon_generated_commons-compress-1.20.jar
-├── katalon_generated_commons-exec-1.3.jar
-├── katalon_generated_commons-io-2.8.0.jar
-├── katalon_generated_commons-lang3-3.12.0.jar
-├── katalon_generated_commons-logging-1.2.jar
-├── katalon_generated_error_prone_annotations-2.1.3.jar
-├── katalon_generated_groovy-all-2.4.21.jar
-├── katalon_generated_gson-2.8.6.jar
-├── katalon_generated_guava-25.0-jre.jar
-├── katalon_generated_hamcrest-core-1.3.jar
-├── katalon_generated_httpclient-4.5.10.jar
-├── katalon_generated_httpclient5-5.0.3.jar
-├── katalon_generated_httpcore-4.4.12.jar
-├── katalon_generated_httpcore5-5.0.2.jar
-├── katalon_generated_httpcore5-h2-5.0.2.jar
-├── katalon_generated_j2objc-annotations-1.1.jar
-├── katalon_generated_jarchivelib-1.1.0.jar
-├── katalon_generated_java-diff-utils-4.9.jar
-├── katalon_generated_jsoup-1.13.1.jar
-├── katalon_generated_jsr305-1.3.9.jar
-├── katalon_generated_materialstore-0.1.0-SNAPSHOT.jar
-├── katalon_generated_okhttp-3.11.0.jar
-├── katalon_generated_okio-1.14.0.jar
-├── katalon_generated_selenium-api-3.141.59.jar
-├── katalon_generated_selenium-chrome-driver-3.141.59.jar
-├── katalon_generated_selenium-edge-driver-3.141.59.jar
-├── katalon_generated_selenium-firefox-driver-3.141.59.jar
-├── katalon_generated_selenium-ie-driver-3.141.59.jar
-├── katalon_generated_selenium-java-3.141.59.jar
-├── katalon_generated_selenium-opera-driver-3.141.59.jar
-├── katalon_generated_selenium-remote-driver-3.141.59.jar
-├── katalon_generated_selenium-safari-driver-3.141.59.jar
-├── katalon_generated_selenium-support-3.141.59.jar
-├── katalon_generated_slf4j-api-1.7.31.jar
-├── katalon_generated_subprocessj-0.1.0.jar
-└── katalon_generated_webdrivermanager-4.4.3.jar
-```
+>If you are storing this project into Git repository, you should `.gitignore` the `Drivers/` directory, as those jars should not be included.
 
 7. You have resolved external dependencies. Now you can start writing a Test Case.
+
+
+### Sample1: simply visit a URL and scrape
+
+At first, we will write a short Test Case in Katalon Studio that visits the [Google Search page](https://www.google.com/). We will take screenshots and HTML page sources of the Web page. We will store PNG files and HTML files into the `store` directory using the `materialstore` library. We will finally generate a HTML file in which we can view the stored files files.
+
+You want to newly create a Test Case `Test Cases/main/GoogleSearch/scrapeGoogleSearch` in your project. Copy and paste the following sample source:
+
+- [`Test Cases/main/GoogleSearch/searchGoogleSearch`](Scripts/main/GoogleSearch/scrapeGoogleSearch/Script1628518694544.groovy)
+
+Once you have created the Test Case, you want to run it as usual by clicking the green button ![run button](docs/images/run_katalon_test.png) in Katalon Studio GUI.
+
+When done, you will find a new directory `$projectDir/store` is newly created. In there you will find a tree of directories and files, like this:
+
+```
+
+```
+
+### Sample2: Visual Testing in Chronos mode
+
+
+### Sample3: Visual Testing in Twins mode
+
 
 
 

@@ -25,9 +25,9 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable
 
 Path projectDir = Paths.get(RunConfiguration.getProjectDir())
-Path root = projectDir.resolve("Materials")
+Path root = projectDir.resolve("store")
 Store store = Stores.newInstance(root)
-JobName jobName = new JobName(GlobalVariable.CURRENT_TESTCASE_NAME)
+JobName jobName = new JobName("scrapeGoogleSearch")
 JobTimestamp jobTimestamp = JobTimestamp.now()
 
 String startingURL = "https://www.google.com/"
@@ -42,7 +42,7 @@ WebUI.verifyElementPresent(q, 10)
 String queryValue = "katalon"
 WebUI.setText(q, queryValue)
 
-// now store the screenshot and the HTML source of the search page
+// now take the screenshot and store the PNG file of the Google Search page
 URL searchPageURL = new URL(WebUI.getUrl())
 Metadata metadata1 = new MetadataImpl.Builder(searchPageURL).build()
 takeFullPageScreenshotAndSavePageSourceUsingBuiltinKeyword(store, jobName, jobTimestamp, metadata1)
@@ -57,18 +57,18 @@ logo.addProperty("xpath", ConditionType.EQUALS, "//div[@class='logo']/a/img")
 // wait for the search result page is loaded
 WebUI.verifyElementPresent(logo, 10)
 
-// now store the screenshot and the HTML source of the result page
+// now store the screenshot and the HTML source of the Search Result page
 URL resultPageURL = new URL(WebUI.getUrl())
 Metadata metadata2 = new MetadataImpl.Builder(resultPageURL).build()
 takeFullPageScreenshotAndSavePageSourceUsingBuiltinKeyword(store, jobName, jobTimestamp, metadata2)
 
-// I can add entry of "q":"katalon"
+// make one more set of materials with "q":"katalon" appended into the metadata
 Metadata metadata3 = new MetadataImpl.Builder(resultPageURL).put("q", queryValue).build()
 takeFullPageScreenshotAndSavePageSourceUsingBuiltinKeyword(store, jobName, jobTimestamp, metadata3)
 
 WebUI.closeBrowser()
 
-// compile a list of Materials in HTML
+// compile a list of the aterials in HTML
 List<Material> materials = store.select(jobName, jobTimestamp, MetadataPattern.ANY)
 
 Path report = store.reportMaterials(jobName, materials, jobName.toString() + ".html")
