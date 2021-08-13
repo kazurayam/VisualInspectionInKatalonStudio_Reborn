@@ -1,11 +1,7 @@
 // VisualTestingInKatalonStudio_revive/build.gradle
 plugins {
-    id 'groovy'
     id "com.katalon.gradle-plugin" version "0.0.7"
 }
-
-group = 'com.kazurayam'
-version = "0.1.0-SNAPSHOT"
 
 ext {
     ExecutionProfilesLoaderVersion = "1.2.0"
