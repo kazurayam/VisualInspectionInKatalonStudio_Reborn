@@ -3,8 +3,24 @@
 - @date Aug 2021
 - @author kazurayam
 
-<!-- START doctoc -->
-<!-- END doctoc -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [History](#history)
+- [Visual Testing revived](#visual-testing-revived)
+  - [Simpler codeset](#simpler-codeset)
+  - [In a pre-designed directory structure, files are stored with index by "metadata"](#in-a-pre-designed-directory-structure-files-are-stored-with-index-by-metadata)
+  - [Packaged in a jar](#packaged-in-a-jar)
+  - [Usable out of Katalon Studio](#usable-out-of-katalon-studio)
+- [mateialstore-examples project](#mateialstore-examples-project)
+- [VisualTestingInKatalonStudio_revive project](#visualtestinginkatalonstudio_revive-project)
+  - [create a project, resolve dependencies](#create-a-project-resolve-dependencies)
+  - [Sample1: simply visit a URL and scrape](#sample1-simply-visit-a-url-and-scrape)
+  - [Sample2: Visual Testing in Chronos mode](#sample2-visual-testing-in-chronos-mode)
+  - [Sample3: Visual Testing in Twins mode](#sample3-visual-testing-in-twins-mode)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## History
 
