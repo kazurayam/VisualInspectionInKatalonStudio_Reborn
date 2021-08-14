@@ -44,15 +44,17 @@ In 2021 July-August, I created a new project named [`materialstore`](https://git
 
 The `materialstore` provides a self-contained API in Groovy, which encapsulates all of the useful functionalities of the previous [Visual Testing In katalon Studio](https://github.com/kazurayam/VisualTestingInKatalonStudio) project. A single Test Case in Katalon Studio empowered by the `materialstore` library can achieve whole job equivalent to the previous one. No need to struggle with that many components (28 Test Cases + 7 Test Suites + 4 Test Suite Collections + 1 Test Listener + 12 Keywords).
 
-### (2) In a pre-designed directory structure, files are stored with index by "metadata"
+### (2) Material Object store indexed by metadata
 
-The `materialstore` provides capability of materializing (storing) any files (PNG, HTML, JSON, XML, etc) downloaded from web sites in a pre-designed directory structure (I call it the "**store**").
+By the word "material" I mean any type of files downloaded from Web applications during automated tests. Screenshot images (PNG), Web page source (HTML), JSON and XML responded by Web Services --- I call all of these "materials".
 
-An application writes files into the store associating "metatadata". Files in the "store" are **indexed by the associcated metadata**. An application retrieves files from the store by "metadata" as key. An application does not find files by name. So *an application does not have to decide (and remember) the path of stored files*.
+The `materialstore` provides capability of materializing (storing) files downloaded from web sites in a pre-designed directory structure (I call it the "**store**"). It is a small "object store".
 
- A "metadata" of a file in the "store" is essencially an instance of `java.util.Map<String, String>` with arbitrary key and value pairs. You can programme any kind of "metadata" and associate it to files so that the files are clearly identified. For example, you can associate the URL from which the web resource was retrieved; or you can associate the name of browser ("Chrome", "FireFox", "Safari", etc) which you used to take the screenshots; or you can associate the name of "Execution Profile" you used when you executed your Test Case in Katalon Studio.
+An application writes files into the "store" associating "metatadata". The "materials" in the "store" are indexed by the associcated metadata. An application retrieves files from the store by "metadata" as key. An application does not look up files by name (Path). In turn, the application is not responsible for deciding and remembering the path of materials.
 
-Metadata composition is entirely up to you. Composing metadata is a bit difficult part of the `materialstore` library. It looks similar to the database table design in SQL-backed application.
+ A "metadata" of a file in the "store" is an instance of `java.util.Map<String, String>` with arbitrary key and value pairs. You can programme any kind of "metadata" and associate it to files so that the files are clearly identified. For example, you can associate the URL from which the web resource was retrieved; or you can associate the name of browser ("Chrome", "FireFox", "Safari", etc) which you used to take the screenshots; or you can associate the name of "Execution Profile" you used when you executed your Test Case in Katalon Studio.
+
+Metadata composition is entirely up to the user application. Composing metadata is a bit difficult part of the `materialstore` library. It looks similar to the database table design in SQL-backed application.
 
 ### (3) Packaged in a jar
 
@@ -60,22 +62,22 @@ The artifact of `materialstore` is distributed as a single jar file. The jar fil
 
 ### (4) Usable outside Katalon Studio
 
-The `materialstore`'s jar has no immediate dependency on the Katalon Studio API. It is not dependent even on the Selenium Webdriver API. It can be used in any Java/Groovy project, not only in Katalon Studio. I can use it in a plain [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/)-based WebUI automated test project. I can use it in a plain [Appium Java Client](https://github.com/appium/java-client)-based Mobile UI automated test project. I can use it in a plain [Apache HttpClient](https://hc.apache.org/httpcomponents-client-5.1.x/)-based Web Service automated test project.
+The `materialstore`'s jar has no immediate dependency on the Katalon Studio API. It is not dependent even on the Selenium Webdriver API. So the `materialstore` library can be used in any Java/Groovy project, not only in Katalon Studio. I can use it in a plain [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/)-based WebUI automated test project on Gradle. I can use it in a plain [Appium Java Client](https://github.com/appium/java-client)-based Mobile UI automated test project on Maven. I can use it in a plain [Apache HttpClient](https://hc.apache.org/httpcomponents-client-5.1.x/)-based Web Service automated test project on Ant.
 
+## Documentation
 
-I would publish 2 sets of documentation with examples to describe how to use the `materialstore` library to implement "Visual Testing".
-
-The following repository contains sample codes and documentation for "Out of KS" cases.
+I would publish 2 sets of documentation with examples to describe how to use the `materialstore` library to implement "Visual Testing". The following repository contains sample codes and documentation for "Out of KS" cases.
 
 - [materialstore-examples](https://kazurayam.github.io/materialstore-examples/)
 
-The examples run on Gradle + Selenium WebDriver + Apache HttpClient, not inside Katalon Studio.
+The examples run on Gradle + Selenium WebDriver + Apache HttpClient, not inside Katalon Studio. Detail tutorials of making use of the `materialstore` API will be included here. (yet TODO)
 
-Detail tutorials of making use of the `materialstore` API will be included here. (yet TODO)
+And here in https://github.com/kazurayam/VisualTestingInKatalonStudio_revive I will show you 3 examples how to use the `materialstore` library.
 
 ## Examples in Katalon Studio
 
-Here I will explatin 3 examples of "Visual Testing Revived" in Kataloon Studio.
+Here I will explatin 3 examples how to use the `materialstore` library in Kataloon Studio. I aimed 2 of 3 examples replace the previous ["Visual Testing in Katalon Studio"](https://github.com/kazurayam/VisualTestingInKatalonStudio) achievements.
+
 
 ### create a project, resolve dependencies
 
