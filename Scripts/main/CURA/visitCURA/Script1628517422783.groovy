@@ -33,7 +33,7 @@ URL url = new URL(WebUI.getUrl())
 
 WebUI.callTestCase(findTestCase("main/common/takeScreenshotAndPageSource"), 
 	["store": store, "jobName": jobName, "jobTimestamp": jobTimestamp,
-		"metadata": new MetadataImpl.Builder(url).put("selector", "body").build()
+		"metadata": new MetadataImpl.Builder(url).build()
 		]
 )
 
@@ -76,7 +76,7 @@ WebUI.setText(findTestObject('CURA/Page_CURA Healthcare Service/appointment/text
 url = new URL(WebUI.getUrl())
 WebUI.callTestCase(findTestCase("main/common/takeScreenshotAndPageSource"),
 	["store": store, "jobName": jobName, "jobTimestamp": jobTimestamp,
-		"metadata": new MetadataImpl.Builder(url).put("selector", "#appointment").build()
+		"metadata": new MetadataImpl.Builder(url).build()
 		]
 )
 
@@ -88,7 +88,7 @@ WebUI.click(findTestObject('CURA/Page_CURA Healthcare Service/appointment/button
 url = new URL(WebUI.getUrl())
 WebUI.callTestCase(findTestCase("main/common/takeScreenshotAndPageSource"),
 	["store": store, "jobName": jobName, "jobTimestamp": jobTimestamp,
-		"metadata": new MetadataImpl.Builder(url).put("selector", "#summary").build()
+		"metadata": new MetadataImpl.Builder(url).build()
 		]
 )
 	

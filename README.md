@@ -125,7 +125,7 @@ These are downloaded from the [Maven Central Repositry](https://mvnrepository.co
 
 ### Sample1: simply visit a URL and scrape
 
-At first, we will write a short Test Case in Katalon Studio that visits the [Google Search page](https://www.google.com/). We will take screenshots and HTML page sources of the Web page. We will store PNG files and HTML files into the `store` directory using the `materialstore` library. We will finally generate a HTML file in which we can view the stored files files.
+At first, we will write a Test Case in Katalon Studio that visits the [Google Search page](https://www.google.com/). We will take screenshots and HTML page sources of the Web page. We will store PNG files and HTML files into the `store` directory using the `materialstore` library. We will finally generate a HTML file in which we can view the stored files files.
 
 #### (1) Test Case
 
@@ -135,7 +135,7 @@ You want to newly create a Test Case `Test Cases/main/GoogleSearch/scrapeGoogleS
 
 Once you have created the Test Case, you want to run it as usual by clicking the green button ![run button](docs/images/run_katalon_test.png) in Katalon Studio GUI.
 
-#### (2) Viewer for the downloaded files
+#### (2) generated viewer for the downloaded files
 
 Once the Test Case finished, a HTML file will be created at `store/scrapeGoogleSearch.html`. Please open it in any web browser. It renders a view of the stored 6 files. You can see an working example here: [pls. click here](https://kazurayam.github.io/VisualTestingInKatalonStudio_revive/store/scrapeGoogleSearch.html).
 
@@ -166,11 +166,11 @@ store
 
 - Under the `store/scrapeGoogleSearch/yyyyMMdd_hhmmss/objects/` directory, there are 6 files. Among them you will find 3 files with postfix `png`. These are the screenshot of web pages in PNG image format. Also you will find 3 files with postfix `html`. These are HTML sources of web pages.
 
-- The file name is 40 hex-decimal characters (SHA1 hash value of each file contents) appended with extension `.png`, `.html`. The 40 hex-decimal string (I call this "ID") of each file name is derived from the file content (without compression) by SHA1 algorithm.
+- The file name comprises with 40 hex-decimal characters appended with extension (`.png`, `.html`). The hex-decimal string (I call this "ID") is derived from the file content without compression by [SHA1 Secure Hash algorithm](https://docs.oracle.com/javase/7/docs/api/java/security/MessageDigest.html).
 
 #### index
 
-- The `store/scrapeGoogleSearch/yyyyMMdd_hhmmss/index` file would be most interesting part. It look like [this](docs/store/scrapeGoogleSearch/20210813_221052/index):
+- The `store/scrapeGoogleSearch/yyyyMMdd_hhmmss/index` file would be interesting. An example of the `index` file is like [this](docs/store/scrapeGoogleSearch/20210813_221052/index):
 
 ```
 8370ecd0081e1fb9ce8aaecb1618ee0fc16b6924	html	{"URL.host":"www.google.com", "URL.path":"/", "URL.protocol":"https"}
@@ -178,7 +178,9 @@ store
 ...
 ```
 
-The `index` file is a plain text file. Each lines corresponds to each files stored in the `objects` directory. A line of the `index` file has 3 parts delimited by TAB characters.
+The `index` file is a plain text file. Each lines corresponds to each files stored in the `objects` directory.
+
+A line of the `index` file has 3 parts delimited by TAB characters.
 
 ```
 <SHA1 Hash value of each file>\t<file type>\t<metadata>
@@ -186,22 +188,96 @@ The `index` file is a plain text file. Each lines corresponds to each files stor
 
 #### metadata
 
-In the test Case script, the code created  *metadata* for each objects. Typically a metadata will include information derived from the URL of the source Web Page. For example, the URL `http://www.google.com/` will be digested to for a metadata `{"URL.host":"www.google.com", "URL.path":"/", "URL.protocol":"https"}`. You can add any element into the metadata as you like.
+In the test Case script, the code created  *metadata* for each objects. Typically a metadata will include information derived from the URL of the source Web Page. For example, an URL
+
+- `http://www.google.com/`
+
+will be digested to form a metadata 
+
+- `{"URL.host":"www.google.com", "URL.path":"/", "URL.protocol":"https"}`
+
+Plus, you can add any key-value pair into the metadata as you like.
 
 In the `index` file, lines are sorted by the ascending order of *metadata* text.
 
-The `materialstore` API restricts that *metadata* texts in a `index` file must be unique. Your code can not create multiple objects (multiple lines in the `index` file) with the same *metadata* value.
+The `materialstore` API restricts that *metadata* texts in a `index` file MUST be unique. Your application can not create multiple objects (= multiple lines in the `index` file) with the same *metadata* value.
 
-The `materialstore` API provides method for your application to retrieve files in the `objects` directory by specifying a *metadata*.
-
-
-
-
+The `materialstore` API provides methoda for your application to retrieve files in the `objects` directory by specifying a *metadata* as key.
 
 
 ### Sample2: Visual Testing in Chronos mode
 
+Secondly, we will write a Test Case in Katalon Studio that visits the [http://demoaut-mimic.kazurayam.com/](http://demoaut-mimic.kazurayam.com/). The top page displays a current timestamp in the unit of seconds. So everytime you retrieve this page, the page changes slightly at the timestamp portion.
 
+#### (1) Test Case
+
+In your project, you want to make the copy of the following Test Case example.
+
+- [`Test Cases/CURA/VisualTestingChronos`](Scripts/main/CURA/VisualTestingChronos/Script1627619550263.groovy)
+
+You will execute the Test Case two times. You run it once, wait for some period (seconds, minuits, hours, or days, ... up to you), then run it again. The Test Case will preserve the output of previous runs. So you will see 2 directories named like `yyyyMMdd_hhmmss`. It will look like this:
+
+```
+$ tree store
+store
+├── CURA_VisualTestingChronos
+│   ├── 20210814_143440
+│   │   ├── index
+│   │   └── objects
+│   │       ├── 081a2a3e3174f13f60a9707f9464d1d73339d0e3.html
+│   │       ├── 4d671f2cd14839164840a520cb185c2d1bb68586.png
+│   │       ├── 504259db4e6562f62f8f70a6991fbce42aa55407.html
+│   │       ├── 668b2a28455d9524fc1da35317f44d3797ea5344.html
+│   │       ├── 6b82ac13ae98ca3c055d28469b75c8f377c1d8b1.png
+│   │       ├── 6b8a699d921520c10b9e7e61cf62e528bf263fa8.html
+│   │       ├── 8dd629a5d1b542b80bebc571c1ee35d27157ea1e.html
+│   │       ├── a11357d7fbc475f7fefabd50f468b9b4fd4e8b35.png
+│   │       ├── ed401b9bff2a687e41cedd9a63b3dd15880964eb.png
+│   │       └── f8664dfa1c3a3af60914c4c90ddfaf0286910133.html
+│   └── 20210814_143722
+│       ├── index
+│       └── objects
+│           ├── 01746787bffa40e2ae0997da12e66c3f6ed50a87.png
+│           ├── 25e752bc500be3a94fad9a4e6fc3ebc25431b558.png
+│           ├── 3d56d836f5c778d0ec31f72fd74fcc5d3cb348fd.html
+│           ├── 4d671f2cd14839164840a520cb185c2d1bb68586.png
+│           ├── 582791931452081590447c71d8769ae185ff7cb9.html
+│           ├── 668b2a28455d9524fc1da35317f44d3797ea5344.html
+│           ├── 6b82ac13ae98ca3c055d28469b75c8f377c1d8b1.png
+│           ├── e18882a39ba9632e9b0018e642d90a289fd1bcb7.html
+│           ├── f6b51712f25ba02a5b39eedb30a57b31d455eafc.html
+│           └── f8664dfa1c3a3af60914c4c90ddfaf0286910133.html
+└── CURA_VisualTestingChronos-index.html
+
+5 directories, 23 files
+```
+
+#### (3) making Chronological diff
+
+The Test Case compares takes materials at chronologically different timings, and then compare the 2 sets.
+
+[`Test Cases/CURA/VisualTestingChronos`](Scripts/main/CURA/VisualTestingChronos/Script1627619550263.groovy) has codes that do the followng processing:
+
+1. make a List of materials in the current timestmp directory
+2. make another List of materials in the previous timestamp directory
+3. do take differences between the material pairs
+4. generate a HTML report, where you can view 2 original materials + the diff.
+
+#### (4) generated viewer for the downloaded files
+
+Once the Test Case finished, a HTML file will be created at `store/CURA_VisualTestingChronos.html`. Please open it in any web browser. It renders a view of the stored 6 files. You can see an working example here: [pls. click here](https://kazurayam.github.io/VisualTestingInKatalonStudio_revive/store/CURA_VisualTestingChronos.html).
+
+You can see examples of screenshot comparison result: Previous screenshot - diff image - current screenshot.
+
+![Chronos Left](docs/images/Chronos_Left.png)
+
+![Chronos Diff](docs/images/Chronos_Diff.png)
+
+![Chronos Right](docs/images/Chronos_Right.png)
+
+Also you can see examples of HTML page sources comparison result.
+
+![Chronos HTML](docs/images/Chronos_HTML_with_diff.png)
 
 ### Sample3: Visual Testing in Twins mode
 

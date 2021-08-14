@@ -27,7 +27,7 @@ JobTimestamp currentTimestamp = JobTimestamp.now()
 ExecutionProfilesLoader profilesLoader = new ExecutionProfilesLoader()
 
 //-----------------------------------------------------------------------------
-String profile = "CURA_ProductionEnv"
+String profile = "CURA_DevelopmentEnv"
 profilesLoader.loadProfile(profile)
 WebUI.comment("Execution Profile ${profile} was loaded")
 
