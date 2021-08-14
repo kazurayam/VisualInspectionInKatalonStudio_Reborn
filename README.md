@@ -17,6 +17,12 @@
 - [Examples in Katalon Studio](#examples-in-katalon-studio)
   - [create a project, resolve dependencies](#create-a-project-resolve-dependencies)
   - [Sample1: simply visit a URL and scrape](#sample1-simply-visit-a-url-and-scrape)
+    - [(1) Test Case](#1-test-case)
+    - [(2) Viewer for the downloaded files](#2-viewer-for-the-downloaded-files)
+    - [(3) The "store" directory structure](#3-the-store-directory-structure)
+    - [objects/](#objects)
+    - [index](#index)
+    - [metadata](#metadata)
   - [Sample2: Visual Testing in Chronos mode](#sample2-visual-testing-in-chronos-mode)
   - [Sample3: Visual Testing in Twins mode](#sample3-visual-testing-in-twins-mode)
 
