@@ -31,7 +31,7 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-## History
+## My previous work
 
 Sep 2018, I published a project named "Visual Testing in Katalon Studio" at
 
@@ -42,10 +42,10 @@ Please have a look at the "Motivation" section in its README document to know wh
 But I wasn't satisfied with it. Why? I would enumerate 3 problems about this project.
 
 1. The codeset of [Visual Testing In katalon Studio](https://github.com/kazurayam/VisualTestingInKatalonStudio) project is too complicated. The project contains 28 Test Cases, 7 Test Suites, 4 Test Suite Collections, 1 Test Listener, 12 Keywords. After 3 years, I forgot them and unable to maintain them any longer.
-2. The project enables me to compare a pair of 2 screenshots of Web pages in PNG image format. That is the only functionality it provides. More often I wanted to compare 2 texts scraped from web. E.g, 2 HTML files as Web Page source; 2 JSON files downloaded from a Web Service.
+2. The project enables me to compare a pair of 2 screenshots of Web pages in PNG image format. No more functionality is provides. More often I wanted to compare 2 texts scraped from web. E.g, 2 HTML files as Web Page source; 2 JSON files downloaded from a Web Service.
 3. The project isn't packaged. It isn't distributable to others easily. It's too hard for people to reuse the codeset of the project to implement their own "Visual Testing" for their custom targets.
 
-## Visual Testing revived
+## New achievement
 
 In 2021 July-August, I created a new project named [`materialstore`](https://github.com/kazurayam/materialstore). It is a small "object store" written in Groovy. In this project I re-designed and re-implemented my idea from scratch. I have achieved the followings.
 
@@ -144,7 +144,7 @@ You want to newly create a Test Case `Test Cases/main/GoogleSearch/scrapeGoogleS
 
 Once you have created the Test Case, you want to run it as usual by clicking the green button ![run button](docs/images/run_katalon_test.png) in Katalon Studio GUI.
 
-#### (2) The viewer generated
+#### (2) The report generated
 
 Once the Test Case finished, a HTML file will be created at `store/scrapeGoogleSearch.html`. Please open it in any web browser. It renders a view of the stored 6 files. You can see an working example here: [pls. click here](https://kazurayam.github.io/VisualTestingInKatalonStudio_revive/store/scrapeGoogleSearch.html).
 
@@ -216,7 +216,9 @@ The `materialstore` API provides methoda for your application to retrieve files 
 
 ### Sample2: Visual Testing in Chronos mode
 
-Secondly, we will write a Test Case in Katalon Studio that visits the [http://demoaut-mimic.kazurayam.com/](http://demoaut-mimic.kazurayam.com/). The top page displays a current timestamp in the unit of seconds. So everytime you retrieve this page, the page changes slightly at the timestamp portion.
+The second example. We will write a Test Case in Katalon Studio that visits the [http://demoaut-mimic.kazurayam.com/](http://demoaut-mimic.kazurayam.com/). The top page displays a current timestamp in the unit of seconds. So everytime you retrieve this page, the page changes slightly at the timestamp portion.
+
+*Is the current page of a web system identical to what it was previously; 5 minutes ago, 3 hours ago, or 1 day ago, etc?* --- this is what I want the second example to sho me.
 
 #### (1) Test Case
 
@@ -274,9 +276,9 @@ The Test Case compares takes materials at chronologically different timings, and
 3. do take differences between the two lists
 4. generate a HTML report, where you can view the detail with diff information.
 
-#### (4) The viewer generated
+#### (4) The report generated
 
-Once the Test Case finished, a HTML file will be created at `store/CURA_VisualTestingChronos.html`. Please open it in any web browser. It renders a view of the stored 6 files. You can see an working example here: [pls. click here](https://kazurayam.github.io/VisualTestingInKatalonStudio_revive/store/CURA_VisualTestingChronos-index.html).
+Once the Test Case finished, a HTML file will be generated at `store/CURA_VisualTestingChronos.html`. Please open it in any web browser. It renders a view of the stored 6 files. You can see an working example here: [pls. click here](https://kazurayam.github.io/VisualTestingInKatalonStudio_revive/store/CURA_VisualTestingChronos-index.html).
 
 You can see examples of screenshot comparison result: Previous screenshot - diff image - current screenshot.
 
@@ -290,10 +292,36 @@ Also you can see examples of HTML page sources comparison result.
 
 ![Chronos HTML](docs/images/Chronos_HTML_with_diff.png)
 
+
+
+
 ### Sample3: Visual Testing in Twins mode
 
+The 3rd example visits 2 URLs. These are useless pages solely for this example.
+
+- [http://mydmin.kazurayam.com/](http://myadmin.kazurayam.com/)
+- [http://devadmin.kazurayam.com/](http://devadmin.kazurayam.com/)
+
+The former URL is meant to be a Production environment of a web system, the latter URL is meant to be a Development environment. The pages look similar at a glance, but are different in detail.
+
+*How the pages of 2 environments differ now?* --- This is what I want the 3rd exmaple to show me.
+
+#### (1) Test Case
+
+
+#### (2) The "store" directory
+
+
+#### (3) makeing Twins diff
+
+#### (4) The report generated
 
 
 
+
+
+## Conclusion
+
+[Visual Testing In Katalon Studio](https://github.com/kazurayam/VisualTestingInKatalonStudio) is now superceded by this [Visual Testing In Katalon Studio Revived](https://github.com/kazurayam/VisualTestingInKatalonStudio_revive) backed by the [materialstore](https://github.com/kazurayam/materialstore) library.
 
 
