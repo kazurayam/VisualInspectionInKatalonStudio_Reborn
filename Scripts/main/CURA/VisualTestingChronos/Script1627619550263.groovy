@@ -20,9 +20,9 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable
 
 Path projectDir = Paths.get(RunConfiguration.getProjectDir())
-Path root = projectDir.resolve("Materials")
+Path root = projectDir.resolve("store")
 Store store = new StoreImpl(root)
-JobName jobName = new JobName(GlobalVariable.CURRENT_TESTCASE_NAME)
+JobName jobName = new JobName("CURA_VisualTestingChronos")
 JobTimestamp currentTimestamp = JobTimestamp.now()
 ExecutionProfilesLoader profilesLoader = new ExecutionProfilesLoader()
 

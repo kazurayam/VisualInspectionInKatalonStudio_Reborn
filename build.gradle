@@ -2,11 +2,12 @@
 // $ gradle drivers
 
 ext {
-    AUTO_IMPORTED_JAR_PREFIX = 'AI_'
+    AUTO_IMPORTED_JAR_PREFIX = 'AUTOIMPORTED_'
     ExecutionProfilesLoaderVersion = "1.2.1"
     materialstoreVersion = '0.1.0'
     subprocessjVersion = '0.1.0'
     ashotVersion = '1.5.4'
+    javadiffutilsVersion = '4.9'
     jsoupVersion = '1.7.2'
 }
 
@@ -28,6 +29,8 @@ dependencies {
                     version: "${subprocessjVersion}"
     myconf group: 'ru.yandex.qatools.ashot', name: 'ashot',
                     version: "${ashotVersion}"
+    myconf group: 'io.github.java-diff-utils', name: 'java-diff-utils',
+                    version: "${javadiffutilsVersion}"
     myconf group: 'org.jsoup', name: 'jsoup', version: "${jsoupVersion}"
 }
 
@@ -47,6 +50,7 @@ task drivers {
                     "**/ExecutionProfilesLoader*.jar",
                     "**/ashot*.jar",
                     "**/jsoup*.jar",
+                    "**/java-diff-utils*.jar",
                     "**/subprocessj*.jar",
                     )
                 .rename({ s ->

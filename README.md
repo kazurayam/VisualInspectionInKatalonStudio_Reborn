@@ -109,11 +109,12 @@ BUILD SUCCESSFUL in 1s
 ```
 $ tree Drivers
 Drivers
-├── AI_ExecutionProfilesLoader-1.2.1.jar
-├── AI_ashot-1.5.4.jar
-├── AI_jsoup-1.13.1.jar
-├── AI_materialstore-0.1.0.jar
-└── AI_subprocessj-0.1.0.jar
+├── AUTOIMPORTED_ExecutionProfilesLoader-1.2.1.jar
+├── AUTOIMPORTED_ashot-1.5.4.jar
+├── AUTOIMPORTED_java-diff-utils-4.9.jar
+├── AUTOIMPORTED_jsoup-1.13.1.jar
+├── AUTOIMPORTED_materialstore-0.1.0.jar
+└── AUTOIMPORTED_subprocessj-0.1.0.jar
 ```
 
 These are downloaded from the [Maven Central Repositry](https://mvnrepository.com/). These are required to run the "Visual Testing" code in your new project in Katalon Studio locally.
@@ -126,11 +127,22 @@ These are downloaded from the [Maven Central Repositry](https://mvnrepository.co
 
 At first, we will write a short Test Case in Katalon Studio that visits the [Google Search page](https://www.google.com/). We will take screenshots and HTML page sources of the Web page. We will store PNG files and HTML files into the `store` directory using the `materialstore` library. We will finally generate a HTML file in which we can view the stored files files.
 
+#### (1) Test Case
+
 You want to newly create a Test Case `Test Cases/main/GoogleSearch/scrapeGoogleSearch` in your project. Copy and paste the following sample source:
 
 - [`Test Cases/main/GoogleSearch/searchGoogleSearch`](Scripts/main/GoogleSearch/scrapeGoogleSearch/Script1628518694544.groovy)
 
 Once you have created the Test Case, you want to run it as usual by clicking the green button ![run button](docs/images/run_katalon_test.png) in Katalon Studio GUI.
+
+#### (2) Viewer for the downloaded files
+
+Once the Test Case finished, a HTML file will be created at `store/scrapeGoogleSearch.html`. Please open it in any web browser. It renders a view of the stored 6 files. You can see an working example here: [pls. click here](https://kazurayam.github.io/VisualTestingInKatalonStudio_revive/store/scrapeGoogleSearch.html).
+
+![scrapeGoogleSearch.html](docs/images/scrapeGoogleSearch.html.png)
+
+
+#### (3) The "store" directory structure
 
 When the Test Case finished, you will find a new directory `$projectDir/store` is created. In there you will find a tree of directories and files, like this:
 
@@ -150,11 +162,13 @@ store
 └── scrapeGoogleSearch.html
 ```
 
-- The `store/scrapeGoogleSearch.html` renders a view of the stored 6 files. You can see an working example here: [pls. click here](https://kazurayam.github.io/VisualTestingInKatalonStudio_revive/store/scrapeGoogleSearch.html).
+#### objects/
 
-![scrapeGoogleSearch.html](docs/images/scrapeGoogleSearch.html.png)
+- Under the `store/scrapeGoogleSearch/yyyyMMdd_hhmmss/objects/` directory, there are 6 files. Among them you will find 3 files with postfix `png`. These are the screenshot of web pages in PNG image format. Also you will find 3 files with postfix `html`. These are HTML sources of web pages.
 
-- Under the `store/scrapeGoogleSearch/yyyyMMdd_hhmmss/objects/` directory, there are 6 files. You can find 3 files with postfix `png`. As you can guess, these are PNG image files. These are the page screenshots. You can find 3 files with postfix `html`. These are Web page sources. The file name is 40 hex-decimal characters (SHA1 hash value of each file contents) appended with extension `.png`, `.html`.
+- The file name is 40 hex-decimal characters (SHA1 hash value of each file contents) appended with extension `.png`, `.html`. The 40 hex-decimal string (I call this "ID") of each file name is derived from the file content (without compression) by SHA1 algorithm.
+
+#### index
 
 - The `store/scrapeGoogleSearch/yyyyMMdd_hhmmss/index` file would be most interesting part. It look like [this](docs/store/scrapeGoogleSearch/20210813_221052/index):
 
@@ -164,25 +178,29 @@ store
 ...
 ```
 
-The `index` file is a plain text file. Each lines corresponds to each files stored in the `objects` directory. An line of the `index` file has 3 parts delimited TAB characters.
+The `index` file is a plain text file. Each lines corresponds to each files stored in the `objects` directory. A line of the `index` file has 3 parts delimited by TAB characters.
 
 ```
 <SHA1 Hash value of each file>\t<file type>\t<metadata>
 ```
 
+#### metadata
+
 In the test Case script, the code created  *metadata* for each objects. Typically a metadata will include information derived from the URL of the source Web Page. For example, the URL `http://www.google.com/` will be digested to for a metadata `{"URL.host":"www.google.com", "URL.path":"/", "URL.protocol":"https"}`. You can add any element into the metadata as you like.
 
-The lines in the `index` file are sorted by the ascending order of *metadata* text.
+In the `index` file, lines are sorted by the ascending order of *metadata* text.
 
-The `materialstore` controls that the *metadata* text must be unique. Your code can not create multiple objects (multiple lines in the `index` file) with the same *metadata* value.
+The `materialstore` API restricts that *metadata* texts in a `index` file must be unique. Your code can not create multiple objects (multiple lines in the `index` file) with the same *metadata* value.
 
-The 40 hex-decimal string (I call this "ID") of each file name is derived from the file content (without compression) by SHA1 algorithm. Yes, you can read every file by the ID but it is not convenient. The `materialstore` API provides method for your code to retrieve files in the `objects` directory by specifying a single *metadata* value. or a *pattern* that match the *metadata* of each objects.
+The `materialstore` API provides method for your application to retrieve files in the `objects` directory by specifying a *metadata*.
 
-The `index` file and the `materialstore` API provides a simple "object storage" indexed by *metadata*.
 
-This object storage enables flexible control over the object stored in the `store` directory.
+
+
+
 
 ### Sample2: Visual Testing in Chronos mode
+
 
 
 ### Sample3: Visual Testing in Twins mode
