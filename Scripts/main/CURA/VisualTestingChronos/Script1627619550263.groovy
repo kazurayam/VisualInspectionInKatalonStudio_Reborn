@@ -38,32 +38,33 @@ WebUI.callTestCase(
 	[ "store": store, "jobName": jobName, "jobTimestamp": currentTimestamp ]
 )
 
-	
-// compare the latest materials with those taken in the previous run, produce a diff report
-
 // identify the last jobTimestamp that were created previously
-JobTimestamp lastTimestamp = store.findJobTimestampPriorTo(jobName, currentTimestamp)
+JobTimestamp previousTimestamp = store.findJobTimestampPriorTo(jobName, currentTimestamp)
 
-if (lastTimestamp == JobTimestamp.NULL_OBJECT) {
+if (previousTimestamp == JobTimestamp.NULL_OBJECT) {
 	KeywordUtil.markFailedAndStop("previous JobTimestamp prior to ${currentTimestamp} is not found")
 }
-		
-List<Material> left = store.select(jobName, lastTimestamp, MetadataPattern.ANY)
+
+// Look up the materials stored in a previous time of run
+List<Material> left = store.select(jobName, previousTimestamp, MetadataPattern.ANY)
 assert left.size() > 0
 
+// Look up the materials stored in the current time of run
 List<Material> right = store.select(jobName, currentTimestamp, MetadataPattern.ANY)
 assert right.size() > 0
 
-// difference greater than the criteria should be warned
+// if difference is greater than this criteria value, the difference should be marked
 double criteria = 0.1d
 
-// make DiffArtifacts
+// do comaring while creating diff. The result will be carried as instances of DiffArtifact class.
 DiffArtifacts stuffedDiffArtifacts =
     store.makeDiff(left, right,
 		new MetadataIgnoredKeys.Builder()
 		    .ignoreKey("URL")
 			.ignoreKey("URL.host")
 		    .build())
+
+// How many siginificant differences were found?
 int warnings = stuffedDiffArtifacts.countWarnings(criteria)
 
 // compile HTML report
@@ -71,6 +72,7 @@ Path reportFile = store.reportDiffs(jobName, stuffedDiffArtifacts, criteria, job
 assert Files.exists(reportFile)
 WebUI.comment("The report can be found at ${reportFile.toString()}")
 
+// if any siginificant difference found, this Test Case should FAIL
 if (warnings > 0) {
 	KeywordUtil.markFailedAndStop("found ${warnings} differences.")
 }

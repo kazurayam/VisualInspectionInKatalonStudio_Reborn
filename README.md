@@ -141,7 +141,7 @@ You want to newly create a Test Case `Test Cases/main/GoogleSearch/scrapeGoogleS
 
 Once you have created the Test Case, you want to run it as usual by clicking the green button ![run button](docs/images/run_katalon_test.png) in Katalon Studio GUI.
 
-#### (2) generated viewer for the downloaded files
+#### (2) The viewer generated
 
 Once the Test Case finished, a HTML file will be created at `store/scrapeGoogleSearch.html`. Please open it in any web browser. It renders a view of the stored 6 files. You can see an working example here: [pls. click here](https://kazurayam.github.io/VisualTestingInKatalonStudio_revive/store/scrapeGoogleSearch.html).
 
@@ -168,13 +168,13 @@ store
 └── scrapeGoogleSearch.html
 ```
 
-#### objects/
+#### (4) The objects/ directory
 
 - Under the `store/scrapeGoogleSearch/yyyyMMdd_hhmmss/objects/` directory, there are 6 files. Among them you will find 3 files with postfix `png`. These are the screenshot of web pages in PNG image format. Also you will find 3 files with postfix `html`. These are HTML sources of web pages.
 
 - The file name comprises with 40 hex-decimal characters appended with extension (`.png`, `.html`). The hex-decimal string (I call this "ID") is derived from the file content without compression by [SHA1 Secure Hash algorithm](https://docs.oracle.com/javase/7/docs/api/java/security/MessageDigest.html).
 
-#### index
+#### (5) The index file
 
 - The `store/scrapeGoogleSearch/yyyyMMdd_hhmmss/index` file would be interesting. An example of the `index` file is like [this](docs/store/scrapeGoogleSearch/20210813_221052/index):
 
@@ -192,7 +192,7 @@ A line of the `index` file has 3 parts delimited by TAB characters.
 <SHA1 Hash value of each file>\t<file type>\t<metadata>
 ```
 
-#### metadata
+#### (6) The metadata
 
 In the test Case script, the code created  *metadata* for each objects. Typically a metadata will include information derived from the URL of the source Web Page. For example, an URL
 
@@ -221,7 +221,11 @@ In your project, you want to make the copy of the following Test Case example.
 
 - [`Test Cases/CURA/VisualTestingChronos`](Scripts/main/CURA/VisualTestingChronos/Script1627619550263.groovy)
 
-You will execute the Test Case two times. You run it once, wait for some period (seconds, minuits, hours, or days, ... up to you), then run it again. The Test Case will preserve the output of previous runs. So you will see 2 directories named like `yyyyMMdd_hhmmss`. It will look like this:
+You will execute the Test Case two times. You run it once; wait for some period (seconds, minuits, hours, or days, ... up to you); then run it again. The Test Case will preserve the output of previous runs.
+
+#### (2) The "store" directory
+
+You will get 2 directories named in the format of  `yyyyMMdd_hhmmss`. The directories will look like this:
 
 ```
 $ tree store
@@ -254,8 +258,6 @@ store
 │           ├── f6b51712f25ba02a5b39eedb30a57b31d455eafc.html
 │           └── f8664dfa1c3a3af60914c4c90ddfaf0286910133.html
 └── CURA_VisualTestingChronos-index.html
-
-5 directories, 23 files
 ```
 
 #### (3) making Chronological diff
@@ -266,12 +268,12 @@ The Test Case compares takes materials at chronologically different timings, and
 
 1. make a List of materials in the current timestmp directory
 2. make another List of materials in the previous timestamp directory
-3. do take differences between the material pairs
-4. generate a HTML report, where you can view 2 original materials + the diff.
+3. do take differences between the two lists
+4. generate a HTML report, where you can view the detail with diff information.
 
-#### (4) generated viewer for the downloaded files
+#### (4) The viewer generated
 
-Once the Test Case finished, a HTML file will be created at `store/CURA_VisualTestingChronos.html`. Please open it in any web browser. It renders a view of the stored 6 files. You can see an working example here: [pls. click here](https://kazurayam.github.io/VisualTestingInKatalonStudio_revive/store/CURA_VisualTestingChronos.html).
+Once the Test Case finished, a HTML file will be created at `store/CURA_VisualTestingChronos.html`. Please open it in any web browser. It renders a view of the stored 6 files. You can see an working example here: [pls. click here](https://kazurayam.github.io/VisualTestingInKatalonStudio_revive/store/CURA_VisualTestingChronos-index.html).
 
 You can see examples of screenshot comparison result: Previous screenshot - diff image - current screenshot.
 
