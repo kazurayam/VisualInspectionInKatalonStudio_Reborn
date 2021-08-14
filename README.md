@@ -13,7 +13,7 @@
   - [(2) Material Object store indexed by metadata](#2-material-object-store-indexed-by-metadata)
   - [(3) Packaged in a jar](#3-packaged-in-a-jar)
   - [(4) Usable outside Katalon Studio](#4-usable-outside-katalon-studio)
-- [Documentation](#documentation)
+- ["materialstore" documentation](#materialstore-documentation)
 - [Examples in Katalon Studio](#examples-in-katalon-studio)
   - [create a project, resolve dependencies](#create-a-project-resolve-dependencies)
   - [Sample1: simply visit a URL and scrape](#sample1-simply-visit-a-url-and-scrape)
