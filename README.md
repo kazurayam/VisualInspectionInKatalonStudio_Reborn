@@ -7,8 +7,8 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
 
-- [History](#history)
-- [Visual Testing revived](#visual-testing-revived)
+- [My previous work](#my-previous-work)
+- [New achievement](#new-achievement)
   - [(1) Simpler codeset](#1-simpler-codeset)
   - [(2) Material Object store indexed by metadata](#2-material-object-store-indexed-by-metadata)
   - [(3) Packaged in a jar](#3-packaged-in-a-jar)
@@ -18,7 +18,7 @@
   - [create a project, resolve dependencies](#create-a-project-resolve-dependencies)
   - [Sample1: simply visit a URL and scrape](#sample1-simply-visit-a-url-and-scrape)
     - [(1) Test Case](#1-test-case)
-    - [(2) The viewer generated](#2-the-viewer-generated)
+    - [(2) The report generated](#2-the-report-generated)
     - [(3) The "store" directory structure](#3-the-store-directory-structure)
     - [(4) The objects/ directory](#4-the-objects-directory)
     - [(5) The index file](#5-the-index-file)
@@ -27,8 +27,13 @@
     - [(1) Test Case](#1-test-case-1)
     - [(2) The "store" directory](#2-the-store-directory)
     - [(3) making Chronological diff](#3-making-chronological-diff)
-    - [(4) The viewer generated](#4-the-viewer-generated)
+    - [(4) The report generated](#4-the-report-generated)
   - [Sample3: Visual Testing in Twins mode](#sample3-visual-testing-in-twins-mode)
+    - [(1) Test Case](#1-test-case-2)
+    - [(2) The "store" directory](#2-the-store-directory-1)
+    - [(3) makeing Twins diff](#3-makeing-twins-diff)
+    - [(4) The report generated](#4-the-report-generated-1)
+- [Conclusion](#conclusion)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
