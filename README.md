@@ -31,10 +31,13 @@
     - [(5) The report generated](#5-the-report-generated)
   - [Sample3: Visual Testing in Twins mode](#sample3-visual-testing-in-twins-mode)
     - [(1) Test Case](#1-test-case-2)
-    - [Execution Profile](#execution-profile)
+    - [(2) Execution Profile](#2-execution-profile-1)
     - [(3) The "store" directory](#3-the-store-directory-1)
     - [(4) makiing diffs of Twins](#4-makiing-diffs-of-twins)
     - [(5) The report generated](#5-the-report-generated-1)
+- [Notes on Extensibility](#notes-on-extensibility)
+  - [Mobile](#mobile)
+  - [Web Service](#web-service)
 - [Conclusion](#conclusion)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
