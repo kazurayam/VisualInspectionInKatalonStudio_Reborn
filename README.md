@@ -36,8 +36,8 @@
     - [(4) makiing diffs of Twins](#4-makiing-diffs-of-twins)
     - [(5) The report generated](#5-the-report-generated-1)
 - [Notes on Extensibility](#notes-on-extensibility)
-  - [Mobile](#mobile)
-  - [Web Service](#web-service)
+  - [for Mobile](#for-mobile)
+  - [for Web Service](#for-web-service)
 - [Conclusion](#conclusion)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
