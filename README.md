@@ -31,7 +31,7 @@
   - [Sample3: Visual Testing in Twins mode](#sample3-visual-testing-in-twins-mode)
     - [(1) Test Case](#1-test-case-2)
     - [(2) The "store" directory](#2-the-store-directory-1)
-    - [(3) makeing Twins diff](#3-makeing-twins-diff)
+    - [(3) makiing diffs of Twins](#3-makiing-diffs-of-twins)
     - [(4) The report generated](#4-the-report-generated-1)
 - [Conclusion](#conclusion)
 
