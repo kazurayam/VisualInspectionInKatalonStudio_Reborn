@@ -58,7 +58,7 @@ But I wasn't satisfied with it. Why? I would enumerate 3 problems about this pro
 
 ## My new development
 
-In 2021 July-August, I have developed a new project named [`materialstore`](https://github.com/kazurayam/materialstore). It is a domain-specifc storage system written in Groovy. In this project I have re-designed and re-implemented my idea from scratch. I have achieved the followings.
+In 2021 July-August, I have developed a new project named [`materialstore`](https://github.com/kazurayam/materialstore). It is a domain-specifc file system written in Groovy. In this project I have re-designed and re-implemented my idea from scratch. I have achieved the followings.
 
 ### (1) Simpler codeset
 
@@ -66,13 +66,13 @@ The `materialstore` provides a self-contained API in Groovy, which encapsulates 
 
 ### (2) Custom file system indexed by metadata
 
-By the word *material"* I mean any type of files downloaded from Web applications during automated tests. Screenshot images (PNG), Web page source (HTML), JSON and XML responded by Web Services --- I call all of these as *materials*.
+By the word *material* I mean any type of files downloaded from Web applications during automated tests. Screenshot images (PNG), Web page source (HTML), JSON and XML responded by Web Services --- I call all of these as *materials*.
 
-The `materialstore` provides capability of materializing (storing) files downloaded from web sites in a pre-designed directory structure (I call it the "**store**").
+The `materialstore` provides capability of materializing (storing) files downloaded from web sites in a pre-designed directory structure (I call it the *store*).
 
 An application writes files into the *"store"* associating *"metadata"*. The *"materials"* in the "store" are indexed by the associcated *metadata*. An application retrieves files from the store by *metadata* as key. An application does not look up files by name (Path). The application is no longer responsible for deciding and remembering the path of physical files.
 
- A *metadata* of a material in the store is merely an instance of `java.util.Map<String, String>` with arbitrary key and value pairs. You can programme any kind of *metadata* and associate it to each materials so that the materials are clearly identified. For example, you can associate the URL from which the web resource was retrieved; or you can associate the name of browser ("Chrome", "FireFox", "Safari", etc) which you used to take the screenshots; or you can associate the name of "Execution Profile" in Katalon Studio which you applied when you executed your Test Case.
+ A *metadata* of a material in the store is merely an instance of `java.util.Map<String, String>` with arbitrary key and value pairs. You can programme any kind of *metadata* and associate it to each materials so that the materials are well described and clearly identified. For example, you can associate the URL from which the web resource was retrieved; or you can associate the name of browser ("Chrome", "FireFox", "Safari", etc) which you used to take the screenshots; or you can associate the name of "Execution Profile" in Katalon Studio which you applied when you executed your Test Case.
 
 Metadata composition is entirely up to the user application. Composing metadata is a bit difficult part of the `materialstore` library. It looks similar to designing database table in SQL-backed application.
 
@@ -142,7 +142,7 @@ Drivers
 
 All of these jar files are downloaded from the [Maven Central Repositry](https://mvnrepository.com/). These are required to run the "Visual Testing" code in your new project in Katalon Studio locally.
 
->If you are going to push this project into Git repository, you should write the `.gitignore` file so that it ignores the `Drivers/` directory.
+>If you are going to push your new project into Git repository, you should write `.gitignore` file so that it ignores the `Drivers/` directory.
 
 7. Stop Katalon Studio, restart it and re-open the project.
 
@@ -150,7 +150,7 @@ You have resolved external dependencies. Now you can start writing a Test Case.
 
 ### Sample1: simply visit a URL and scrape
 
-First example. We will write a Test Case in Katalon Studio that visits the [Google Search page](https://www.google.com/). We will take screenshots and HTML page sources of the Web page. We will store PNG files and HTML files into the `store` directory using the `materialstore` library. We will finally generate a HTML file in which we can view the stored files files.
+First example. We will write a Test Case in Katalon Studio that visits the [Google Search page](https://www.google.com/). We will take screenshots and HTML page sources of the Web page. We will store PNG files and HTML files into the `store` directory using the `materialstore` library. We will finally generate a HTML file in which we can view the stored files.
 
 #### (1) Test Case
 
@@ -227,14 +227,14 @@ In the `index` file, lines are sorted by the ascending order of *metadata* text.
 
 The `materialstore` API restricts that *metadata* texts in a `index` file MUST be unique. Your application can not create multiple objects (= multiple lines in the `index` file) with the same *metadata* value.
 
-The `materialstore` API provides methoda for your application to retrieve files in the `objects` directory by specifying a *metadata* as key.
+
 
 
 ### Sample2: Visual Testing in Chronos mode
 
 Second example. We will write a Test Case in Katalon Studio that visits the [http://demoaut-mimic.kazurayam.com/](http://demoaut-mimic.kazurayam.com/). The top page displays a current timestamp in the unit of seconds. So everytime you retrieve this page, the page changes slightly at the timestamp portion.
 
-*How is the current page of a web system different from what it was previously since 5 minutes ago, 3 hours ago, or 2 days ago? I want to see the differences in HTML code, not only visually as screenshots comparison.* --- the second example will show you.
+*How is the current page of a web system different from what it was previously since 5 minutes ago, 3 hours ago, or 2 days ago? I want to see the differences in HTML code, not only visually as screenshots comparison.* --- the second example will show you how to implement a test that helps.
 
 #### (1) Test Case
 
@@ -300,7 +300,7 @@ The Test Case compares takes materials at chronologically different timings, and
 
 1. make a List of materials in the current timestmp directory
 2. make another List of materials in the previous timestamp directory
-3. do take differences between the two lists
+3. make differences between the two lists, store the diff info into the store as well
 4. generate a HTML report, where you can view the detail with diff information.
 
 #### (5) The report generated
@@ -450,7 +450,7 @@ The `materialstore` library can be used by a [Appium](https://appium.io/)-based 
 
 ### for Web Service
 
-The `materialstore` library can be used by a [Apache HttpClient](https://hc.apache.org/httpcomponents-client-5.1.x/)-based Web Service testing in Java. Using Katalong Studio's [sendRequest](https://docs.katalon.com/katalon-studio/docs/ws-send-request.html) keyword, you can get a response. Then your script extract the response body (JSON, XML) and save them into the `store`.
+The `materialstore` library can be used by a [Apache HttpClient](https://hc.apache.org/httpcomponents-client-5.1.x/)-based Web Service testing in Java. Using Katalon Studio's [sendRequest](https://docs.katalon.com/katalon-studio/docs/ws-send-request.html) keyword, you can get a response. Then your script extract the response body (JSON, XML) and save them into the `store`.
 
 ## Conclusion
 
