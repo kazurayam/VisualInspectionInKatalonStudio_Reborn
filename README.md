@@ -48,7 +48,7 @@ But I wasn't satisfied with it. Why? I would enumerate 3 problems about this pro
 
 ## New achievement
 
-In 2021 July-August, I created a new project named [`materialstore`](https://github.com/kazurayam/materialstore). It is a small "object store" written in Groovy. In this project I re-designed and re-implemented my idea from scratch. I have achieved the followings.
+In 2021 July-August, I have developed a new project named [`materialstore`](https://github.com/kazurayam/materialstore). It is a small "object store" written in Groovy. In this project I have re-designed and re-implemented my idea from scratch. I have achieved the followings.
 
 ### (1) Simpler codeset
 
@@ -84,7 +84,7 @@ I would publish 2 sets of documentation with examples to describe how to use the
 
 Here I will present 3 examples which show how to use the `materialstore` library in Kataloon Studio. I aimed 2 of 3 examples replace the previous ["Visual Testing in Katalon Studio"](https://github.com/kazurayam/VisualTestingInKatalonStudio) achievements.
 
-### create a project, resolve dependencies
+### Creating a project, resolving external dependencies
 
 You can make a new Katalon Studio project, import the required external dependencies, and write your Test Cases for "Visual Testing". Let me describe it first.
 
@@ -104,7 +104,7 @@ You can make a new Katalon Studio project, import the required external dependen
 
 ```
 $ cd $projectDir
-$ gradle driver
+$ gradle drivers
 ```
 
 5. The `gradle driver` will display some lines of messages in 10 seconds, and will finish successfully.
@@ -127,7 +127,9 @@ Drivers
 └── AUTOIMPORTED_subprocessj-0.1.0.jar
 ```
 
-These are downloaded from the [Maven Central Repositry](https://mvnrepository.com/). These are required to run the "Visual Testing" code in your new project in Katalon Studio locally.
+>The exact version number of the jars may change in future. Please regard this as an example.
+
+All of these jar files are downloaded from the [Maven Central Repositry](https://mvnrepository.com/). These are required to run the "Visual Testing" code in your new project in Katalon Studio locally.
 
 >If you are going to push this project into Git repository, you should write the `.gitignore` file so that it ignores the `Drivers/` directory.
 
@@ -135,7 +137,7 @@ These are downloaded from the [Maven Central Repositry](https://mvnrepository.co
 
 ### Sample1: simply visit a URL and scrape
 
-At first, we will write a Test Case in Katalon Studio that visits the [Google Search page](https://www.google.com/). We will take screenshots and HTML page sources of the Web page. We will store PNG files and HTML files into the `store` directory using the `materialstore` library. We will finally generate a HTML file in which we can view the stored files files.
+First example. We will write a Test Case in Katalon Studio that visits the [Google Search page](https://www.google.com/). We will take screenshots and HTML page sources of the Web page. We will store PNG files and HTML files into the `store` directory using the `materialstore` library. We will finally generate a HTML file in which we can view the stored files files.
 
 #### (1) Test Case
 
@@ -217,9 +219,9 @@ The `materialstore` API provides methoda for your application to retrieve files 
 
 ### Sample2: Visual Testing in Chronos mode
 
-The second example. We will write a Test Case in Katalon Studio that visits the [http://demoaut-mimic.kazurayam.com/](http://demoaut-mimic.kazurayam.com/). The top page displays a current timestamp in the unit of seconds. So everytime you retrieve this page, the page changes slightly at the timestamp portion.
+Second example. We will write a Test Case in Katalon Studio that visits the [http://demoaut-mimic.kazurayam.com/](http://demoaut-mimic.kazurayam.com/). The top page displays a current timestamp in the unit of seconds. So everytime you retrieve this page, the page changes slightly at the timestamp portion.
 
-*Is the current page of a web system identical to what it was previously; 5 minutes ago, 3 hours ago, or 1 day ago, etc?* --- this is what I want the second example to sho me.
+The second example will show you *How is the current page of a web system different from what it was previously since 5 minutes ago, 3 hours ago, or 2 days ago? I want to see the differences in HTML code, not only visually as screenshots comparison.*
 
 #### (1) Test Case
 
@@ -279,7 +281,7 @@ The Test Case compares takes materials at chronologically different timings, and
 
 #### (4) The report generated
 
-Once the Test Case finished, a HTML file will be generated at `store/CURA_VisualTestingChronos.html`. Please open it in any web browser. It renders a view of the stored 6 files. You can see an working example here: [pls. click here](https://kazurayam.github.io/VisualTestingInKatalonStudio_revive/store/CURA_VisualTestingChronos-index.html).
+Once the Test Case finished, a HTML file will be generated at `store/CURA_VisualTestingChronos-index.html`. Please open it in any web browser. It renders a view of the stored 6 files. You can see an working example here: [pls. click here](https://kazurayam.github.io/VisualTestingInKatalonStudio_revive/store/CURA_VisualTestingChronos-index.html).
 
 You can see examples of screenshot comparison result: Previous screenshot - diff image - current screenshot.
 
