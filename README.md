@@ -1,4 +1,4 @@
-# Visual Testing in Katalon Studio Revived
+# Visual Testing in Katalon Studio - Reborn
 
 - @date Aug 2021
 - @author kazurayam
@@ -454,4 +454,4 @@ The `materialstore` library can be used by a [Apache HttpClient](https://hc.apac
 
 ## Conclusion
 
-The [Visual Testing In Katalon Studio](https://github.com/kazurayam/VisualTestingInKatalonStudio) project is now superceded by this [Visual Testing In Katalon Studio Revived](https://github.com/kazurayam/VisualTestingInKatalonStudio_revive) project backed by the [materialstore](https://github.com/kazurayam/materialstore) library.
+The [Visual Testing In Katalon Studio](https://github.com/kazurayam/VisualTestingInKatalonStudio) project is now superceded by this [Visual Testing In Katalon Studio - Reborn](https://github.com/kazurayam/VisualTestingInKatalonStudio_Reborn) project backed by the [materialstore](https://github.com/kazurayam/materialstore) library.
