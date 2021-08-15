@@ -48,32 +48,32 @@ Please have a look at the "Motivation" section in its README document to know wh
 But I wasn't satisfied with it. Why? I would enumerate 3 problems about this project.
 
 1. The codeset of [Visual Testing In katalon Studio](https://github.com/kazurayam/VisualTestingInKatalonStudio) project is too complicated. The project contains 28 Test Cases, 7 Test Suites, 4 Test Suite Collections, 1 Test Listener, 12 Keywords. After 3 years, I forgot them and unable to maintain them any longer.
-2. The project enables me to compare a pair of 2 screenshots of Web pages in PNG image format. No more functionality is provides. More often I wanted to compare 2 texts scraped from web. E.g, 2 HTML files as Web Page source; 2 JSON files downloaded from a Web Service.
-3. The project isn't packaged. It isn't distributable to others easily. It's too hard for people to reuse the codeset of the project to implement their own "Visual Testing" for their custom targets.
+2. The project enables me to compare a pair of 2 screenshots of Web pages in PNG image format. That's all. Not enough. Often I wanted to compare 2 texts scraped from web. E.g, 2 HTML files as Web Page source; 2 JSON files downloaded from a Web Service.
+3. The project isn't distributable to others easily because it isn't packaged. It's too hard for people to reuse the codeset of the project to achieve their own "Visual Testing" for their custom targets.
 
-## New achievement
+## My new development
 
-In 2021 July-August, I have developed a new project named [`materialstore`](https://github.com/kazurayam/materialstore). It is a small "object store" written in Groovy. In this project I have re-designed and re-implemented my idea from scratch. I have achieved the followings.
+In 2021 July-August, I have developed a new project named [`materialstore`](https://github.com/kazurayam/materialstore). It is a domain-specifc storage system written in Groovy. In this project I have re-designed and re-implemented my idea from scratch. I have achieved the followings.
 
 ### (1) Simpler codeset
 
 The `materialstore` provides a self-contained API in Groovy, which encapsulates all of the useful functionalities of the previous [Visual Testing In katalon Studio](https://github.com/kazurayam/VisualTestingInKatalonStudio) project. A single Test Case in Katalon Studio empowered by the `materialstore` library can achieve whole job equivalent to the previous one. No need to struggle with that many components (28 Test Cases + 7 Test Suites + 4 Test Suite Collections + 1 Test Listener + 12 Keywords).
 
-### (2) Material Object store indexed by metadata
+### (2) Custom file system indexed by metadata
 
-By the word "material" I mean any type of files downloaded from Web applications during automated tests. Screenshot images (PNG), Web page source (HTML), JSON and XML responded by Web Services --- I call all of these "materials".
+By the word *material"* I mean any type of files downloaded from Web applications during automated tests. Screenshot images (PNG), Web page source (HTML), JSON and XML responded by Web Services --- I call all of these as *materials*.
 
-The `materialstore` provides capability of materializing (storing) files downloaded from web sites in a pre-designed directory structure (I call it the "**store**"). It is a small "object store".
+The `materialstore` provides capability of materializing (storing) files downloaded from web sites in a pre-designed directory structure (I call it the "**store**").
 
-An application writes files into the *"store"* associating *"metadata"*. The *"materials"* in the "store" are indexed by the associcated *metadata*. An application retrieves files from the store by *metadata* as key. An application does not look up files by name (Path). In turn, the application is not responsible for deciding and remembering the path of materials.
+An application writes files into the *"store"* associating *"metadata"*. The *"materials"* in the "store" are indexed by the associcated *metadata*. An application retrieves files from the store by *metadata* as key. An application does not look up files by name (Path). The application is no longer responsible for deciding and remembering the path of physical files.
 
- A *metadata* of a material in the store is an instance of `java.util.Map<String, String>` with arbitrary key and value pairs. You can programme any kind of *metadata* and associate it to materials so that the materials are clearly identified. For example, you can associate the URL from which the web resource was retrieved; or you can associate the name of browser ("Chrome", "FireFox", "Safari", etc) which you used to take the screenshots; or you can associate the name of "Execution Profile" you used when you executed your Test Case in Katalon Studio.
+ A *metadata* of a material in the store is merely an instance of `java.util.Map<String, String>` with arbitrary key and value pairs. You can programme any kind of *metadata* and associate it to each materials so that the materials are clearly identified. For example, you can associate the URL from which the web resource was retrieved; or you can associate the name of browser ("Chrome", "FireFox", "Safari", etc) which you used to take the screenshots; or you can associate the name of "Execution Profile" in Katalon Studio which you applied when you executed your Test Case.
 
-Metadata composition is entirely up to the user application. Composing metadata is a bit difficult part of the `materialstore` library. It looks similar to the database table design in SQL-backed application.
+Metadata composition is entirely up to the user application. Composing metadata is a bit difficult part of the `materialstore` library. It looks similar to designing database table in SQL-backed application.
 
 ### (3) Packaged in a jar
 
-The artifact of `materialstore` is distributed as a single jar file. The jar file is available at the [Maven Central Repository](https://mvnrepository.com/artifact/com.kazurayam/materialstore). Therefore any Java/Groovy-based application can automate downloading the `materialstore-x.x.x.jar` to resolve dependency using Gradle and Maven.
+The artifact of `materialstore` is distributed as a single jar file. The jar file is available at the [Maven Central Repository](https://mvnrepository.com/artifact/com.kazurayam/materialstore). Any Java/Groovy-based application can automate downloading the `materialstore-x.x.x.jar` to resolve dependency using the build tools (Gradle, Maven, Ant).
 
 ### (4) Usable outside Katalon Studio
 
@@ -81,21 +81,22 @@ The `materialstore`'s jar has no immediate dependency on the Katalon Studio API.
 
 ## "materialstore" documentation
 
-I would publish 2 sets of documentation with examples to describe how to use the `materialstore` library to implement "Visual Testing". The following repository contains sample codes and documentation of the `materialstore` API (yet TODO). The examples run on Gradle + Selenium WebDriver + Apache HttpClient, outside Katalon Studio.
+The following repository contains sample codes and documentation of the `materialstore` API. The sample codes are written in Java, run on Gradle + Selenium WebDriver + Apache HttpClient.
 
 - [materialstore-examples](https://kazurayam.github.io/materialstore-examples/)
 
+
 ## Examples in Katalon Studio
 
-Here I will present 3 examples which show how to use the `materialstore` library in Kataloon Studio. I aimed 2 of 3 examples replace the previous ["Visual Testing in Katalon Studio"](https://github.com/kazurayam/VisualTestingInKatalonStudio) achievements.
+Here I will present 3 examples which show how to use the `materialstore` library in Kataloon Studio. I intend these will supercede my previous ["Visual Testing in Katalon Studio"](https://github.com/kazurayam/VisualTestingInKatalonStudio) project.
 
 ### Creating a project, resolving external dependencies
 
-You can make a new Katalon Studio project, import the required external dependencies, and write your Test Cases for "Visual Testing". Let me describe it first.
+You can create a new Katalon Studio project, import the required external dependencies, and write your Test Cases for "Visual Testing". Let me describe the procedure how to create your "Visual Testing Revived" project.
 
 1. Install "Gradle" build tool into your PC. Please follow this [guide](https://gradle.org/install/) to install Gradle on your machine.
 
->You can use Gradle ver 7.0 as well as ver 6.x.
+>You can use Gradle ver 7.x as well as ver 6.x.
 
 2. Open Katalon Studio GUI. Create a new project as usual in whichever directory you like.
 
@@ -105,7 +106,7 @@ You can make a new Katalon Studio project, import the required external dependen
 
 - [build.gradle](build.gradle)
 
-4. In the commandline you want to execute the following command:
+4. In the commandline (outside Katalon Studio GUI) you want to execute the following command:
 
 ```
 $ cd $projectDir
@@ -138,7 +139,9 @@ All of these jar files are downloaded from the [Maven Central Repositry](https:/
 
 >If you are going to push this project into Git repository, you should write the `.gitignore` file so that it ignores the `Drivers/` directory.
 
-7. You have resolved external dependencies. Now you can start writing a Test Case.
+7. Stop Katalon Studio, restart it and re-open the project.
+
+You have resolved external dependencies. Now you can start writing a Test Case.
 
 ### Sample1: simply visit a URL and scrape
 
@@ -236,7 +239,18 @@ In your project, you want to copy&paste the following Test Case code.
 
 You will execute the Test Case two times. You run it once; wait for some period (seconds, minuits, hours, or days, ... up to you); then run it again. The Test Case will preserve the output of previous runs.
 
-#### (2) The "store" directory
+#### (2) Execution Profile
+
+This Test Case expects an Execution Profile is provided like this:
+
+- `Profiles/CURA_DevelopmentEnv`
+
+![profile_CURA](docs/images/ExecutionProfile_CURA_DevelopmentEnv.png)
+
+Please create it in your project.
+
+
+#### (3) The "store" directory
 
 You will get 2 directories named in the format of  `yyyyMMdd_hhmmss`. The directories will look like this:
 
@@ -273,7 +287,7 @@ store
 └── CURA_VisualTestingChronos-index.html
 ```
 
-#### (3) making Chronological diff
+#### (4) making Chronological diff
 
 The Test Case compares takes materials at chronologically different timings, and then compare the 2 sets.
 
@@ -284,7 +298,7 @@ The Test Case compares takes materials at chronologically different timings, and
 3. do take differences between the two lists
 4. generate a HTML report, where you can view the detail with diff information.
 
-#### (4) The report generated
+#### (5) The report generated
 
 Once the Test Case finished, a HTML file will be generated at `store/CURA_VisualTestingChronos-index.html`. Please open it in any web browser. It renders a view of the stored 6 files. You can see an working example here: [pls. click here](https://kazurayam.github.io/VisualTestingInKatalonStudio_revive/store/CURA_VisualTestingChronos-index.html).
 
@@ -322,7 +336,19 @@ In your project, you want to copy the followiing Test Case code.
 
 You will execute the Test Case only once. The Test Case will visit the 2 URLs as one batch. And it creates a HTML report.
 
-#### (2) The "store" directory
+#### Execution Profile
+
+The Test Case script expects 2 Execution Profiles are provided like this:
+
+- `Profiles/MyAdmin_DevelopmentEnv`
+![profile_MyAdmin_Dev](docs/images/ExecutionProfile_MyAdmin_DevelopmentEnv.png)
+
+- `Profiles/MyAdmin_ProductionEnv`
+![profile_MyAdmin_Prod](docs/images/ExecutionProfile_MyAdmin_ProductionEnv.png)
+
+Please create them in your project.
+
+#### (3) The "store" directory
 
 The Test Case creates a directory named in the format of `yyyyMMdd_hhmmss`. The directory looks like this:
 
@@ -344,7 +370,7 @@ store
 
 
 
-#### (3) makiing diffs of Twins
+#### (4) makiing diffs of Twins
 
 The Test Case looks up 2 set of materials and compare them.
 
@@ -358,9 +384,9 @@ The [`Test Cases/main/MyAdmin/VisualTestingTwins`](Scripts/main/MyAdmin/VisualTe
 
 ----
 
-How can I select 2 sets of materials to compare? How can I find pairs of materials to compaire? What is the rule of lookup?
+How can I select pairs of materials to compare?
 
-Well, it is a bit difficult to explain. ... I wonder if I could describe it in English, but let me try ...
+Well, it is difficult to explain. I wonder if I could describe it in English, but let me try.
 
 In the `objects` directory, there are 6 files. These are a mixture of materials downloaded from 2 URLs. How can I tell which file is from which URL? --- The `index` file keeps enough information. The content of `index` file is as follows:
 
@@ -389,14 +415,13 @@ Also they have a different portion:
 {{"URL.host":"myadmin.kazurayam.com", "profile":"MyAdmin_ProductionEnv"}
 ```
 
-The Test Case script can select 2 lines as a pair amongst others by looking at their *metadata*. You want to ignore the known different portions in the *metadata*, then the pairs will be identified by the common portions.
+The Test Case script can select 2 lines as a pair amongst others by looking at their *metadata*. I would ignore the known different portions in the *metadata* resulting a common portion. Taking the common portion as a key of lookup, I could find a pair or materials to compare.
 
-Difficult to understand? --- Well, I agree. But this is the best (flexible, expressive) method I could develop.
+Difficult to understand? Well, I agree. But this is the best flexible and expressive method I could develop.
 
+#### (5) The report generated
 
-#### (4) The report generated
-
-Once the Test Case finished, a HTML fill weill be generated at `store/MyAdmin_VisualTestingTwins-index.html`. Please open it in any web browser. It renders a view of the stored 1 page, both in PNG screenshot and HTML page source. You can see an working example here: [pls.click here](https://kazurayam.github.io/VisualTestingInKatalonStudio_revive/store/MyAdmin_VisualTestingTwins-index.html)
+Finally the Test Case will generate a HTML report of which path is `store/MyAdmin_VisualTestingTwins-index.html`. Please open it in any web browser. It renders a view of the stored 1 page, both in PNG screenshot and HTML page source. You can see an working example here: [pls.click here](https://kazurayam.github.io/VisualTestingInKatalonStudio_revive/store/MyAdmin_VisualTestingTwins-index.html)
 
 You can see a screenshot comparison result: Production Env - Diff - Development Env.
 
