@@ -15,7 +15,7 @@
   - [(4) Usable outside Katalon Studio](#4-usable-outside-katalon-studio)
 - ["materialstore" documentation](#materialstore-documentation)
 - [Examples in Katalon Studio](#examples-in-katalon-studio)
-  - [create a project, resolve dependencies](#create-a-project-resolve-dependencies)
+  - [Creating a project, resolving external dependencies](#creating-a-project-resolving-external-dependencies)
   - [Sample1: simply visit a URL and scrape](#sample1-simply-visit-a-url-and-scrape)
     - [(1) Test Case](#1-test-case)
     - [(2) The report generated](#2-the-report-generated)
