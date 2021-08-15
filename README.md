@@ -65,9 +65,9 @@ By the word "material" I mean any type of files downloaded from Web applications
 
 The `materialstore` provides capability of materializing (storing) files downloaded from web sites in a pre-designed directory structure (I call it the "**store**"). It is a small "object store".
 
-An application writes files into the "store" associating "metatadata". The "materials" in the "store" are indexed by the associcated metadata. An application retrieves files from the store by "metadata" as key. An application does not look up files by name (Path). In turn, the application is not responsible for deciding and remembering the path of materials.
+An application writes files into the *"store"* associating *"metadata"*. The *"materials"* in the "store" are indexed by the associcated *metadata*. An application retrieves files from the store by *metadata* as key. An application does not look up files by name (Path). In turn, the application is not responsible for deciding and remembering the path of materials.
 
- A "metadata" of a material in the "store" is an instance of `java.util.Map<String, String>` with arbitrary key and value pairs. You can programme any kind of "metadata" and associate it to materials so that the materials are clearly identified. For example, you can associate the URL from which the web resource was retrieved; or you can associate the name of browser ("Chrome", "FireFox", "Safari", etc) which you used to take the screenshots; or you can associate the name of "Execution Profile" you used when you executed your Test Case in Katalon Studio.
+ A *metadata* of a material in the store is an instance of `java.util.Map<String, String>` with arbitrary key and value pairs. You can programme any kind of *metadata* and associate it to materials so that the materials are clearly identified. For example, you can associate the URL from which the web resource was retrieved; or you can associate the name of browser ("Chrome", "FireFox", "Safari", etc) which you used to take the screenshots; or you can associate the name of "Execution Profile" you used when you executed your Test Case in Katalon Studio.
 
 Metadata composition is entirely up to the user application. Composing metadata is a bit difficult part of the `materialstore` library. It looks similar to the database table design in SQL-backed application.
 
@@ -226,13 +226,13 @@ The `materialstore` API provides methoda for your application to retrieve files 
 
 Second example. We will write a Test Case in Katalon Studio that visits the [http://demoaut-mimic.kazurayam.com/](http://demoaut-mimic.kazurayam.com/). The top page displays a current timestamp in the unit of seconds. So everytime you retrieve this page, the page changes slightly at the timestamp portion.
 
-The second example will show you *How is the current page of a web system different from what it was previously since 5 minutes ago, 3 hours ago, or 2 days ago? I want to see the differences in HTML code, not only visually as screenshots comparison.*
+The second example will show you; *How is the current page of a web system different from what it was previously since 5 minutes ago, 3 hours ago, or 2 days ago? I want to see the differences in HTML code, not only visually as screenshots comparison.*
 
 #### (1) Test Case
 
 In your project, you want to make the copy of the following Test Case example.
 
-- [`Test Cases/CURA/VisualTestingChronos`](Scripts/main/CURA/VisualTestingChronos/Script1627619550263.groovy)
+- [`Test Cases/main/CURA/VisualTestingChronos`](Scripts/main/CURA/VisualTestingChronos/Script1627619550263.groovy)
 
 You will execute the Test Case two times. You run it once; wait for some period (seconds, minuits, hours, or days, ... up to you); then run it again. The Test Case will preserve the output of previous runs.
 
@@ -277,7 +277,7 @@ store
 
 The Test Case compares takes materials at chronologically different timings, and then compare the 2 sets.
 
-[`Test Cases/CURA/VisualTestingChronos`](Scripts/main/CURA/VisualTestingChronos/Script1627619550263.groovy) has codes that do the followng processing:
+[`Test Cases/CURA/VisualTestingChronos`](Scripts/main/CURA/VisualTestingChronos/Script1627619550263.groovy) does the followng processing:
 
 1. make a List of materials in the current timestmp directory
 2. make another List of materials in the previous timestamp directory
@@ -310,26 +310,111 @@ The 3rd example visits 2 URLs. These are useless pages solely for this example.
 - [http://mydmin.kazurayam.com/](http://myadmin.kazurayam.com/)
 - [http://devadmin.kazurayam.com/](http://devadmin.kazurayam.com/)
 
-The former URL is meant to be a Production environment of a web system, the latter URL is meant to be a Development environment. The pages look similar at a glance, but are different in detail.
+The former URL is meant to represent a *Production environment* of a web system, the latter URL is meant to represent a *Development environment*. The pages look similar at a glance, but are different in detail.
 
-*How the pages of 2 environments differ now?* --- This is what I want the 3rd exmaple to show me.
+*How the pages of 2 environments differ now?* --- This is what I want the 3rd example to show me.
 
 #### (1) Test Case
 
+In your project, you want to copy the followiing Test Case code.
+
+- [`Test Cases/main/MyAdmin/VisualTestingTwins`](Scripts/main/MyAdmin/VisualTestingTwins/Script1627089269407.groovy)
+
+You will execute the Test Case only once. The Test Case will visit the 2 URLs as one batch soon create a HTML report.
 
 #### (2) The "store" directory
 
+You will get 1 directory named in the format of `yyyyMMdd_hhmmss`. The directory will look like this:
 
-#### (3) makeing Twins diff
+```
+$ tree store
+store
+├── MyAdmin_VisualTestingTwins
+│   └── 20210814_224127
+│       ├── index
+│       └── objects
+│           ├── 2cf3afe9ff4104e4055f0dc2bff53b9166e80a0c.html
+│           ├── 4cbd1ac3812a5251325202f86a8dfe76bc82dbdc.png
+│           ├── 5e3ff331ef4ff3feb3222f0d2951aed284e47ac2.png
+│           ├── adb4c03ac0f0928a4dff3328845c4db460fc72b5.html
+│           ├── b0456c0ae964825a1508b28ac1042340b29c9357.html
+│           └── e911ce587553fc42f24bf18279ee3f5214eb75ba.png
+└── MyAdmin_VisualTestingTwins-index.html
+```
+
+
+
+#### (3) makiing diffs of Twins
+
+The Test Case looks up 2 set of materials and compare them.
+
+The [`Test Cases/main/MyAdmin/VisualTestingTwins`](Scripts/main/MyAdmin/VisualTestingTwins/Script1627089269407.groovy) does the following processing:
+
+1. Amongst the stored 6 materials, select 3 of the *Development environment* to make a List.
+2. Also select 3 of the *Projection environment* to make a Liist.
+3. do take differences between the two lists
+4. generate a HTML report, where you can view the detail with diff information.
+
+----
+
+How can I select 3 materials out of 6? How can I find pairs of materials to compaire?
+
+Well, it is a bit difficult to explain. ... I wonder if I could describe it in English, but let me try ...
+
+In the `objects` directory, there are 6 files. These are a mixture of materials downloaded from 2 URLs. How can I tell which file is from which URL? --- The `index` file keeps enough information. The content of `index` file is as follows:
+
+- [store/MyAdmin_VisualTestingTwins/20210814_224127/index](docs/store/MyAdmin_VisualTestingTwins/20210814_224127/index)
+
+In there you can find the following 2 lines. These lines point to the PNG screenshots of the 2 environments. I call the 3 column delimited by \t (`{"URL.host": ... :"body"}`) as *metadata*.
+
+```
+...
+5e3ff331ef4ff3feb3222f0d2951aed284e47ac2	png	{"URL.host":"devadmin.kazurayam.com", "URL.path":"/", \n
+    "URL.protocol":"http", "profile":"MyAdmin_DevelopmentEnv", "selector":"body"}
+...
+4cbd1ac3812a5251325202f86a8dfe76bc82dbdc	png	{"URL.host":"myadmin.kazurayam.com", "URL.path":"/", \n
+    "URL.protocol":"http", "profile":"MyAdmin_ProductionEnv", "selector":"body"}
+...
+```
+
+>for better readability, I inserted NEWLINE characters (`\n`) above.
+
+The *metadata* of these 2 lines have a common portion:
+
+```
+{"URL.path":"/", "selector":"body"}
+```
+
+Also they have a different portion:
+
+```
+{{"URL.host":"devadmin.kazurayam.com", "profile":"MyAdmin_DevelopmentEnv"}
+{{"URL.host":"myadmin.kazurayam.com", "profile":"MyAdmin_ProductionEnv"}
+```
+
+The Test Case script can select 2 lines as a pair amongst others by looking at their *metadata*. You want to ignore the known different portions in the *metadata*, then the pairs will be identified by the common portions.
+
+Difficult to understand? --- Well, I think so. But this is the best method I could develop.
+
 
 #### (4) The report generated
 
+Once the Test Case finished, a HTML fill weill be generated at `store/MyAdmin_VisualTestingTwins-index.html`. Please open it in any web browser. It renders a view of the stored 1 page, both in PNG screenshot and HTML page source. You can see an working example here: [pls.clikc here](docs/store/MyAdmin_VisualTestingTwins-index.html)
 
+You can see a screenshot comparison result: Production Env - Diff - Development Env.
+
+![Twins_Left](docs/images/Twins_Left.png)
+
+![Twins_Diff](docs/images/Twins_Diff.png)
+
+![Twins_Right](docs/images/Twins_Right.png)
+
+Also you can see the diff of HTML page source.
+
+![Twins_HTML](docs/images/Twins_HTML.png)
 
 
 
 ## Conclusion
 
-[Visual Testing In Katalon Studio](https://github.com/kazurayam/VisualTestingInKatalonStudio) is now superceded by this [Visual Testing In Katalon Studio Revived](https://github.com/kazurayam/VisualTestingInKatalonStudio_revive) backed by the [materialstore](https://github.com/kazurayam/materialstore) library.
-
-
+The [Visual Testing In Katalon Studio](https://github.com/kazurayam/VisualTestingInKatalonStudio) project is now superceded by this [Visual Testing In Katalon Studio Revived](https://github.com/kazurayam/VisualTestingInKatalonStudio_revive) project backed by the [materialstore](https://github.com/kazurayam/materialstore) library.
