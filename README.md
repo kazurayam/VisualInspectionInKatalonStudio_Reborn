@@ -226,11 +226,11 @@ The `materialstore` API provides methoda for your application to retrieve files 
 
 Second example. We will write a Test Case in Katalon Studio that visits the [http://demoaut-mimic.kazurayam.com/](http://demoaut-mimic.kazurayam.com/). The top page displays a current timestamp in the unit of seconds. So everytime you retrieve this page, the page changes slightly at the timestamp portion.
 
-The second example will show you; *How is the current page of a web system different from what it was previously since 5 minutes ago, 3 hours ago, or 2 days ago? I want to see the differences in HTML code, not only visually as screenshots comparison.*
+*How is the current page of a web system different from what it was previously since 5 minutes ago, 3 hours ago, or 2 days ago? I want to see the differences in HTML code, not only visually as screenshots comparison.* --- the second example will show you.
 
 #### (1) Test Case
 
-In your project, you want to make the copy of the following Test Case example.
+In your project, you want to copy&paste the following Test Case code.
 
 - [`Test Cases/main/CURA/VisualTestingChronos`](Scripts/main/CURA/VisualTestingChronos/Script1627619550263.groovy)
 
@@ -312,7 +312,7 @@ The 3rd example visits 2 URLs. These are useless pages solely for this example.
 
 The former URL is meant to represent a *Production environment* of a web system, the latter URL is meant to represent a *Development environment*. The pages look similar at a glance, but are different in detail.
 
-*How the pages of 2 environments differ now?* --- This is what I want the 3rd example to show me.
+*How the pages of 2 environments differ now?* --- the 3rd example will show you.
 
 #### (1) Test Case
 
@@ -320,11 +320,11 @@ In your project, you want to copy the followiing Test Case code.
 
 - [`Test Cases/main/MyAdmin/VisualTestingTwins`](Scripts/main/MyAdmin/VisualTestingTwins/Script1627089269407.groovy)
 
-You will execute the Test Case only once. The Test Case will visit the 2 URLs as one batch soon create a HTML report.
+You will execute the Test Case only once. The Test Case will visit the 2 URLs as one batch. And it creates a HTML report.
 
 #### (2) The "store" directory
 
-You will get 1 directory named in the format of `yyyyMMdd_hhmmss`. The directory will look like this:
+The Test Case creates a directory named in the format of `yyyyMMdd_hhmmss`. The directory looks like this:
 
 ```
 $ tree store
@@ -350,14 +350,15 @@ The Test Case looks up 2 set of materials and compare them.
 
 The [`Test Cases/main/MyAdmin/VisualTestingTwins`](Scripts/main/MyAdmin/VisualTestingTwins/Script1627089269407.groovy) does the following processing:
 
-1. Amongst the stored 6 materials, select 3 of the *Development environment* to make a List.
-2. Also select 3 of the *Projection environment* to make a Liist.
-3. do take differences between the two lists
-4. generate a HTML report, where you can view the detail with diff information.
+1. Amongst the stored materials, select 2 (a screenshot and a HTML) of the *Development environment* to make a List.
+2. Also select 2 of the *Projection environment* to make a Liist.
+3. do take differences between the two lists. 
+4. will insert files into the "store", which contains the diff information.
+5. generate a HTML report, where you can view the detail with diff information.
 
 ----
 
-How can I select 3 materials out of 6? How can I find pairs of materials to compaire?
+How can I select 2 sets of materials to compare? How can I find pairs of materials to compaire? What is the rule of lookup?
 
 Well, it is a bit difficult to explain. ... I wonder if I could describe it in English, but let me try ...
 
@@ -369,17 +370,13 @@ In there you can find the following 2 lines. These lines point to the PNG screen
 
 ```
 ...
-5e3ff331ef4ff3feb3222f0d2951aed284e47ac2	png	{"URL.host":"devadmin.kazurayam.com", "URL.path":"/", \n
-    "URL.protocol":"http", "profile":"MyAdmin_DevelopmentEnv", "selector":"body"}
+5e3ff331ef4ff3feb3222f0d2951aed284e47ac2	png	{"URL.host":"devadmin.kazurayam.com", "URL.path":"/", "URL.protocol":"http", "profile":"MyAdmin_DevelopmentEnv", "selector":"body"}
 ...
-4cbd1ac3812a5251325202f86a8dfe76bc82dbdc	png	{"URL.host":"myadmin.kazurayam.com", "URL.path":"/", \n
-    "URL.protocol":"http", "profile":"MyAdmin_ProductionEnv", "selector":"body"}
+4cbd1ac3812a5251325202f86a8dfe76bc82dbdc	png	{"URL.host":"myadmin.kazurayam.com", "URL.path":"/", "URL.protocol":"http", "profile":"MyAdmin_ProductionEnv", "selector":"body"}
 ...
 ```
 
->for better readability, I inserted NEWLINE characters (`\n`) above.
-
-The *metadata* of these 2 lines have a common portion:
+These 2 lines have a common portion in the *metadata*:
 
 ```
 {"URL.path":"/", "selector":"body"}
@@ -394,12 +391,12 @@ Also they have a different portion:
 
 The Test Case script can select 2 lines as a pair amongst others by looking at their *metadata*. You want to ignore the known different portions in the *metadata*, then the pairs will be identified by the common portions.
 
-Difficult to understand? --- Well, I think so. But this is the best method I could develop.
+Difficult to understand? --- Well, I agree. But this is the best (flexible, expressive) method I could develop.
 
 
 #### (4) The report generated
 
-Once the Test Case finished, a HTML fill weill be generated at `store/MyAdmin_VisualTestingTwins-index.html`. Please open it in any web browser. It renders a view of the stored 1 page, both in PNG screenshot and HTML page source. You can see an working example here: [pls.clikc here](docs/store/MyAdmin_VisualTestingTwins-index.html)
+Once the Test Case finished, a HTML fill weill be generated at `store/MyAdmin_VisualTestingTwins-index.html`. Please open it in any web browser. It renders a view of the stored 1 page, both in PNG screenshot and HTML page source. You can see an working example here: [pls.click here](https://kazurayam.github.io/VisualTestingInKatalonStudio_revive/store/MyAdmin_VisualTestingTwins-index.html)
 
 You can see a screenshot comparison result: Production Env - Diff - Development Env.
 
