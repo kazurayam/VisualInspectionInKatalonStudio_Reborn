@@ -97,7 +97,7 @@ Here I will present 3 examples which show how to use the `materialstore` library
 
 ### Creating a project, resolving external dependencies
 
-You can create a new Katalon Studio project, import the required external dependencies, and write your Test Cases for "Visual Testing". Let me describe the procedure how to create your "Visual Testing Revived" project.
+You can create a new Katalon Studio project, import the required external dependencies, and write your Test Cases for "Visual Testing". Let me describe the procedure how to create your "Visual Testing Reborn" project.
 
 1. Install "Gradle" build tool into your PC. Please follow this [guide](https://gradle.org/install/) to install Gradle on your machine.
 
