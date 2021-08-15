@@ -336,7 +336,7 @@ In your project, you want to copy the followiing Test Case code.
 
 You will execute the Test Case only once. The Test Case will visit the 2 URLs as one batch. And it creates a HTML report.
 
-#### Execution Profile
+#### (2) Execution Profile
 
 The Test Case script expects 2 Execution Profiles are provided like this:
 
@@ -350,7 +350,7 @@ Please create them in your project.
 
 #### (3) The "store" directory
 
-The Test Case creates a directory named in the format of `yyyyMMdd_hhmmss`. The directory looks like this:
+Once finished, the Test Case creates a directory named in the format of `yyyyMMdd_hhmmss`. The directory looks like this:
 
 ```
 $ tree store
@@ -384,7 +384,7 @@ The [`Test Cases/main/MyAdmin/VisualTestingTwins`](Scripts/main/MyAdmin/VisualTe
 
 ----
 
-How can I select pairs of materials to compare?
+How can I select materials amongst many appropriately and make pairs to compare?
 
 Well, it is difficult to explain. I wonder if I could describe it in English, but let me try.
 
@@ -435,7 +435,17 @@ Also you can see the diff of HTML page source.
 
 ![Twins_HTML](docs/images/Twins_HTML.png)
 
+## Notes on Extensibility
 
+The `materialstore` library is usable for various cases, not only for Web Brower-based UI testing.
+
+### Mobile
+
+The `materialstore` library can be used by a [Appium](https://appium.io/)-based Mobile testing in Java. All you need to do is to take screenshots of Mobile app using Katalon Studio's built-in keyword (e.g, [Mobile taksScreenshot](https://docs.katalon.com/katalon-studio/docs/mobile-take-screenshot.html)) and save the image into the `store`. No differenct from the Web UI testing case.
+
+### Web Service
+
+The `materialstore` library can be used by a [Apache HttpClient](https://hc.apache.org/httpcomponents-client-5.1.x/)-based Web Service testing in Java. Using Katalong Studio's [sendRequest](https://docs.katalon.com/katalon-studio/docs/ws-send-request.html) keyword, you can get JSON (XML response. Then your test script save the responded text body into the `store`.
 
 ## Conclusion
 
