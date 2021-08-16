@@ -161,7 +161,7 @@ Once you have created the Test Case, you want to run it as usual by clicking the
 
 #### (2) The report generated
 
-Once the Test Case finished, a HTML file will be created at `store/scrapeGoogleSearch.html`. Please open it in any web browser. It renders a view of the stored 6 files. You can see an working example here: [pls. click here](https://kazurayam.github.io/VisualTestingInKatalonStudio_reborn/store/scrapeGoogleSearch.html).
+Once the Test Case finished, a HTML file will be created at `store/scrapeGoogleSearch.html`. Please open it in any web browser. It renders a view of the stored 6 files. You can see an working example here: [pls. click here](https://kazurayam.github.io/VisualTestingInKatalonStudio_Reborn/store/scrapeGoogleSearch.html).
 
 ![scrapeGoogleSearch.html](docs/images/scrapeGoogleSearch.html.png)
 
@@ -304,7 +304,7 @@ The Test Case compares takes materials at chronologically different timings, and
 
 #### (5) The report generated
 
-Once the Test Case finished, a HTML file will be generated at `store/CURA_VisualTestingChronos-index.html`. Please open it in any web browser. It renders a view of the stored 6 files. You can see an working example here: [pls. click here](https://kazurayam.github.io/VisualTestingInKatalonStudio_reborn/store/CURA_VisualTestingChronos-index.html).
+Once the Test Case finished, a HTML file will be generated at `store/CURA_VisualTestingChronos-index.html`. Please open it in any web browser. It renders a view of the stored 6 files. You can see an working example here: [pls. click here](https://kazurayam.github.io/VisualTestingInKatalonStudio_Reborn/store/CURA_VisualTestingChronos-index.html).
 
 You can see examples of screenshot comparison result: Previous screenshot - diff image - current screenshot.
 
@@ -425,7 +425,7 @@ Difficult to understand? Well, I agree. But this is the best flexible and expres
 
 #### (5) The report generated
 
-Finally the Test Case will generate a HTML report of which path is `store/MyAdmin_VisualTestingTwins-index.html`. Please open it in any web browser. It renders a view of the stored 1 page, both in PNG screenshot and HTML page source. You can see an working example here: [pls.click here](https://kazurayam.github.io/VisualTestingInKatalonStudio_reborn/store/MyAdmin_VisualTestingTwins-index.html)
+Finally the Test Case will generate a HTML report of which path is `store/MyAdmin_VisualTestingTwins-index.html`. Please open it in any web browser. It renders a view of the stored 1 page, both in PNG screenshot and HTML page source. You can see an working example here: [pls.click here](https://kazurayam.github.io/VisualTestingInKatalonStudio_Reborn/store/MyAdmin_VisualTestingTwins-index.html)
 
 You can see a screenshot comparison result: Production Env - Diff - Development Env.
 
