@@ -13,7 +13,7 @@
   - [(2) Domain-specific file system indexed by metadata](#2-domain-specific-file-system-indexed-by-metadata)
   - [(3) Packaged in a jar](#3-packaged-in-a-jar)
   - [(4) Usable outside Katalon Studio](#4-usable-outside-katalon-studio)
-- ["materialstore" documentation](#materialstore-documentation)
+- [The documentation of "materialstore"](#the-documentation-of-materialstore)
 - [Examples in Katalon Studio](#examples-in-katalon-studio)
   - [Creating a project, resolving external dependencies](#creating-a-project-resolving-external-dependencies)
   - [Sample1: simply visit a URL and scrape](#sample1-simply-visit-a-url-and-scrape)
