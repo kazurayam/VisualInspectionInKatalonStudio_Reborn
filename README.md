@@ -10,7 +10,7 @@
 - [My previous work](#my-previous-work)
 - [My new development](#my-new-development)
   - [(1) Simpler codeset](#1-simpler-codeset)
-  - [(2) Custom file system indexed by metadata](#2-custom-file-system-indexed-by-metadata)
+  - [(2) Domain-specific file system indexed by metadata](#2-domain-specific-file-system-indexed-by-metadata)
   - [(3) Packaged in a jar](#3-packaged-in-a-jar)
   - [(4) Usable outside Katalon Studio](#4-usable-outside-katalon-studio)
 - ["materialstore" documentation](#materialstore-documentation)
