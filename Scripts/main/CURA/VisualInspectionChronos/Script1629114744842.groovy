@@ -22,7 +22,7 @@ import internal.GlobalVariable
 Path projectDir = Paths.get(RunConfiguration.getProjectDir())
 Path root = projectDir.resolve("store")
 Store store = new StoreImpl(root)
-JobName jobName = new JobName("CURA_VisualTestingChronos")
+JobName jobName = new JobName("CURA_VisualInspectionChronos")
 JobTimestamp currentTimestamp = JobTimestamp.now()
 ExecutionProfilesLoader profilesLoader = new ExecutionProfilesLoader()
 

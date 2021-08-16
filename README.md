@@ -247,7 +247,7 @@ Second example. We will write a Test Case in Katalon Studio that visits the [htt
 
 In your project, you want to copy&paste the following Test Case code.
 
-- [`Test Cases/main/CURA/VisualTestingChronos`](Scripts/main/CURA/VisualTestingChronos/Script1627619550263.groovy)
+- [`Test Cases/main/CURA/VisualInspectionChronos`](Scripts/main/CURA/VisualInspectionChronos/Script1627619550263.groovy)
 
 You will execute the Test Case two times. You run it once; wait for some period (seconds, minuits, hours, or days, ... up to you); then run it again. The Test Case will preserve the output of previous runs.
 
@@ -269,7 +269,7 @@ You will get 2 directories named in the format of  `yyyyMMdd_hhmmss`. The direct
 ```
 $ tree store
 store
-├── CURA_VisualTestingChronos
+├── CURA_VisualInspectionChronos
 │   ├── 20210814_143440
 │   │   ├── index
 │   │   └── objects
@@ -296,14 +296,14 @@ store
 │           ├── e18882a39ba9632e9b0018e642d90a289fd1bcb7.html
 │           ├── f6b51712f25ba02a5b39eedb30a57b31d455eafc.html
 │           └── f8664dfa1c3a3af60914c4c90ddfaf0286910133.html
-└── CURA_VisualTestingChronos-index.html
+└── CURA_VisualInspectionChronos-index.html
 ```
 
 #### (4) making Chronological diff
 
 The Test Case compares takes materials at chronologically different timings, and then compare the 2 sets.
 
-[`Test Cases/CURA/VisualTestingChronos`](Scripts/main/CURA/VisualTestingChronos/Script1627619550263.groovy) does the followng processing:
+[`Test Cases/CURA/VisualInspectionChronos`](Scripts/main/CURA/VisualInspectionChronos/Script1627619550263.groovy) does the followng processing:
 
 1. make a List of materials in the current timestmp directory
 2. make another List of materials in the previous timestamp directory
@@ -312,7 +312,7 @@ The Test Case compares takes materials at chronologically different timings, and
 
 #### (5) The report generated
 
-Once the Test Case finished, a HTML file will be generated at `store/CURA_VisualTestingChronos-index.html`. Please open it in any web browser. It renders a view of the stored 6 files. You can see an working example here: [pls. click here](https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/CURA_VisualTestingChronos-index.html).
+Once the Test Case finished, a HTML file will be generated at `store/CURA_VisualInspectionChronos-index.html`. Please open it in any web browser. It renders a view of the stored 6 files. You can see an working example here: [pls. click here](https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/CURA_VisualInspectionChronos-index.html).
 
 You can see examples of screenshot comparison result: Previous screenshot - diff image - current screenshot.
 
@@ -344,7 +344,7 @@ The former URL is meant to represent a *Production environment* of a web system,
 
 In your project, you want to copy the followiing Test Case code.
 
-- [`Test Cases/main/MyAdmin/VisualTestingTwins`](Scripts/main/MyAdmin/VisualTestingTwins/Script1627089269407.groovy)
+- [`Test Cases/main/MyAdmin/VisualInspecttionTwins`](Scripts/main/MyAdmin/VisualInspectitonTwins/Script1627089269407.groovy)
 
 You will execute the Test Case only once. The Test Case will visit the 2 URLs as one batch. And it creates a HTML report.
 
@@ -367,7 +367,7 @@ Once finished, the Test Case creates a directory named in the format of `yyyyMMd
 ```
 $ tree store
 store
-├── MyAdmin_VisualTestingTwins
+├── MyAdmin_VisualInspectionTwins
 │   └── 20210814_224127
 │       ├── index
 │       └── objects
@@ -377,7 +377,7 @@ store
 │           ├── adb4c03ac0f0928a4dff3328845c4db460fc72b5.html
 │           ├── b0456c0ae964825a1508b28ac1042340b29c9357.html
 │           └── e911ce587553fc42f24bf18279ee3f5214eb75ba.png
-└── MyAdmin_VisualTestingTwins-index.html
+└── MyAdmin_VisualInspectionTwins-index.html
 ```
 
 
@@ -386,7 +386,7 @@ store
 
 The Test Case looks up 2 set of materials and compare them.
 
-The [`Test Cases/main/MyAdmin/VisualTestingTwins`](Scripts/main/MyAdmin/VisualTestingTwins/Script1627089269407.groovy) does the following processing:
+The [`Test Cases/main/MyAdmin/VisualInspectionTwins`](Scripts/main/MyAdmin/VisualInspectionTwins/Script1627089269407.groovy) does the following processing:
 
 1. Amongst the stored materials, select 2 (a screenshot and a HTML) of the *Development environment* to make a List.
 2. Also select 2 of the *Projection environment* to make a Liist.
@@ -402,7 +402,7 @@ Well, it is difficult to explain. I wonder if I could describe it in English, bu
 
 In the `objects` directory, there are 6 files. These are a mixture of materials downloaded from 2 URLs. How can I tell which file is from which URL? --- The `index` file keeps enough information. The content of `index` file is as follows:
 
-- [store/MyAdmin_VisualTestingTwins/20210814_224127/index](docs/store/MyAdmin_VisualTestingTwins/20210814_224127/index)
+- [store/MyAdmin_VisualInspectionTwins/20210814_224127/index](docs/store/MyAdmin_VisualInspectionTwins/20210814_224127/index)
 
 In there you can find the following 2 lines. These lines point to the PNG screenshots of the 2 environments. I call the 3 column delimited by \t (`{"URL.host": ... :"body"}`) as *metadata*.
 
@@ -433,7 +433,7 @@ Difficult to understand? Well, I agree. But this is the best flexible and expres
 
 #### (5) The report generated
 
-Finally the Test Case will generate a HTML report of which path is `store/MyAdmin_VisualTestingTwins-index.html`. Please open it in any web browser. It renders a view of the stored 1 page, both in PNG screenshot and HTML page source. You can see an working example here: [pls.click here](https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/MyAdmin_VisualTestingTwins-index.html)
+Finally the Test Case will generate a HTML report of which path is `store/MyAdmin_VisualInspectionTwins-index.html`. Please open it in any web browser. It renders a view of the stored 1 page, both in PNG screenshot and HTML page source. You can see an working example here: [pls.click here](https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/MyAdmin_VisualInspectionTwins-index.html)
 
 You can see a screenshot comparison result: Production Env - Diff - Development Env.
 

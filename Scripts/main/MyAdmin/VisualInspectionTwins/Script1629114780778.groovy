@@ -22,7 +22,7 @@ import internal.GlobalVariable
 Path projectDir = Paths.get(RunConfiguration.getProjectDir())
 Path root = projectDir.resolve("store")
 Store store = Stores.newInstance(root)
-JobName jobName = new JobName("MyAdmin_VisualTestingTwins")
+JobName jobName = new JobName("MyAdmin_VisualInspectionTwins")
 JobTimestamp jobTimestamp = JobTimestamp.now()
 ExecutionProfilesLoader profilesLoader = new ExecutionProfilesLoader()
 
