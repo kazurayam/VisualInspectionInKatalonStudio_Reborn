@@ -1,4 +1,4 @@
-// VisualTestingInKatalonStudio_revive/build.gradle
+// VisualTestingInKatalonStudio_reborn/build.gradle
 
 // $ gradle drivers
 
@@ -6,7 +6,6 @@ ext {
     AUTO_IMPORTED_JAR_PREFIX = 'AUTOIMPORTED_'
     ExecutionProfilesLoaderVersion = "1.2.1"
     materialstoreVersion = '0.1.1'
-    subprocessjVersion = '0.1.0'
     ashotVersion = '1.5.4'
     javadiffutilsVersion = '4.9'
     jsoupVersion = '1.7.2'
@@ -14,7 +13,6 @@ ext {
 
 repositories {
     mavenCentral()
-    mavenLocal()
 }
 
 configurations {
@@ -26,8 +24,6 @@ dependencies {
                     version: "${materialstoreVersion}"
     myconf group: 'com.kazurayam', name: 'ExecutionProfilesLoader',
                     version: "${ExecutionProfilesLoaderVersion}"
-    myconf group: 'com.kazurayam', name: 'subprocessj',
-                    version: "${subprocessjVersion}"
     myconf group: 'ru.yandex.qatools.ashot', name: 'ashot',
                     version: "${ashotVersion}"
     myconf group: 'io.github.java-diff-utils', name: 'java-diff-utils',
@@ -52,7 +48,6 @@ task drivers {
                     "**/ashot*.jar",
                     "**/jsoup*.jar",
                     "**/java-diff-utils*.jar",
-                    "**/subprocessj*.jar",
                     )
                 .rename({ s ->
                     AUTO_IMPORTED_JAR_PREFIX + s

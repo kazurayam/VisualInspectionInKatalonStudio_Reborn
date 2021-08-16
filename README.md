@@ -72,7 +72,7 @@ The `materialstore` provides capability of materializing (storing) files downloa
 
 An application writes files into the *"store"* associating *"metadata"*. The *"materials"* in the "store" are indexed by the associcated *metadata*. An application retrieves files from the store by *metadata* as key. An application does not look up files by name (Path). The application is no longer responsible for deciding and remembering the path of physical files.
 
- A *metadata* of a material in the store is merely an instance of `java.util.Map<String, String>` with arbitrary key and value pairs. You can programme any kind of *metadata* and associate it to each materials so that the materials are well described and clearly identified. For example, you can associate the URL from which the web resource was retrieved; or you can associate the name of browser ("Chrome", "FireFox", "Safari", etc) which you used to take the screenshots; or you can associate the name of "Execution Profile" in Katalon Studio which you applied when you executed your Test Case.
+ A *metadata* of a material in the store is merely an instance of `java.util.Map<String, String>` with arbitrary key=value pairs. You can programme any kind of *metadata* and associate it to each materials so that the materials are well described and clearly identified. For example, you can associate the URL from which the web resource was retrieved; or you can associate the name of browser ("Chrome", "FireFox", "Safari", etc) which you used to take the screenshots; or you can associate the name of "Execution Profile" in Katalon Studio which you applied when you executed your Test Case.
 
 Metadata composition is entirely up to the user application. Composing metadata is a bit difficult part of the `materialstore` library. It looks similar to designing database table in SQL-backed application.
 
@@ -84,7 +84,7 @@ The artifact of `materialstore` is distributed as a single jar file. The jar fil
 
 The `materialstore`'s jar has no immediate dependency on the Katalon Studio API. It is not dependent even on the Selenium Webdriver API. So the `materialstore` library can be used in any Java/Groovy project, not only in Katalon Studio. I can use it in a plain [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/)-based automated test project for Web UI on Gradle. I can use it in a plain [Appium Java Client](https://github.com/appium/java-client)-based automated test project for Mobile UI on Maven. I can use it in a plain [Apache HttpClient](https://hc.apache.org/httpcomponents-client-5.1.x/)-based automated test project for Web Services on Ant.
 
-## "materialstore" documentation
+## The documentation of "materialstore"
 
 The following repository contains sample codes and documentation of the `materialstore` API. The sample codes are written in Java, run on Gradle + Selenium WebDriver + Apache HttpClient.
 
@@ -135,7 +135,6 @@ Drivers
 ├── AUTOIMPORTED_java-diff-utils-4.9.jar
 ├── AUTOIMPORTED_jsoup-1.13.1.jar
 ├── AUTOIMPORTED_materialstore-0.1.0.jar
-└── AUTOIMPORTED_subprocessj-0.1.0.jar
 ```
 
 >The exact version number of the jars may change in future. Please regard this as an example.
