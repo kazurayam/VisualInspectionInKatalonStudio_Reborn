@@ -304,7 +304,7 @@ store
 
 The Test Case compares takes materials at chronologically different timings, and then compare the 2 sets.
 
-[`Test Cases/CURA/VisualInspectionChronos`](Scripts/main/CURA/VisualInspectionChronos/Script1627619550263.groovy) does the followng processing:
+`Test Cases/CURA/VisualInspectionChronos` does the followng processing:
 
 1. make a List of materials in the current timestmp directory
 2. make another List of materials in the previous timestamp directory
@@ -387,7 +387,7 @@ store
 
 The Test Case looks up 2 set of materials and compare them.
 
-The [`Test Cases/main/MyAdmin/VisualInspectionTwins`](Scripts/main/MyAdmin/VisualInspectionTwins/Script1627089269407.groovy) does the following processing:
+`Test Cases/main/MyAdmin/VisualInspectionTwins` does the following processing:
 
 1. Amongst the stored materials, select 2 (a screenshot and a HTML) of the *Development environment* to make a List.
 2. Also select 2 of the *Projection environment* to make a Liist.
