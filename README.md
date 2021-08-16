@@ -1,4 +1,4 @@
-# Visual Testing in Katalon Studio - Reborn
+# Visual Inspection in Katalon Studio - Reborn
 
 - @date Aug 2021
 - @author kazurayam
@@ -84,6 +84,14 @@ The artifact of `materialstore` is distributed as a single jar file. The jar fil
 
 The `materialstore`'s jar has no immediate dependency on the Katalon Studio API. It is not dependent even on the Selenium Webdriver API. So the `materialstore` library can be used in any Java/Groovy project, not only in Katalon Studio. I can use it in a plain [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/)-based automated test project for Web UI on Gradle. I can use it in a plain [Appium Java Client](https://github.com/appium/java-client)-based automated test project for Mobile UI on Maven. I can use it in a plain [Apache HttpClient](https://hc.apache.org/httpcomponents-client-5.1.x/)-based automated test project for Web Services on Ant.
 
+## Inspect, not Test
+
+I named my previous project as "Visual Testing". To me, a word *testing* means to check if a system behaves as I expect in detail. On the other hand, *inspection* means to me looking around a system to find if there is anything unexpected observed. This project does not really *test it*, but it does *inspect it*.
+
+Now I want to name my new project as **Visual Inspection**. I think it is a better naming.
+
+
+
 ## The documentation of "materialstore"
 
 The following repository contains sample codes and documentation of the `materialstore` API. The sample codes are written in Java, run on Gradle + Selenium WebDriver + Apache HttpClient.
@@ -97,7 +105,7 @@ Here I will present 3 examples which show how to use the `materialstore` library
 
 ### Creating a project, resolving external dependencies
 
-You can create a new Katalon Studio project, import the required external dependencies, and write your Test Cases for "Visual Testing". Let me describe the procedure how to create your "Visual Testing Reborn" project.
+You can create a new Katalon Studio project, import the required external dependencies, and write your Test Cases for "Visual Testing". Let me describe the procedure how to create your "Visual Inspection Reborn" project.
 
 1. Install "Gradle" build tool into your PC. Please follow this [guide](https://gradle.org/install/) to install Gradle on your machine.
 
@@ -161,7 +169,7 @@ Once you have created the Test Case, you want to run it as usual by clicking the
 
 #### (2) The report generated
 
-Once the Test Case finished, a HTML file will be created at `store/scrapeGoogleSearch.html`. Please open it in any web browser. It renders a view of the stored 6 files. You can see an working example here: [pls. click here](https://kazurayam.github.io/VisualTestingInKatalonStudio_Reborn/store/scrapeGoogleSearch.html).
+Once the Test Case finished, a HTML file will be created at `store/scrapeGoogleSearch.html`. Please open it in any web browser. It renders a view of the stored 6 files. You can see an working example here: [pls. click here](https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/scrapeGoogleSearch.html).
 
 ![scrapeGoogleSearch.html](docs/images/scrapeGoogleSearch.html.png)
 
@@ -304,7 +312,7 @@ The Test Case compares takes materials at chronologically different timings, and
 
 #### (5) The report generated
 
-Once the Test Case finished, a HTML file will be generated at `store/CURA_VisualTestingChronos-index.html`. Please open it in any web browser. It renders a view of the stored 6 files. You can see an working example here: [pls. click here](https://kazurayam.github.io/VisualTestingInKatalonStudio_Reborn/store/CURA_VisualTestingChronos-index.html).
+Once the Test Case finished, a HTML file will be generated at `store/CURA_VisualTestingChronos-index.html`. Please open it in any web browser. It renders a view of the stored 6 files. You can see an working example here: [pls. click here](https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/CURA_VisualTestingChronos-index.html).
 
 You can see examples of screenshot comparison result: Previous screenshot - diff image - current screenshot.
 
@@ -425,7 +433,7 @@ Difficult to understand? Well, I agree. But this is the best flexible and expres
 
 #### (5) The report generated
 
-Finally the Test Case will generate a HTML report of which path is `store/MyAdmin_VisualTestingTwins-index.html`. Please open it in any web browser. It renders a view of the stored 1 page, both in PNG screenshot and HTML page source. You can see an working example here: [pls.click here](https://kazurayam.github.io/VisualTestingInKatalonStudio_Reborn/store/MyAdmin_VisualTestingTwins-index.html)
+Finally the Test Case will generate a HTML report of which path is `store/MyAdmin_VisualTestingTwins-index.html`. Please open it in any web browser. It renders a view of the stored 1 page, both in PNG screenshot and HTML page source. You can see an working example here: [pls.click here](https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/MyAdmin_VisualTestingTwins-index.html)
 
 You can see a screenshot comparison result: Production Env - Diff - Development Env.
 
@@ -453,4 +461,4 @@ The `materialstore` library can be used by a [Apache HttpClient](https://hc.apac
 
 ## Conclusion
 
-The [Visual Testing In Katalon Studio](https://github.com/kazurayam/VisualTestingInKatalonStudio) project is now superceded by this [Visual Testing In Katalon Studio - Reborn](https://github.com/kazurayam/VisualTestingInKatalonStudio_Reborn) project backed by the [materialstore](https://github.com/kazurayam/materialstore) library.
+The [Visual Testing In Katalon Studio](https://github.com/kazurayam/VisualTestingInKatalonStudio) project is now superceded by this [Visual Inspection In Katalon Studio - Reborn](https://github.com/kazurayam/VisualInspectionInKatalonStudio_Reborn) project backed by the [materialstore](https://github.com/kazurayam/materialstore) library.
