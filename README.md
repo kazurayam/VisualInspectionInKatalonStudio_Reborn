@@ -248,7 +248,7 @@ Second example. We will write a Test Case in Katalon Studio that visits the [htt
 
 In your project, you want to copy&paste the following Test Case code.
 
-- [`Test Cases/main/CURA/VisualInspectionChronos`](Scripts/main/CURA/VisualInspectionChronos/Script1627619550263.groovy)
+- [`Test Cases/main/CURA/VisualInspectionChronos`](Scripts/main/CURA/VisualInspectionChronos/Script1629114744842.groovy)
 
 You will execute the Test Case two times. You run it once; wait for some period (seconds, minuits, hours, or days, ... up to you); then run it again. The Test Case will preserve the output of previous runs.
 
@@ -345,7 +345,7 @@ The former URL is meant to represent a *Production environment* of a web system,
 
 In your project, you want to copy the followiing Test Case code.
 
-- [`Test Cases/main/MyAdmin/VisualInspecttionTwins`](Scripts/main/MyAdmin/VisualInspectitonTwins/Script1627089269407.groovy)
+- [`Test Cases/main/MyAdmin/VisualInspectionTwins`](Scripts/main/MyAdmin/VisualInspectionTwins/Script1629114780778.groovy)
 
 You will execute the Test Case only once. The Test Case will visit the 2 URLs as one batch. And it creates a HTML report.
 
