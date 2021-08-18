@@ -85,9 +85,9 @@ The artifact of `materialstore` is distributed as a single jar file. The jar fil
 
 The `materialstore`'s jar has no immediate dependency on the Katalon Studio API. It is not dependent even on the Selenium Webdriver API. So the `materialstore` library can be used in any Java/Groovy project, not only in Katalon Studio. I can use it in a plain [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/)-based automated test project for Web UI on Gradle. I can use it in a plain [Appium Java Client](https://github.com/appium/java-client)-based automated test project for Mobile UI on Maven. I can use it in a plain [Apache HttpClient](https://hc.apache.org/httpcomponents-client-5.1.x/)-based automated test project for Web Services on Ant.
 
-## Inspect, not Test
+## Inspection, not Test
 
-I named my previous project as "Visual Testing". To me, a word *testing* means to check if a system behaves as I expect in detail. On the other hand, *inspection* means to me looking around a system to find if there is anything unexpected observed. This project does not really *test it*, but it does *inspect it*.
+I named my previous project as "Visual Testing". I think that this naming was not very good. To me, a word *testing* means to check if a system behaves as I expect. On the other hand, *inspection* means looking around a system for anything unexpected observed. This project does not really *test it*, but it does help me to *inspect it*.
 
 Now I want to name my new project as **Visual Inspection**. I think it is a better naming.
 
@@ -462,4 +462,4 @@ The `materialstore` library can be used by a [Apache HttpClient](https://hc.apac
 
 ## Conclusion
 
-The [Visual Testing In Katalon Studio](https://github.com/kazurayam/VisualTestingInKatalonStudio) project is now superceded by this [Visual Inspection In Katalon Studio - Reborn](https://github.com/kazurayam/VisualInspectionInKatalonStudio_Reborn) project backed by the [materialstore](https://github.com/kazurayam/materialstore) library.
+The [Visual Testing In Katalon Studio](https://github.com/kazurayam/VisualTestingInKatalonStudio) project is now superseded by this [Visual Inspection In Katalon Studio - Reborn](https://github.com/kazurayam/VisualInspectionInKatalonStudio_Reborn) project backed by the [materialstore](https://github.com/kazurayam/materialstore) library.
