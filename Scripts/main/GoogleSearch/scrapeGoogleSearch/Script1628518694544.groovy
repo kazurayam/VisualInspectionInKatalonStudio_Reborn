@@ -11,6 +11,7 @@ import com.kazurayam.materialstore.FileType
 import com.kazurayam.materialstore.JobName
 import com.kazurayam.materialstore.JobTimestamp
 import com.kazurayam.materialstore.Material
+import com.kazurayam.materialstore.MaterialList
 import com.kazurayam.materialstore.Metadata
 import com.kazurayam.materialstore.MetadataPattern
 import com.kazurayam.materialstore.Store
@@ -68,7 +69,7 @@ takeFullPageScreenshotAndSavePageSourceUsingBuiltinKeyword(store, jobName, jobTi
 WebUI.closeBrowser()
 
 // compile a list of the aterials in HTML
-List<Material> materials = store.select(jobName, jobTimestamp, MetadataPattern.ANY)
+MaterialList materials = store.select(jobName, jobTimestamp, MetadataPattern.ANY)
 
 Path report = store.reportMaterials(jobName, materials, jobName.toString() + ".html")
 WebUI.comment("see ${report.toString()} for the list")

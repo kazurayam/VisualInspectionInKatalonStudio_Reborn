@@ -8,7 +8,7 @@ import com.kazurayam.ks.globalvariable.ExecutionProfilesLoader
 import com.kazurayam.materialstore.DiffArtifacts
 import com.kazurayam.materialstore.JobName
 import com.kazurayam.materialstore.JobTimestamp
-import com.kazurayam.materialstore.Material
+import com.kazurayam.materialstore.MaterialList
 import com.kazurayam.materialstore.MetadataIgnoredKeys
 import com.kazurayam.materialstore.MetadataPattern
 import com.kazurayam.materialstore.Store
@@ -46,11 +46,11 @@ if (previousTimestamp == JobTimestamp.NULL_OBJECT) {
 }
 
 // Look up the materials stored in a previous time of run
-List<Material> left = store.select(jobName, previousTimestamp, MetadataPattern.ANY)
+MaterialList left = store.select(jobName, previousTimestamp, MetadataPattern.ANY)
 assert left.size() > 0
 
 // Look up the materials stored in the current time of run
-List<Material> right = store.select(jobName, currentTimestamp, MetadataPattern.ANY)
+MaterialList right = store.select(jobName, currentTimestamp, MetadataPattern.ANY)
 assert right.size() > 0
 
 // if difference is greater than this criteria value, the difference should be marked

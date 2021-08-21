@@ -8,7 +8,7 @@ import com.kazurayam.ks.globalvariable.ExecutionProfilesLoader
 import com.kazurayam.materialstore.DiffArtifacts
 import com.kazurayam.materialstore.JobName
 import com.kazurayam.materialstore.JobTimestamp
-import com.kazurayam.materialstore.Material
+import com.kazurayam.materialstore.MaterialList
 import com.kazurayam.materialstore.MetadataIgnoredKeys
 import com.kazurayam.materialstore.MetadataPattern
 import com.kazurayam.materialstore.Store
@@ -54,11 +54,11 @@ WebUI.callTestCase(
 // compare the materials obtained from the 2 sites, compile a diff report
 
 // pickup the materials that belongs to the 2 "profiles"
-List<Material> left = store.select(jobName, jobTimestamp,
+MaterialList left = store.select(jobName, jobTimestamp,
 			MetadataPattern.builderWithMap([ "profile": profile1 ]).build()
 			)
 
-List<Material> right = store.select(jobName, jobTimestamp,
+MaterialList right = store.select(jobName, jobTimestamp,
 			MetadataPattern.builderWithMap([ "profile": profile2 ]).build()
 			)
 
@@ -66,9 +66,7 @@ List<Material> right = store.select(jobName, jobTimestamp,
 double criteria = 0.0d
 
 // make DiffArtifacts
-DiffArtifacts stuffedDiffArtifacts =
-	store.makeDiff(left, right, 
-		MetadataIgnoredKeys.of("profile", "URL.host"))
+DiffArtifacts stuffedDiffArtifacts = store.makeDiff(left, right, MetadataIgnoredKeys.of("profile", "URL.host"))
 int warnings = stuffedDiffArtifacts.countWarnings(criteria)
 
 // compile HTML report
