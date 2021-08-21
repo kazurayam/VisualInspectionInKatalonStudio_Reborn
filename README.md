@@ -51,7 +51,7 @@ Sep 2018, I published a project named "Visual Testing in Katalon Studio" at
 
 Please have a look at the "Motivation" section in its README document to know why I made it. I tried to implement what I called "Visual Testing" in Katalon Studio. The project worked for me.
 
-But I wasn't satisfied with it. Why? I would enumerate 3 problems about this project.
+But I wasn't satisfied with it. Why? I would enumerate 3 problems about that project.
 
 1. The codeset of [Visual Testing In katalon Studio](https://github.com/kazurayam/VisualTestingInKatalonStudio) project is too complicated. The project contains 28 Test Cases, 7 Test Suites, 4 Test Suite Collections, 1 Test Listener, 12 Keywords. After 3 years, I forgot them and unable to maintain them any longer.
 2. The project enables me to compare a pair of 2 screenshots of Web pages in PNG image format. That's all. Not enough. Often I wanted to compare 2 texts scraped from web. E.g, 2 HTML files as Web Page source; 2 JSON files downloaded from a Web Service.
@@ -102,7 +102,7 @@ The following repository contains sample codes and documentation of the `materia
 
 ## Examples in Katalon Studio
 
-Here I will present 3 examples which show how to use the `materialstore` library in Kataloon Studio. I intend these will supercede my previous ["Visual Testing in Katalon Studio"](https://github.com/kazurayam/VisualTestingInKatalonStudio) project.
+Here I will present 3 examples which show how to use the `materialstore` library in Katalon Studio. I intend these will supersede my previous ["Visual Testing in Katalon Studio"](https://github.com/kazurayam/VisualTestingInKatalonStudio) project.
 
 ### Creating a project, resolving external dependencies
 

@@ -58,11 +58,7 @@ double criteria = 0.1d
 
 // do comaring while creating diff. The result will be carried as instances of DiffArtifact class.
 DiffArtifacts stuffedDiffArtifacts =
-    store.makeDiff(left, right,
-		new MetadataIgnoredKeys.Builder()
-		    .ignoreKey("URL")
-			.ignoreKey("URL.host")
-		    .build())
+    store.makeDiff(left, right, MetadataIgnoredKeys.of("URL", "URL.host"))
 
 // How many siginificant differences were found?
 int warnings = stuffedDiffArtifacts.countWarnings(criteria)
@@ -74,5 +70,5 @@ WebUI.comment("The report can be found at ${reportFile.toString()}")
 
 // if any siginificant difference found, this Test Case should FAIL
 if (warnings > 0) {
-	KeywordUtil.markFailedAndStop("found ${warnings} differences.")
+	KeywordUtil.markFailed("found ${warnings} differences.")
 }

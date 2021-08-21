@@ -55,11 +55,11 @@ WebUI.callTestCase(
 
 // pickup the materials that belongs to the 2 "profiles"
 List<Material> left = store.select(jobName, jobTimestamp,
-			new MetadataPattern.Builder([ "profile": profile1 ]).build()
+			MetadataPattern.builderWithMap([ "profile": profile1 ]).build()
 			)
 
 List<Material> right = store.select(jobName, jobTimestamp,
-			new MetadataPattern.Builder([ "profile": profile2 ]).build()
+			MetadataPattern.builderWithMap([ "profile": profile2 ]).build()
 			)
 
 // difference greater than the criteria should be warned
@@ -68,10 +68,7 @@ double criteria = 0.0d
 // make DiffArtifacts
 DiffArtifacts stuffedDiffArtifacts =
 	store.makeDiff(left, right, 
-		new MetadataIgnoredKeys.Builder()
-			.ignoreKey("profile")
-			.ignoreKey("URL.host")
-			.build())
+		MetadataIgnoredKeys.of("profile", "URL.host"))
 int warnings = stuffedDiffArtifacts.countWarnings(criteria)
 
 // compile HTML report
@@ -80,7 +77,7 @@ assert Files.exists(reportFile)
 WebUI.comment("The report can be found ${reportFile.toString()}")
 
 if (warnings > 0) {
-	KeywordUtil.markFailedAndStop("found ${warnings} differences.")
+	KeywordUtil.markFailed("found ${warnings} differences.")
 }
 
 	

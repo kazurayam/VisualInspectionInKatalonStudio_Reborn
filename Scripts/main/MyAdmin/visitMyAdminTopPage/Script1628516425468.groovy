@@ -1,6 +1,6 @@
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 
-import com.kazurayam.materialstore.MetadataImpl
+import com.kazurayam.materialstore.Metadata
 import com.kms.katalon.core.testobject.ConditionType
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
@@ -37,7 +37,7 @@ WebUI.callTestCase(findTestCase("main/common/takeScreenshotAndPageSource"),
 		"store": store,
 		"jobName": jobName,
 		"jobTimestamp": jobTimestamp,
-		"metadata": new MetadataImpl.Builder(url)
+		"metadata": Metadata.builderWithUrl(url)
 									.put("profile", profile)
 									.put("selector", "body")
 									.build()

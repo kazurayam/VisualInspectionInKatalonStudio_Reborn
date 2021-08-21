@@ -6,7 +6,7 @@ import java.time.format.DateTimeFormatter
 
 import org.openqa.selenium.Keys
 
-import com.kazurayam.materialstore.MetadataImpl
+import com.kazurayam.materialstore.Metadata
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import internal.GlobalVariable
@@ -31,11 +31,12 @@ WebUI.navigateToUrl(GlobalVariable.URL)
 // take the screenshot and the page source, save them into the store; using the Katalon keyword
 URL url = new URL(WebUI.getUrl())
 
-WebUI.callTestCase(findTestCase("main/common/takeScreenshotAndPageSource"), 
-	["store": store, "jobName": jobName, "jobTimestamp": jobTimestamp,
-		"metadata": new MetadataImpl.Builder(url).build()
-		]
-)
+WebUI.callTestCase(findTestCase("main/common/takeScreenshotAndPageSource"), [
+	"store": store,
+	"jobName": jobName,
+	"jobTimestamp": jobTimestamp,
+	"metadata": Metadata.builderWithUrl(url).build()
+	])
 
 WebUI.click(findTestObject('CURA/Page_CURA Healthcare Service/top/a_Make Appointment'))
 
@@ -74,11 +75,12 @@ WebUI.setText(findTestObject('CURA/Page_CURA Healthcare Service/appointment/text
 
 // take the screenshot and the page source, save them into the store; using the AShot library
 url = new URL(WebUI.getUrl())
-WebUI.callTestCase(findTestCase("main/common/takeScreenshotAndPageSource"),
-	["store": store, "jobName": jobName, "jobTimestamp": jobTimestamp,
-		"metadata": new MetadataImpl.Builder(url).build()
-		]
-)
+WebUI.callTestCase(findTestCase("main/common/takeScreenshotAndPageSource"),[
+	"store": store,
+	"jobName": jobName,
+	"jobTimestamp": jobTimestamp,
+	"metadata": Metadata.builderWithUrl(url).build()
+	])
 
 WebUI.click(findTestObject('CURA/Page_CURA Healthcare Service/appointment/button_Book Appointment'))
 
@@ -86,11 +88,12 @@ WebUI.click(findTestObject('CURA/Page_CURA Healthcare Service/appointment/button
 
 // take the screenshot and the page source, save them into the store; using the AShot library
 url = new URL(WebUI.getUrl())
-WebUI.callTestCase(findTestCase("main/common/takeScreenshotAndPageSource"),
-	["store": store, "jobName": jobName, "jobTimestamp": jobTimestamp,
-		"metadata": new MetadataImpl.Builder(url).build()
-		]
-)
+WebUI.callTestCase(findTestCase("main/common/takeScreenshotAndPageSource"),[
+	"store": store,
+	"jobName": jobName,
+	"jobTimestamp": jobTimestamp,
+	"metadata": Metadata.builderWithUrl(url).build()
+	])
 	
 WebUI.click(findTestObject('CURA/Page_CURA Healthcare Service/summary/a_Go to Homepage'))
 

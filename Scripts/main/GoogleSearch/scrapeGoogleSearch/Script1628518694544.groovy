@@ -12,7 +12,6 @@ import com.kazurayam.materialstore.JobName
 import com.kazurayam.materialstore.JobTimestamp
 import com.kazurayam.materialstore.Material
 import com.kazurayam.materialstore.Metadata
-import com.kazurayam.materialstore.MetadataImpl
 import com.kazurayam.materialstore.MetadataPattern
 import com.kazurayam.materialstore.Store
 import com.kazurayam.materialstore.Stores
@@ -44,7 +43,7 @@ WebUI.setText(q, queryValue)
 
 // now take the screenshot and store the PNG file of the Google Search page
 URL searchPageURL = new URL(WebUI.getUrl())
-Metadata metadata1 = new MetadataImpl.Builder(searchPageURL).build()
+Metadata metadata1 = Metadata.builderWithUrl(searchPageURL).build()
 takeFullPageScreenshotAndSavePageSourceUsingBuiltinKeyword(store, jobName, jobTimestamp, metadata1)
 
 // send ENTER to trasfer to the result page
@@ -59,11 +58,11 @@ WebUI.verifyElementPresent(logo, 10)
 
 // now store the screenshot and the HTML source of the Search Result page
 URL resultPageURL = new URL(WebUI.getUrl())
-Metadata metadata2 = new MetadataImpl.Builder(resultPageURL).build()
+Metadata metadata2 = Metadata.builderWithUrl(resultPageURL).build()
 takeFullPageScreenshotAndSavePageSourceUsingBuiltinKeyword(store, jobName, jobTimestamp, metadata2)
 
 // make one more set of materials with "q":"katalon" appended into the metadata
-Metadata metadata3 = new MetadataImpl.Builder(resultPageURL).put("q", queryValue).build()
+Metadata metadata3 = Metadata.builderWithUrl(resultPageURL).put("q", queryValue).build()
 takeFullPageScreenshotAndSavePageSourceUsingBuiltinKeyword(store, jobName, jobTimestamp, metadata3)
 
 WebUI.closeBrowser()
