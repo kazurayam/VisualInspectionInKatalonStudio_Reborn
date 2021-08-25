@@ -9,7 +9,7 @@ import com.kazurayam.materialstore.DiffArtifacts
 import com.kazurayam.materialstore.JobName
 import com.kazurayam.materialstore.JobTimestamp
 import com.kazurayam.materialstore.MaterialList
-import com.kazurayam.materialstore.MetadataIgnoredKeys
+import com.kazurayam.materialstore.IgnoringMetadataKeys
 import com.kazurayam.materialstore.MetadataPattern
 import com.kazurayam.materialstore.Store
 import com.kazurayam.materialstore.StoreImpl
@@ -58,7 +58,7 @@ double criteria = 0.1d
 
 // do comaring while creating diff. The result will be carried as instances of DiffArtifact class.
 DiffArtifacts stuffedDiffArtifacts =
-    store.makeDiff(left, right, MetadataIgnoredKeys.of("URL", "URL.host"))
+    store.makeDiff(left, right, IgnoringMetadataKeys.of("URL", "URL.host"))
 
 // How many siginificant differences were found?
 int warnings = stuffedDiffArtifacts.countWarnings(criteria)

@@ -52,7 +52,7 @@ WebUI.sendKeys(q, Keys.chord(Keys.ENTER))
 
 // logo image
 TestObject logo = new TestObject("logo")
-logo.addProperty("xpath", ConditionType.EQUALS, "//div[@class='logo']/a/img")
+logo.addProperty("xpath", ConditionType.EQUALS, "//div[contains(@class,'logo')]/a/img")
 
 // wait for the search result page is loaded
 WebUI.verifyElementPresent(logo, 10)

@@ -9,7 +9,7 @@ import com.kazurayam.materialstore.DiffArtifacts
 import com.kazurayam.materialstore.JobName
 import com.kazurayam.materialstore.JobTimestamp
 import com.kazurayam.materialstore.MaterialList
-import com.kazurayam.materialstore.MetadataIgnoredKeys
+import com.kazurayam.materialstore.IgnoringMetadataKeys
 import com.kazurayam.materialstore.MetadataPattern
 import com.kazurayam.materialstore.Store
 import com.kazurayam.materialstore.Stores
@@ -66,7 +66,7 @@ MaterialList right = store.select(jobName, jobTimestamp,
 double criteria = 0.0d
 
 // make DiffArtifacts
-DiffArtifacts stuffedDiffArtifacts = store.makeDiff(left, right, MetadataIgnoredKeys.of("profile", "URL.host"))
+DiffArtifacts stuffedDiffArtifacts = store.makeDiff(left, right, IgnoringMetadataKeys.of("profile", "URL.host"))
 int warnings = stuffedDiffArtifacts.countWarnings(criteria)
 
 // compile HTML report
