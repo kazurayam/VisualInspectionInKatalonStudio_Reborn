@@ -23,7 +23,6 @@ Path projectDir = Paths.get(RunConfiguration.getProjectDir())
 Path root = projectDir.resolve("store")
 Store store = Stores.newInstance(root)
 JobName jobName = new JobName("MyAdmin_VisualInspectionTwins")
-JobTimestamp jobTimestamp = JobTimestamp.now()
 ExecutionProfilesLoader profilesLoader = new ExecutionProfilesLoader()
 
 // --------------------------------------------------------------------
@@ -32,10 +31,10 @@ ExecutionProfilesLoader profilesLoader = new ExecutionProfilesLoader()
 String profile1 = "MyAdmin_ProductionEnv"
 profilesLoader.loadProfile(profile1)
 WebUI.comment("Execution Profile ${profile1} was loaded")
-
+JobTimestamp timestampP = JobTimestamp.now()
 WebUI.callTestCase(
 	findTestCase("main/MyAdmin/visitMyAdminTopPage"),
-	["profile": profile1, "store": store, "jobName": jobName, "jobTimestamp": jobTimestamp]
+	["profile": profile1, "store": store, "jobName": jobName, "jobTimestamp": timestampP]
 )
 
 	
@@ -44,9 +43,10 @@ String profile2 = "MyAdmin_DevelopmentEnv"
 profilesLoader.loadProfile(profile2)
 WebUI.comment("Execution Profile ${profile2} was loaded")
 
+JobTimestamp timestampD = JobTimestamp.now()
 WebUI.callTestCase(
 	findTestCase("main/MyAdmin/visitMyAdminTopPage"),
-	["profile": profile2, "store": store, "jobName": jobName, "jobTimestamp": jobTimestamp]
+	["profile": profile2, "store": store, "jobName": jobName, "jobTimestamp": timestampD]
 )
 	
 // --------------------------------------------------------------------
@@ -54,11 +54,11 @@ WebUI.callTestCase(
 // compare the materials obtained from the 2 sites, compile a diff report
 
 // pickup the materials that belongs to the 2 "profiles"
-MaterialList left = store.select(jobName, jobTimestamp,
+MaterialList left = store.select(jobName, timestampP,
 			MetadataPattern.builderWithMap([ "profile": profile1 ]).build()
 			)
 
-MaterialList right = store.select(jobName, jobTimestamp,
+MaterialList right = store.select(jobName, timestampD,
 			MetadataPattern.builderWithMap([ "profile": profile2 ]).build()
 			)
 
