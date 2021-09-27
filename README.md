@@ -106,7 +106,7 @@ Here I will present 3 examples which show how to use the `materialstore` library
 
 ### Creating a project, resolving external dependencies
 
-You can create a new Katalon Studio project, import the required external dependencies, and write your Test Cases for "Visual Testing". Let me describe the procedure how to create your "Visual Inspection Reborn" project.
+You can create a new Katalon Studio project, import the required external dependencies, and write your Test Cases for "Visual Inspection". Let me describe the procedure how to create your "Visual Inspection Reborn" project.
 
 1. Install "Gradle" build tool into your PC. Please follow this [guide](https://gradle.org/install/) to install Gradle on your machine.
 
@@ -238,7 +238,7 @@ The `materialstore` API restricts that *metadata* texts in a `index` file MUST b
 
 
 
-### Sample2: Visual Testing in Chronos mode
+### Sample2: Visual Inspection in Chronos mode
 
 Second example. We will write a Test Case in Katalon Studio that visits the [http://demoaut-mimic.kazurayam.com/](http://demoaut-mimic.kazurayam.com/). The top page displays a current timestamp in the unit of seconds. So everytime you retrieve this page, the page changes slightly at the timestamp portion.
 
@@ -330,7 +330,7 @@ Also you can see examples of HTML page sources comparison result.
 
 
 
-### Sample3: Visual Testing in Twins mode
+### Sample3: Visual Inspection in Twins mode
 
 The 3rd example visits 2 URLs. These are useless pages solely for this example.
 
