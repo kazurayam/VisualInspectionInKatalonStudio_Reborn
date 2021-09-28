@@ -1,0 +1,4357 @@
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <title>TextDifferToHTML output</title>
+    <style>
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: ui-monospace,SFMono-Regular,SZ Mono,
+        Menlo,Consolas,Liberation Mono,monospace;
+    font-size: 12px;
+    line-height: 20px;
+}
+div#container {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+td, th {
+    font-size: 12px;
+    border-right: 1px solid #ccc;
+    display: table-cell;
+}
+th {
+    border-bottom: 1px solid #ccc;
+}
+.blob-code-inner {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+.code-change {
+    background-color: #dbedff;
+}
+.code-delete {
+    background-color: #ffeef0;
+}
+.code-equal {
+    background-color: #ffffff;
+}
+.code-insert {
+    background-color: #e6ffec;
+}
+.deletion {
+    background-color: #ffdce0;
+}
+.insertion {
+    background-color: #ccffd8;
+}
+</style>
+  </head>
+  <body>
+    <div id='container'>
+      <div id='inputs'>
+        <h2>Left</h2>
+        <dl>
+          <dt>URL</dt>
+          <dd>
+            <a href='../../../CURA_VisualInspectionChronos/20210825_141406/objects/96adb830ac71ac25aa4de9033c9723118de4922a.html' target='Left'>CURA_VisualInspectionChronos/20210825_141406/objects/96adb830ac71ac25aa4de9033c9723118de4922a.html</a>
+          </dd>
+          <dt>metadata</dt>
+          <dd>{"URL.fragment":"appointment", "URL.host":"katalon-demo-cura.herokuapp.com", "URL.path":"/", "URL.protocol":"https"}</dd>
+        </dl>
+        <h2>Right</h2>
+        <dl>
+          <dt>URL</dt>
+          <dd>
+            <a href='../../../CURA_VisualInspectionChronos/20210826_083053/objects/bd1a96e93b2eab8c45c2f87b98519897eb938928.html' target='Right'>CURA_VisualInspectionChronos/20210826_083053/objects/bd1a96e93b2eab8c45c2f87b98519897eb938928.html</a>
+          </dd>
+          <dt>metadata</dt>
+          <dd>{"URL.fragment":"appointment", "URL.host":"katalon-demo-cura.herokuapp.com", "URL.path":"/", "URL.protocol":"https"}</dd>
+        </dl>
+      </div>
+      <div id='decision'>
+        <h3>
+          <span>are DIFFERENT</span>
+          <span style='margin-left: 20px;'>0.62%</span>
+        </h3>
+        <dl>
+          <dt>rows</dt>
+          <dd>
+            <ul id='rows-stats'>
+              <li>
+                <span>total :</span>
+                <span>325</span>
+              </li>
+              <li>
+                <span class='code-insert'>inserted :</span>
+                <span class='code-insert'>0</span>
+              </li>
+              <li>
+                <span class='code-delete'>deleted :</span>
+                <span class='code-delete'>0</span>
+              </li>
+              <li>
+                <span class='code-change'>changed :</span>
+                <span class='code-change'>2</span>
+              </li>
+              <li>
+                <span>equal :</span>
+                <span>323</span>
+              </li>
+            </ul>
+          </dd>
+        </dl>
+      </div>
+      <table id='split-diff'>
+        <colgroup>
+          <col width='44' />
+          <col />
+          <col />
+        </colgroup>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Left</th>
+            <th>Right</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th class='code-equal'>1</th>
+            <td class='code-equal'>
+              <span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>&lt;html lang="en"&gt;</span>
+            </span>
+          </span>
+        </td>
+        <td class='code-equal'>
+          <span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>&lt;html lang="en"&gt;</span>
+        </span>
+      </span>
+    </td>
+  </tr>
+  <tr>
+    <th class='code-equal'>2</th>
+    <td class='code-equal'>
+      <span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'> &lt;head&gt;</span>
+    </span>
+  </span>
+</td>
+<td class='code-equal'>
+  <span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'> &lt;head&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>3</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;script src="chrome-extension://hdholmmobnfnkjgnbmgakgjlbkpjdgkj/content/wait.js"&gt;&lt;/script&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;script src="chrome-extension://hdholmmobnfnkjgnbmgakgjlbkpjdgkj/content/wait.js"&gt;&lt;/script&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>4</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;meta charset="utf-8" /&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;meta charset="utf-8" /&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>5</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;meta http-equiv="X-UA-Compatible" content="IE=edge" /&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;meta http-equiv="X-UA-Compatible" content="IE=edge" /&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>6</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>7</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;meta name="description" content="CURA Healthcare Service; (678) 813-1KMS" /&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;meta name="description" content="CURA Healthcare Service; (678) 813-1KMS" /&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>8</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;title&gt;CURA Healthcare Service&lt;/title&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;title&gt;CURA Healthcare Service&lt;/title&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>9</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;!-- Bootstrap Core CSS --&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;!-- Bootstrap Core CSS --&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>10</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" /&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" /&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>11</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css" rel="stylesheet" /&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css" rel="stylesheet" /&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>12</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;!-- Custom CSS --&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;!-- Custom CSS --&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>13</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;link href="https://katalon-demo-cura.herokuapp.com//css/theme.css" rel="stylesheet" /&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;link href="https://katalon-demo-cura.herokuapp.com//css/theme.css" rel="stylesheet" /&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>14</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;!-- Custom Fonts --&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;!-- Custom Fonts --&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>15</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" /&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" /&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>16</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" /&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" /&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>17</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>18</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;!-- WARNING: Respond.js doesn't work if you view the page via file:// --&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;!-- WARNING: Respond.js doesn't work if you view the page via file:// --&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>19</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;!--[if lt IE 9]&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;!--[if lt IE 9]&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>20</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"&gt;&lt;/script&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"&gt;&lt;/script&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>21</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"&gt;&lt;/script&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"&gt;&lt;/script&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>22</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;![endif]--&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;![endif]--&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>23</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'> &lt;/head&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'> &lt;/head&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>24</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'> &lt;body&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'> &lt;body&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>25</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;!-- Navigation --&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;!-- Navigation --&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>26</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"&gt;&lt;i class="fa fa-bars"&gt;&lt;/i&gt;&lt;/a&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"&gt;&lt;i class="fa fa-bars"&gt;&lt;/i&gt;&lt;/a&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>27</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;nav id="sidebar-wrapper"&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;nav id="sidebar-wrapper"&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>28</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;ul class="sidebar-nav"&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;ul class="sidebar-nav"&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>29</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"&gt;&lt;i class="fa fa-times"&gt;&lt;/i&gt;&lt;/a&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"&gt;&lt;i class="fa fa-times"&gt;&lt;/i&gt;&lt;/a&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>30</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;li class="sidebar-brand"&gt; &lt;a href="./" onclick="$('#menu-close').click();"&gt;CURA Healthcare&lt;/a&gt; &lt;/li&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;li class="sidebar-brand"&gt; &lt;a href="./" onclick="$('#menu-close').click();"&gt;CURA Healthcare&lt;/a&gt; &lt;/li&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>31</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;li&gt; &lt;a href="./" onclick="$('#menu-close').click();"&gt;Home&lt;/a&gt; &lt;/li&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;li&gt; &lt;a href="./" onclick="$('#menu-close').click();"&gt;Home&lt;/a&gt; &lt;/li&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>32</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;li&gt; &lt;a href="history.php#history" onclick="$('#menu-close').click();"&gt;History&lt;/a&gt; &lt;/li&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;li&gt; &lt;a href="history.php#history" onclick="$('#menu-close').click();"&gt;History&lt;/a&gt; &lt;/li&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>33</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;li&gt; &lt;a href="profile.php#profile" onclick="$('#menu-close').click();"&gt;Profile&lt;/a&gt; &lt;/li&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;li&gt; &lt;a href="profile.php#profile" onclick="$('#menu-close').click();"&gt;Profile&lt;/a&gt; &lt;/li&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>34</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;li&gt; &lt;a href="authenticate.php?logout" onclick="$('#menu-close').click();"&gt;Logout&lt;/a&gt; &lt;/li&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;li&gt; &lt;a href="authenticate.php?logout" onclick="$('#menu-close').click();"&gt;Logout&lt;/a&gt; &lt;/li&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>35</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;/ul&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;/ul&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>36</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;/nav&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;/nav&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>37</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;!-- Header --&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;!-- Header --&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>38</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;header id="top" class="header"&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;header id="top" class="header"&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>39</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;div class="text-vertical-center"&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;div class="text-vertical-center"&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>40</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;h1&gt;CURA Healthcare Service&lt;/h1&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;h1&gt;CURA Healthcare Service&lt;/h1&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>41</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;h3&gt;We Care About Your Health&lt;/h3&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;h3&gt;We Care About Your Health&lt;/h3&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>42</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;br /&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;br /&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>43</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;a id="btn-make-appointment" href="./index.php#appointment" class="btn btn-dark btn-lg"&gt;Make Appointment&lt;/a&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;a id="btn-make-appointment" href="./index.php#appointment" class="btn btn-dark btn-lg"&gt;Make Appointment&lt;/a&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>44</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>45</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;/header&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;/header&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>46</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;section id="appointment" class="section bg-primary"&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;section id="appointment" class="section bg-primary"&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>47</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;div class="container"&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;div class="container"&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>48</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;div class="row"&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;div class="row"&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>49</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;div class="col-sm-12 text-center"&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;div class="col-sm-12 text-center"&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>50</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;h2&gt;Make Appointment&lt;/h2&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;h2&gt;Make Appointment&lt;/h2&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>51</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;hr class="small" /&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;hr class="small" /&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>52</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>53</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;form class="form-horizontal" action="https://katalon-demo-cura.herokuapp.com/appointment.php#summary" method="post"&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;form class="form-horizontal" action="https://katalon-demo-cura.herokuapp.com/appointment.php#summary" method="post"&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>54</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;div class="form-group"&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;div class="form-group"&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>55</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;label for="combo_facility" class="col-sm-offset-3 col-sm-2 control-label"&gt;Facility&lt;/label&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;label for="combo_facility" class="col-sm-offset-3 col-sm-2 control-label"&gt;Facility&lt;/label&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>56</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;div class="col-sm-4"&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;div class="col-sm-4"&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>57</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>        &lt;select id="combo_facility" name="facility" class="form-control"&gt; &lt;option value="Tokyo CURA Healthcare Center"&gt;Tokyo CURA Healthcare Center&lt;/option&gt; &lt;option value="Hongkong CURA Healthcare Center"&gt;Hongkong CURA Healthcare Center&lt;/option&gt; &lt;option value="Seoul CURA Healthcare Center"&gt;Seoul CURA Healthcare Center&lt;/option&gt; &lt;/select&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>        &lt;select id="combo_facility" name="facility" class="form-control"&gt; &lt;option value="Tokyo CURA Healthcare Center"&gt;Tokyo CURA Healthcare Center&lt;/option&gt; &lt;option value="Hongkong CURA Healthcare Center"&gt;Hongkong CURA Healthcare Center&lt;/option&gt; &lt;option value="Seoul CURA Healthcare Center"&gt;Seoul CURA Healthcare Center&lt;/option&gt; &lt;/select&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>58</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>59</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>60</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;div class="form-group"&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;div class="form-group"&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>61</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;div class="col-sm-offset-5 col-sm-4"&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;div class="col-sm-offset-5 col-sm-4"&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>62</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>        &lt;label for="chk_hospotal_readmission" class="checkbox-inline"&gt; &lt;input type="checkbox" id="chk_hospotal_readmission" name="hospital_readmission" value="Yes" /&gt; Apply for hospital readmission &lt;/label&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>        &lt;label for="chk_hospotal_readmission" class="checkbox-inline"&gt; &lt;input type="checkbox" id="chk_hospotal_readmission" name="hospital_readmission" value="Yes" /&gt; Apply for hospital readmission &lt;/label&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>63</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>64</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>65</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;div class="form-group"&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;div class="form-group"&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>66</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;label class="col-sm-offset-3 col-sm-2 control-label"&gt;Healthcare Program&lt;/label&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;label class="col-sm-offset-3 col-sm-2 control-label"&gt;Healthcare Program&lt;/label&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>67</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;div class="col-sm-4"&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;div class="col-sm-4"&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>68</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>        &lt;label class="radio-inline"&gt; &lt;input type="radio" name="programs" id="radio_program_medicare" value="Medicare" checked="" /&gt; Medicare &lt;/label&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>        &lt;label class="radio-inline"&gt; &lt;input type="radio" name="programs" id="radio_program_medicare" value="Medicare" checked="" /&gt; Medicare &lt;/label&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>69</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>        &lt;label class="radio-inline"&gt; &lt;input type="radio" name="programs" id="radio_program_medicaid" value="Medicaid" /&gt; Medicaid &lt;/label&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>        &lt;label class="radio-inline"&gt; &lt;input type="radio" name="programs" id="radio_program_medicaid" value="Medicaid" /&gt; Medicaid &lt;/label&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>70</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>        &lt;label class="radio-inline"&gt; &lt;input type="radio" name="programs" id="radio_program_none" value="None" /&gt; None &lt;/label&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>        &lt;label class="radio-inline"&gt; &lt;input type="radio" name="programs" id="radio_program_none" value="None" /&gt; None &lt;/label&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>71</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>72</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>73</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;div class="form-group"&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;div class="form-group"&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>74</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;label for="txt_visit_date" class="col-sm-offset-3 col-sm-2 control-label"&gt;Visit Date (Required)&lt;/label&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;label for="txt_visit_date" class="col-sm-offset-3 col-sm-2 control-label"&gt;Visit Date (Required)&lt;/label&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>75</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;div class="col-sm-4"&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;div class="col-sm-4"&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>76</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>        &lt;div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy"&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>        &lt;div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy"&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>77</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>         &lt;input type="text" class="form-control" id="txt_visit_date" name="visit_date" placeholder="dd/mm/yyyy" autocomplete="off" required="" /&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>         &lt;input type="text" class="form-control" id="txt_visit_date" name="visit_date" placeholder="dd/mm/yyyy" autocomplete="off" required="" /&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>78</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>         &lt;div class="input-group-addon"&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>         &lt;div class="input-group-addon"&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>79</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>          &lt;span class="glyphicon glyphicon-calendar"&gt;&lt;/span&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>          &lt;span class="glyphicon glyphicon-calendar"&gt;&lt;/span&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>80</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>         &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>         &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>81</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>        &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>        &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>82</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>83</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>84</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;div class="form-group"&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;div class="form-group"&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>85</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;label for="txt_comment" class="col-sm-offset-3 col-sm-2 control-label"&gt;Comment&lt;/label&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;label for="txt_comment" class="col-sm-offset-3 col-sm-2 control-label"&gt;Comment&lt;/label&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>86</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;div class="col-sm-4"&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;div class="col-sm-4"&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>87</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>        &lt;textarea class="form-control" id="txt_comment" name="comment" placeholder="Comment" rows="10"&gt;&lt;/textarea&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>        &lt;textarea class="form-control" id="txt_comment" name="comment" placeholder="Comment" rows="10"&gt;&lt;/textarea&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>88</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>89</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>90</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;div class="form-group"&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;div class="form-group"&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>91</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;div class="col-sm-offset-5 col-sm-4"&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;div class="col-sm-offset-5 col-sm-4"&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>92</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>        &lt;button id="btn-book-appointment" type="submit" class="btn btn-default"&gt;Book Appointment&lt;/button&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>        &lt;button id="btn-book-appointment" type="submit" class="btn btn-default"&gt;Book Appointment&lt;/button&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>93</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>94</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>95</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/form&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/form&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>96</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>97</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>98</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;/section&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;/section&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>99</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;!-- Footer --&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;!-- Footer --&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>100</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;footer&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;footer&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>101</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;div class="container"&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;div class="container"&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>102</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;div class="row"&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;div class="row"&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>103</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;div class="col-lg-10 col-lg-offset-1 text-center"&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;div class="col-lg-10 col-lg-offset-1 text-center"&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>104</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;h4&gt;&lt;strong&gt;CURA Healthcare Service&lt;/strong&gt; &lt;/h4&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;h4&gt;&lt;strong&gt;CURA Healthcare Service&lt;/strong&gt; &lt;/h4&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>105</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;p&gt;Atlanta 550 Pharr Road NE Suite 525&lt;br /&gt;Atlanta, GA 30305&lt;/p&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;p&gt;Atlanta 550 Pharr Road NE Suite 525&lt;br /&gt;Atlanta, GA 30305&lt;/p&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>106</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;ul class="list-unstyled"&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;ul class="list-unstyled"&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>107</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;li&gt;&lt;i class="fa fa-phone fa-fw"&gt;&lt;/i&gt; (678) 813-1KMS&lt;/li&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;li&gt;&lt;i class="fa fa-phone fa-fw"&gt;&lt;/i&gt; (678) 813-1KMS&lt;/li&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>108</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;li&gt;&lt;i class="fa fa-envelope-o fa-fw"&gt;&lt;/i&gt; &lt;a href="mailto:info@katalon.com"&gt;info@katalon.com&lt;/a&gt; &lt;/li&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;li&gt;&lt;i class="fa fa-envelope-o fa-fw"&gt;&lt;/i&gt; &lt;a href="mailto:info@katalon.com"&gt;info@katalon.com&lt;/a&gt; &lt;/li&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>109</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/ul&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/ul&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>110</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;br /&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;br /&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>111</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;ul class="list-inline"&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;ul class="list-inline"&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>112</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;li&gt; &lt;a href="#"&gt;&lt;i class="fa fa-facebook fa-fw fa-3x"&gt;&lt;/i&gt;&lt;/a&gt; &lt;/li&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;li&gt; &lt;a href="#"&gt;&lt;i class="fa fa-facebook fa-fw fa-3x"&gt;&lt;/i&gt;&lt;/a&gt; &lt;/li&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>113</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;li&gt; &lt;a href="#"&gt;&lt;i class="fa fa-twitter fa-fw fa-3x"&gt;&lt;/i&gt;&lt;/a&gt; &lt;/li&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;li&gt; &lt;a href="#"&gt;&lt;i class="fa fa-twitter fa-fw fa-3x"&gt;&lt;/i&gt;&lt;/a&gt; &lt;/li&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>114</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;li&gt; &lt;a href="#"&gt;&lt;i class="fa fa-dribbble fa-fw fa-3x"&gt;&lt;/i&gt;&lt;/a&gt; &lt;/li&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;li&gt; &lt;a href="#"&gt;&lt;i class="fa fa-dribbble fa-fw fa-3x"&gt;&lt;/i&gt;&lt;/a&gt; &lt;/li&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>115</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/ul&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/ul&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>116</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;hr class="small" /&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;hr class="small" /&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>117</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;p class="text-muted"&gt;Copyright &amp;copy; CURA Healthcare Service 2021&lt;/p&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;p class="text-muted"&gt;Copyright &amp;copy; CURA Healthcare Service 2021&lt;/p&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>118</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>119</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>120</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;/div&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>121</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;a id="to-top" href="#top" class="btn btn-dark btn-lg" style="display: none; position: fixed;"&gt;&lt;i class="fa fa-chevron-up fa-fw fa-1x"&gt;&lt;/i&gt;&lt;/a&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;a id="to-top" href="#top" class="btn btn-dark btn-lg" style="display: none; position: fixed;"&gt;&lt;i class="fa fa-chevron-up fa-fw fa-1x"&gt;&lt;/i&gt;&lt;/a&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>122</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;/footer&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;/footer&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>123</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"&gt;&lt;/script&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"&gt;&lt;/script&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>124</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"&gt;&lt;/script&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"&gt;&lt;/script&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>125</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"&gt;&lt;/script&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"&gt;&lt;/script&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>126</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;script src="https://katalon-demo-cura.herokuapp.com//js/theme.js"&gt;&lt;/script&gt; </span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;script src="https://katalon-demo-cura.herokuapp.com//js/theme.js"&gt;&lt;/script&gt; </span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>127</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;div class="datepicker datepicker-dropdown dropdown-menu datepicker-orient-left datepicker-orient-top" style="top: 523px; left: 443.656px; display: block;"&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;div class="datepicker datepicker-dropdown dropdown-menu datepicker-orient-left datepicker-orient-top" style="top: 523px; left: 443.656px; display: block;"&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>128</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;div class="datepicker-days" style="display: block;"&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;div class="datepicker-days" style="display: block;"&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>129</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;table class="table-condensed"&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;table class="table-condensed"&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>130</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;thead&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;thead&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>131</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>132</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="7" class="datepicker-title" style="display: none;"&gt;&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="7" class="datepicker-title" style="display: none;"&gt;&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>133</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>134</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>135</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="prev" style="visibility: visible;"&gt;&amp;laquo;&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="prev" style="visibility: visible;"&gt;&amp;laquo;&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>136</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="5" class="datepicker-switch"&gt;August 2021&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="5" class="datepicker-switch"&gt;August 2021&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>137</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="next" style="visibility: visible;"&gt;&amp;raquo;&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="next" style="visibility: visible;"&gt;&amp;raquo;&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>138</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>139</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>140</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="dow"&gt;Su&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="dow"&gt;Su&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>141</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="dow"&gt;Mo&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="dow"&gt;Mo&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>142</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="dow"&gt;Tu&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="dow"&gt;Tu&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>143</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="dow"&gt;We&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="dow"&gt;We&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>144</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="dow"&gt;Th&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="dow"&gt;Th&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>145</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="dow"&gt;Fr&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="dow"&gt;Fr&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>146</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="dow"&gt;Sa&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="dow"&gt;Sa&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>147</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>148</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/thead&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/thead&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>149</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;tbody&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;tbody&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>150</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>151</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="old day"&gt;25&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="old day"&gt;25&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>152</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="old day"&gt;26&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="old day"&gt;26&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>153</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="old day"&gt;27&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="old day"&gt;27&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>154</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="old day"&gt;28&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="old day"&gt;28&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>155</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="old day"&gt;29&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="old day"&gt;29&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>156</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="old day"&gt;30&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="old day"&gt;30&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>157</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="old day"&gt;31&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="old day"&gt;31&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>158</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>159</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>160</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;1&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;1&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>161</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;2&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;2&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>162</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;3&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;3&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>163</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;4&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;4&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>164</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;5&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;5&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>165</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;6&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;6&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>166</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;7&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;7&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>167</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>168</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>169</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;8&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;8&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>170</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;9&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;9&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>171</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;10&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;10&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>172</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;11&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;11&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>173</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;12&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;12&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>174</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;13&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;13&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>175</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;14&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;14&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>176</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>177</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>178</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;15&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;15&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>179</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;16&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;16&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>180</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;17&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;17&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>181</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;18&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;18&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>182</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;19&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;19&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>183</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;20&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;20&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>184</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;21&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;21&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>185</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>186</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>187</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;22&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;22&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>188</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;23&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;23&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>189</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;24&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;24&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-change'>190</th>
+<td class='code-change'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td </span><span class='deletion'>class="active day"&gt;25&lt;</span><span class='unchanged'>/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-change'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td </span><span class='insertion'>class="day"&gt;25&lt;</span><span class='unchanged'>/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-change'>191</th>
+<td class='code-change'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td </span><span class='deletion'>class="day"&gt;26&lt;</span><span class='unchanged'>/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-change'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td </span><span class='insertion'>class="active day"&gt;26&lt;</span><span class='unchanged'>/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>192</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;27&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;27&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>193</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;28&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;28&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>194</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>195</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>196</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;29&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;29&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>197</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;30&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;30&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>198</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;31&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="day"&gt;31&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>199</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="new day"&gt;1&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="new day"&gt;1&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>200</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="new day"&gt;2&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="new day"&gt;2&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>201</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="new day"&gt;3&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="new day"&gt;3&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>202</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="new day"&gt;4&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td class="new day"&gt;4&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>203</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>204</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/tbody&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/tbody&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>205</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;tfoot&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;tfoot&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>206</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>207</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="7" class="today" style="display: none;"&gt;Today&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="7" class="today" style="display: none;"&gt;Today&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>208</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>209</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>210</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="7" class="clear" style="display: none;"&gt;Clear&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="7" class="clear" style="display: none;"&gt;Clear&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>211</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>212</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/tfoot&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/tfoot&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>213</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;/table&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;/table&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>214</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;/div&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;/div&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>215</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;div class="datepicker-months" style="display: none;"&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;div class="datepicker-months" style="display: none;"&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>216</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;table class="table-condensed"&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;table class="table-condensed"&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>217</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;thead&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;thead&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>218</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>219</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="7" class="datepicker-title" style="display: none;"&gt;&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="7" class="datepicker-title" style="display: none;"&gt;&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>220</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>221</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>222</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="prev" style="visibility: visible;"&gt;&amp;laquo;&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="prev" style="visibility: visible;"&gt;&amp;laquo;&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>223</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="5" class="datepicker-switch"&gt;2021&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="5" class="datepicker-switch"&gt;2021&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>224</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="next" style="visibility: visible;"&gt;&amp;raquo;&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="next" style="visibility: visible;"&gt;&amp;raquo;&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>225</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>226</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/thead&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/thead&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>227</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;tbody&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;tbody&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>228</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>229</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td colspan="7"&gt;&lt;span class="month"&gt;Jan&lt;/span&gt;&lt;span class="month"&gt;Feb&lt;/span&gt;&lt;span class="month"&gt;Mar&lt;/span&gt;&lt;span class="month"&gt;Apr&lt;/span&gt;&lt;span class="month"&gt;May&lt;/span&gt;&lt;span class="month"&gt;Jun&lt;/span&gt;&lt;span class="month"&gt;Jul&lt;/span&gt;&lt;span class="month focused active"&gt;Aug&lt;/span&gt;&lt;span class="month"&gt;Sep&lt;/span&gt;&lt;span class="month"&gt;Oct&lt;/span&gt;&lt;span class="month"&gt;Nov&lt;/span&gt;&lt;span class="month"&gt;Dec&lt;/span&gt;&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td colspan="7"&gt;&lt;span class="month"&gt;Jan&lt;/span&gt;&lt;span class="month"&gt;Feb&lt;/span&gt;&lt;span class="month"&gt;Mar&lt;/span&gt;&lt;span class="month"&gt;Apr&lt;/span&gt;&lt;span class="month"&gt;May&lt;/span&gt;&lt;span class="month"&gt;Jun&lt;/span&gt;&lt;span class="month"&gt;Jul&lt;/span&gt;&lt;span class="month focused active"&gt;Aug&lt;/span&gt;&lt;span class="month"&gt;Sep&lt;/span&gt;&lt;span class="month"&gt;Oct&lt;/span&gt;&lt;span class="month"&gt;Nov&lt;/span&gt;&lt;span class="month"&gt;Dec&lt;/span&gt;&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>230</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>231</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/tbody&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/tbody&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>232</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;tfoot&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;tfoot&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>233</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>234</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="7" class="today" style="display: none;"&gt;Today&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="7" class="today" style="display: none;"&gt;Today&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>235</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>236</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>237</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="7" class="clear" style="display: none;"&gt;Clear&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="7" class="clear" style="display: none;"&gt;Clear&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>238</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>239</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/tfoot&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/tfoot&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>240</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;/table&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;/table&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>241</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;/div&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;/div&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>242</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;div class="datepicker-years" style="display: none;"&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;div class="datepicker-years" style="display: none;"&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>243</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;table class="table-condensed"&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;table class="table-condensed"&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>244</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;thead&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;thead&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>245</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>246</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="7" class="datepicker-title" style="display: none;"&gt;&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="7" class="datepicker-title" style="display: none;"&gt;&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>247</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>248</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>249</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="prev" style="visibility: visible;"&gt;&amp;laquo;&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="prev" style="visibility: visible;"&gt;&amp;laquo;&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>250</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="5" class="datepicker-switch"&gt;2020-2029&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="5" class="datepicker-switch"&gt;2020-2029&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>251</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="next" style="visibility: visible;"&gt;&amp;raquo;&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="next" style="visibility: visible;"&gt;&amp;raquo;&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>252</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>253</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/thead&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/thead&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>254</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;tbody&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;tbody&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>255</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>256</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td colspan="7"&gt;&lt;span class="year old"&gt;2019&lt;/span&gt;&lt;span class="year"&gt;2020&lt;/span&gt;&lt;span class="year active focused"&gt;2021&lt;/span&gt;&lt;span class="year"&gt;2022&lt;/span&gt;&lt;span class="year"&gt;2023&lt;/span&gt;&lt;span class="year"&gt;2024&lt;/span&gt;&lt;span class="year"&gt;2025&lt;/span&gt;&lt;span class="year"&gt;2026&lt;/span&gt;&lt;span class="year"&gt;2027&lt;/span&gt;&lt;span class="year"&gt;2028&lt;/span&gt;&lt;span class="year"&gt;2029&lt;/span&gt;&lt;span class="year new"&gt;2030&lt;/span&gt;&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td colspan="7"&gt;&lt;span class="year old"&gt;2019&lt;/span&gt;&lt;span class="year"&gt;2020&lt;/span&gt;&lt;span class="year active focused"&gt;2021&lt;/span&gt;&lt;span class="year"&gt;2022&lt;/span&gt;&lt;span class="year"&gt;2023&lt;/span&gt;&lt;span class="year"&gt;2024&lt;/span&gt;&lt;span class="year"&gt;2025&lt;/span&gt;&lt;span class="year"&gt;2026&lt;/span&gt;&lt;span class="year"&gt;2027&lt;/span&gt;&lt;span class="year"&gt;2028&lt;/span&gt;&lt;span class="year"&gt;2029&lt;/span&gt;&lt;span class="year new"&gt;2030&lt;/span&gt;&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>257</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>258</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/tbody&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/tbody&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>259</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;tfoot&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;tfoot&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>260</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>261</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="7" class="today" style="display: none;"&gt;Today&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="7" class="today" style="display: none;"&gt;Today&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>262</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>263</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>264</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="7" class="clear" style="display: none;"&gt;Clear&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="7" class="clear" style="display: none;"&gt;Clear&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>265</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>266</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/tfoot&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/tfoot&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>267</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;/table&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;/table&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>268</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;/div&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;/div&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>269</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;div class="datepicker-decades" style="display: none;"&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;div class="datepicker-decades" style="display: none;"&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>270</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;table class="table-condensed"&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;table class="table-condensed"&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>271</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;thead&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;thead&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>272</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>273</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="7" class="datepicker-title" style="display: none;"&gt;&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="7" class="datepicker-title" style="display: none;"&gt;&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>274</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>275</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>276</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="prev" style="visibility: visible;"&gt;&amp;laquo;&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="prev" style="visibility: visible;"&gt;&amp;laquo;&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>277</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="5" class="datepicker-switch"&gt;2000-2090&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="5" class="datepicker-switch"&gt;2000-2090&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>278</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="next" style="visibility: visible;"&gt;&amp;raquo;&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="next" style="visibility: visible;"&gt;&amp;raquo;&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>279</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>280</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/thead&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/thead&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>281</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;tbody&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;tbody&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>282</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>283</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td colspan="7"&gt;&lt;span class="decade old"&gt;1990&lt;/span&gt;&lt;span class="decade"&gt;2000&lt;/span&gt;&lt;span class="decade"&gt;2010&lt;/span&gt;&lt;span class="decade active"&gt;2020&lt;/span&gt;&lt;span class="decade"&gt;2030&lt;/span&gt;&lt;span class="decade"&gt;2040&lt;/span&gt;&lt;span class="decade"&gt;2050&lt;/span&gt;&lt;span class="decade"&gt;2060&lt;/span&gt;&lt;span class="decade"&gt;2070&lt;/span&gt;&lt;span class="decade"&gt;2080&lt;/span&gt;&lt;span class="decade"&gt;2090&lt;/span&gt;&lt;span class="decade new"&gt;2100&lt;/span&gt;&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td colspan="7"&gt;&lt;span class="decade old"&gt;1990&lt;/span&gt;&lt;span class="decade"&gt;2000&lt;/span&gt;&lt;span class="decade"&gt;2010&lt;/span&gt;&lt;span class="decade active"&gt;2020&lt;/span&gt;&lt;span class="decade"&gt;2030&lt;/span&gt;&lt;span class="decade"&gt;2040&lt;/span&gt;&lt;span class="decade"&gt;2050&lt;/span&gt;&lt;span class="decade"&gt;2060&lt;/span&gt;&lt;span class="decade"&gt;2070&lt;/span&gt;&lt;span class="decade"&gt;2080&lt;/span&gt;&lt;span class="decade"&gt;2090&lt;/span&gt;&lt;span class="decade new"&gt;2100&lt;/span&gt;&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>284</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>285</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/tbody&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/tbody&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>286</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;tfoot&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;tfoot&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>287</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>288</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="7" class="today" style="display: none;"&gt;Today&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="7" class="today" style="display: none;"&gt;Today&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>289</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>290</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>291</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="7" class="clear" style="display: none;"&gt;Clear&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="7" class="clear" style="display: none;"&gt;Clear&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>292</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>293</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/tfoot&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/tfoot&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>294</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;/table&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;/table&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>295</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;/div&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;/div&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>296</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;div class="datepicker-centuries" style="display: none;"&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;div class="datepicker-centuries" style="display: none;"&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>297</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;table class="table-condensed"&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;table class="table-condensed"&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>298</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;thead&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;thead&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>299</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>300</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="7" class="datepicker-title" style="display: none;"&gt;&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="7" class="datepicker-title" style="display: none;"&gt;&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>301</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>302</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>303</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="prev" style="visibility: visible;"&gt;&amp;laquo;&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="prev" style="visibility: visible;"&gt;&amp;laquo;&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>304</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="5" class="datepicker-switch"&gt;2000-2900&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="5" class="datepicker-switch"&gt;2000-2900&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>305</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="next" style="visibility: visible;"&gt;&amp;raquo;&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th class="next" style="visibility: visible;"&gt;&amp;raquo;&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>306</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>307</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/thead&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/thead&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>308</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;tbody&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;tbody&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>309</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>310</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td colspan="7"&gt;&lt;span class="century old"&gt;1900&lt;/span&gt;&lt;span class="century active"&gt;2000&lt;/span&gt;&lt;span class="century"&gt;2100&lt;/span&gt;&lt;span class="century"&gt;2200&lt;/span&gt;&lt;span class="century"&gt;2300&lt;/span&gt;&lt;span class="century"&gt;2400&lt;/span&gt;&lt;span class="century"&gt;2500&lt;/span&gt;&lt;span class="century"&gt;2600&lt;/span&gt;&lt;span class="century"&gt;2700&lt;/span&gt;&lt;span class="century"&gt;2800&lt;/span&gt;&lt;span class="century"&gt;2900&lt;/span&gt;&lt;span class="century new"&gt;3000&lt;/span&gt;&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;td colspan="7"&gt;&lt;span class="century old"&gt;1900&lt;/span&gt;&lt;span class="century active"&gt;2000&lt;/span&gt;&lt;span class="century"&gt;2100&lt;/span&gt;&lt;span class="century"&gt;2200&lt;/span&gt;&lt;span class="century"&gt;2300&lt;/span&gt;&lt;span class="century"&gt;2400&lt;/span&gt;&lt;span class="century"&gt;2500&lt;/span&gt;&lt;span class="century"&gt;2600&lt;/span&gt;&lt;span class="century"&gt;2700&lt;/span&gt;&lt;span class="century"&gt;2800&lt;/span&gt;&lt;span class="century"&gt;2900&lt;/span&gt;&lt;span class="century new"&gt;3000&lt;/span&gt;&lt;/td&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>311</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>312</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/tbody&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/tbody&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>313</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;tfoot&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;tfoot&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>314</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>315</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="7" class="today" style="display: none;"&gt;Today&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="7" class="today" style="display: none;"&gt;Today&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>316</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>317</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>318</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="7" class="clear" style="display: none;"&gt;Clear&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>       &lt;th colspan="7" class="clear" style="display: none;"&gt;Clear&lt;/th&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>319</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>      &lt;/tr&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>320</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/tfoot&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>     &lt;/tfoot&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>321</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;/table&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>    &lt;/table&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>322</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;/div&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>   &lt;/div&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>323</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;/div&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>  &lt;/div&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>324</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'> &lt;/body&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'> &lt;/body&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<th class='code-equal'>325</th>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>&lt;/html&gt;</span>
+</span>
+</span>
+</td>
+<td class='code-equal'>
+<span class='blob-code-inner'><span class='blob-code-inner'><span class='unchanged'>&lt;/html&gt;</span>
+</span>
+</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>

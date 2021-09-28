@@ -1,0 +1,12 @@
+713227206acc367ed2fec720c2a221d76be55135	html	{"URL.fragment":"appointment", "URL.host":"katalon-demo-cura.herokuapp.com", "URL.path":"/", "URL.protocol":"https"}
+dbacc1dd31687b5ed40316362fc0072c30f25ee2	png	{"URL.fragment":"appointment", "URL.host":"katalon-demo-cura.herokuapp.com", "URL.path":"/", "URL.protocol":"https"}
+25c756efbd133d381b24c202b33099823bb4f2ac	html	{"URL.fragment":"summary", "URL.host":"katalon-demo-cura.herokuapp.com", "URL.path":"/appointment.php", "URL.protocol":"https"}
+31e994e624341e316acd2695ce2a14eb1d57bcd9	png	{"URL.fragment":"summary", "URL.host":"katalon-demo-cura.herokuapp.com", "URL.path":"/appointment.php", "URL.protocol":"https"}
+44b9b36d854d2dc50b350ef58335196cc53132b9	html	{"URL.host":"demoaut-mimic.kazurayam.com", "URL.path":"/", "URL.protocol":"http"}
+66d2e9b2864bc8049095174d7175f48fa9daf6a8	png	{"URL.host":"demoaut-mimic.kazurayam.com", "URL.path":"/", "URL.protocol":"http"}
+b5f55ed6448246ba960cc5c5ab9c330bb1760994	png	{"category":"diff", "left":"44bb084d2cb0fcd62a4cb4c9045923d52874d9a4", "ratio":"0.61", "right":"31e994e624341e316acd2695ce2a14eb1d57bcd9"}
+098560e6135cbb066e7cb77b4881f2312b9a75e8	png	{"category":"diff", "left":"49d7d7c58aa04cc5e14025ed555c2fba65f7f0e7", "ratio":"0.78", "right":"dbacc1dd31687b5ed40316362fc0072c30f25ee2"}
+9c4fafc4ea09f55c6fc69e54fa695a8f11938c02	html	{"category":"diff", "left":"5e85fb5046edf1670b0b2adcb46f6723c3b8bc6d", "ratio":"0.78", "right":"25c756efbd133d381b24c202b33099823bb4f2ac"}
+61d58bb5f2b4b5d5d8528e3a0aee76bc119d9a9b	png	{"category":"diff", "left":"8ab0033ead09fa0038602cb85cc582db5ea36ceb", "ratio":"1.99", "right":"66d2e9b2864bc8049095174d7175f48fa9daf6a8"}
+13ef33debe0d9b36af86850bf7684e2c64cdbd9b	html	{"category":"diff", "left":"96adb830ac71ac25aa4de9033c9723118de4922a", "ratio":"10.27", "right":"713227206acc367ed2fec720c2a221d76be55135"}
+3d06af3596dfe171a8f1f1ba4783590c6d466fd8	html	{"category":"diff", "left":"9d5212e268160be11444639880f5060ec721dd08", "ratio":"0.88", "right":"44b9b36d854d2dc50b350ef58335196cc53132b9"}
