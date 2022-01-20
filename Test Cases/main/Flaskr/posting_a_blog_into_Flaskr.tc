@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>posting_a_blog_into_Flaskr</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>7594bf50-e794-4327-8e23-17e5352b4e81</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>bf89eb02-19f5-45ec-b1cd-b65d250cbe83</id>
+      <masked>false</masked>
+      <name>profile</name>
+   </variable>
+   <variable>
+      <defaultValue>null</defaultValue>
+      <description></description>
+      <id>bc051d77-66d2-4dd1-9908-9e89f0fd915c</id>
+      <masked>false</masked>
+      <name>store</name>
+   </variable>
+   <variable>
+      <defaultValue>null</defaultValue>
+      <description></description>
+      <id>b9cf6c37-cfdd-4eb8-9534-90316ffb72df</id>
+      <masked>false</masked>
+      <name>jobName</name>
+   </variable>
+   <variable>
+      <defaultValue>null</defaultValue>
+      <description></description>
+      <id>1cb36dc5-8ae5-4406-b26c-b058d0fbe8c3</id>
+      <masked>false</masked>
+      <name>jobTimestamp</name>
+   </variable>
+</TestCaseEntity>

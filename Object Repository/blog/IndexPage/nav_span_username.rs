@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>nav_span_username</name>
+   <tag></tag>
+   <elementGuidId>54059bd6-299e-4eab-9447-faae075d25b4</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//nav/ul/li/span[text()='${username}']</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//nav/ul/li/span[text()='${username}']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//nav/ul/li/span[text()='${username}']</value>
+   </webElementProperties>
+</WebElementEntity>

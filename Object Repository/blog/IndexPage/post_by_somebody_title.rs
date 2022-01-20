@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>post_by_somebody_title</name>
+   <tag></tag>
+   <elementGuidId>ec0cdde1-e688-41ef-960b-b021247d16da</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value>//section[contains(@class,'content')]/article[header/div/div[contains(text(),'${by}')]][1]/header/div/h1</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//section[contains(@class,'content')]/article[header/div/div[contains(text(),'$by')]][1]/header/div/h1</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>BASIC</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>//section[contains(@class,'content')]/article[header/div/div[contains(text(),'${by}')]][1]/header/div/h1</value>
+   </webElementProperties>
+</WebElementEntity>

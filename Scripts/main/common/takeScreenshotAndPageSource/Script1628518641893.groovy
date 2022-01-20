@@ -31,3 +31,5 @@ WebDriver driver = DriverFactory.getWebDriver()
 Document doc = Jsoup.parse(driver.getPageSource())
 Material html = store.write(jobName, jobTimestamp, FileType.HTML, metadata, doc.toString())
 assert html != null
+
+return new Tuple(image, html)
