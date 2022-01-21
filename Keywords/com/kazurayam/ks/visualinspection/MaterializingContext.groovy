@@ -18,6 +18,9 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 public class MaterializingContext {
 
+	public static final NULL_OBJECT =
+	new MaterializingContext("__NULL_OBJECT__", Store.NULL_OBJECT, JobName.NULL_OBJECT, JobTimestamp.NULL_OBJECT)
+
 	private final String profile
 	private final Store store
 	private final JobName jobName
@@ -42,8 +45,7 @@ public class MaterializingContext {
 		Objects.requireNonNull(url)
 		Metadata metadata = Metadata.builderWithUrl(url)
 				.put("profile", profile)
-				// want to add the attributes
-				// see https://github.com/kazurayam/materialstore/issues/65
+				.putAll(additionalMetadata)
 				.build()
 
 		// take a screenshot and save the image into a temporary file using Katalon's built-in keyword

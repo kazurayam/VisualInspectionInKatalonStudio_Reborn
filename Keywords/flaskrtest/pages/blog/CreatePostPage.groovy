@@ -19,6 +19,12 @@ public class CreatePostPage {
 	CreatePostPage(WebDriver browser) {
 		this.browser = browser
 	}
+	
+	URL get_url() {
+		DriverFactory.changeWebDriver(browser)
+		String url = WebUI.getUrl()
+		return new URL(url)
+	}
 
 	Boolean save_button_exists() {
 		DriverFactory.changeWebDriver(browser)

@@ -40,4 +40,11 @@ public class LogInPage {
 		DriverFactory.changeWebDriver(browser)
 		WebUI.click(LOGIN_BUTTON)
 	}
+
+	URL get_url() {
+		DriverFactory.changeWebDriver(browser)
+		String url = WebUI.getUrl()
+		return new URL(url)
+	}
+
 }

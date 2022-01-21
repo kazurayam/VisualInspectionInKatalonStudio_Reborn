@@ -192,4 +192,11 @@ class IndexPage {
 				})
 				.collect(Collectors.toList())
 	}
+	
+	URL get_url() {
+		DriverFactory.changeWebDriver(browser)
+		String url = WebUI.getUrl()
+		return new URL(url)
+	}
+
 }
