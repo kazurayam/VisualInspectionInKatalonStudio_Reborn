@@ -555,7 +555,7 @@ In the sample4, we need 2 URLs available on our own PC.
 - http://127.0.0.1/
 - http://127.0.0.1:3090 
 
-You can let it work on your PC. You need Docker installed.
+You can make it work on your PC. You need [Docker](https://www.docker.com/) installed into your PC.
 
 ### Installing Docker Desktop
 
@@ -563,7 +563,7 @@ On my MacBook Air, I installed [Docker Desktop](https://www.docker.com/products/
 
 ### Command Line Interface
 
-Here I assume you work on Command Line Interface. I use the Terminal.app of macOS. For Windows user, install [Git Bash](https://gitforwindows.org/) and use "Git Bash".
+Here I assume you work on a Command Line Interface. I use the Terminal.app of macOS. For Windows user, install [Git for Windows](https://gitforwindows.org/) which bundles "Git Bash".
 
 ### Starting up Flaskr
 
@@ -574,7 +574,7 @@ $ cd $VisualInspectionInKatalonStudio_Reborn
 $ ./startup-flaskr-prod.sh
 ```
 
-This shell script will show 2 lines of messages and will block:
+This shell script will emit 2 lines of messages and will block:
 ```
 you can visit http://127.0.0.1/
 Serving on http://0.0.0.0:8080
@@ -587,15 +587,15 @@ $ cd $VisualInspectionInKatalonStudio_Reborn
 $ ./startup-flaskr-dev.sh
 ```
 
-This will show 2 lines of messages and will block:
+This will emit 2 lines of messages and will block:
 
 ```
-$ ./startup-flaskr-dev.sh 
+$ ./startup-flaskr-dev.sh
 you can visit http://127.0.0.1:3090/
 Serving on http://0.0.0.0:8080
 ```
 
-By `lsof` command, you can make sure that 2 processes are listening to the IP port #80 and #3090.
+By `lsof` command, you can make sure that 2 processes are listening to the IP port #80 and #3090 on your localhost.
 
 ```
 $  lsof -i -P | grep LISTEN | grep com.docke
@@ -605,11 +605,11 @@ com.docke   709 kazuakiurayama  111u  IPv6 0x84f53716e8d771d3      0t0  TCP *:80
 
 ### Shutting down Flaskr gracefully
 
-You can stop the docker process by typing CTRL + C.
+You can stop the docker process gracefully by typing CTRL + C.
 
-You should NEVER close the Terminal.app window without gracefully stopping the docker process.
+You should NEVER close the window of Command Line Interface without stopping the docker process by CTLR + C.
 
-If you forced to close the Terminal, then the IP Port #80 and #3090 might be held used. In that case you would fail to start the process of Flaskr again. When it occurred, you need to stop & restart your PC/OS to release the ports.
+If you forced to close the window, then IP Port #80 and #3090 might be left *USED* status. In that case you would fail to start a new process of Flaskr again. When it occurred, you need to stop & restart your PC/OS to release the ports.
 
 ### How I used Docker
 
@@ -626,7 +626,7 @@ docker run -it -p 80:8080 kazurayam/flaskr-kazurayam:1.1.0
 cd $CWD
 ```
 
-As you see, it runs `docker run` command with a docker image `kazurayam/flaskr-kazurayam:1.1.0`. I created the docker image and published at the Docker Hub https://hub.docker.com/repository/docker/kazurayam/flaskr-kazurayam .
+As you see, it runs `docker run` command with a docker image `kazurayam/flaskr-kazurayam:1.1.0`. I created this docker image and published at the [Docker Hub](https://hub.docker.com/repository/docker/kazurayam/flaskr-kazurayam).
 
 
 ## Notes on Extensibility
