@@ -566,7 +566,7 @@ Here I assume you work on Command Line Interface. I use the Terminal.app of macO
 
 ### Starting up Flaskr
 
-Once Docker Desktop is installed, open a window of Terminal.app on Mac (on Windows, perhaps in the Powershell window), then execute:
+Open a window of Command Line Interface, then execute:
 
 ```
 $ cd $VisualInspectionInKatalonStudio_Reborn
@@ -579,7 +579,7 @@ you can visit http://127.0.0.1/
 Serving on http://0.0.0.0:8080
 ```
 
-Next, you want to open another window of Terminal.app on Mac (on Windows, a Powershell window), then execute:
+Next, you want to open one more window of Command Line Interface, then execute:
 
 ```
 $ cd $VisualInspectionInKatalonStudio_Reborn
@@ -594,18 +594,25 @@ you can visit http://127.0.0.1:3090/
 Serving on http://0.0.0.0:8080
 ```
 
+By `lsof` command, you can make sure that 2 processes are listening to the IP port #80 and #3090.
+
+```
+$  lsof -i -P | grep LISTEN | grep com.docke
+com.docke   709 kazuakiurayama  107u  IPv6 0x84f53716e8d7cb33      0t0  TCP *:3090 (LISTEN)
+com.docke   709 kazuakiurayama  111u  IPv6 0x84f53716e8d771d3      0t0  TCP *:80 (LISTEN)
+```
+
 ### Shutting down Flaskr gracefully
 
 You can stop the docker process by typing CTRL + C.
 
 You should NEVER close the Terminal.app window without gracefully stopping the docker process.
 
-If you forced to close the Terminal, then the IP Port #80 and #3090 might be held used, so that you will fail to start the Flaskr again. When it happened, you need to stop & restart your PC/OS to release the help ports.
-
+If you forced to close the Terminal, then the IP Port #80 and #3090 might be held used. In that case you would fail to start the process of Flaskr again. When it occurred, you need to stop & restart your PC/OS to release the ports.
 
 ### How I used Docker
 
-The [startup-flaskr-prod.sh](startup-flaskr-prod.sh) is codes like this:
+Hava a look at the code of [startup-flaskr-prod.sh](startup-flaskr-prod.sh):
 
 ```
 CWD=$(pwd)
@@ -618,7 +625,7 @@ docker run -it -p 80:8080 kazurayam/flaskr-kazurayam:1.1.0
 cd $CWD
 ```
 
-As you see, it runs `docker run` command with a docker image `kazurayam/flaskr-kazurayam:1.1.0`. I created it and published at the Docker Hub https://hub.docker.com/repository/docker/kazurayam/flaskr-kazurayam .
+As you see, it runs `docker run` command with a docker image `kazurayam/flaskr-kazurayam:1.1.0`. I created the docker image and published at the Docker Hub https://hub.docker.com/repository/docker/kazurayam/flaskr-kazurayam .
 
 
 ## Notes on Extensibility
