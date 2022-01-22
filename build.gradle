@@ -2,6 +2,8 @@
 
 // $ gradle drivers
 
+version = '0.2.0'
+
 ext {
     AUTO_IMPORTED_JAR_PREFIX = 'AUTOIMPORTED_'
     ExecutionProfilesLoaderVersion = "1.2.1"

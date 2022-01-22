@@ -488,7 +488,7 @@ The test case [Flaskr/VisualInspectionTwins](Scripts/main/Flaskr/VisualInspectio
 
 4. The test case compares each pairs of URLs and generates diff images. The following is an example of a diff image. Please find the section on the top-left side <span style="color:red;">painted red</span>, which is the diff. ![diff](docs/store/Flaskr_VisualInspectionTwins/20220122_101212/objects/27e09bdfcfc014b102f1e74b61a428514fbd6cc8.png)
 
-5. The test case generates a HTML report which shows a list all of the materials (screenshot images and HTML page sources) attached with detail diff information. You can find an example [here](docs/store/Flaskr_VisualInspectionTwins-index.html).
+5. The test case generates a HTML report which shows a list all of the materials (screenshot images and HTML page sources) attached with detail diff information. You can find an example [here](https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/Flaskr_VisualInspectionTwins-index.html).
 
 
 #### (2) How to run the test
