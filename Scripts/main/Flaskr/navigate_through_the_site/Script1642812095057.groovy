@@ -27,15 +27,20 @@ WebUI.setViewPortSize(720,600)
 assert GlobalVariable.URL != null, "GlobalVariable.URL is not defined"
 URL indexUrl = new URL(GlobalVariable.URL)
 
-// Bob logs in
-LoginAction.do_login(browser, indexUrl, User.Bob, matz)
+User user = User.Bob
+Song song = Songs.get(1)
 
-Song song_of_queen = Songs.get(1)
+/* alternatively you can try */
+// User user = User.Alice
+// Song song = Songs.get(0)
 
-// Bob makes a post with a song by Queen
-PostAction.new_post(browser, indexUrl, User.Bob, song_of_queen, matz)
+// the user logs in
+LoginAction.do_login(browser, indexUrl, user, matz)
 
-// Bob logs out
+// the user makes a post with a song
+PostAction.new_post(browser, indexUrl, user, song, matz)
+
+// the user logs out
 LogoutAction.do_logout(browser, indexUrl, matz)
 
 browser.quit()

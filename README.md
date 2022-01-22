@@ -1,6 +1,7 @@
 # Visual Inspection in Katalon Studio - Reborn
 
 - @date Aug 2021
+- @update Jan 2022: add the Sample4
 - @author kazurayam
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
