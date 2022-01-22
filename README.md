@@ -45,6 +45,7 @@
     - [(6) How the test is coded](#6-how-the-test-is-coded)
 - [Setup Docker & Flaskr on your PC](#setup-docker--flaskr-on-your-pc)
   - [Installing Docker Desktop](#installing-docker-desktop)
+  - [Command Line Interface](#command-line-interface)
   - [Starting up Flaskr](#starting-up-flaskr)
   - [Shutting down Flaskr gracefully](#shutting-down-flaskr-gracefully)
   - [How I used Docker](#how-i-used-docker)
