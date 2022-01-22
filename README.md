@@ -491,6 +491,8 @@ The test case [Flaskr/VisualInspectionTwins](Scripts/main/Flaskr/VisualInspectio
 
 5. The test case generates a HTML report which shows a list all of the materials (screenshot images and HTML page sources) attached with detail diff information. You can find an example [here](https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/Flaskr_VisualInspectionTwins-index.html).
 
+![report](docs/images/Sample4_Flaskr/Flaskr_VisualInspectionTwins.png)
+
 
 #### (2) How to run the test
 
