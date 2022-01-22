@@ -461,14 +461,14 @@ Also you can see the diff of HTML page source.
 
 ### Sample4: Navigating multiple URLs in Twins mode
 
-The sample3 showed how to compare just a single pair of URLs. The next sample4 shows how to compare multiple paris of URLs. The sample4 shows how to navigate though a site for 7 pages while taking screenshots and HTML sources.
+The sample3 showed how to compare just a single pair of URLs. The next sample4 shows how to compare multiple pairs of URLs. The sample4 shows how to navigate though a site for 7 pages while taking screenshots and HTML sources.
 
 #### (1) What the test case does?
 
 The test case [Flaskr/VisualInspectionTwins](Scripts/main/Flaskr/VisualInspectionTwins/Script1642595597544.groovy) does the following:
 
 1. It compares 2 web sites visually: `http://127.0.0.1` and `http://127.0.0.1:3090`. 
-- (You can setup these URLs on your PC locally. I will explain how to later in this section.)
+- (You can setup these URLs on your PC locally. I will explain how to later in this document.)
 2. A web application named **Flakr** run in the URLs. Let me call them "Flaskr *Prod env*" and "Flaskr *Dev env*". These 2 URLs have just the same functionality. But the pages look slightly different. The production environment has no site logo, but the development environment has a small site logo. <img alt="logo" src="docs/images/Sample4_Flaskr/site_logo.png" width="22pt">.
 - the Prod env
 ![Prod](docs/store/Flaskr_VisualInspectionTwins/20220122_101200/objects/4646385252b24fdbca95b1ef3413ce6367588388.png)
@@ -512,16 +512,17 @@ You can easily restart the Flaskr process by executing `startup-flaskr-prod.sh`.
 
 #### (4) Initializing Database in the web app
 
-The Flaskr has a backend database where the blog post are stored. After you repeat executing tests you will find many blog posts are stored, and you will feel like to clean the database out.
+The Flaskr has a backend database where credentials and blog posts are stored. After you repeated running tests several times you will find many blog posts are stored, and you would feel like to clean the database out.
 
-You just want to stop the web app by CTRL + C and restart it. In the start-up process, the database will be initialized.
+Just type CTRL + C to stop the docker process and restart it. The start-up script will automatically initialize the internal database and make it empty.
 
 #### (5) What is Flaskr?
 
-Flaskr is coded in Python language on top of the "Flask" web application framework. I learned the Flaskr web app at the [Flask Tutorial](https://flask.palletsprojects.com/en/2.0.x/tutorial/) by Pallets project.
+Flaskr is coded in Python language on top of the "Flask" web application framework. I learned the Flaskr web app at the [Flask Tutorial](https://flask.palletsprojects.com/en/2.0.x/tutorial/) authored and published by the Pallets project.
 
 >This tutorial will walk you through creating a basic blog application called Flaskr. Users will be able to register, log in, create posts, and edit or delete their own posts. 
 
+I used the source code 99% as is. I amended it slightly to diplay the site logo in the Dev env only.
 
 #### (6) How the test is coded
 
@@ -542,7 +543,6 @@ and a lot of related Groovy classes
 - [Keywords/flaskrtest/pages/blog/CreatePostPage.groovy](Keywords/flaskrtest/pages/blog/CreatePostPage.groovy)
 - [Keywords/flaskrtest/pages/blog/IndexPage.groovy](Keywords/flaskrtest/pages/blog/IndexPage.groovy)
 - [Keywords/flaskrtest/pages/blog/Post.groovy](Keywords/flaskrtest/pages/blog/Post.groovy)
-- [Keywords/flaskrtest/pages/blog/UpdatePostPage.groovy](Keywords/flaskrtest/pages/blog/UpdatePostPage.groovy)
 
 Why do I have these Groovy classes? --- It is because I employed the ["Page Object Model"](https://www.guru99.com/page-object-model-pom-page-factory-in-selenium-ultimate-guide.html). The Page Object Model helped me in writing compact and readable codes.
 
@@ -553,11 +553,11 @@ In the sample4, we need 2 URLs available on our own PC.
 - http://127.0.0.1/
 - http://127.0.0.1:3090 
 
-You can let it work on your PC. You need install Docker.
+You can let it work on your PC. You need Docker installed.
 
 ### Installing Docker Desktop
 
-On my MacBook Air, I installed [Docker Desktop](https://www.docker.com/products/docker-desktop). If you are on Windows, then you should be able to use Docker Desktop for Windows.
+On my MacBook Air, I installed [Docker Desktop](https://www.docker.com/products/docker-desktop). Docker Desktop for Windows is also available.
 
 ### Starting up Flaskr
 
@@ -588,6 +588,14 @@ $ ./startup-flaskr-dev.sh
 you can visit http://127.0.0.1:3090/
 Serving on http://0.0.0.0:8080
 ```
+
+### Shutting down Flaskr gracefully
+
+You can stop the docker process by typing CTRL + C.
+
+You should NEVER close the Terminal.app window without gracefully stopping the docker process.
+
+If you forced to close the Terminal, then the HTTP port #80 and #3090 might be help used, so that you will fail to start the Flaskr again. When it happened, you should stop & restart your PC to release the ports.
 
 
 ### How I used Docker
