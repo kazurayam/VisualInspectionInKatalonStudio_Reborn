@@ -37,7 +37,7 @@
     - [(4) makiing diffs of Twins](#4-makiing-diffs-of-twins)
     - [(5) The report generated](#5-the-report-generated-1)
   - [Sample4 Navigating multiple URLs in Twins mode](#sample4-navigating-multiple-urls-in-twins-mode)
-    - [(1) Test Cases/Flaskr/VisualInspectionTwins](#1-test-casesflaskrvisualinspectiontwins)
+    - [(1) What the test case does?](#1-what-the-test-case-does)
     - [(2) How to run the test](#2-how-to-run-the-test)
     - [(3) What is Flaskr?](#3-what-is-flaskr)
     - [(4) How the test is coded](#4-how-the-test-is-coded)
