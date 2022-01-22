@@ -595,7 +595,7 @@ You can stop the docker process by typing CTRL + C.
 
 You should NEVER close the Terminal.app window without gracefully stopping the docker process.
 
-If you forced to close the Terminal, then the HTTP port #80 and #3090 might be help used, so that you will fail to start the Flaskr again. When it happened, you should stop & restart your PC to release the ports.
+If you forced to close the Terminal, then the IP Port #80 and #3090 might be held used, so that you will fail to start the Flaskr again. When it happened, you need to stop & restart your PC/OS to release the help ports.
 
 
 ### How I used Docker
