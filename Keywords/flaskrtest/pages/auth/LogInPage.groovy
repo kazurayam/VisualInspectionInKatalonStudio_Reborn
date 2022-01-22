@@ -46,5 +46,4 @@ public class LogInPage {
 		String url = WebUI.getUrl()
 		return new URL(url)
 	}
-
 }

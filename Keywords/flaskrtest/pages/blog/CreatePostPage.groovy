@@ -19,7 +19,7 @@ public class CreatePostPage {
 	CreatePostPage(WebDriver browser) {
 		this.browser = browser
 	}
-	
+
 	URL get_url() {
 		DriverFactory.changeWebDriver(browser)
 		String url = WebUI.getUrl()

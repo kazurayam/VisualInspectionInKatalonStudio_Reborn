@@ -462,33 +462,33 @@ Also you can see the diff of HTML page source.
 
 The sample3 showed how to compare just a single pair of URLs. The next sample4 shows how to compare multiple paris of URLs. The sample4 shows how to navigate though a site while taking screenshots of web pages.
 
-#### (1) Test Cases/Flaskr/VisualInspectionTwins
+#### (1) What the test case does?
 
 The test case [Flaskr/VisualInspectionTwins](Scripts/main/Flaskr/VisualInspectionTwins/Script1642595597544.groovy) does the following:
 
 1. It compares 2 web sites visually: `http://127.0.0.1` and `http://127.0.0.1:3090`. (You can setup these URLs on your PC locally. I will explain how to later in this section.)
 2. At the URL runs a web application named **Flakr**. Let me call them "Flaskr Prod env" and "Flaskr Dev env". These 2 URLs have just the same functionality. But the pages look slightly different. The production environment has no site logo, but the development environment has a small site logo <img alt="logo" src="docs/images/Sample4_Flaskr/site_logo.png" width="22pt">.
 - the Prod env
-![Prod](store/Flaskr_VisualInspectionTwins/20220122_101200/objects/4646385252b24fdbca95b1ef3413ce6367588388.png)
+![Prod](docs/store/Flaskr_VisualInspectionTwins/20220122_101200/objects/4646385252b24fdbca95b1ef3413ce6367588388.png)
 - the Dev env
-![Dev](store/Flaskr_VisualInspectionTwins/20220122_101212/objects/4640bfb0825cafa44dd85f9fc9fc1515bf0a0f9a.png)
+![Dev](docs/store/Flaskr_VisualInspectionTwins/20220122_101212/objects/4640bfb0825cafa44dd85f9fc9fc1515bf0a0f9a.png)
 
 3. The test case starts visiting the index page, then navigates through pages by clicking menu anchors, typing texts, clicking buttons, etc.
 
 | Step | description          | Prod env URL      | Dev env URL |
 |:-----|:---------------------|:------------------|:------------|
-|step1 | index page           | http://127.0.0.1/ | http://127.0.0.1:3090/ |
-|step2 | register credential  | http://127.0.0.1/auth/register | http://127.0.0.1:3090/auth/register |
-|step3 | log in               | http://127.0.0.1/auth/login | http://127.0.0.1:3090/auth/login |
-|step4 | posting - blank      | http://127.0.0.1/create | http://127.0.0.1:3090/create |
-|step5 | posting - text typed | http://127.0.0.1/create | http://127.0.0.1:3090/create |
-|step6 | list of blogs        | http://127.0.0.1/ | http://127.0.0.1:3090/ |
-|step7 | log out              | http://127.0.0.1/ | http://127.0.0.1:3090/ |
+|step1 | index page           | http&#58;//127.0.0.1/ | http&#58;//127.0.0.1:3090/ |
+|step2 | register credential  | http&#58;//127.0.0.1/auth/register | http&#58;//127.0.0.1:3090/auth/register |
+|step3 | log in               | http&#58;//127.0.0.1/auth/login | http&#58;//127.0.0.1:3090/auth/login |
+|step4 | posting - blank      | http&#58;//127.0.0.1/create | http&#58;//127.0.0.1:3090/create |
+|step5 | posting - text typed | http&#58;//127.0.0.1/create | http&#58;//127.0.0.1:3090/create |
+|step6 | list of blogs        | http&#58;//127.0.0.1/ | http&#58;//127.0.0.1:3090/ |
+|step7 | log out              | http&#58;//127.0.0.1/ | http&#58;//127.0.0.1:3090/ |
 
 4. The test case compares each pairs of URLs and generates diff images. The following is an example of a diff image.
-![diff](store/Flaskr_VisualInspectionTwins/20220122_101212/objects/27e09bdfcfc014b102f1e74b61a428514fbd6cc8.png)
+![diff](docs/store/Flaskr_VisualInspectionTwins/20220122_101212/objects/27e09bdfcfc014b102f1e74b61a428514fbd6cc8.png)
 
-5. The test case generates a HTML report which shows a list all of the materials (screenshot images and HTML page sources) attached with detail diff information. You can find an example [here](store/Flaskr_VisualInspectionTwins-index.html).
+5. The test case generates a HTML report which shows a list all of the materials (screenshot images and HTML page sources) attached with detail diff information. You can find an example [here](docs/store/Flaskr_VisualInspectionTwins-index.html).
 
 
 #### (2) How to run the test
