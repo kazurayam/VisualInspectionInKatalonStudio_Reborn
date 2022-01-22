@@ -493,7 +493,7 @@ The test case [Flaskr/VisualInspectionTwins](Scripts/main/Flaskr/VisualInspectio
 
 #### (2) How to run the test
 
-Just open the "Test Cases/Flaskr/VisualInspectionTwins" and run it. As default Chrome Headless will be used, but you can choose any browser. You can choose any Execution Profile. The test won't be affected by the profile you chose.
+Just open the "Test Cases/Flaskr/VisualInspectionTwins" and run it. As default Chrome Headless browser git will be used, but you can choose any browser. You can choose any Execution Profile. The test won't be affected by the profile you chose.
 
 The test case will take approximately 30 seconds to finish.
 
