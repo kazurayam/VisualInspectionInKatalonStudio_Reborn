@@ -505,21 +505,7 @@ The test case will take approximately 30 seconds to finish.
 
 The test case will write the report in the `<projectDir>/store/Flaskr_VisualInspectionTwins-index.html` file.
 
-
-#### (3) Shutting down Flarkr
-
-You should type CTRL+C to stop the Flaskr process.
-
-You can easily restart the Flaskr process by executing `startup-flaskr-prod.sh`.
-
-
-#### (4) Initializing Database in the web app
-
-The Flaskr has a backend database where credentials and blog posts are stored. After you repeated running tests several times you will find many blog posts are stored, and you would feel like to clean the database out.
-
-Just type CTRL + C to stop the docker process and restart it. The start-up script will automatically initialize the internal database and make it empty.
-
-#### (5) What is Flaskr?
+#### (3) What is Flaskr?
 
 Flaskr is coded in Python language on top of the "Flask" web application framework. I learned the Flaskr web app at the [Flask Tutorial](https://flask.palletsprojects.com/en/2.0.x/tutorial/) authored and published by the Pallets project.
 
@@ -527,7 +513,7 @@ Flaskr is coded in Python language on top of the "Flask" web application framewo
 
 I used the source code 99% as is. I amended it slightly to diplay the site logo in the Dev env only.
 
-#### (6) How the test is coded
+#### (4) How the test is coded
 
 You can read the sources
 - [Test Cases/Flaskr/VisualInspectionTwins](Scripts/main/Flaskr/VisualInspectionTwins/Script1642595597544.groovy)
@@ -611,6 +597,15 @@ You can stop the docker process gracefully by typing CTRL + C.
 You should NEVER close the window of Command Line Interface without stopping the docker process by CTLR + C.
 
 If you forced to close the window, then IP Port #80 and #3090 might be left *USED* status. In that case you would fail to start a new process of Flaskr again. When it occurred, you need to stop & restart your PC/OS to release the ports.
+
+
+
+
+### Initializing Database in the web app
+
+The Flaskr has a backend database where credentials and blog posts are stored. After you repeated running tests several times you will find many blog posts are stored, and you would feel like to clean the database out.
+
+Just type CTRL + C to stop the docker process and restart it. The start-up script will automatically initialize the Flaskr's internal database and make it empty.
 
 ### How I used Docker
 
