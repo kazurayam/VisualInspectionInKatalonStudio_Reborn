@@ -560,6 +560,10 @@ You can let it work on your PC. You need Docker installed.
 
 On my MacBook Air, I installed [Docker Desktop](https://www.docker.com/products/docker-desktop). Docker Desktop for Windows is also available.
 
+### Command Line Interface
+
+Here I assume you work on Command Line Interface. I use the Terminal.app of macOS. For Windows user, install [Git Bash](https://gitforwindows.org/) and use "Git Bash".
+
 ### Starting up Flaskr
 
 Once Docker Desktop is installed, open a window of Terminal.app on Mac (on Windows, perhaps in the Powershell window), then execute:
