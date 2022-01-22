@@ -25,15 +25,15 @@ class LoginAction {
 	 * @param password
 	 * @return
 	 */
-	static void do_login(WebDriver browser, URL url, User user, MaterializingContext matz) {
+	static void do_login(WebDriver browser, URL startAt, User user, MaterializingContext matz) {
 		Objects.requireNonNull(browser)
-		Objects.requireNonNull(url)
+		Objects.requireNonNull(startAt)
 		Objects.requireNonNull(user)
 		Objects.requireNonNull(matz)
 
 		// now we go to the Index page
 		IndexPage indexPage = new IndexPage(browser)
-		indexPage.load(url)
+		indexPage.load(startAt)
 
 		// ensure we are on the index page
 		assert indexPage.app_header_exists()
@@ -41,6 +41,7 @@ class LoginAction {
 		assert indexPage.login_anchor_exists()
 
 		// take screenshot
+		URL url = new URL(WebUI.getUrl())
 		matz.materialize(url, ["step": "1"])
 		WebUI.comment("step1 ${url.toString()}")
 
@@ -59,9 +60,10 @@ class LoginAction {
 		regPage.type_password(user.getPassword())
 
 		// take screenshot
+		url = new URL(WebUI.getUrl())
 		matz.materialize(url, ["step": "2"])
 		WebUI.comment("step2 ${url.toString()}")
-		
+
 
 		// try registering the credential of the user
 		regPage.do_register()
@@ -83,9 +85,10 @@ class LoginAction {
 		loginPage.type_password(user.getPassword())
 
 		// take screenshot
+		url = new URL(WebUI.getUrl())
 		matz.materialize(url, ["step": "3"])
 		WebUI.comment("step3 ${url.toString()}")
-		
+
 		loginPage.do_login()
 
 		// now we should be are on the index page

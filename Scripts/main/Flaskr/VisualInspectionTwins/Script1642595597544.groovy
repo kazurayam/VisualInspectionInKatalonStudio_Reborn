@@ -35,7 +35,7 @@ WebUI.comment("Execution Profile ${profile1} was loaded with GlobalVariable.URL=
 JobTimestamp timestampP = JobTimestamp.now()
 
 WebUI.callTestCase(
-	findTestCase("main/Flaskr/posting_blogs_into_Flaskr"),
+	findTestCase("main/Flaskr/navigate_through_the_site"),
 	["profile": profile1, "store": store, "jobName": jobName, "jobTimestamp": timestampP]
 )
 
@@ -46,7 +46,7 @@ WebUI.comment("Execution Profile ${profile2} was loaded with GlobalVariable.URL=
 JobTimestamp timestampD = JobTimestamp.now()
 
 WebUI.callTestCase(
-	findTestCase("main/Flaskr/posting_blogs_into_Flaskr"),
+	findTestCase("main/Flaskr/navigate_through_the_site"),
 	["profile": profile2, "store": store, "jobName": jobName, "jobTimestamp": timestampD]
 )
 
