@@ -535,6 +535,8 @@ and a lot of related Groovy classes
 
 Why do I have these Groovy classes? --- It is because I employed the ["Page Object Model"](https://www.guru99.com/page-object-model-pom-page-factory-in-selenium-ultimate-guide.html). The Page Object Model helped me in writing compact and readable codes.
 
+The sample4 is highly extensible while avoiding code publications. It would be a foundation of large scale Visual Inspection projects.
+
 ## Setup Docker & Flaskr on your PC
 
 In the sample4, we need 2 URLs available on our own PC.
