@@ -2,15 +2,16 @@
 
 // $ gradle drivers
 
-version = '0.2.0'
+version = '0.2.3'
 
 ext {
     AUTO_IMPORTED_JAR_PREFIX = 'AUTOIMPORTED_'
     ExecutionProfilesLoaderVersion = "1.2.1"
-    materialstoreVersion = '0.1.8'
+    materialstoreVersion = '0.1.12'
     ashotVersion = '1.5.4'
     javadiffutilsVersion = '4.9'
     jsoupVersion = '1.7.2'
+    subprocessjVersion = '0.3.3'
 }
 
 repositories {
@@ -27,11 +28,14 @@ dependencies {
                     version: "${materialstoreVersion}"
     myconf group: 'com.kazurayam', name: 'ExecutionProfilesLoader',
                     version: "${ExecutionProfilesLoaderVersion}"
+    myconf group: 'com.kazurayam', name: 'subprocessj',
+                    version: "${subprocessjVersion}"
     myconf group: 'ru.yandex.qatools.ashot', name: 'ashot',
                     version: "${ashotVersion}"
     myconf group: 'io.github.java-diff-utils', name: 'java-diff-utils',
                     version: "${javadiffutilsVersion}"
     myconf group: 'org.jsoup', name: 'jsoup', version: "${jsoupVersion}"
+
 }
 
 task drivers {
@@ -48,6 +52,7 @@ task drivers {
                 .include(
                     "**/materialstore*.jar",
                     "**/ExecutionProfilesLoader*.jar",
+                    "**/subprocessj*.jar",
                     "**/ashot*.jar",
                     "**/jsoup*.jar",
                     "**/java-diff-utils*.jar",

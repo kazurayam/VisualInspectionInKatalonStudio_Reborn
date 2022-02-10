@@ -6,6 +6,7 @@ import java.nio.file.Paths
 
 import com.kazurayam.ks.globalvariable.ExecutionProfilesLoader
 import com.kazurayam.materialstore.DiffArtifacts
+import com.kazurayam.materialstore.IdentifyMetadataValues
 import com.kazurayam.materialstore.IgnoringMetadataKeys
 import com.kazurayam.materialstore.JobName
 import com.kazurayam.materialstore.JobTimestamp
@@ -70,7 +71,10 @@ try {
 	
 	// make DiffArtifacts
 	DiffArtifacts stuffedDiffArtifacts = 
-    	store.makeDiff(left, right, IgnoringMetadataKeys.of("profile", "URL.host", "URL.port"))
+    	store.makeDiff(left, right,
+			IgnoringMetadataKeys.of("profile", "URL.host", "URL.port"), 
+			IdentifyMetadataValues.NULL_OBJECT)
+		
 	int warnings = stuffedDiffArtifacts.countWarnings(criteria)
 
 	// compile HTML report
