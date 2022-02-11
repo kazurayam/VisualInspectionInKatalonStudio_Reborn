@@ -13,20 +13,21 @@ import com.kazurayam.materialstore.JobTimestamp
 import com.kazurayam.materialstore.Material
 import com.kazurayam.materialstore.Metadata
 import com.kazurayam.materialstore.Store
+import com.kazurayam.uitestjava.flaskr.pom.actions.ActionListener
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
-public class MaterializingContext {
+public class StoreMaterialActionListener extends ActionListener {
 
 	public static final NULL_OBJECT =
-	new MaterializingContext("__NULL_OBJECT__", Store.NULL_OBJECT, JobName.NULL_OBJECT, JobTimestamp.NULL_OBJECT)
+	new StoreMaterialActionListener("__NULL_OBJECT__", Store.NULL_OBJECT, JobName.NULL_OBJECT, JobTimestamp.NULL_OBJECT)
 
 	private final String profile
 	private final Store store
 	private final JobName jobName
 	private final JobTimestamp jobTimestamp
 
-	MaterializingContext(String profile, Store store, JobName jobName, JobTimestamp jobTimestamp) {
+	StoreMaterialActionListener(String profile, Store store, JobName jobName, JobTimestamp jobTimestamp) {
 		Objects.requireNonNull(profile)
 		Objects.requireNonNull(store)
 		Objects.requireNonNull(jobName)
@@ -37,15 +38,13 @@ public class MaterializingContext {
 		this.jobTimestamp = jobTimestamp
 	}
 
-	Tuple materialize(URL url) {
-		return materialize(url, [:])
-	}
-
-	Tuple materialize(URL url, Map<String, String> additionalMetadata) {
+	@Override
+	void on(Class clazz, URL url, Map<String, String> attributes) {
 		Objects.requireNonNull(url)
+		Objects.requireNonNull(attributes)
 		Metadata metadata = Metadata.builderWithUrl(url)
 				.put("profile", profile)
-				.putAll(additionalMetadata)
+				.putAll(attributes)
 				.build()
 
 		// take a screenshot and save the image into a temporary file using Katalon's built-in keyword
@@ -61,7 +60,5 @@ public class MaterializingContext {
 		Document doc = Jsoup.parse(driver.getPageSource())
 		Material html = store.write(jobName, jobTimestamp, FileType.HTML, metadata, doc.toString())
 		assert html != null
-
-		return new Tuple(image, html)
 	}
 }

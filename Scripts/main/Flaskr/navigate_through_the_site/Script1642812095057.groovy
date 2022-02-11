@@ -1,15 +1,15 @@
 import org.openqa.selenium.WebDriver
 
-import com.kazurayam.ks.visualinspection.MaterializingContext
+import com.kazurayam.ks.visualinspection.StoreMaterialActionListener
+import com.kazurayam.uitestjava.flaskr.pom.actions.LoginAction
+import com.kazurayam.uitestjava.flaskr.pom.actions.LogoutAction
+import com.kazurayam.uitestjava.flaskr.pom.actions.PostAction
+import com.kazurayam.uitestjava.flaskr.pom.data.Song
+import com.kazurayam.uitestjava.flaskr.pom.data.Songs
+import com.kazurayam.uitestjava.flaskr.pom.data.User
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
-import flaskrtest.actions.LoginAction
-import flaskrtest.actions.LogoutAction
-import flaskrtest.actions.PostAction
-import flaskrtest.data.Song
-import flaskrtest.data.Songs
-import flaskrtest.data.User
 import internal.GlobalVariable
 
 // check params which should be passed as the arguments of WebUI.callTestCases() call
@@ -18,7 +18,7 @@ Objects.requireNonNull(store)
 Objects.requireNonNull(jobName)
 Objects.requireNonNull(jobTimestamp)
 
-MaterializingContext matz = new MaterializingContext(profile, store, jobName, jobTimestamp)
+StoreMaterialActionListener matz = new StoreMaterialActionListener(profile, store, jobName, jobTimestamp)
 
 WebUI.openBrowser('')
 WebDriver browser = DriverFactory.getWebDriver()
@@ -35,12 +35,15 @@ Song song = Songs.get(1)
 // Song song = Songs.get(0)
 
 // the user logs in
-LoginAction.do_login(browser, indexUrl, user, matz)
+LoginAction loginAction = new LoginAction()
+loginAction.do_login(browser, indexUrl, user, matz)
 
 // the user makes a post with a song
-PostAction.new_post(browser, indexUrl, user, song, matz)
+PostAction postAction = new PostAction()
+postAction.new_post(browser, indexUrl, user, song, matz)
 
 // the user logs out
-LogoutAction.do_logout(browser, indexUrl, matz)
+LogoutAction logoutAction = new LogoutAction()
+logoutAction.do_logout(browser, indexUrl, matz)
 
 browser.quit()
