@@ -70,6 +70,7 @@ class TLFlaskr {
 		ContainerRunner containerRunner =
 				new ContainerRunner.Builder(image)
 					.directory(webDir.toFile())
+					.addEnvVars(envVars)
 					.publishedPort(port)
 					.build()
 		ContainerRunningResult crrP = containerRunner.run()
