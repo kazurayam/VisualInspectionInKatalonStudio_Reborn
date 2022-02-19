@@ -19,7 +19,13 @@
 .container .header {
   padding: 16px 20px;
 }
-.container .ignoring-key {
+.container .identified-value {
+  background-color: #FA98FA;
+}
+.container .semantic-version {
+  border: #FA98FA solid;
+}
+.container .ignored-key {
   background-color: #CCC;
 }
 .container .matched-value {
@@ -98,7 +104,7 @@
           <dd>
             <dl>
               <dt>JobTimestamp :</dt>
-              <dd>20210928_180623</dd>
+              <dd>20220219_202846</dd>
               <dt>MetadataPattern :</dt>
               <dd>
                 <span>{</span>
@@ -114,7 +120,7 @@
           <dd>
             <dl>
               <dt>JobTimestamp :</dt>
-              <dd>20210928_221501</dd>
+              <dd>20220219_210639</dd>
               <dt>MetadataPattern :</dt>
               <dd>
                 <span>{</span>
@@ -126,12 +132,12 @@
               <dd>not specified</dd>
             </dl>
           </dd>
-          <dt>IgnoringMetadataKeys</dt>
+          <dt>IgnoreMetadataKeys</dt>
           <dd>
             <span>{</span>
-            <span class='ignoring-key'>"URL"</span>
+            <span class='ignored-key'>"URL"</span>
             <span>, </span>
-            <span class='ignoring-key'>"URL.host"</span>
+            <span class='ignored-key'>"URL.host"</span>
             <span>}</span>
           </dd>
         </dl>
@@ -141,25 +147,48 @@
           <h2 id='heading1' class='accordion-header'>
             <button class='accordion-button' type='button' data-bs-toggle='collapse' data-bs-target='#collapse1' area-expanded='false' aria-controls='collapse1'>
               <span class='ratio '>0.00%</span>
-              <span class='fileType'>html</span>
-              <span class='description'>{"URL.fragment":"appointment", "URL.path":"/", "URL.protocol":"https"}</span>
+              <span class='fileType'>png</span>
+              <span class='description'>{"URL.fragment":"appointment", "URL.path":"/", "URL.port":"80", "URL.protocol":"https"}</span>
             </button>
           </h2>
           <div id='collapse1' class='according-collapse collapse' aria-labelledby='heading1' data-bs-parent='#diff-contents'>
             <div class='accordion-body'>
               <div class='show-diff'><!-- Button trigger modal -->
-                <button type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#textModal1'>Show diff in Modal</button><!-- Modal to show texts diff -->
-                <div class='modal fade' id='textModal1' tabindex='-1' aria-labelledby='textModalLabel' aria-hidden='true'>
+                <button type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#imageModal1'>Show diff in Modal</button><!-- Modal to show 3 images: Left/Diff/Right -->
+                <div class='modal fade' id='imageModal1' tabindex='-1' aria-labelledby='imageModalLabel' aria-hidden='true'>
                   <div class='modal-dialog modal-fullscreen'>
                     <div class='modal-content'>
                       <div class='modal-header'>
-                        <h5 class='modal-title' id='textModalLabel1'>
-                          <span>{"URL.fragment":"appointment", "URL.path":"/", "URL.protocol":"https"} html 0.00%</span>
+                        <h5 class='modal-title' id='imageModalLabel1'>
+                          <span>{"URL.fragment":"appointment", "URL.path":"/", "URL.port":"80", "URL.protocol":"https"} png 0.00%%</span>
                           <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
                         </h5>
                       </div>
                       <div class='modal-body'><!-- body -->
-                        <iframe src='CURA_VisualInspectionChronos/20210928_221501/objects/df1202682486c51ce858ce0b39df1aee89911a3a.html' title='TextDiff'></iframe>
+                        <div id='carouselControl1' class='carousel slide' data-bs-ride='carousel'>
+                          <div class='carousel-inner'>
+                            <div class='carousel-item'>
+                              <h3 class='centered'>Left</h3>
+                              <img class='img-fluid d-block w-75 centered' alt='left' src='CURA_VisualInspectionChronos/20220219_202846/objects/a30da133e1558bd64b1a3a5199e633d060ef6302.png' />
+                            </div>
+                            <div class='carousel-item active'>
+                              <h3 class='centered'>Diff</h3>
+                              <img class='img-fluid d-block w-75 centered' alt='diff' src='CURA_VisualInspectionChronos/20220219_210639/objects/a30da133e1558bd64b1a3a5199e633d060ef6302.png' />
+                            </div>
+                            <div class='carousel-item'>
+                              <h3 class='centered'>Right</h3>
+                              <img class='img-fluid d-block w-75 centered' alt='right' src='CURA_VisualInspectionChronos/20220219_210639/objects/d3cc1b2f620df4d6db911e55ec354f3fc5fe7470.png' />
+                            </div>
+                          </div>
+                          <button class='carousel-control-prev' type='button' data-bs-target='#carouselControl1' data-bs-slide='prev'>
+                            <span class='carousel-control-prev-icon' aria-hidden='true'></span>
+                            <span class='visually-hidden'>Previous</span>
+                          </button>
+                          <button class='carousel-control-next' type='button' data-bs-target='#carouselControl1' data-bs-slide='next'>
+                            <span class='carousel-control-next-icon' aria-hidden='true'></span>
+                            <span class='visually-hidden'>Next</span>
+                          </button>
+                        </div>
                       </div>
                       <div class='modal-footer'>
                         <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Close</button>
@@ -173,21 +202,24 @@
                 <dl class='detail'>
                   <dt>URL</dt>
                   <dd>
-                    <a href='CURA_VisualInspectionChronos/20210928_180623/objects/713227206acc367ed2fec720c2a221d76be55135.html' target='left'>CURA_VisualInspectionChronos/20210928_180623/objects/713227206acc367ed2fec720c2a221d76be55135.html</a>
+                    <a href='CURA_VisualInspectionChronos/20220219_202846/objects/a30da133e1558bd64b1a3a5199e633d060ef6302.png' target='left'>CURA_VisualInspectionChronos/20220219_202846/objects/a30da133e1558bd64b1a3a5199e633d060ef6302.png</a>
                   </dd>
                   <dt>fileType</dt>
-                  <dd>html</dd>
+                  <dd>png</dd>
                   <dt>metadata</dt>
                   <dd>
                     <span>{</span>
                     <span>"URL.fragment":</span>
                     <span class='matched-value'>"appointment"</span>
                     <span>, </span>
-                    <span class='ignoring-key'>"URL.host":</span>
+                    <span class='ignored-key'>"URL.host":</span>
                     <span class='matched-value'>"katalon-demo-cura.herokuapp.com"</span>
                     <span>, </span>
                     <span>"URL.path":</span>
                     <span class='matched-value'>"/"</span>
+                    <span>, </span>
+                    <span>"URL.port":</span>
+                    <span class='matched-value'>"80"</span>
                     <span>, </span>
                     <span>"URL.protocol":</span>
                     <span class='matched-value'>"https"</span>
@@ -200,21 +232,24 @@
                 <dl class='detail'>
                   <dt>URL</dt>
                   <dd>
-                    <a href='CURA_VisualInspectionChronos/20210928_221501/objects/713227206acc367ed2fec720c2a221d76be55135.html' target='right'>CURA_VisualInspectionChronos/20210928_221501/objects/713227206acc367ed2fec720c2a221d76be55135.html</a>
+                    <a href='CURA_VisualInspectionChronos/20220219_210639/objects/d3cc1b2f620df4d6db911e55ec354f3fc5fe7470.png' target='right'>CURA_VisualInspectionChronos/20220219_210639/objects/d3cc1b2f620df4d6db911e55ec354f3fc5fe7470.png</a>
                   </dd>
                   <dt>fileType</dt>
-                  <dd>html</dd>
+                  <dd>png</dd>
                   <dt>metadata</dt>
                   <dd>
                     <span>{</span>
                     <span>"URL.fragment":</span>
                     <span class='matched-value'>"appointment"</span>
                     <span>, </span>
-                    <span class='ignoring-key'>"URL.host":</span>
+                    <span class='ignored-key'>"URL.host":</span>
                     <span class='matched-value'>"katalon-demo-cura.herokuapp.com"</span>
                     <span>, </span>
                     <span>"URL.path":</span>
                     <span class='matched-value'>"/"</span>
+                    <span>, </span>
+                    <span>"URL.port":</span>
+                    <span class='matched-value'>"80"</span>
                     <span>, </span>
                     <span>"URL.protocol":</span>
                     <span class='matched-value'>"https"</span>
@@ -227,10 +262,10 @@
                 <dl class='detail'>
                   <dt>URL</dt>
                   <dd>
-                    <a href='CURA_VisualInspectionChronos/20210928_221501/objects/df1202682486c51ce858ce0b39df1aee89911a3a.html' target='diff'>CURA_VisualInspectionChronos/20210928_221501/objects/df1202682486c51ce858ce0b39df1aee89911a3a.html</a>
+                    <a href='CURA_VisualInspectionChronos/20220219_210639/objects/a30da133e1558bd64b1a3a5199e633d060ef6302.png' target='diff'>CURA_VisualInspectionChronos/20220219_210639/objects/a30da133e1558bd64b1a3a5199e633d060ef6302.png</a>
                   </dd>
                   <dt>fileType</dt>
-                  <dd>html</dd>
+                  <dd>png</dd>
                   <dt>metadata</dt>
                   <dd>
                     <span>{</span>
@@ -238,13 +273,13 @@
                     <span class='matched-value'>"diff"</span>
                     <span>, </span>
                     <span>"left":</span>
-                    <span class='matched-value'>"713227206acc367ed2fec720c2a221d76be55135"</span>
+                    <span class='matched-value'>"a30da133e1558bd64b1a3a5199e633d060ef6302"</span>
                     <span>, </span>
                     <span>"ratio":</span>
-                    <span class='matched-value'>"0.00"</span>
+                    <span class='matched-value'>"0.00%"</span>
                     <span>, </span>
                     <span>"right":</span>
-                    <span class='matched-value'>"713227206acc367ed2fec720c2a221d76be55135"</span>
+                    <span class='matched-value'>"d3cc1b2f620df4d6db911e55ec354f3fc5fe7470"</span>
                     <span>}</span>
                   </dd>
                 </dl>
@@ -256,48 +291,25 @@
           <h2 id='heading2' class='accordion-header'>
             <button class='accordion-button' type='button' data-bs-toggle='collapse' data-bs-target='#collapse2' area-expanded='false' aria-controls='collapse2'>
               <span class='ratio '>0.00%</span>
-              <span class='fileType'>png</span>
-              <span class='description'>{"URL.fragment":"appointment", "URL.path":"/", "URL.protocol":"https"}</span>
+              <span class='fileType'>html</span>
+              <span class='description'>{"URL.fragment":"appointment", "URL.path":"/", "URL.port":"80", "URL.protocol":"https"}</span>
             </button>
           </h2>
           <div id='collapse2' class='according-collapse collapse' aria-labelledby='heading2' data-bs-parent='#diff-contents'>
             <div class='accordion-body'>
               <div class='show-diff'><!-- Button trigger modal -->
-                <button type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#imageModal2'>Show diff in Modal</button><!-- Modal to show 3 images: Left/Diff/Right -->
-                <div class='modal fade' id='imageModal2' tabindex='-1' aria-labelledby='imageModalLabel' aria-hidden='true'>
+                <button type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#textModal2'>Show diff in Modal</button><!-- Modal to show texts diff -->
+                <div class='modal fade' id='textModal2' tabindex='-1' aria-labelledby='textModalLabel' aria-hidden='true'>
                   <div class='modal-dialog modal-fullscreen'>
                     <div class='modal-content'>
                       <div class='modal-header'>
-                        <h5 class='modal-title' id='imageModalLabel2'>
-                          <span>{"URL.fragment":"appointment", "URL.path":"/", "URL.protocol":"https"} png 0.00%</span>
+                        <h5 class='modal-title' id='textModalLabel2'>
+                          <span>{"URL.fragment":"appointment", "URL.path":"/", "URL.port":"80", "URL.protocol":"https"} html 0.00%%</span>
                           <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
                         </h5>
                       </div>
                       <div class='modal-body'><!-- body -->
-                        <div id='carouselControl2' class='carousel slide' data-bs-ride='carousel'>
-                          <div class='carousel-inner'>
-                            <div class='carousel-item'>
-                              <h3 class='centered'>Left</h3>
-                              <img class='img-fluid d-block w-75 centered' alt='left' src='CURA_VisualInspectionChronos/20210928_180623/objects/dbacc1dd31687b5ed40316362fc0072c30f25ee2.png' />
-                            </div>
-                            <div class='carousel-item active'>
-                              <h3 class='centered'>Diff</h3>
-                              <img class='img-fluid d-block w-75 centered' alt='diff' src='CURA_VisualInspectionChronos/20210928_221501/objects/dbacc1dd31687b5ed40316362fc0072c30f25ee2.png' />
-                            </div>
-                            <div class='carousel-item'>
-                              <h3 class='centered'>Right</h3>
-                              <img class='img-fluid d-block w-75 centered' alt='right' src='CURA_VisualInspectionChronos/20210928_221501/objects/34983d3e565976c5c202705ab6a24b68cdc7f441.png' />
-                            </div>
-                          </div>
-                          <button class='carousel-control-prev' type='button' data-bs-target='#carouselControl2' data-bs-slide='prev'>
-                            <span class='carousel-control-prev-icon' aria-hidden='true'></span>
-                            <span class='visually-hidden'>Previous</span>
-                          </button>
-                          <button class='carousel-control-next' type='button' data-bs-target='#carouselControl2' data-bs-slide='next'>
-                            <span class='carousel-control-next-icon' aria-hidden='true'></span>
-                            <span class='visually-hidden'>Next</span>
-                          </button>
-                        </div>
+                        <iframe src='CURA_VisualInspectionChronos/20220219_210639/objects/bee09b77acffc8bebd569bd014338d09c5487b3b.html' title='TextDiff'></iframe>
                       </div>
                       <div class='modal-footer'>
                         <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Close</button>
@@ -311,21 +323,24 @@
                 <dl class='detail'>
                   <dt>URL</dt>
                   <dd>
-                    <a href='CURA_VisualInspectionChronos/20210928_180623/objects/dbacc1dd31687b5ed40316362fc0072c30f25ee2.png' target='left'>CURA_VisualInspectionChronos/20210928_180623/objects/dbacc1dd31687b5ed40316362fc0072c30f25ee2.png</a>
+                    <a href='CURA_VisualInspectionChronos/20220219_202846/objects/84cf303c91cc44e27aa47c2cfb9bbf8cee4dd51a.html' target='left'>CURA_VisualInspectionChronos/20220219_202846/objects/84cf303c91cc44e27aa47c2cfb9bbf8cee4dd51a.html</a>
                   </dd>
                   <dt>fileType</dt>
-                  <dd>png</dd>
+                  <dd>html</dd>
                   <dt>metadata</dt>
                   <dd>
                     <span>{</span>
                     <span>"URL.fragment":</span>
                     <span class='matched-value'>"appointment"</span>
                     <span>, </span>
-                    <span class='ignoring-key'>"URL.host":</span>
+                    <span class='ignored-key'>"URL.host":</span>
                     <span class='matched-value'>"katalon-demo-cura.herokuapp.com"</span>
                     <span>, </span>
                     <span>"URL.path":</span>
                     <span class='matched-value'>"/"</span>
+                    <span>, </span>
+                    <span>"URL.port":</span>
+                    <span class='matched-value'>"80"</span>
                     <span>, </span>
                     <span>"URL.protocol":</span>
                     <span class='matched-value'>"https"</span>
@@ -338,21 +353,24 @@
                 <dl class='detail'>
                   <dt>URL</dt>
                   <dd>
-                    <a href='CURA_VisualInspectionChronos/20210928_221501/objects/34983d3e565976c5c202705ab6a24b68cdc7f441.png' target='right'>CURA_VisualInspectionChronos/20210928_221501/objects/34983d3e565976c5c202705ab6a24b68cdc7f441.png</a>
+                    <a href='CURA_VisualInspectionChronos/20220219_210639/objects/84cf303c91cc44e27aa47c2cfb9bbf8cee4dd51a.html' target='right'>CURA_VisualInspectionChronos/20220219_210639/objects/84cf303c91cc44e27aa47c2cfb9bbf8cee4dd51a.html</a>
                   </dd>
                   <dt>fileType</dt>
-                  <dd>png</dd>
+                  <dd>html</dd>
                   <dt>metadata</dt>
                   <dd>
                     <span>{</span>
                     <span>"URL.fragment":</span>
                     <span class='matched-value'>"appointment"</span>
                     <span>, </span>
-                    <span class='ignoring-key'>"URL.host":</span>
+                    <span class='ignored-key'>"URL.host":</span>
                     <span class='matched-value'>"katalon-demo-cura.herokuapp.com"</span>
                     <span>, </span>
                     <span>"URL.path":</span>
                     <span class='matched-value'>"/"</span>
+                    <span>, </span>
+                    <span>"URL.port":</span>
+                    <span class='matched-value'>"80"</span>
                     <span>, </span>
                     <span>"URL.protocol":</span>
                     <span class='matched-value'>"https"</span>
@@ -365,10 +383,10 @@
                 <dl class='detail'>
                   <dt>URL</dt>
                   <dd>
-                    <a href='CURA_VisualInspectionChronos/20210928_221501/objects/dbacc1dd31687b5ed40316362fc0072c30f25ee2.png' target='diff'>CURA_VisualInspectionChronos/20210928_221501/objects/dbacc1dd31687b5ed40316362fc0072c30f25ee2.png</a>
+                    <a href='CURA_VisualInspectionChronos/20220219_210639/objects/bee09b77acffc8bebd569bd014338d09c5487b3b.html' target='diff'>CURA_VisualInspectionChronos/20220219_210639/objects/bee09b77acffc8bebd569bd014338d09c5487b3b.html</a>
                   </dd>
                   <dt>fileType</dt>
-                  <dd>png</dd>
+                  <dd>html</dd>
                   <dt>metadata</dt>
                   <dd>
                     <span>{</span>
@@ -376,13 +394,13 @@
                     <span class='matched-value'>"diff"</span>
                     <span>, </span>
                     <span>"left":</span>
-                    <span class='matched-value'>"dbacc1dd31687b5ed40316362fc0072c30f25ee2"</span>
+                    <span class='matched-value'>"84cf303c91cc44e27aa47c2cfb9bbf8cee4dd51a"</span>
                     <span>, </span>
                     <span>"ratio":</span>
-                    <span class='matched-value'>"0.00"</span>
+                    <span class='matched-value'>"0.00%"</span>
                     <span>, </span>
                     <span>"right":</span>
-                    <span class='matched-value'>"34983d3e565976c5c202705ab6a24b68cdc7f441"</span>
+                    <span class='matched-value'>"84cf303c91cc44e27aa47c2cfb9bbf8cee4dd51a"</span>
                     <span>}</span>
                   </dd>
                 </dl>
@@ -393,26 +411,49 @@
         <div id='accordion3' class='accordion-item'>
           <h2 id='heading3' class='accordion-header'>
             <button class='accordion-button' type='button' data-bs-toggle='collapse' data-bs-target='#collapse3' area-expanded='false' aria-controls='collapse3'>
-              <span class='ratio '>0.00%</span>
-              <span class='fileType'>html</span>
-              <span class='description'>{"URL.fragment":"summary", "URL.path":"/appointment.php", "URL.protocol":"https"}</span>
+              <span class='ratio '>0.01%</span>
+              <span class='fileType'>png</span>
+              <span class='description'>{"URL.fragment":"summary", "URL.path":"/appointment.php", "URL.port":"80", "URL.protocol":"https"}</span>
             </button>
           </h2>
           <div id='collapse3' class='according-collapse collapse' aria-labelledby='heading3' data-bs-parent='#diff-contents'>
             <div class='accordion-body'>
               <div class='show-diff'><!-- Button trigger modal -->
-                <button type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#textModal3'>Show diff in Modal</button><!-- Modal to show texts diff -->
-                <div class='modal fade' id='textModal3' tabindex='-1' aria-labelledby='textModalLabel' aria-hidden='true'>
+                <button type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#imageModal3'>Show diff in Modal</button><!-- Modal to show 3 images: Left/Diff/Right -->
+                <div class='modal fade' id='imageModal3' tabindex='-1' aria-labelledby='imageModalLabel' aria-hidden='true'>
                   <div class='modal-dialog modal-fullscreen'>
                     <div class='modal-content'>
                       <div class='modal-header'>
-                        <h5 class='modal-title' id='textModalLabel3'>
-                          <span>{"URL.fragment":"summary", "URL.path":"/appointment.php", "URL.protocol":"https"} html 0.00%</span>
+                        <h5 class='modal-title' id='imageModalLabel3'>
+                          <span>{"URL.fragment":"summary", "URL.path":"/appointment.php", "URL.port":"80", "URL.protocol":"https"} png 0.01%%</span>
                           <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
                         </h5>
                       </div>
                       <div class='modal-body'><!-- body -->
-                        <iframe src='CURA_VisualInspectionChronos/20210928_221501/objects/ea85db094547c075a7c5e166e18a346b9dfcc0c7.html' title='TextDiff'></iframe>
+                        <div id='carouselControl3' class='carousel slide' data-bs-ride='carousel'>
+                          <div class='carousel-inner'>
+                            <div class='carousel-item'>
+                              <h3 class='centered'>Left</h3>
+                              <img class='img-fluid d-block w-75 centered' alt='left' src='CURA_VisualInspectionChronos/20220219_202846/objects/9eceacdbad204f5382da4aa63bbcde9da61cc9a4.png' />
+                            </div>
+                            <div class='carousel-item active'>
+                              <h3 class='centered'>Diff</h3>
+                              <img class='img-fluid d-block w-75 centered' alt='diff' src='CURA_VisualInspectionChronos/20220219_210639/objects/40a74ab9855e02ccced18823fa2114e25b7dfd8b.png' />
+                            </div>
+                            <div class='carousel-item'>
+                              <h3 class='centered'>Right</h3>
+                              <img class='img-fluid d-block w-75 centered' alt='right' src='CURA_VisualInspectionChronos/20220219_210639/objects/c494be44cc2dce9b5f81f511e131cb924d01b535.png' />
+                            </div>
+                          </div>
+                          <button class='carousel-control-prev' type='button' data-bs-target='#carouselControl3' data-bs-slide='prev'>
+                            <span class='carousel-control-prev-icon' aria-hidden='true'></span>
+                            <span class='visually-hidden'>Previous</span>
+                          </button>
+                          <button class='carousel-control-next' type='button' data-bs-target='#carouselControl3' data-bs-slide='next'>
+                            <span class='carousel-control-next-icon' aria-hidden='true'></span>
+                            <span class='visually-hidden'>Next</span>
+                          </button>
+                        </div>
                       </div>
                       <div class='modal-footer'>
                         <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Close</button>
@@ -426,21 +467,24 @@
                 <dl class='detail'>
                   <dt>URL</dt>
                   <dd>
-                    <a href='CURA_VisualInspectionChronos/20210928_180623/objects/25c756efbd133d381b24c202b33099823bb4f2ac.html' target='left'>CURA_VisualInspectionChronos/20210928_180623/objects/25c756efbd133d381b24c202b33099823bb4f2ac.html</a>
+                    <a href='CURA_VisualInspectionChronos/20220219_202846/objects/9eceacdbad204f5382da4aa63bbcde9da61cc9a4.png' target='left'>CURA_VisualInspectionChronos/20220219_202846/objects/9eceacdbad204f5382da4aa63bbcde9da61cc9a4.png</a>
                   </dd>
                   <dt>fileType</dt>
-                  <dd>html</dd>
+                  <dd>png</dd>
                   <dt>metadata</dt>
                   <dd>
                     <span>{</span>
                     <span>"URL.fragment":</span>
                     <span class='matched-value'>"summary"</span>
                     <span>, </span>
-                    <span class='ignoring-key'>"URL.host":</span>
+                    <span class='ignored-key'>"URL.host":</span>
                     <span class='matched-value'>"katalon-demo-cura.herokuapp.com"</span>
                     <span>, </span>
                     <span>"URL.path":</span>
                     <span class='matched-value'>"/appointment.php"</span>
+                    <span>, </span>
+                    <span>"URL.port":</span>
+                    <span class='matched-value'>"80"</span>
                     <span>, </span>
                     <span>"URL.protocol":</span>
                     <span class='matched-value'>"https"</span>
@@ -453,21 +497,24 @@
                 <dl class='detail'>
                   <dt>URL</dt>
                   <dd>
-                    <a href='CURA_VisualInspectionChronos/20210928_221501/objects/25c756efbd133d381b24c202b33099823bb4f2ac.html' target='right'>CURA_VisualInspectionChronos/20210928_221501/objects/25c756efbd133d381b24c202b33099823bb4f2ac.html</a>
+                    <a href='CURA_VisualInspectionChronos/20220219_210639/objects/c494be44cc2dce9b5f81f511e131cb924d01b535.png' target='right'>CURA_VisualInspectionChronos/20220219_210639/objects/c494be44cc2dce9b5f81f511e131cb924d01b535.png</a>
                   </dd>
                   <dt>fileType</dt>
-                  <dd>html</dd>
+                  <dd>png</dd>
                   <dt>metadata</dt>
                   <dd>
                     <span>{</span>
                     <span>"URL.fragment":</span>
                     <span class='matched-value'>"summary"</span>
                     <span>, </span>
-                    <span class='ignoring-key'>"URL.host":</span>
+                    <span class='ignored-key'>"URL.host":</span>
                     <span class='matched-value'>"katalon-demo-cura.herokuapp.com"</span>
                     <span>, </span>
                     <span>"URL.path":</span>
                     <span class='matched-value'>"/appointment.php"</span>
+                    <span>, </span>
+                    <span>"URL.port":</span>
+                    <span class='matched-value'>"80"</span>
                     <span>, </span>
                     <span>"URL.protocol":</span>
                     <span class='matched-value'>"https"</span>
@@ -480,10 +527,10 @@
                 <dl class='detail'>
                   <dt>URL</dt>
                   <dd>
-                    <a href='CURA_VisualInspectionChronos/20210928_221501/objects/ea85db094547c075a7c5e166e18a346b9dfcc0c7.html' target='diff'>CURA_VisualInspectionChronos/20210928_221501/objects/ea85db094547c075a7c5e166e18a346b9dfcc0c7.html</a>
+                    <a href='CURA_VisualInspectionChronos/20220219_210639/objects/40a74ab9855e02ccced18823fa2114e25b7dfd8b.png' target='diff'>CURA_VisualInspectionChronos/20220219_210639/objects/40a74ab9855e02ccced18823fa2114e25b7dfd8b.png</a>
                   </dd>
                   <dt>fileType</dt>
-                  <dd>html</dd>
+                  <dd>png</dd>
                   <dt>metadata</dt>
                   <dd>
                     <span>{</span>
@@ -491,13 +538,13 @@
                     <span class='matched-value'>"diff"</span>
                     <span>, </span>
                     <span>"left":</span>
-                    <span class='matched-value'>"25c756efbd133d381b24c202b33099823bb4f2ac"</span>
+                    <span class='matched-value'>"9eceacdbad204f5382da4aa63bbcde9da61cc9a4"</span>
                     <span>, </span>
                     <span>"ratio":</span>
-                    <span class='matched-value'>"0.00"</span>
+                    <span class='matched-value'>"0.01%"</span>
                     <span>, </span>
                     <span>"right":</span>
-                    <span class='matched-value'>"25c756efbd133d381b24c202b33099823bb4f2ac"</span>
+                    <span class='matched-value'>"c494be44cc2dce9b5f81f511e131cb924d01b535"</span>
                     <span>}</span>
                   </dd>
                 </dl>
@@ -508,49 +555,26 @@
         <div id='accordion4' class='accordion-item'>
           <h2 id='heading4' class='accordion-header'>
             <button class='accordion-button' type='button' data-bs-toggle='collapse' data-bs-target='#collapse4' area-expanded='false' aria-controls='collapse4'>
-              <span class='ratio '>0.01%</span>
-              <span class='fileType'>png</span>
-              <span class='description'>{"URL.fragment":"summary", "URL.path":"/appointment.php", "URL.protocol":"https"}</span>
+              <span class='ratio '>0.00%</span>
+              <span class='fileType'>html</span>
+              <span class='description'>{"URL.fragment":"summary", "URL.path":"/appointment.php", "URL.port":"80", "URL.protocol":"https"}</span>
             </button>
           </h2>
           <div id='collapse4' class='according-collapse collapse' aria-labelledby='heading4' data-bs-parent='#diff-contents'>
             <div class='accordion-body'>
               <div class='show-diff'><!-- Button trigger modal -->
-                <button type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#imageModal4'>Show diff in Modal</button><!-- Modal to show 3 images: Left/Diff/Right -->
-                <div class='modal fade' id='imageModal4' tabindex='-1' aria-labelledby='imageModalLabel' aria-hidden='true'>
+                <button type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#textModal4'>Show diff in Modal</button><!-- Modal to show texts diff -->
+                <div class='modal fade' id='textModal4' tabindex='-1' aria-labelledby='textModalLabel' aria-hidden='true'>
                   <div class='modal-dialog modal-fullscreen'>
                     <div class='modal-content'>
                       <div class='modal-header'>
-                        <h5 class='modal-title' id='imageModalLabel4'>
-                          <span>{"URL.fragment":"summary", "URL.path":"/appointment.php", "URL.protocol":"https"} png 0.01%</span>
+                        <h5 class='modal-title' id='textModalLabel4'>
+                          <span>{"URL.fragment":"summary", "URL.path":"/appointment.php", "URL.port":"80", "URL.protocol":"https"} html 0.00%%</span>
                           <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
                         </h5>
                       </div>
                       <div class='modal-body'><!-- body -->
-                        <div id='carouselControl4' class='carousel slide' data-bs-ride='carousel'>
-                          <div class='carousel-inner'>
-                            <div class='carousel-item'>
-                              <h3 class='centered'>Left</h3>
-                              <img class='img-fluid d-block w-75 centered' alt='left' src='CURA_VisualInspectionChronos/20210928_180623/objects/31e994e624341e316acd2695ce2a14eb1d57bcd9.png' />
-                            </div>
-                            <div class='carousel-item active'>
-                              <h3 class='centered'>Diff</h3>
-                              <img class='img-fluid d-block w-75 centered' alt='diff' src='CURA_VisualInspectionChronos/20210928_221501/objects/5132870fb55748aed614172c19c6a98b65a0e7a5.png' />
-                            </div>
-                            <div class='carousel-item'>
-                              <h3 class='centered'>Right</h3>
-                              <img class='img-fluid d-block w-75 centered' alt='right' src='CURA_VisualInspectionChronos/20210928_221501/objects/a49b3c10c71aac45de3fc437d0abcb06f6f4379c.png' />
-                            </div>
-                          </div>
-                          <button class='carousel-control-prev' type='button' data-bs-target='#carouselControl4' data-bs-slide='prev'>
-                            <span class='carousel-control-prev-icon' aria-hidden='true'></span>
-                            <span class='visually-hidden'>Previous</span>
-                          </button>
-                          <button class='carousel-control-next' type='button' data-bs-target='#carouselControl4' data-bs-slide='next'>
-                            <span class='carousel-control-next-icon' aria-hidden='true'></span>
-                            <span class='visually-hidden'>Next</span>
-                          </button>
-                        </div>
+                        <iframe src='CURA_VisualInspectionChronos/20220219_210639/objects/ae09302a4bc68e9a6b3cbcf0f22a0c1aff41607d.html' title='TextDiff'></iframe>
                       </div>
                       <div class='modal-footer'>
                         <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Close</button>
@@ -564,21 +588,24 @@
                 <dl class='detail'>
                   <dt>URL</dt>
                   <dd>
-                    <a href='CURA_VisualInspectionChronos/20210928_180623/objects/31e994e624341e316acd2695ce2a14eb1d57bcd9.png' target='left'>CURA_VisualInspectionChronos/20210928_180623/objects/31e994e624341e316acd2695ce2a14eb1d57bcd9.png</a>
+                    <a href='CURA_VisualInspectionChronos/20220219_202846/objects/2369d1166180489879dc5a31c4ea6560da2d19de.html' target='left'>CURA_VisualInspectionChronos/20220219_202846/objects/2369d1166180489879dc5a31c4ea6560da2d19de.html</a>
                   </dd>
                   <dt>fileType</dt>
-                  <dd>png</dd>
+                  <dd>html</dd>
                   <dt>metadata</dt>
                   <dd>
                     <span>{</span>
                     <span>"URL.fragment":</span>
                     <span class='matched-value'>"summary"</span>
                     <span>, </span>
-                    <span class='ignoring-key'>"URL.host":</span>
+                    <span class='ignored-key'>"URL.host":</span>
                     <span class='matched-value'>"katalon-demo-cura.herokuapp.com"</span>
                     <span>, </span>
                     <span>"URL.path":</span>
                     <span class='matched-value'>"/appointment.php"</span>
+                    <span>, </span>
+                    <span>"URL.port":</span>
+                    <span class='matched-value'>"80"</span>
                     <span>, </span>
                     <span>"URL.protocol":</span>
                     <span class='matched-value'>"https"</span>
@@ -591,21 +618,24 @@
                 <dl class='detail'>
                   <dt>URL</dt>
                   <dd>
-                    <a href='CURA_VisualInspectionChronos/20210928_221501/objects/a49b3c10c71aac45de3fc437d0abcb06f6f4379c.png' target='right'>CURA_VisualInspectionChronos/20210928_221501/objects/a49b3c10c71aac45de3fc437d0abcb06f6f4379c.png</a>
+                    <a href='CURA_VisualInspectionChronos/20220219_210639/objects/2369d1166180489879dc5a31c4ea6560da2d19de.html' target='right'>CURA_VisualInspectionChronos/20220219_210639/objects/2369d1166180489879dc5a31c4ea6560da2d19de.html</a>
                   </dd>
                   <dt>fileType</dt>
-                  <dd>png</dd>
+                  <dd>html</dd>
                   <dt>metadata</dt>
                   <dd>
                     <span>{</span>
                     <span>"URL.fragment":</span>
                     <span class='matched-value'>"summary"</span>
                     <span>, </span>
-                    <span class='ignoring-key'>"URL.host":</span>
+                    <span class='ignored-key'>"URL.host":</span>
                     <span class='matched-value'>"katalon-demo-cura.herokuapp.com"</span>
                     <span>, </span>
                     <span>"URL.path":</span>
                     <span class='matched-value'>"/appointment.php"</span>
+                    <span>, </span>
+                    <span>"URL.port":</span>
+                    <span class='matched-value'>"80"</span>
                     <span>, </span>
                     <span>"URL.protocol":</span>
                     <span class='matched-value'>"https"</span>
@@ -618,10 +648,10 @@
                 <dl class='detail'>
                   <dt>URL</dt>
                   <dd>
-                    <a href='CURA_VisualInspectionChronos/20210928_221501/objects/5132870fb55748aed614172c19c6a98b65a0e7a5.png' target='diff'>CURA_VisualInspectionChronos/20210928_221501/objects/5132870fb55748aed614172c19c6a98b65a0e7a5.png</a>
+                    <a href='CURA_VisualInspectionChronos/20220219_210639/objects/ae09302a4bc68e9a6b3cbcf0f22a0c1aff41607d.html' target='diff'>CURA_VisualInspectionChronos/20220219_210639/objects/ae09302a4bc68e9a6b3cbcf0f22a0c1aff41607d.html</a>
                   </dd>
                   <dt>fileType</dt>
-                  <dd>png</dd>
+                  <dd>html</dd>
                   <dt>metadata</dt>
                   <dd>
                     <span>{</span>
@@ -629,13 +659,13 @@
                     <span class='matched-value'>"diff"</span>
                     <span>, </span>
                     <span>"left":</span>
-                    <span class='matched-value'>"31e994e624341e316acd2695ce2a14eb1d57bcd9"</span>
+                    <span class='matched-value'>"2369d1166180489879dc5a31c4ea6560da2d19de"</span>
                     <span>, </span>
                     <span>"ratio":</span>
-                    <span class='matched-value'>"0.01"</span>
+                    <span class='matched-value'>"0.00%"</span>
                     <span>, </span>
                     <span>"right":</span>
-                    <span class='matched-value'>"a49b3c10c71aac45de3fc437d0abcb06f6f4379c"</span>
+                    <span class='matched-value'>"2369d1166180489879dc5a31c4ea6560da2d19de"</span>
                     <span>}</span>
                   </dd>
                 </dl>
@@ -646,154 +676,45 @@
         <div id='accordion5' class='accordion-item'>
           <h2 id='heading5' class='accordion-header'>
             <button class='accordion-button' type='button' data-bs-toggle='collapse' data-bs-target='#collapse5' area-expanded='false' aria-controls='collapse5'>
-              <span class='ratio warning'>1.76%</span>
-              <span class='fileType'>html</span>
-              <span class='description'>{"URL.path":"/", "URL.protocol":"http"}</span>
+              <span class='ratio warning'>1.18%</span>
+              <span class='fileType'>png</span>
+              <span class='description'>{"URL.path":"/", "URL.port":"80", "URL.protocol":"http"}</span>
             </button>
           </h2>
           <div id='collapse5' class='according-collapse collapse' aria-labelledby='heading5' data-bs-parent='#diff-contents'>
             <div class='accordion-body'>
               <div class='show-diff'><!-- Button trigger modal -->
-                <button type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#textModal5'>Show diff in Modal</button><!-- Modal to show texts diff -->
-                <div class='modal fade' id='textModal5' tabindex='-1' aria-labelledby='textModalLabel' aria-hidden='true'>
+                <button type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#imageModal5'>Show diff in Modal</button><!-- Modal to show 3 images: Left/Diff/Right -->
+                <div class='modal fade' id='imageModal5' tabindex='-1' aria-labelledby='imageModalLabel' aria-hidden='true'>
                   <div class='modal-dialog modal-fullscreen'>
                     <div class='modal-content'>
                       <div class='modal-header'>
-                        <h5 class='modal-title' id='textModalLabel5'>
-                          <span>{"URL.path":"/", "URL.protocol":"http"} html 1.76%</span>
+                        <h5 class='modal-title' id='imageModalLabel5'>
+                          <span>{"URL.path":"/", "URL.port":"80", "URL.protocol":"http"} png 1.18%%</span>
                           <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
                         </h5>
                       </div>
                       <div class='modal-body'><!-- body -->
-                        <iframe src='CURA_VisualInspectionChronos/20210928_221501/objects/d050a033e179d660ccd6229ecef0c346e361541a.html' title='TextDiff'></iframe>
-                      </div>
-                      <div class='modal-footer'>
-                        <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Close</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class='show-detail'>
-                <h2>left</h2>
-                <dl class='detail'>
-                  <dt>URL</dt>
-                  <dd>
-                    <a href='CURA_VisualInspectionChronos/20210928_180623/objects/44b9b36d854d2dc50b350ef58335196cc53132b9.html' target='left'>CURA_VisualInspectionChronos/20210928_180623/objects/44b9b36d854d2dc50b350ef58335196cc53132b9.html</a>
-                  </dd>
-                  <dt>fileType</dt>
-                  <dd>html</dd>
-                  <dt>metadata</dt>
-                  <dd>
-                    <span>{</span>
-                    <span class='ignoring-key'>"URL.host":</span>
-                    <span class='matched-value'>"demoaut-mimic.kazurayam.com"</span>
-                    <span>, </span>
-                    <span>"URL.path":</span>
-                    <span class='matched-value'>"/"</span>
-                    <span>, </span>
-                    <span>"URL.protocol":</span>
-                    <span class='matched-value'>"http"</span>
-                    <span>}</span>
-                  </dd>
-                </dl>
-              </div>
-              <div class='show-detail'>
-                <h2>right</h2>
-                <dl class='detail'>
-                  <dt>URL</dt>
-                  <dd>
-                    <a href='CURA_VisualInspectionChronos/20210928_221501/objects/fa462145ee62c5cc79b30bd892043466cf5d48e5.html' target='right'>CURA_VisualInspectionChronos/20210928_221501/objects/fa462145ee62c5cc79b30bd892043466cf5d48e5.html</a>
-                  </dd>
-                  <dt>fileType</dt>
-                  <dd>html</dd>
-                  <dt>metadata</dt>
-                  <dd>
-                    <span>{</span>
-                    <span class='ignoring-key'>"URL.host":</span>
-                    <span class='matched-value'>"demoaut-mimic.kazurayam.com"</span>
-                    <span>, </span>
-                    <span>"URL.path":</span>
-                    <span class='matched-value'>"/"</span>
-                    <span>, </span>
-                    <span>"URL.protocol":</span>
-                    <span class='matched-value'>"http"</span>
-                    <span>}</span>
-                  </dd>
-                </dl>
-              </div>
-              <div class='show-detail'>
-                <h2>diff</h2>
-                <dl class='detail'>
-                  <dt>URL</dt>
-                  <dd>
-                    <a href='CURA_VisualInspectionChronos/20210928_221501/objects/d050a033e179d660ccd6229ecef0c346e361541a.html' target='diff'>CURA_VisualInspectionChronos/20210928_221501/objects/d050a033e179d660ccd6229ecef0c346e361541a.html</a>
-                  </dd>
-                  <dt>fileType</dt>
-                  <dd>html</dd>
-                  <dt>metadata</dt>
-                  <dd>
-                    <span>{</span>
-                    <span>"category":</span>
-                    <span class='matched-value'>"diff"</span>
-                    <span>, </span>
-                    <span>"left":</span>
-                    <span class='matched-value'>"44b9b36d854d2dc50b350ef58335196cc53132b9"</span>
-                    <span>, </span>
-                    <span>"ratio":</span>
-                    <span class='matched-value'>"1.76"</span>
-                    <span>, </span>
-                    <span>"right":</span>
-                    <span class='matched-value'>"fa462145ee62c5cc79b30bd892043466cf5d48e5"</span>
-                    <span>}</span>
-                  </dd>
-                </dl>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id='accordion6' class='accordion-item'>
-          <h2 id='heading6' class='accordion-header'>
-            <button class='accordion-button' type='button' data-bs-toggle='collapse' data-bs-target='#collapse6' area-expanded='false' aria-controls='collapse6'>
-              <span class='ratio warning'>43.61%</span>
-              <span class='fileType'>png</span>
-              <span class='description'>{"URL.path":"/", "URL.protocol":"http"}</span>
-            </button>
-          </h2>
-          <div id='collapse6' class='according-collapse collapse' aria-labelledby='heading6' data-bs-parent='#diff-contents'>
-            <div class='accordion-body'>
-              <div class='show-diff'><!-- Button trigger modal -->
-                <button type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#imageModal6'>Show diff in Modal</button><!-- Modal to show 3 images: Left/Diff/Right -->
-                <div class='modal fade' id='imageModal6' tabindex='-1' aria-labelledby='imageModalLabel' aria-hidden='true'>
-                  <div class='modal-dialog modal-fullscreen'>
-                    <div class='modal-content'>
-                      <div class='modal-header'>
-                        <h5 class='modal-title' id='imageModalLabel6'>
-                          <span>{"URL.path":"/", "URL.protocol":"http"} png 43.61%</span>
-                          <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
-                        </h5>
-                      </div>
-                      <div class='modal-body'><!-- body -->
-                        <div id='carouselControl6' class='carousel slide' data-bs-ride='carousel'>
+                        <div id='carouselControl5' class='carousel slide' data-bs-ride='carousel'>
                           <div class='carousel-inner'>
                             <div class='carousel-item'>
                               <h3 class='centered'>Left</h3>
-                              <img class='img-fluid d-block w-75 centered' alt='left' src='CURA_VisualInspectionChronos/20210928_180623/objects/66d2e9b2864bc8049095174d7175f48fa9daf6a8.png' />
+                              <img class='img-fluid d-block w-75 centered' alt='left' src='CURA_VisualInspectionChronos/20220219_202846/objects/371b605ca4e9bd86a17cfdbf7be48eb9d840409c.png' />
                             </div>
                             <div class='carousel-item active'>
                               <h3 class='centered'>Diff</h3>
-                              <img class='img-fluid d-block w-75 centered' alt='diff' src='CURA_VisualInspectionChronos/20210928_221501/objects/84c38db3af46065f85aac7b76ab88293098d13ce.png' />
+                              <img class='img-fluid d-block w-75 centered' alt='diff' src='CURA_VisualInspectionChronos/20220219_210639/objects/035baa8dc23b5236d2a22896c5188b60395ff4d4.png' />
                             </div>
                             <div class='carousel-item'>
                               <h3 class='centered'>Right</h3>
-                              <img class='img-fluid d-block w-75 centered' alt='right' src='CURA_VisualInspectionChronos/20210928_221501/objects/b3f96933922cb86698524105fe61616ce134ff4e.png' />
+                              <img class='img-fluid d-block w-75 centered' alt='right' src='CURA_VisualInspectionChronos/20220219_210639/objects/39365f434ca5326056ef2fec16f0d1474471c33a.png' />
                             </div>
                           </div>
-                          <button class='carousel-control-prev' type='button' data-bs-target='#carouselControl6' data-bs-slide='prev'>
+                          <button class='carousel-control-prev' type='button' data-bs-target='#carouselControl5' data-bs-slide='prev'>
                             <span class='carousel-control-prev-icon' aria-hidden='true'></span>
                             <span class='visually-hidden'>Previous</span>
                           </button>
-                          <button class='carousel-control-next' type='button' data-bs-target='#carouselControl6' data-bs-slide='next'>
+                          <button class='carousel-control-next' type='button' data-bs-target='#carouselControl5' data-bs-slide='next'>
                             <span class='carousel-control-next-icon' aria-hidden='true'></span>
                             <span class='visually-hidden'>Next</span>
                           </button>
@@ -811,18 +732,21 @@
                 <dl class='detail'>
                   <dt>URL</dt>
                   <dd>
-                    <a href='CURA_VisualInspectionChronos/20210928_180623/objects/66d2e9b2864bc8049095174d7175f48fa9daf6a8.png' target='left'>CURA_VisualInspectionChronos/20210928_180623/objects/66d2e9b2864bc8049095174d7175f48fa9daf6a8.png</a>
+                    <a href='CURA_VisualInspectionChronos/20220219_202846/objects/371b605ca4e9bd86a17cfdbf7be48eb9d840409c.png' target='left'>CURA_VisualInspectionChronos/20220219_202846/objects/371b605ca4e9bd86a17cfdbf7be48eb9d840409c.png</a>
                   </dd>
                   <dt>fileType</dt>
                   <dd>png</dd>
                   <dt>metadata</dt>
                   <dd>
                     <span>{</span>
-                    <span class='ignoring-key'>"URL.host":</span>
+                    <span class='ignored-key'>"URL.host":</span>
                     <span class='matched-value'>"demoaut-mimic.kazurayam.com"</span>
                     <span>, </span>
                     <span>"URL.path":</span>
                     <span class='matched-value'>"/"</span>
+                    <span>, </span>
+                    <span>"URL.port":</span>
+                    <span class='matched-value'>"80"</span>
                     <span>, </span>
                     <span>"URL.protocol":</span>
                     <span class='matched-value'>"http"</span>
@@ -835,18 +759,21 @@
                 <dl class='detail'>
                   <dt>URL</dt>
                   <dd>
-                    <a href='CURA_VisualInspectionChronos/20210928_221501/objects/b3f96933922cb86698524105fe61616ce134ff4e.png' target='right'>CURA_VisualInspectionChronos/20210928_221501/objects/b3f96933922cb86698524105fe61616ce134ff4e.png</a>
+                    <a href='CURA_VisualInspectionChronos/20220219_210639/objects/39365f434ca5326056ef2fec16f0d1474471c33a.png' target='right'>CURA_VisualInspectionChronos/20220219_210639/objects/39365f434ca5326056ef2fec16f0d1474471c33a.png</a>
                   </dd>
                   <dt>fileType</dt>
                   <dd>png</dd>
                   <dt>metadata</dt>
                   <dd>
                     <span>{</span>
-                    <span class='ignoring-key'>"URL.host":</span>
+                    <span class='ignored-key'>"URL.host":</span>
                     <span class='matched-value'>"demoaut-mimic.kazurayam.com"</span>
                     <span>, </span>
                     <span>"URL.path":</span>
                     <span class='matched-value'>"/"</span>
+                    <span>, </span>
+                    <span>"URL.port":</span>
+                    <span class='matched-value'>"80"</span>
                     <span>, </span>
                     <span>"URL.protocol":</span>
                     <span class='matched-value'>"http"</span>
@@ -859,7 +786,7 @@
                 <dl class='detail'>
                   <dt>URL</dt>
                   <dd>
-                    <a href='CURA_VisualInspectionChronos/20210928_221501/objects/84c38db3af46065f85aac7b76ab88293098d13ce.png' target='diff'>CURA_VisualInspectionChronos/20210928_221501/objects/84c38db3af46065f85aac7b76ab88293098d13ce.png</a>
+                    <a href='CURA_VisualInspectionChronos/20220219_210639/objects/035baa8dc23b5236d2a22896c5188b60395ff4d4.png' target='diff'>CURA_VisualInspectionChronos/20220219_210639/objects/035baa8dc23b5236d2a22896c5188b60395ff4d4.png</a>
                   </dd>
                   <dt>fileType</dt>
                   <dd>png</dd>
@@ -870,13 +797,128 @@
                     <span class='matched-value'>"diff"</span>
                     <span>, </span>
                     <span>"left":</span>
-                    <span class='matched-value'>"66d2e9b2864bc8049095174d7175f48fa9daf6a8"</span>
+                    <span class='matched-value'>"371b605ca4e9bd86a17cfdbf7be48eb9d840409c"</span>
                     <span>, </span>
                     <span>"ratio":</span>
-                    <span class='matched-value'>"43.61"</span>
+                    <span class='matched-value'>"1.18%"</span>
                     <span>, </span>
                     <span>"right":</span>
-                    <span class='matched-value'>"b3f96933922cb86698524105fe61616ce134ff4e"</span>
+                    <span class='matched-value'>"39365f434ca5326056ef2fec16f0d1474471c33a"</span>
+                    <span>}</span>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id='accordion6' class='accordion-item'>
+          <h2 id='heading6' class='accordion-header'>
+            <button class='accordion-button' type='button' data-bs-toggle='collapse' data-bs-target='#collapse6' area-expanded='false' aria-controls='collapse6'>
+              <span class='ratio warning'>0.94%</span>
+              <span class='fileType'>html</span>
+              <span class='description'>{"URL.path":"/", "URL.port":"80", "URL.protocol":"http"}</span>
+            </button>
+          </h2>
+          <div id='collapse6' class='according-collapse collapse' aria-labelledby='heading6' data-bs-parent='#diff-contents'>
+            <div class='accordion-body'>
+              <div class='show-diff'><!-- Button trigger modal -->
+                <button type='button' class='btn btn-primary' data-bs-toggle='modal' data-bs-target='#textModal6'>Show diff in Modal</button><!-- Modal to show texts diff -->
+                <div class='modal fade' id='textModal6' tabindex='-1' aria-labelledby='textModalLabel' aria-hidden='true'>
+                  <div class='modal-dialog modal-fullscreen'>
+                    <div class='modal-content'>
+                      <div class='modal-header'>
+                        <h5 class='modal-title' id='textModalLabel6'>
+                          <span>{"URL.path":"/", "URL.port":"80", "URL.protocol":"http"} html 0.94%%</span>
+                          <button type='button' class='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+                        </h5>
+                      </div>
+                      <div class='modal-body'><!-- body -->
+                        <iframe src='CURA_VisualInspectionChronos/20220219_210639/objects/efee7a36eb83bcb6c561a0b51286ca32a4ea1b8b.html' title='TextDiff'></iframe>
+                      </div>
+                      <div class='modal-footer'>
+                        <button type='button' class='btn btn-secondary' data-bs-dismiss='modal'>Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class='show-detail'>
+                <h2>left</h2>
+                <dl class='detail'>
+                  <dt>URL</dt>
+                  <dd>
+                    <a href='CURA_VisualInspectionChronos/20220219_202846/objects/c6d659fcbd1dae8fb8dabb51abd6c6daa6a81179.html' target='left'>CURA_VisualInspectionChronos/20220219_202846/objects/c6d659fcbd1dae8fb8dabb51abd6c6daa6a81179.html</a>
+                  </dd>
+                  <dt>fileType</dt>
+                  <dd>html</dd>
+                  <dt>metadata</dt>
+                  <dd>
+                    <span>{</span>
+                    <span class='ignored-key'>"URL.host":</span>
+                    <span class='matched-value'>"demoaut-mimic.kazurayam.com"</span>
+                    <span>, </span>
+                    <span>"URL.path":</span>
+                    <span class='matched-value'>"/"</span>
+                    <span>, </span>
+                    <span>"URL.port":</span>
+                    <span class='matched-value'>"80"</span>
+                    <span>, </span>
+                    <span>"URL.protocol":</span>
+                    <span class='matched-value'>"http"</span>
+                    <span>}</span>
+                  </dd>
+                </dl>
+              </div>
+              <div class='show-detail'>
+                <h2>right</h2>
+                <dl class='detail'>
+                  <dt>URL</dt>
+                  <dd>
+                    <a href='CURA_VisualInspectionChronos/20220219_210639/objects/857f6f853d63865dd3e5cc3637c3b44fbac707b9.html' target='right'>CURA_VisualInspectionChronos/20220219_210639/objects/857f6f853d63865dd3e5cc3637c3b44fbac707b9.html</a>
+                  </dd>
+                  <dt>fileType</dt>
+                  <dd>html</dd>
+                  <dt>metadata</dt>
+                  <dd>
+                    <span>{</span>
+                    <span class='ignored-key'>"URL.host":</span>
+                    <span class='matched-value'>"demoaut-mimic.kazurayam.com"</span>
+                    <span>, </span>
+                    <span>"URL.path":</span>
+                    <span class='matched-value'>"/"</span>
+                    <span>, </span>
+                    <span>"URL.port":</span>
+                    <span class='matched-value'>"80"</span>
+                    <span>, </span>
+                    <span>"URL.protocol":</span>
+                    <span class='matched-value'>"http"</span>
+                    <span>}</span>
+                  </dd>
+                </dl>
+              </div>
+              <div class='show-detail'>
+                <h2>diff</h2>
+                <dl class='detail'>
+                  <dt>URL</dt>
+                  <dd>
+                    <a href='CURA_VisualInspectionChronos/20220219_210639/objects/efee7a36eb83bcb6c561a0b51286ca32a4ea1b8b.html' target='diff'>CURA_VisualInspectionChronos/20220219_210639/objects/efee7a36eb83bcb6c561a0b51286ca32a4ea1b8b.html</a>
+                  </dd>
+                  <dt>fileType</dt>
+                  <dd>html</dd>
+                  <dt>metadata</dt>
+                  <dd>
+                    <span>{</span>
+                    <span>"category":</span>
+                    <span class='matched-value'>"diff"</span>
+                    <span>, </span>
+                    <span>"left":</span>
+                    <span class='matched-value'>"c6d659fcbd1dae8fb8dabb51abd6c6daa6a81179"</span>
+                    <span>, </span>
+                    <span>"ratio":</span>
+                    <span class='matched-value'>"0.94%"</span>
+                    <span>, </span>
+                    <span>"right":</span>
+                    <span class='matched-value'>"857f6f853d63865dd3e5cc3637c3b44fbac707b9"</span>
                     <span>}</span>
                   </dd>
                 </dl>

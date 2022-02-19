@@ -6,7 +6,7 @@ import java.time.format.DateTimeFormatter
 
 import org.openqa.selenium.Keys
 
-import com.kazurayam.materialstore.Metadata
+import com.kazurayam.materialstore.metadata.Metadata
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import internal.GlobalVariable

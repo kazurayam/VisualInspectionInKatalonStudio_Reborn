@@ -1,0 +1,12 @@
+84cf303c91cc44e27aa47c2cfb9bbf8cee4dd51a	html	{"URL.fragment":"appointment", "URL.host":"katalon-demo-cura.herokuapp.com", "URL.path":"/", "URL.port":"80", "URL.protocol":"https"}
+d3cc1b2f620df4d6db911e55ec354f3fc5fe7470	png	{"URL.fragment":"appointment", "URL.host":"katalon-demo-cura.herokuapp.com", "URL.path":"/", "URL.port":"80", "URL.protocol":"https"}
+2369d1166180489879dc5a31c4ea6560da2d19de	html	{"URL.fragment":"summary", "URL.host":"katalon-demo-cura.herokuapp.com", "URL.path":"/appointment.php", "URL.port":"80", "URL.protocol":"https"}
+c494be44cc2dce9b5f81f511e131cb924d01b535	png	{"URL.fragment":"summary", "URL.host":"katalon-demo-cura.herokuapp.com", "URL.path":"/appointment.php", "URL.port":"80", "URL.protocol":"https"}
+857f6f853d63865dd3e5cc3637c3b44fbac707b9	html	{"URL.host":"demoaut-mimic.kazurayam.com", "URL.path":"/", "URL.port":"80", "URL.protocol":"http"}
+39365f434ca5326056ef2fec16f0d1474471c33a	png	{"URL.host":"demoaut-mimic.kazurayam.com", "URL.path":"/", "URL.port":"80", "URL.protocol":"http"}
+ae09302a4bc68e9a6b3cbcf0f22a0c1aff41607d	html	{"category":"diff", "left":"2369d1166180489879dc5a31c4ea6560da2d19de", "ratio":"0.00%", "right":"2369d1166180489879dc5a31c4ea6560da2d19de"}
+035baa8dc23b5236d2a22896c5188b60395ff4d4	png	{"category":"diff", "left":"371b605ca4e9bd86a17cfdbf7be48eb9d840409c", "ratio":"1.18%", "right":"39365f434ca5326056ef2fec16f0d1474471c33a"}
+bee09b77acffc8bebd569bd014338d09c5487b3b	html	{"category":"diff", "left":"84cf303c91cc44e27aa47c2cfb9bbf8cee4dd51a", "ratio":"0.00%", "right":"84cf303c91cc44e27aa47c2cfb9bbf8cee4dd51a"}
+40a74ab9855e02ccced18823fa2114e25b7dfd8b	png	{"category":"diff", "left":"9eceacdbad204f5382da4aa63bbcde9da61cc9a4", "ratio":"0.01%", "right":"c494be44cc2dce9b5f81f511e131cb924d01b535"}
+a30da133e1558bd64b1a3a5199e633d060ef6302	png	{"category":"diff", "left":"a30da133e1558bd64b1a3a5199e633d060ef6302", "ratio":"0.00%", "right":"d3cc1b2f620df4d6db911e55ec354f3fc5fe7470"}
+efee7a36eb83bcb6c561a0b51286ca32a4ea1b8b	html	{"category":"diff", "left":"c6d659fcbd1dae8fb8dabb51abd6c6daa6a81179", "ratio":"0.94%", "right":"857f6f853d63865dd3e5cc3637c3b44fbac707b9"}

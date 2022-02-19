@@ -7,12 +7,12 @@ import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import org.openqa.selenium.WebDriver
 
-import com.kazurayam.materialstore.FileType
-import com.kazurayam.materialstore.JobName
-import com.kazurayam.materialstore.JobTimestamp
-import com.kazurayam.materialstore.Material
-import com.kazurayam.materialstore.Metadata
-import com.kazurayam.materialstore.Store
+import com.kazurayam.materialstore.filesystem.FileType
+import com.kazurayam.materialstore.filesystem.JobName
+import com.kazurayam.materialstore.filesystem.JobTimestamp
+import com.kazurayam.materialstore.filesystem.Material
+import com.kazurayam.materialstore.metadata.Metadata
+import com.kazurayam.materialstore.filesystem.Store
 import com.kazurayam.uitestjava.flaskr.pom.actions.ActionListener
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI

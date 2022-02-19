@@ -2,10 +2,10 @@ import java.nio.file.Path
 import java.nio.file.Paths
 import java.time.temporal.ChronoUnit
 
-import com.kazurayam.materialstore.JobName
-import com.kazurayam.materialstore.JobTimestamp
-import com.kazurayam.materialstore.Store
-import com.kazurayam.materialstore.Stores
+import com.kazurayam.materialstore.filesystem.JobName
+import com.kazurayam.materialstore.filesystem.JobTimestamp
+import com.kazurayam.materialstore.filesystem.Store
+import com.kazurayam.materialstore.filesystem.Stores
 import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 

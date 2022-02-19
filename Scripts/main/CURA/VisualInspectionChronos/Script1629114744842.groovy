@@ -5,14 +5,14 @@ import java.nio.file.Path
 import java.nio.file.Paths
 
 import com.kazurayam.ks.globalvariable.ExecutionProfilesLoader
-import com.kazurayam.materialstore.DiffArtifacts
-import com.kazurayam.materialstore.JobName
-import com.kazurayam.materialstore.JobTimestamp
-import com.kazurayam.materialstore.MaterialList
-import com.kazurayam.materialstore.IgnoringMetadataKeys
-import com.kazurayam.materialstore.MetadataPattern
-import com.kazurayam.materialstore.Store
-import com.kazurayam.materialstore.StoreImpl
+import com.kazurayam.materialstore.diffartifact.DiffArtifactGroup
+import com.kazurayam.materialstore.filesystem.JobName
+import com.kazurayam.materialstore.filesystem.JobTimestamp
+import com.kazurayam.materialstore.filesystem.MaterialList
+import com.kazurayam.materialstore.metadata.MetadataPattern
+import com.kazurayam.materialstore.filesystem.Store
+import com.kazurayam.materialstore.filesystem.Stores
+import com.kazurayam.materialstore.MaterialstoreFacade
 import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
@@ -21,7 +21,7 @@ import internal.GlobalVariable
 
 Path projectDir = Paths.get(RunConfiguration.getProjectDir())
 Path root = projectDir.resolve("store")
-Store store = new StoreImpl(root)
+Store store = Stores.newInstance(root)
 JobName jobName = new JobName("CURA_VisualInspectionChronos")
 JobTimestamp currentTimestamp = JobTimestamp.now()
 ExecutionProfilesLoader profilesLoader = new ExecutionProfilesLoader()
@@ -57,18 +57,22 @@ assert right.size() > 0
 double criteria = 0.1d
 
 // do comaring while creating diff. The result will be carried as instances of DiffArtifact class.
-DiffArtifacts stuffedDiffArtifacts =
-    store.makeDiff(left, right, IgnoringMetadataKeys.of("URL", "URL.host"))
+DiffArtifactGroup prepared =
+    DiffArtifactGroup.builder(left, right)
+		.ignoreKeys("URL", "URL.host")
+		.build()
+MaterialstoreFacade facade = new MaterialstoreFacade(store)
+DiffArtifactGroup workedOut = facade.workOn(prepared)
 
 // How many siginificant differences were found?
-int warnings = stuffedDiffArtifacts.countWarnings(criteria)
+int warnings = workedOut.countWarnings(criteria)
 
 // compile HTML report
-Path reportFile = store.reportDiffs(jobName, stuffedDiffArtifacts, criteria, jobName.toString() + "-index.html")
+Path reportFile = store.reportDiffs(jobName, workedOut, criteria, jobName.toString() + "-index.html")
 assert Files.exists(reportFile)
 WebUI.comment("The report can be found at ${reportFile.toString()}")
 
 // if any siginificant difference found, this Test Case should FAIL
 if (warnings > 0) {
-	KeywordUtil.markFailed("found ${warnings} differences.")
+	KeywordUtil.markWarning("found ${warnings} differences.")
 }

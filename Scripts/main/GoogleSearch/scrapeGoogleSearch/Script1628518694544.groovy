@@ -7,15 +7,15 @@ import org.jsoup.nodes.Document
 import org.openqa.selenium.Keys
 import org.openqa.selenium.WebDriver
 
-import com.kazurayam.materialstore.FileType
-import com.kazurayam.materialstore.JobName
-import com.kazurayam.materialstore.JobTimestamp
-import com.kazurayam.materialstore.Material
-import com.kazurayam.materialstore.MaterialList
-import com.kazurayam.materialstore.Metadata
-import com.kazurayam.materialstore.MetadataPattern
-import com.kazurayam.materialstore.Store
-import com.kazurayam.materialstore.Stores
+import com.kazurayam.materialstore.filesystem.FileType
+import com.kazurayam.materialstore.filesystem.JobName
+import com.kazurayam.materialstore.filesystem.JobTimestamp
+import com.kazurayam.materialstore.filesystem.Material
+import com.kazurayam.materialstore.filesystem.MaterialList
+import com.kazurayam.materialstore.metadata.Metadata
+import com.kazurayam.materialstore.metadata.MetadataPattern
+import com.kazurayam.materialstore.filesystem.Store
+import com.kazurayam.materialstore.filesystem.Stores
 import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.testobject.ConditionType
 import com.kms.katalon.core.testobject.TestObject
