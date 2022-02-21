@@ -65,8 +65,7 @@ MaterialList right = store.select(jobName, timestampD,
 	
 
 try {
-	MaterialstoreFacade facade = new MaterialstoreFacade(store)
-	
+	MaterialstoreFacade facade = MaterialstoreFacade.newInstance(store)
 	
 	// make ArtifactGroup
 	ArtifactGroup prepared = 
@@ -81,7 +80,7 @@ try {
 	double criteria = 0.0d
 	
 	// compile HTML report
-	Path reportFile = store.reportDiffs(jobName, workedOut, criteria, jobName.toString() + "-index.html")
+	Path reportFile = facade.reportArtifactGroup(jobName, workedOut, criteria, jobName.toString() + "-index.html")
 	assert Files.exists(reportFile)
 	WebUI.comment("The report can be found ${reportFile.toString()}")
 

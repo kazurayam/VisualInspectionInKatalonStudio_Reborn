@@ -5,19 +5,18 @@ import java.nio.file.Path
 import java.nio.file.Paths
 
 import com.kazurayam.ks.globalvariable.ExecutionProfilesLoader
-import com.kazurayam.materialstore.resolvent.ArtifactGroup
+import com.kazurayam.materialstore.MaterialstoreFacade
 import com.kazurayam.materialstore.filesystem.JobName
 import com.kazurayam.materialstore.filesystem.JobTimestamp
 import com.kazurayam.materialstore.filesystem.MaterialList
-import com.kazurayam.materialstore.metadata.MetadataPattern
 import com.kazurayam.materialstore.filesystem.Store
 import com.kazurayam.materialstore.filesystem.Stores
-import com.kazurayam.materialstore.MaterialstoreFacade
+import com.kazurayam.materialstore.metadata.MetadataPattern
+import com.kazurayam.materialstore.resolvent.ArtifactGroup
 import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
-import internal.GlobalVariable
 
 Path projectDir = Paths.get(RunConfiguration.getProjectDir())
 Path root = projectDir.resolve("store")
@@ -62,7 +61,7 @@ MaterialList right = store.select(jobName, timestampD,
 			MetadataPattern.builderWithMap([ "profile": profile2 ]).build()
 			)
 
-MaterialstoreFacade facade = new MaterialstoreFacade(store)		
+MaterialstoreFacade facade = MaterialstoreFacade.newInstance(store)		
 
 
 // make DiffArtifacts
@@ -77,7 +76,7 @@ ArtifactGroup workedOut = facade.workOn(prepared)
 double criteria = 0.0d
 
 // compile HTML report
-Path reportFile = store.reportDiffs(jobName, workedOut, criteria, jobName.toString() + "-index.html")
+Path reportFile = facade.reportArtifactGroup(jobName, workedOut, criteria, jobName.toString() + "-index.html")
 assert Files.exists(reportFile)
 WebUI.comment("The report can be found ${reportFile.toString()}")
 

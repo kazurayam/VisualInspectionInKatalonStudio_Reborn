@@ -54,20 +54,21 @@ MaterialList right = store.select(jobName, currentTimestamp, MetadataPattern.ANY
 assert right.size() > 0
 
 // the facade class that work for you
-MaterialstoreFacade facade = new MaterialstoreFacade(store)
+MaterialstoreFacade facade = MaterialstoreFacade.newInstance(store)
 
 // do comaring while creating diff. The result will be carried as instances of DiffArtifact class.
 ArtifactGroup prepared =
     ArtifactGroup.builder(left, right)
 		.ignoreKeys("URL", "URL.host")
 		.build()
+
 ArtifactGroup workedOut = facade.workOn(prepared)
 
 // if difference is greater than this criteria value, the difference should be marked
 double criteria = 0.1d
 
 // compile HTML report
-Path reportFile = store.reportDiffs(jobName, workedOut, criteria, jobName.toString() + "-index.html")
+Path reportFile = facade.reportArtifactGroup(jobName, workedOut, criteria, jobName.toString() + "-index.html")
 assert Files.exists(reportFile)
 WebUI.comment("The report can be found at ${reportFile.toString()}")
 
