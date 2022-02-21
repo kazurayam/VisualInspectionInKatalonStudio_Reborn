@@ -5,7 +5,7 @@ import java.nio.file.Path
 import java.nio.file.Paths
 
 import com.kazurayam.ks.globalvariable.ExecutionProfilesLoader
-import com.kazurayam.materialstore.diffartifact.DiffArtifactGroup
+import com.kazurayam.materialstore.resolvent.ArtifactGroup
 import com.kazurayam.materialstore.filesystem.JobName
 import com.kazurayam.materialstore.filesystem.JobTimestamp
 import com.kazurayam.materialstore.filesystem.MaterialList
@@ -65,27 +65,27 @@ MaterialList right = store.select(jobName, timestampD,
 	
 
 try {
-	// difference greater than the criteria should be warned
-	double criteria = 0.0d
+	MaterialstoreFacade facade = new MaterialstoreFacade(store)
 	
-	// make DiffArtifacts
-	DiffArtifactGroup prepared = 
-    	DiffArtifactGroup.builder(left, right)
+	
+	// make ArtifactGroup
+	ArtifactGroup prepared = 
+    	ArtifactGroup.builder(left, right)
 			.ignoreKeys("profile", "URL.host", "URL.port")
 			.sort("step")
 			.build()
 			
-	MaterialstoreFacade facade = new MaterialstoreFacade(store)
-	DiffArtifactGroup workedOut = facade.workOn(prepared)
-	int warnings = workedOut.countWarnings(criteria)
-
+	ArtifactGroup workedOut = facade.workOn(prepared)
+	
+	// difference greater than the criteria should be warned
+	double criteria = 0.0d
+	
 	// compile HTML report
-	Path reportFile = 
-    store.reportDiffs(jobName, workedOut, criteria,
-	    jobName.toString() + "-index.html")
+	Path reportFile = store.reportDiffs(jobName, workedOut, criteria, jobName.toString() + "-index.html")
 	assert Files.exists(reportFile)
 	WebUI.comment("The report can be found ${reportFile.toString()}")
 
+	int warnings = workedOut.countWarnings(criteria)
 	if (warnings > 0) {
 		KeywordUtil.markWarning("found ${warnings} differences.")
 	}

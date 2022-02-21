@@ -5,7 +5,7 @@ import java.nio.file.Path
 import java.nio.file.Paths
 
 import com.kazurayam.ks.globalvariable.ExecutionProfilesLoader
-import com.kazurayam.materialstore.diffartifact.DiffArtifactGroup
+import com.kazurayam.materialstore.resolvent.ArtifactGroup
 import com.kazurayam.materialstore.filesystem.JobName
 import com.kazurayam.materialstore.filesystem.JobTimestamp
 import com.kazurayam.materialstore.filesystem.MaterialList
@@ -53,19 +53,18 @@ assert left.size() > 0
 MaterialList right = store.select(jobName, currentTimestamp, MetadataPattern.ANY)
 assert right.size() > 0
 
-// if difference is greater than this criteria value, the difference should be marked
-double criteria = 0.1d
+// the facade class that work for you
+MaterialstoreFacade facade = new MaterialstoreFacade(store)
 
 // do comaring while creating diff. The result will be carried as instances of DiffArtifact class.
-DiffArtifactGroup prepared =
-    DiffArtifactGroup.builder(left, right)
+ArtifactGroup prepared =
+    ArtifactGroup.builder(left, right)
 		.ignoreKeys("URL", "URL.host")
 		.build()
-MaterialstoreFacade facade = new MaterialstoreFacade(store)
-DiffArtifactGroup workedOut = facade.workOn(prepared)
+ArtifactGroup workedOut = facade.workOn(prepared)
 
-// How many siginificant differences were found?
-int warnings = workedOut.countWarnings(criteria)
+// if difference is greater than this criteria value, the difference should be marked
+double criteria = 0.1d
 
 // compile HTML report
 Path reportFile = store.reportDiffs(jobName, workedOut, criteria, jobName.toString() + "-index.html")
@@ -73,6 +72,7 @@ assert Files.exists(reportFile)
 WebUI.comment("The report can be found at ${reportFile.toString()}")
 
 // if any siginificant difference found, this Test Case should FAIL
+int warnings = workedOut.countWarnings(criteria)
 if (warnings > 0) {
 	KeywordUtil.markWarning("found ${warnings} differences.")
 }
