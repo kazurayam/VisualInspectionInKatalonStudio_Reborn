@@ -18,6 +18,7 @@
 - [The documentation of "materialstore"](#the-documentation-of-materialstore)
 - [Examples in Katalon Studio](#examples-in-katalon-studio)
   - [Creating a project, resolving external dependencies](#creating-a-project-resolving-external-dependencies)
+  - [Overview of samples](#overview-of-samples)
   - [Sample1: simply visit a URL and scrape](#sample1-simply-visit-a-url-and-scrape)
     - [(1) Test Case](#1-test-case)
     - [(2) The report generated](#2-the-report-generated)
