@@ -16,7 +16,7 @@ import com.kazurayam.materialstore.filesystem.MaterialList
 import com.kazurayam.materialstore.filesystem.Store
 import com.kazurayam.materialstore.filesystem.Stores
 import com.kazurayam.materialstore.metadata.Metadata
-import com.kazurayam.materialstore.metadata.MetadataPattern
+import com.kazurayam.materialstore.metadata.QueryOnMetadata
 import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.testobject.ConditionType
 import com.kms.katalon.core.testobject.TestObject
@@ -69,7 +69,7 @@ takeFullPageScreenshotAndSavePageSourceUsingBuiltinKeyword(store, jobName, jobTi
 WebUI.closeBrowser()
 
 // compile a list of the aterials in HTML
-MaterialList materials = store.select(jobName, jobTimestamp, MetadataPattern.ANY)
+MaterialList materials = store.select(jobName, jobTimestamp, QueryOnMetadata.ANY)
 
 MaterialstoreFacade facade = MaterialstoreFacade.newInstance(store)
 Path report = facade.reportMaterials(jobName, materials, jobName.toString() + ".html")
