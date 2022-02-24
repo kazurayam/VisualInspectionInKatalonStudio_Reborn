@@ -51,7 +51,7 @@ WebUI.callTestCase(
 String profile2 = "Flaskr_DevelopmentEnv"
 profilesLoader.loadProfile(profile2)
 WebUI.comment("Execution Profile ${profile2} was loaded with GlobalVariable.URL=${GlobalVariable.URL}")
-JobTimestamp timestampD = JobTimestamp.now()
+JobTimestamp timestampD = JobTimestamp.laterThan(timestampP)
 
 WebUI.callTestCase(
 	findTestCase("main/Flaskr/navigate_through_the_site"),

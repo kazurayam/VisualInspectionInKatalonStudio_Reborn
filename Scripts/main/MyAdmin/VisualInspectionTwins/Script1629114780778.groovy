@@ -48,8 +48,7 @@ WebUI.callTestCase(
 String profile2 = "MyAdmin_DevelopmentEnv"
 profilesLoader.loadProfile(profile2)
 WebUI.comment("Execution Profile ${profile2} was loaded")
-
-JobTimestamp timestampD = JobTimestamp.now()
+JobTimestamp timestampD = JobTimestamp.laterThan(timestampP)
 WebUI.callTestCase(
 	findTestCase("main/MyAdmin/visitMyAdminTopPage"),
 	["profile": profile2, "store": store, "jobName": jobName, "jobTimestamp": timestampD]
