@@ -163,9 +163,36 @@ Drivers
 
 >The exact version number of the jars may change in future. Please regard this as an example.
 
+
+
 All of these jar files are downloaded from the [Maven Central Repositry](https://mvnrepository.com/). These are required to run the "Visual Testing" code in your new project in Katalon Studio locally.
 
 >If you are going to push your new project into Git repository, you should write `.gitignore` file so that it ignores the `Drivers/` directory.
+
+7. Stop Katalon Studio, restart it and re-open the project.
+
+You have resolved external dependencies. Now you can start writing a Test Case.
+
+
+### Target Web Application under Sample Tests
+
+| sample name | entry Test Case | URL accessed 1st | URL accessed 2nd | description |
+| :---------- | :-------------- | :--------------- | :--------------- | :---------- |
+| Sample1 Google | [Test Cases/GoogleSearch/ScrapeGoogleSearch](./Test%20Cases/main/GoogleSearch/ScrapeGoogleSearch.tc) | https://www.google.com/ | N/A | 
+| Sample2 CURA   | [Test Cases/CURA/VisualInspectionChronos](Test%20Cases/main/CURA/VisualInspectionChronos.tc) | http://demoaut-mimic.kazurayam.com/ | http://demoaut-mimic.kazurayam.com/ | same as the left |
+| Sample3 MyAdmin | [Test Cases/MyAdmin/VisualInspectionTwins](Scripts/main/MyAdmin/VisualInspectionTwins/Script1629114780778.groovy) | http://myadmin.kazurayam.com/ | http://devadmin.kazurayam.com/ |
+| Sample4 Flaskr | [Test Cases/Flaskr/VisualInspectionTwins](Scripts/main/Flaskr/VisualInspectionTwins/Script1642595597544.groovy) | http://127.0.0.1:3080 | http://127.0.0.1:3090 | 
+
+The **Sample1** opens the Google search page, makes search with keyword "katalon", takes screenshots, saves HTML sources.
+
+As for the **Sample2**, the URL is provided by kazurayam.com (it's me!), publicly available on the Internet. The test visits a single URL twice with a few tempos of intermission.
+
+As for the **Sample3**, both URLs are provided by kazurayam.com, publicly available on the Internet. The 2 pages have slight difference visually.
+
+As for the **Sample4**, the 2 URLs are private ones on the localhost. The URLs are provided by a Docker container which runs on your PC. You need "Docker" installed on your PC to try the Sample4. The URL has multiple pages, requires fairly complex user interactions. In order to implement a automated UI test for this target, I employed the design pattern "Page Object Model" in Java.
+
+
+### External Dependencies
 
 The following table shows by which code these external dependencies are used
 
@@ -178,28 +205,6 @@ The following table shows by which code these external dependencies are used
 | [materialstore](https://mvnrepository.com/artifact/com.kazurayam/materialstore) |✔︎|✔︎|✔︎|✔︎|✔︎|
 | [subprocess](https://mvnrepository.com/artifact/com.kazurayam/subprocessj) | | | | |✔︎|
 | [Docker](https://www.docker.com/products/docker-desktop) | | | | |✔︎  |
-
-
-7. Stop Katalon Studio, restart it and re-open the project.
-
-You have resolved external dependencies. Now you can start writing a Test Case.
-
-### Target Web Application under Test
-
-| sample name | entry Test Case | URL accessed 1st | URL accessed 2nd | description |
-| :---------- | :-------------- | :--------------- | :--------------- | :---------- |
-| Sample1 Google | [Test Cases/GoogleSearch/ScrapeGoogleSearch](./Test%20Cases/main/GoogleSearch/ScrapeGoogleSearch.tc) | https://www.google.com/ | N/A | 
-| Sample2 CURA   | [Test Cases/CURA/VisualInspectionChronos](Test%20Cases/main/CURA/VisualInspectionChronos.tc) | http://demoaut-mimic.kazurayam.com/ | http://demoaut-mimic.kazurayam.com/ | same as the left |
-| Sample3 MyAdmin | [Test Cases/MyAdmin/VisualInspectionTwins](Scripts/main/MyAdmin/VisualInspectionTwins/Script1629114780778.groovy) | http://myadmin.kazurayam.com/ | http://devadmin.kazurayam.com/ |
-| Sample4 Flaskr | [Test Cases/Flaskr/VisualInspectionTwins] | http://127.0.0.1:3080 | http://127.0.0.1:3090 | 
-
-The **Sample1** opens the Google search page, makes search with keyword "katalon", takes screenshots, saves HTML sources.
-
-As for the **Sample2**, the URL is provided by kazurayam.com (it's me!), publicly available on the Internet. The test visits a single URL twice with a few tempos of intermission.
-
-As for the **Sample3**, both URLs are provided by kazurayam.com, publicly available on the Internet. The 2 pages have slight difference visually.
-
-As for the **Sample4**, the 2 URLs are private ones on the localhost. The URLs are provided by a Docker container which runs on your PC. You need "Docker" installed on your PC to try the Sample4. The URL has multiple pages, requires fairly complex user interactions. In order to implement a automated UI test for this target, I employed the design pattern "Page Object Model" in Java.
 
 
 
