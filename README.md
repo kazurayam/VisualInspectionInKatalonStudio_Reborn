@@ -156,7 +156,8 @@ Drivers
 ├── AUTOIMPORTED_ashot-1.5.4.jar
 ├── AUTOIMPORTED_java-diff-utils-4.9.jar
 ├── AUTOIMPORTED_jsoup-1.13.1.jar
-├── AUTOIMPORTED_materialstore-0.1.0.jar
+├── AUTOIMPORTED_materialstore-0.3.5.jar
+└── AUTOIMPORTED_subprocessj-0.3.3.jar
 ```
 
 >The exact version number of the jars may change in future. Please regard this as an example.
@@ -165,18 +166,31 @@ All of these jar files are downloaded from the [Maven Central Repositry](https:/
 
 >If you are going to push your new project into Git repository, you should write `.gitignore` file so that it ignores the `Drivers/` directory.
 
+The following table shows by which code these external dependencies are used
+
+| External tools/libraries | the framework | Sample1 | Sample2 | Sample3 MyAdmin | Sample4 Flaskr |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| [ExecutionProfilesLoader](ExecutionProfilesLoader) | | |✔︎| ✔︎ |✔︎|
+| [ashot](https://mvnrepository.com/artifact/ru.yandex.qatools.ashot/ashot) | |✔︎|✔︎|✔︎|✔︎|
+| [java-diff-utils](https://mvnrepository.com/artifact/io.github.java-diff-utils/java-diff-utils) |✔︎|✔︎|✔︎|✔︎|✔︎|
+| [jsoup](https://mvnrepository.com/artifact/org.jsoup/jsoup) |✔︎|✔︎|✔︎|✔︎|✔︎|
+| [materialstore](https://mvnrepository.com/artifact/com.kazurayam/materialstore) |✔︎|✔︎|✔︎|✔︎|✔︎|
+| [subprocess](https://mvnrepository.com/artifact/com.kazurayam/subprocessj) | | | | |✔︎|
+| [Docker](https://www.docker.com/products/docker-desktop) | | | | |✔︎  |
+
+
 7. Stop Katalon Studio, restart it and re-open the project.
 
 You have resolved external dependencies. Now you can start writing a Test Case.
 
-### Overview of samples
+### Target Web Application under Test
 
 | sample name | entry Test Case | URL accessed 1st | URL accessed 2nd | description |
 | :---------- | :-------------- | :--------------- | :--------------- | :---------- |
-| Sample1     | [Test Cases/GoogleSearch/ScrapeGoogleSearch](./Test%20Cases/main/GoogleSearch/ScrapeGoogleSearch.tc) | https://www.google.com/ | N/A | 
-| Sample2     | [Test Cases/CURA/VisualInspectionChronos](Test%20Cases/main/CURA/VisualInspectionChronos.tc) | http://demoaut-mimic.kazurayam.com/ | http://demoaut-mimic.kazurayam.com/ | same as the left |
-| Sample3     | [Test Cases/MyAdmin/VisualInspectionTwins](Scripts/main/MyAdmin/VisualInspectionTwins/Script1629114780778.groovy) | http://myadmin.kazurayam.com/ | http://devadmin.kazurayam.com/ |
-| Sample4     | [Test Cases/Flaskr/VisualInspectionTwins] | http://127.0.0.1:3080 | http://127.0.0.1:3090 | 
+| Sample1 Google | [Test Cases/GoogleSearch/ScrapeGoogleSearch](./Test%20Cases/main/GoogleSearch/ScrapeGoogleSearch.tc) | https://www.google.com/ | N/A | 
+| Sample2 CURA   | [Test Cases/CURA/VisualInspectionChronos](Test%20Cases/main/CURA/VisualInspectionChronos.tc) | http://demoaut-mimic.kazurayam.com/ | http://demoaut-mimic.kazurayam.com/ | same as the left |
+| Sample3 MyAdmin | [Test Cases/MyAdmin/VisualInspectionTwins](Scripts/main/MyAdmin/VisualInspectionTwins/Script1629114780778.groovy) | http://myadmin.kazurayam.com/ | http://devadmin.kazurayam.com/ |
+| Sample4 Flaskr | [Test Cases/Flaskr/VisualInspectionTwins] | http://127.0.0.1:3080 | http://127.0.0.1:3090 | 
 
 The **Sample1** opens the Google search page, makes search with keyword "katalon", takes screenshots, saves HTML sources.
 
@@ -188,7 +202,7 @@ As for the **Sample4**, the 2 URLs are private ones on the localhost. The URLs a
 
 
 
-### Sample1: simply visit a URL and scrape
+## Sample1: simply visit a URL and scrape
 
 First example. We will write a Test Case in Katalon Studio that visits the [Google Search page](https://www.google.com/). We will take screenshots and HTML page sources of the Web page. We will store PNG files and HTML files into the `store` directory using the `materialstore` library. We will finally generate a HTML file in which we can view the stored files.
 
@@ -270,7 +284,7 @@ The `materialstore` API restricts that *metadata* texts in a `index` file MUST b
 
 
 
-### Sample2: Visual Inspection in Chronos mode
+## Sample2: Visual Inspection in Chronos mode
 
 Second example. We will write a Test Case in Katalon Studio that visits the [http://demoaut-mimic.kazurayam.com/](http://demoaut-mimic.kazurayam.com/). The top page displays a current timestamp in the unit of seconds. So everytime you retrieve this page, the page changes slightly at the timestamp portion.
 
@@ -362,7 +376,7 @@ Also you can see examples of HTML page sources comparison result.
 
 
 
-### Sample3: Visual Inspection in Twins mode
+## Sample3: Visual Inspection in Twins mode
 
 The 3rd example visits 2 URLs. These are useless pages solely for this example.
 
@@ -480,7 +494,7 @@ Also you can see the diff of HTML page source.
 
 ![Twins_HTML](docs/images/Twins_HTML.png)
 
-### Sample4: Navigating multiple URLs in Twins mode
+## Sample4: Navigating multiple URLs in Twins mode
 
 The sample3 showed how to compare just a single pair of URLs. The next sample4 shows how to compare multiple pairs of URLs. The sample4 shows how to navigate though a site for 7 pages while taking screenshots and HTML sources.
 
@@ -554,6 +568,7 @@ and a lot of related Groovy classes
 Why do I have these Groovy classes? --- It is because I employed the ["Page Object Model"](https://www.guru99.com/page-object-model-pom-page-factory-in-selenium-ultimate-guide.html). The Page Object Model helped me in writing compact and readable codes.
 
 The sample4 is highly extensible while avoiding code publications. It would be a foundation of large scale Visual Inspection projects.
+
 
 ## Setup Docker & Flaskr on your PC
 
