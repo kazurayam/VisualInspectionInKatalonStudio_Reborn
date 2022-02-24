@@ -176,12 +176,12 @@ You have resolved external dependencies. Now you can start writing a Test Case.
 
 ### Target Web Application under Sample Tests
 
-| sample name | entry Test Case | URL accessed 1st | URL accessed 2nd | description |
-| :---------- | :-------------- | :--------------- | :--------------- | :---------- |
-| Sample1 Google | [Test Cases/GoogleSearch/ScrapeGoogleSearch](./Test%20Cases/main/GoogleSearch/ScrapeGoogleSearch.tc) | https://www.google.com/ | N/A | 
-| Sample2 CURA   | [Test Cases/CURA/VisualInspectionChronos](Test%20Cases/main/CURA/VisualInspectionChronos.tc) | http://demoaut-mimic.kazurayam.com/ | http://demoaut-mimic.kazurayam.com/ | same as the left |
-| Sample3 MyAdmin | [Test Cases/MyAdmin/VisualInspectionTwins](Scripts/main/MyAdmin/VisualInspectionTwins/Script1629114780778.groovy) | http://myadmin.kazurayam.com/ | http://devadmin.kazurayam.com/ |
-| Sample4 Flaskr | [Test Cases/Flaskr/VisualInspectionTwins](Scripts/main/Flaskr/VisualInspectionTwins/Script1642595597544.groovy) | http://127.0.0.1:3080 | http://127.0.0.1:3090 | 
+| sample name | Test Case | URL accessed 1st | URL accessed 2nd |
+| :---------- | :-------------- | :--------------- | :--------------- |
+| Sample1 Google | [GoogleSearch/ScrapeGoogleSearch](./Test%20Cases/main/GoogleSearch/ScrapeGoogleSearch.tc) | https://www.google.com/ |
+| Sample2 CURA   | [CURA/VisualInspectionChronos](Test%20Cases/main/CURA/VisualInspectionChronos.tc) | http://demoaut-mimic.kazurayam.com/ | http://demoaut-mimic.kazurayam.com/ |
+| Sample3 MyAdmin | [MyAdmin/VisualInspectionTwins](Scripts/main/MyAdmin/VisualInspectionTwins/Script1629114780778.groovy) | http://myadmin.kazurayam.com/ | http://devadmin.kazurayam.com/ |
+| Sample4 Flaskr | [Flaskr/VisualInspectionTwins](Scripts/main/Flaskr/VisualInspectionTwins/Script1642595597544.groovy) | http://127.0.0.1:3080 | http://127.0.0.1:3090 | 
 
 The **Sample1** opens the Google search page, makes search with keyword "katalon", takes screenshots, saves HTML sources.
 
