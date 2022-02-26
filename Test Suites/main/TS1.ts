@@ -21,12 +21,12 @@
       <guid>75a0a28a-1d0c-40df-9283-a8201322b4a9</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/main/CURA/VisualInspectionChronos</testCaseId>
+      <testCaseId>Test Cases/main/CURA/VisualInspection_Chronos</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>7496fe0b-e1df-45a3-9e35-2840d7819280</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/main/MyAdmin/VisualInspectionTwins</testCaseId>
+      <testCaseId>Test Cases/main/MyAdmin/VisualInspection_Twins</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

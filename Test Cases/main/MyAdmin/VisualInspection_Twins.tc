@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>VisualInspectionChronos</name>
+   <name>VisualInspection_Twins</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>56a59e4a-a044-4b86-8bd8-43738be6f5ad</testCaseGuid>
+   <testCaseGuid>f3d66a5a-290e-4d2c-bf5d-b6f653b5ee10</testCaseGuid>
 </TestCaseEntity>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>VisualInspectionTwins</name>
+   <name>materialize</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>ba045f73-455d-49a5-bac0-0d46143724b4</testCaseGuid>
+   <testCaseGuid>30b61a4b-aaf1-490e-b62c-ef2376423344</testCaseGuid>
 </TestCaseEntity>

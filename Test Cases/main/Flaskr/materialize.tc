@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>navigate_through_the_site</name>
+   <name>materialize</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>7594bf50-e794-4327-8e23-17e5352b4e81</testCaseGuid>
