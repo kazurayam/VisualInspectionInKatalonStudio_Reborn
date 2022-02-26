@@ -32,7 +32,7 @@ ExecutionProfilesLoader profilesLoader = new ExecutionProfilesLoader()
 /*
  * Materialize stage
  */
-// visit the Production environment
+// visit the Production environment to materialize web resources
 String profile1 = "MyAdmin_ProductionEnv"
 profilesLoader.loadProfile(profile1)
 WebUI.comment("Execution Profile ${profile1} was loaded")
@@ -41,7 +41,7 @@ WebUI.callTestCase(
 	findTestCase("main/MyAdmin/materialize"),
 	["profile": profile1, "store": store, "jobName": jobName, "jobTimestamp": timestampP]
 )
-// visit the Development environment
+// visit the Development environment to materialize web resources
 String profile2 = "MyAdmin_DevelopmentEnv"
 profilesLoader.loadProfile(profile2)
 WebUI.comment("Execution Profile ${profile2} was loaded")

@@ -44,13 +44,6 @@ Metadata metadata = WebUI.callTestCase(
 	[ "store": store, "jobName": jobName, "jobTimestamp": currentTimestamp ]
 )
 
-// identify the last jobTimestamp that were created previously
-QueryOnMetadata query = QueryOnMetadata.builderWithMetadata(metadata).build()
-JobTimestamp previousTimestamp = store.queryJobTimestampPriorTo(jobName, query, currentTimestamp)
-
-if (previousTimestamp == JobTimestamp.NULL_OBJECT) {
-	KeywordUtil.markFailedAndStop("previous JobTimestamp prior to ${currentTimestamp} is not found")
-}
 
 
 
@@ -58,6 +51,14 @@ if (previousTimestamp == JobTimestamp.NULL_OBJECT) {
 /*
  * Reduce stage
  */
+
+// identify the last jobTimestamp that were created previously
+QueryOnMetadata query = QueryOnMetadata.builderWithMetadata(metadata).build()
+JobTimestamp previousTimestamp = store.queryJobTimestampPriorTo(jobName, query, currentTimestamp)
+if (previousTimestamp == JobTimestamp.NULL_OBJECT) {
+	KeywordUtil.markFailedAndStop("previous JobTimestamp prior to ${currentTimestamp} is not found")
+}
+
 // Look up the materials stored in the previous time of run
 MaterialList left = store.select(jobName, previousTimestamp, QueryOnMetadata.ANY)
 assert left.size() > 0
@@ -75,6 +76,7 @@ ArtifactGroup prepared =
 // make diff with 2 Materials and record it in a single Artifact
 MaterialstoreFacade facade = MaterialstoreFacade.newInstance(store)		
 ArtifactGroup reduced = facade.reduce(prepared)
+
 
 
 
