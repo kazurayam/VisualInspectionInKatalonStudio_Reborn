@@ -7,11 +7,12 @@ version = '0.3.5'
 ext {
     AUTO_IMPORTED_JAR_PREFIX = 'AUTOIMPORTED_'
     ExecutionProfilesLoaderVersion = "1.2.1"
-    materialstoreVersion = '0.3.5'
+    materialstoreVersion = '0.3.8'
     ashotVersion = '1.5.4'
     javadiffutilsVersion = '4.9'
     jsoupVersion = '1.7.2'
     subprocessjVersion = '0.3.3'
+    freemarkerVersion = '2.3.31'
 
     UITESTJAVA_PROJECT_DIR = '../../github/MyPythonProjectTemplate/uitestjava'
 }
@@ -38,6 +39,9 @@ dependencies {
                     version: "${javadiffutilsVersion}"
     myconf group: 'org.jsoup', name: 'jsoup', version: "${jsoupVersion}"
 
+    myconf group: 'org.freemarker', name: 'freemarker', 
+                    version: "${freemarkerVersion}"
+
 }
 
 task drivers {
@@ -58,6 +62,7 @@ task drivers {
                     "**/ashot*.jar",
                     "**/jsoup*.jar",
                     "**/java-diff-utils*.jar",
+                    "**/freemarker*.jar"
                     )
                 .rename({ s ->
                     AUTO_IMPORTED_JAR_PREFIX + s

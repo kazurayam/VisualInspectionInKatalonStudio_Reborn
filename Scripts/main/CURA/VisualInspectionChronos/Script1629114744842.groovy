@@ -6,7 +6,6 @@ import java.nio.file.Paths
 
 import com.kazurayam.ks.globalvariable.ExecutionProfilesLoader
 import com.kazurayam.materialstore.MaterialstoreFacade
-import com.kazurayam.materialstore.MaterialstoreFacade.Result
 import com.kazurayam.materialstore.filesystem.JobName
 import com.kazurayam.materialstore.filesystem.JobTimestamp
 import com.kazurayam.materialstore.filesystem.MaterialList
@@ -74,12 +73,14 @@ double criteria = 0.1d
 String fileName = jobName.toString() + "-index.html"
 
 // make diff and compile report
-Result result = facade.makeDiffAndReport(jobName, prepared, criteria, fileName)
+ArtifactGroup reduced = facade.reduce(prepared)
 
-assert Files.exists(result.report())
-WebUI.comment("The report can be found at ${result.report()}")
+Path report = facade.report(jobName, reduced, criteria, fileName)
+
+assert Files.exists(report)
+WebUI.comment("The report can be found at ${report}")
 
 // if any significant difference found, this Test Case should warn it
-if (result.warnings() > 0) {
-	KeywordUtil.markWarning("found ${result.warnings()} differences")
+if (reduced.countWarnings(criteria) > 0) {
+	KeywordUtil.markWarning("found ${reduced.countWarnings(criteria)} differences")
 }
