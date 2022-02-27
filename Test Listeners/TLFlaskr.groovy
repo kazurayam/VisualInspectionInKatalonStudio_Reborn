@@ -32,7 +32,7 @@ class TLFlaskr {
 	 */
 	@BeforeTestCase
 	def beforeTestCase(TestCaseContext testCaseContext) {
-		if (testCaseContext.getTestCaseId().contains("Flaskr/VisualInspectionTwins")) {
+		if (testCaseContext.getTestCaseId().contains("Flaskr/VisualInspection_Twins")) {
 			Path projectDir = Paths.get(RunConfiguration.getProjectDir())
 			Path tmpDir = projectDir.resolve("tmp")
 			Files.createDirectories(tmpDir)
