@@ -72,7 +72,7 @@ WebUI.closeBrowser()
 MaterialList materials = store.select(jobName, jobTimestamp, QueryOnMetadata.ANY)
 
 MaterialstoreFacade facade = MaterialstoreFacade.newInstance(store)
-Path report = facade.reportMaterials(jobName, materials, jobName.toString() + ".html")
+Path report = facade.report(jobName, materials, jobName.toString() + ".html")
 WebUI.comment("see ${report.toString()} for the list")
 
 
