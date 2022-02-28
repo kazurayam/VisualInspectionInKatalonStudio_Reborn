@@ -42,7 +42,7 @@ public class StoreMaterialActionListener extends ActionListener {
 	void on(Class clazz, URL url, Map<String, String> attributes) {
 		Objects.requireNonNull(url)
 		Objects.requireNonNull(attributes)
-		Metadata metadata = Metadata.builderWithUrl(url)
+		Metadata metadata = Metadata.builder(url)
 				.put("profile", profile)
 				.putAll(attributes)
 				.build()

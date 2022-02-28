@@ -35,7 +35,7 @@ WebUI.callTestCase(findTestCase("main/common/takeScreenshotAndPageSource"), [
 	"store": store,
 	"jobName": jobName,
 	"jobTimestamp": jobTimestamp,
-	"metadata": Metadata.builderWithUrl(url).build()
+	"metadata": Metadata.builder(url).build()
 	])
 
 WebUI.click(findTestObject('CURA/Page_CURA Healthcare Service/top/a_Make Appointment'))
@@ -76,7 +76,7 @@ WebUI.setText(findTestObject('CURA/Page_CURA Healthcare Service/appointment/text
 // take the screenshot and the page source, save them into the store; using the AShot library
 url = new URL(WebUI.getUrl())
 
-Metadata metadata = Metadata.builderWithUrl(url).build()
+Metadata metadata = Metadata.builder(url).build()
 
 WebUI.callTestCase(findTestCase("main/common/takeScreenshotAndPageSource"),[
 	"store": store,
@@ -95,7 +95,7 @@ WebUI.callTestCase(findTestCase("main/common/takeScreenshotAndPageSource"),[
 	"store": store,
 	"jobName": jobName,
 	"jobTimestamp": jobTimestamp,
-	"metadata": Metadata.builderWithUrl(url).build()
+	"metadata": Metadata.builder(url).build()
 	])
 	
 WebUI.click(findTestObject('CURA/Page_CURA Healthcare Service/summary/a_Go to Homepage'))

@@ -37,7 +37,7 @@ WebUI.callTestCase(findTestCase("main/common/takeScreenshotAndPageSource"),
 		"store": store,
 		"jobName": jobName,
 		"jobTimestamp": jobTimestamp,
-		"metadata": Metadata.builderWithUrl(url)
+		"metadata": Metadata.builder(url)
 									.put("profile", profile)
 									.put("selector", "body")
 									.build()
