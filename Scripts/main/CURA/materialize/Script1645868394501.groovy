@@ -102,5 +102,3 @@ WebUI.click(findTestObject('CURA/Page_CURA Healthcare Service/summary/a_Go to Ho
 
 // we are done
 WebUI.closeBrowser()
-
-return metadata
