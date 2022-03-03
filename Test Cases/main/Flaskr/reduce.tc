@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>ScrapeGoogleSearch</name>
+   <name>reduce</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>16f39896-b300-4daa-be82-08cacf77a920</testCaseGuid>
+   <testCaseGuid>e113e59c-964c-48a3-b1fd-953a09aa04f2</testCaseGuid>
 </TestCaseEntity>

@@ -15,7 +15,7 @@
       <guid>200a2e3b-b40b-4bf5-9c9e-bb7d3deb19c2</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/main/GoogleSearch/ScrapeGoogleSearch</testCaseId>
+      <testCaseId>Test Cases/main/GoogleSearch/Main_scraping</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>75a0a28a-1d0c-40df-9283-a8201322b4a9</guid>
@@ -27,6 +27,6 @@
       <guid>7496fe0b-e1df-45a3-9e35-2840d7819280</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/main/MyAdmin/VisualInspection_Twins</testCaseId>
+      <testCaseId>Test Cases/main/MyAdmin/Main_Twins</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

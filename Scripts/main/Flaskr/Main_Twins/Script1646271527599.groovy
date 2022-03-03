@@ -12,7 +12,7 @@ import com.kazurayam.materialstore.filesystem.MaterialList
 import com.kazurayam.materialstore.filesystem.Store
 import com.kazurayam.materialstore.filesystem.Stores
 import com.kazurayam.materialstore.metadata.QueryOnMetadata
-import com.kazurayam.materialstore.resolvent.ArtifactGroup
+import com.kazurayam.materialstore.reduce.MProductGroup
 import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
@@ -64,47 +64,40 @@ WebUI.callTestCase(
 /*
  * Reduce stage
  */
-// compare the materials obtained from the 2 sites, compile a diff report
-// pickup the materials that belongs to the 2 "profiles"
+// identify 2 MaterialList objects: left and right = production and development
+// compare the right(development) with the left(production)
+// in order to find differences between the 2 versions. --- Twins mode
+
 MaterialList left = store.select(jobName, timestampP,
-	QueryOnMetadata.builderWithMap([ "profile": profile1 ]).build()
-	)
+	QueryOnMetadata.builder([ "profile": profile1 ]).build())
 
 MaterialList right = store.select(jobName, timestampD,
-	QueryOnMetadata.builderWithMap([ "profile": profile2 ]).build()
-	)
-	
-// zip 2 Materials to form a single Artifact
-ArtifactGroup prepared =
-	ArtifactGroup.builder(left, right)
-		.ignoreKeys("profile", "URL.host", "URL.port")
-		.sort("step")
-		.build()
+	QueryOnMetadata.builder([ "profile": profile2 ]).build())
 
-// with 2 Materials, create a diff Material
-MaterialstoreFacade facade = MaterialstoreFacade.newInstance(store)	
-ArtifactGroup reduced = facade.reduce(prepared)
+WebUI.comment("left=${left.toString()}")
+WebUI.comment("right=${right.toString()}")
 
+MProductGroup reduced =
+    WebUI.callTestCase(findTestCase("main/Flaskr/reduce"),
+		["store": store, "jobName": jobName,
+			"leftMaterialList": left,
+			"rightMaterialList": right])
 
 
 //---------------------------------------------------------------------
 /*
  * Report stage
  */
-// if difference is greater than this critera, it should be warned
-double criteria = 0.0d
-	
-// the file name of HTML report
-String fileName = jobName.toString() + "-index.html"
-	
-Path report = facade.report(jobName, reduced, criteria, fileName)
-	
-assert Files.exists(report)
-WebUI.comment("The report can be found ${report.toString()}")
+// compile a human-readable report
+int warnings =
+	WebUI.callTestCase(findTestCase("main/CURA/report"),
+		["store": store, "jobName": jobName, "mProductGroup": reduced, "criteria": 0.0d])
 
-// if any significant difference found, then this Test Case should warn it
-int warnings = reduced.countWarnings(criteria)
+
+//---------------------------------------------------------------------
+/*
+ * Epilogue
+ */
 if (warnings > 0) {
 	KeywordUtil.markWarning("found ${warnings} differences.")
 }
-	
