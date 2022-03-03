@@ -27,7 +27,7 @@ import internal.GlobalVariable
 Path projectDir = Paths.get(RunConfiguration.getProjectDir())
 Path root = projectDir.resolve("store")
 Store store = Stores.newInstance(root)
-JobName jobName = new JobName("Flaskr_VisualInspection_Twins")
+JobName jobName = new JobName("Flaskr_Main_Twins")
 
 ExecutionProfilesLoader profilesLoader = new ExecutionProfilesLoader()
 
