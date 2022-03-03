@@ -66,7 +66,7 @@ WebUI.callTestCase(
  */
 // identify 2 MaterialList objects: left and right = production and development
 // compare the right(development) with the left(production)
-// in order to find differences between the 2 versions. --- Twins mode
+// find differences between the 2 versions. --- Twins mode
 
 MaterialList left = store.select(jobName, timestampP,
 	QueryOnMetadata.builder([ "profile": profile1 ]).build())

@@ -5,7 +5,7 @@ import com.kazurayam.materialstore.MaterialstoreFacade
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 /**
- * Test Cases/main/Flaskr/report
+ * Test Cases/main/MyAdmin/report
  */
 assert store != null
 assert jobName != null
