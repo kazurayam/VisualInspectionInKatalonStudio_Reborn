@@ -32,24 +32,3 @@ MProductGroup reduced =
 return reduced
 
 
-
-/*
-// zip 2 Materilas to form a single Artifact
-MProductGroup prepared =
-	MProductGroup.builder(leftMaterialList, rightMaterialList)
-		.ignoreKeys("profile", "URL.host", "URL.port")
-		.sort("step")
-		.build()
-assert prepared.size() > 0
-
-//println JsonOutput.prettyPrint(prepared.toString())
-		
-// make diff with 2 Materials and record it in a single Artifact
-MaterialstoreFacade facade = MaterialstoreFacade.newInstance(store)
-
-MProductGroup reduced = facade.reduce(prepared)
-
-return reduced
- */
-
-

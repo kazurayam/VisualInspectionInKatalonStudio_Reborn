@@ -70,9 +70,10 @@ WebUI.comment("right=${right.toString()}")
 
 MProductGroup reduced =
 	WebUI.callTestCase(findTestCase("main/MyAdmin/reduce"),
-		["store": store, "jobName": jobName,
+		["store": store,
 			"leftMaterialList": left,
-			"rightMaterialList": right])
+			"rightMaterialList": right
+			])
 
 
 //---------------------------------------------------------------------

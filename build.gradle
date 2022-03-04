@@ -2,7 +2,7 @@
 
 // $ gradle drivers
 
-version = '0.4.1'
+version = '0.4.2'
 
 ext {
     AUTO_IMPORTED_JAR_PREFIX = 'AUTOIMPORTED_'
