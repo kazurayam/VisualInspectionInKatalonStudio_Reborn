@@ -40,7 +40,7 @@ MaterialList materialList = WebUI.callTestCase(
  */
 Path report = 
 	WebUI.callTestCase(findTestCase("main/GoogleSearch/report"),
-		["store": store, "jobName": jobName, "materialList": materialList])
+		["store": store, "materialList": materialList])
 
 	
 	

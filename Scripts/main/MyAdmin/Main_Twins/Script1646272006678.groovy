@@ -82,7 +82,7 @@ MProductGroup reduced =
 // compile a human-readable report
 int warnings =
 	WebUI.callTestCase(findTestCase("main/MyAdmin/report"),
-		["store": store, "jobName": jobName, "mProductGroup": reduced, "criteria": 0.0d])
+		["store": store, "mProductGroup": reduced, "criteria": 0.0d])
 
 
 

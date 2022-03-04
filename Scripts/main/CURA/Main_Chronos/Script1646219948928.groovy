@@ -6,6 +6,7 @@ import java.nio.file.Paths
 import com.kazurayam.ks.globalvariable.ExecutionProfilesLoader
 import com.kazurayam.materialstore.filesystem.JobName
 import com.kazurayam.materialstore.filesystem.JobTimestamp
+import com.kazurayam.materialstore.filesystem.MaterialList
 import com.kazurayam.materialstore.filesystem.Store
 import com.kazurayam.materialstore.filesystem.Stores
 import com.kazurayam.materialstore.reduce.MProductGroup
@@ -45,23 +46,17 @@ WebUI.comment("Execution Profile ${profile} was loaded")
 /*
  * Reduce stage
  */
-// lookup a previous jobTimesamp directory.
-// compare the current materials with the previos one
-// in order to find differences between the 2 versions. --- Chronos mode
+// lookup a MaterialList which is created by the current run of Materialize stage
+// call "reduce" which will 
+// - identify the MaterialList which was created by the previous run of Materialize stage
+// - compare 2 Materialists, create a MProductGroup and return
 
-JobTimestamp previousTimestamp =
-	store.queryJobTimestampWithSimilarContentPriorTo(jobName, currentTimestamp)
-
-WebUI.comment("previousTimestamp=${previousTimestamp.toString()}")
-WebUI.comment("currentTimestamp=${currentTimestamp.toString()}")
-
+MaterialList currentMaterialList = store.select(jobName, currentTimestamp)
 
 MProductGroup reduced =
 	WebUI.callTestCase(findTestCase("main/CURA/reduce"),
-		["store": store, "jobName": jobName,
-			"previousTimestamp": previousTimestamp,
-			"currentTimestamp": currentTimestamp
-			])
+		["store": store, "currentMaterialList": currentMaterialList])
+
 
 
 //---------------------------------------------------------------------
@@ -71,7 +66,7 @@ MProductGroup reduced =
 // compile a human-readable report
 int warnings =
 	WebUI.callTestCase(findTestCase("main/CURA/report"),
-		["store": store, "jobName": jobName, "mProductGroup": reduced, "criteria": 0.0d])
+		["store": store, "mProductGroup": reduced, "criteria": 0.0d])
 
 
 //---------------------------------------------------------------------

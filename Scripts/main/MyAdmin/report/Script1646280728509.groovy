@@ -18,7 +18,7 @@ WebUI.comment("report started; criteria=${criteria}, mProductGroup=${mProductGro
 String fileName = jobName.toString()+ "-index.html"
 
 MaterialstoreFacade facade = MaterialstoreFacade.newInstance(store)
-Path report = facade.report(jobName, mProductGroup, criteria, fileName)
+Path report = facade.report(mProductGroup, criteria, fileName)
 
 assert Files.exists(report)
 WebUI.comment("The report can be found at ${report.toString()}")

@@ -74,12 +74,9 @@ MaterialList left = store.select(jobName, timestampP,
 MaterialList right = store.select(jobName, timestampD,
 	QueryOnMetadata.builder([ "profile": profile2 ]).build())
 
-WebUI.comment("left=${left.toString()}")
-WebUI.comment("right=${right.toString()}")
-
 MProductGroup reduced =
     WebUI.callTestCase(findTestCase("main/Flaskr/reduce"),
-		["store": store, "jobName": jobName,
+		["store": store,
 			"leftMaterialList": left,
 			"rightMaterialList": right])
 
@@ -91,7 +88,7 @@ MProductGroup reduced =
 // compile a human-readable report
 int warnings =
 	WebUI.callTestCase(findTestCase("main/CURA/report"),
-		["store": store, "jobName": jobName, "mProductGroup": reduced, "criteria": 0.0d])
+		["store": store, "mProductGroup": reduced, "criteria": 0.0d])
 
 
 //---------------------------------------------------------------------
