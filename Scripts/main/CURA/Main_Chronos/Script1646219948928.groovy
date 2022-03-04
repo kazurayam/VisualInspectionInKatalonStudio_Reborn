@@ -9,6 +9,7 @@ import com.kazurayam.materialstore.filesystem.JobTimestamp
 import com.kazurayam.materialstore.filesystem.MaterialList
 import com.kazurayam.materialstore.filesystem.Store
 import com.kazurayam.materialstore.filesystem.Stores
+import com.kazurayam.materialstore.metadata.QueryOnMetadata
 import com.kazurayam.materialstore.reduce.MProductGroup
 import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.util.KeywordUtil
@@ -51,7 +52,7 @@ WebUI.comment("Execution Profile ${profile} was loaded")
 // - identify the MaterialList which was created by the previous run of Materialize stage
 // - compare 2 Materialists, create a MProductGroup and return
 
-MaterialList currentMaterialList = store.select(jobName, currentTimestamp)
+MaterialList currentMaterialList = store.select(jobName, currentTimestamp, QueryOnMetadata.ANY)
 
 MProductGroup reduced =
 	WebUI.callTestCase(findTestCase("main/CURA/reduce"),

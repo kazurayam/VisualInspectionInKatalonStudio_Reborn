@@ -25,9 +25,12 @@ BiFunction<MaterialList, MaterialList, MProductGroup> func = {
 	        .build()
 }
 
-MProductGroup reduced = 
+MProductGroup prepared = 
 	MProductGroupBuilder.twins(store,
 		leftMaterialList, rightMaterialList, func)
+	
+MaterialstoreFacade facade = MaterialstoreFacade.newInstance(store)
+MProductGroup reduced = facade.reduce(prepared)
 
 return reduced
 

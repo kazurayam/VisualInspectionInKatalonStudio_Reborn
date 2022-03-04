@@ -16,7 +16,12 @@ assert currentMaterialList != null
 WebUI.comment("reduce started; store=${store}")
 WebUI.comment("reduce started; currentMaterialList=${currentMaterialList}")
 
-return MProductGroupBuilder.chronos(store, currentMaterialList)
+MProductGroup prepared = MProductGroupBuilder.chronos(store, currentMaterialList)
+
+MaterialstoreFacade facade = MaterialstoreFacade.newInstance(store)
+MProductGroup reduced = facade.reduce(prepared)
+
+return reduced
 
 /*
  BiFunction<MaterialList, MaterialList, MProductGroup> func = {

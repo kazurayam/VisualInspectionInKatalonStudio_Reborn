@@ -1,4 +1,5 @@
 import com.kazurayam.materialstore.MaterialstoreFacade
+import com.kazurayam.materialstore.filesystem.MaterialList
 import com.kazurayam.materialstore.reduce.MProductGroup
 import com.kazurayam.materialstore.reduce.MProductGroupBuilder
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
@@ -23,8 +24,11 @@ BiFunction<MaterialList, MaterialList, MProductGroup> func = {
 			.build()
 }
 
-MProductGroup reduced =
+MProductGroup prepared =
 	MProductGroupBuilder.twins(store,
 		leftMaterialList, rightMaterialList, func)
+	
+MaterialstoreFacade facade = MaterialstoreFacade.newInstance(store)
+MProductGroup reduced = facade.reduce(prepared)
 
 return reduced

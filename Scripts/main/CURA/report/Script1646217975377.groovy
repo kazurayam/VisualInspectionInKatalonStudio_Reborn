@@ -7,6 +7,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 assert store != null
 assert mProductGroup != null
+assert mProductGroup.isReadyToReport()
 assert criteria != null
 
 JobName jobName = mProductGroup.getJobName()
