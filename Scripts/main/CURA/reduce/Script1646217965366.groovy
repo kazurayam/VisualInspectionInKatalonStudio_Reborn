@@ -1,4 +1,4 @@
-import com.kazurayam.materialstore.MaterialstoreFacade
+import com.kazurayam.materialstore.Inspector
 import com.kazurayam.materialstore.filesystem.MaterialList
 import com.kazurayam.materialstore.metadata.QueryOnMetadata
 import com.kazurayam.materialstore.reduce.MProductGroup
@@ -18,8 +18,8 @@ WebUI.comment("reduce started; currentMaterialList=${currentMaterialList}")
 
 MProductGroup prepared = MProductGroupBuilder.chronos(store, currentMaterialList)
 
-MaterialstoreFacade facade = MaterialstoreFacade.newInstance(store)
-MProductGroup reduced = facade.reduce(prepared)
+Inspector inspector = Inspector.newInstance(store)
+MProductGroup reduced = inspector.reduce(prepared)
 
 return reduced
 
