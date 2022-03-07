@@ -1,7 +1,7 @@
 import java.nio.file.Path
 
 import com.kazurayam.materialstore.filesystem.JobName
-import com.kazurayam.materialstore.MaterialstoreFacade
+import com.kazurayam.materialstore.Inspector
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 /**
@@ -20,7 +20,7 @@ WebUI.comment("report started; materialList=${materialList.toString()}, jobName=
 // the file name of HTML report
 String fileName = jobName.toString() + "-list.html"
 
-MaterialstoreFacade facade = MaterialstoreFacade.newInstance(store)
-Path report = facade.report(materialList, fileName)
+Inspector inspector = Inspector.newInstance(store)
+Path report = inspector.report(materialList, fileName)
 
 return report

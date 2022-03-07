@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>deleteOldMaterials</name>
+   <name>cleanup</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>4f6d9e05-b0d8-4ae4-a454-7789fa1a8a93</testCaseGuid>

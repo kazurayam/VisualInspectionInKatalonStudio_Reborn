@@ -11,6 +11,8 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 
 /**
+ * Test Cases/main/CURA/cleanup
+ * 
  * delete old files in the Materials directory.
  * files aged for 3 days or longer will be deleted
  */
@@ -19,8 +21,7 @@ Path root = projectDir.resolve("Materials")
 Store store = Stores.newInstance(root)
 JobTimestamp currentTimestamp = JobTimestamp.now()
 
-deleteOldMaterialsOf(store, new JobName("CURA_VisualTestingTwins"), currentTimestamp)
-deleteOldMaterialsOf(store, new JobName("CURA_VisualTestingChronos"), currentTimestamp)
+deleteOldMaterialsOf(store, new JobName("CURA"), currentTimestamp)
 
 /*
  * To save disk space, we will delete the "<JobName>/<JobTimestamp>" dirs

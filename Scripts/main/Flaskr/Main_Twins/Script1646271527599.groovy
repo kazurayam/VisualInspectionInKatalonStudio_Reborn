@@ -18,7 +18,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable
 
 /**
- * Flaskr/VisualInspection_Twins
+ * Test Cases/main/Flaskr/Main_Twins
  *
  */
 

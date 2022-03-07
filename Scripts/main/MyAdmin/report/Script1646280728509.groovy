@@ -7,6 +7,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 /**
  * Test Cases/main/MyAdmin/report
+ * 
  */
 assert store != null
 assert mProductGroup != null

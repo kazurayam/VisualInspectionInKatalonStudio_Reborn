@@ -11,7 +11,9 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import internal.GlobalVariable
 
-
+/**
+ * Test Cases/main/CURA/materialize
+ */
 Objects.requireNonNull(GlobalVariable.URL)
 Objects.requireNonNull(GlobalVariable.Username)
 Objects.requireNonNull(GlobalVariable.Password)

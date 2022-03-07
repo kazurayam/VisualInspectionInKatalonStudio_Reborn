@@ -16,7 +16,7 @@ import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 /**
- * CURA/VisualInspection_Chronos
+ * Test Cases/CURA/VisualInspection_Chronos
  *
  */
 Path projectDir = Paths.get(RunConfiguration.getProjectDir())

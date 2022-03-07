@@ -5,6 +5,9 @@ import com.kazurayam.materialstore.filesystem.JobName
 import com.kazurayam.materialstore.Inspector
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
+/**
+ * Test Cases/main/CURA/report
+ */
 assert store != null
 assert mProductGroup != null
 assert mProductGroup.isReadyToReport()

@@ -7,6 +7,10 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 import internal.GlobalVariable
 
+/**
+ * Test Cases/main/MyAdmin/materialize
+ * 
+ */
 // check params which should be passed as the arguments of WebUI.callTestCases() call
 Objects.requireNonNull(profile)
 Objects.requireNonNull(store)

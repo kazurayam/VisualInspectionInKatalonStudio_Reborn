@@ -6,6 +6,9 @@ import com.kazurayam.materialstore.reduce.MProductGroup
 import com.kazurayam.materialstore.reduce.MProductGroupBuilder
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
+/**
+ * Test Cases/main/Flaskr/reduce
+ */
 assert store != null
 assert leftMaterialList != null
 assert rightMaterialList != null
