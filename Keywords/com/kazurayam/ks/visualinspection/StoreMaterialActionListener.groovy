@@ -11,7 +11,7 @@ import com.kazurayam.materialstore.filesystem.FileType
 import com.kazurayam.materialstore.filesystem.JobName
 import com.kazurayam.materialstore.filesystem.JobTimestamp
 import com.kazurayam.materialstore.filesystem.Material
-import com.kazurayam.materialstore.metadata.Metadata
+import com.kazurayam.materialstore.filesystem.Metadata
 import com.kazurayam.materialstore.filesystem.Store
 import com.kazurayam.uitestjava.flaskr.pom.actions.ActionListener
 import com.kms.katalon.core.webui.driver.DriverFactory

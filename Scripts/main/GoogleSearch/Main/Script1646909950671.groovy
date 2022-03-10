@@ -13,7 +13,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 
 /**
- * Test Cases/main/GoogleSearch/Main_scraping
+ * Test Cases/main/GoogleSearch/Main
  * 
  */
 Path projectDir = Paths.get(RunConfiguration.getProjectDir())

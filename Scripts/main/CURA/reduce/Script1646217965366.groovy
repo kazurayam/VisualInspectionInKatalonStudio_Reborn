@@ -1,6 +1,6 @@
 import com.kazurayam.materialstore.Inspector
 import com.kazurayam.materialstore.filesystem.MaterialList
-import com.kazurayam.materialstore.metadata.QueryOnMetadata
+import com.kazurayam.materialstore.filesystem.QueryOnMetadata
 import com.kazurayam.materialstore.reduce.MProductGroup
 import com.kazurayam.materialstore.reduce.MProductGroupBuilder
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
