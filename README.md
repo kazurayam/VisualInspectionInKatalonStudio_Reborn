@@ -55,6 +55,7 @@
   - [for Mobile](#for-mobile)
   - [for Web Service](#for-web-service)
 - [Conclusion](#conclusion)
+- [Appendix](#appendix)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
