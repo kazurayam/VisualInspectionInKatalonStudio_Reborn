@@ -13,6 +13,7 @@ import com.kazurayam.materialstore.filesystem.JobTimestamp
 import com.kazurayam.materialstore.filesystem.Material
 import com.kazurayam.materialstore.filesystem.Metadata
 import com.kazurayam.materialstore.filesystem.Store
+import com.kazurayam.materialstore.filesystem.StoreImpl
 import com.kazurayam.uitestjava.flaskr.pom.actions.ActionListener
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
@@ -20,7 +21,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 public class StoreMaterialActionListener extends ActionListener {
 
 	public static final NULL_OBJECT =
-	new StoreMaterialActionListener("__NULL_OBJECT__", Store.NULL_OBJECT, JobName.NULL_OBJECT, JobTimestamp.NULL_OBJECT)
+	new StoreMaterialActionListener("__NULL_OBJECT__", StoreImpl.NULL_OBJECT, JobName.NULL_OBJECT, JobTimestamp.NULL_OBJECT)
 
 	private final String profile
 	private final Store store

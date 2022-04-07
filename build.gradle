@@ -1,12 +1,11 @@
 // VisualInspectionInKatalonStudio_Reborn/build.gradle
-
 // $ gradle drivers
 
-version = '0.4.4'
+
+version = '0.6.0'
 
 ext {
     AUTO_IMPORTED_JAR_PREFIX = 'AUTOIMPORTED_'
-    materialstoreVersion = '0.4.10'
     ExecutionProfilesLoaderVersion = "1.2.1"
     ashotVersion = '1.5.4'
     javadiffutilsVersion = '4.9'
@@ -28,7 +27,9 @@ configurations {
 
 dependencies {
     myconf group: 'com.kazurayam', name: 'materialstore',
-                    version: "${materialstoreVersion}"
+                    version: "0.6.2"
+    myconf group: 'com.kazurayam', name: 'kazurayam_FreeMarker_directives', 
+                    version: "0.2.0"
     myconf group: 'com.kazurayam', name: 'ExecutionProfilesLoader',
                     version: "${ExecutionProfilesLoaderVersion}"
     myconf group: 'com.kazurayam', name: 'subprocessj',
@@ -57,6 +58,7 @@ task drivers {
                 .into("Drivers")
                 .include(
                     "**/materialstore*.jar",
+                    "**/kazurayam_FreeMarker_directives*.jar",
                     "**/ExecutionProfilesLoader*.jar",
                     "**/subprocessj*.jar",
                     "**/ashot*.jar",
