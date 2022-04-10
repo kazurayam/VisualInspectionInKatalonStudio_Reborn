@@ -400,7 +400,7 @@ This means:
 
 In other words, I created 6 materials (PNG screenshot and HTML source saved). I set `1.0%` as the criteria of evaluating the diffRatio; if an entity has a diffRatio greather than 1.0, it will be marked *warning*, hence the figure `46.66%` is highlighted with the background color of yellow.
 
-A large diffRatio indicates to me that there must be some reason that caused significant differences; therefore I should look into the system. Definitely I will do for every entities warned. I would find some reason why the diffRatio is as large as `46.66%`. No matter what the reason is, I would decide whether the entity is **ignorable** or not.
+A large diffRatio indicates to me that there must be some reason that caused significant visual differences; therefore I should look into the system. Definitely I will do for every entities warned. I would find some reason why the diffRatio is as large as `46.66%`. No matter what the reason is, I would decide whether the entity is **ignorable** or not.
 
 In fact in most cases, the diffs detected by automated tests are ignorable for human. For example, when I compare the development environment against the production environment of a Web app, it is quite likely that there are some significant visual differences caused by the recent changes in the application software in the development environment. Any visual differences caused by known factors are **ignorable** for human, and I want to differentiate them from the diffs caused by unexpected factors. 
 
