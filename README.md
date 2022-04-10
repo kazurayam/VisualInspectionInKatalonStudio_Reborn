@@ -402,15 +402,15 @@ In other words, I created 6 materials (PNG screenshot and HTML source saved). I 
 
 A large diffRatio indicates to me that there must be some reason that made significant enough differences; therefore I should look at the system to find out the reason of the difference. Of course, I will look into every entities warned. Why not? It is the whole reason why I ran this "Visual Inspection" software tool.
 
-I would study the diff entity and I would find out some reason why the diffRatio is as large as `46.66%`. Now matter what the reason is, I would be able to decide wither the entity is **ignorable** or not.
+I would study the diff entity and I would find out some reason why the diffRatio is as large as `46.66%`. No matter what the reason is, I would decide whether the entity is **ignorable** or not.
 
-The fact is that, in most cases, the diffs found by automated tools are ignorable for human. Let me assume I compared the development environment agaist the production environment of a Web app. It is quite likely that there could be find some significant visual differences caused by the changes of software in the development environment. Any visual difference caused by known factors are **ignorable**. Only human can decide if a visual difference is ignorable or not; my Visual Inspection tool does not decide it. But *the tool offers you a feature of storing your decision into the report and memorize it across sessions.*
+In fact in most cases, the diffs found by automated tools are ignorable for human. Let me assume I compared the development environment against the production environment of a Web app. It is quite likely that there could be find some significant visual differences caused by the changes of software in the development environment. Any visual difference caused by known factors are **ignorable**, and I want to differentiate them from the diffs caused by unknown factors. Only human can decide if a visual difference is ignorable or not; my Visual Inspection tool does not decide it. But *the tool offers you a feature of persisting your decision into the report and memorize it across sessions.*
 
-Let me assume I have found out that the entity with 46.33% is ignorable; then I would interact with the report displayed in a browser. I will click the checkbox at the left of the entity.
+Let me assume I have found out that the entity with 46.33% in the following screenshot is ignorable. Then I would interact with the report displayed in a browser. I will click the checkbox at the left end of the entity.
 
 ![Count checked ignorable](docs/images/Count_2_checked_ignorable.png)
 
-When the checkbox is checked, the diffRatio `43.66%` changes its background color less highlighting. And the "Count" display on the top-left corner changes:
+When the checkbox is checked, the diffRatio `43.66%` changes its background color less highlighted. And the "Count" display on the top-left corner changes:
 
 - `2w 0i 6t` => `1w 1i 6t`
 
@@ -424,9 +424,9 @@ Now I have got
 
 - `0w 2i 6t`
 
-I have zero warnings!.I have finished inspecting this web application!
+*I have zero warnings! Congrat! I have finished inspecting this web application!*
 
-The checkbox status made by human is persisted into [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) of browser. Therefore your decisions (which entities to be ignored) will be retained across browser sessions. You can reload the page, close and reopen the page; the checkboxes will keep the previous status.
+The checkbox status made by human is persisted into [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) of browser. Therefore your decisions (which entities to be ignored) will be retained across browser sessions. You can reload the page, close and reopen the page. The checkboxes will keep the status you put previously.
 
 
 ## Sample3: Visual Inspection in Twins mode
