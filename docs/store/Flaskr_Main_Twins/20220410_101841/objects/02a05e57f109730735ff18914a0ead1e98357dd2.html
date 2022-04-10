@@ -1,0 +1,24 @@
+<html>
+ <head>
+  <title>New Post - Flaskr</title> 
+  <link rel="stylesheet" href="/static/style.css"> 
+ </head>
+ <body>
+  <nav> 
+   <h1>Flaskr</h1> 
+   <ul> 
+    <li><span>Bob</span></li> 
+    <li><a href="/auth/logout">Log Out</a></li> 
+   </ul> 
+  </nav> 
+  <section class="content"> 
+   <header> 
+    <h1>New Post</h1> 
+   </header> 
+   <form method="post"> <label for="title">Title</label> 
+    <input name="title" id="title" value="" required> <label for="body">Body</label> <textarea name="body" id="body"></textarea> 
+    <input type="submit" value="Save"> 
+   </form> 
+  </section>
+ </body>
+</html>

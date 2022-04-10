@@ -1,0 +1,26 @@
+<html>
+ <head>
+  <title>Login - Flaskr</title> 
+  <link rel="stylesheet" href="/static/style.css"> 
+ </head>
+ <body>
+  <nav> 
+   <img style="width:16px; margin-right: 8px;" src="/static/pngfind.com-python-logo-png-1044449.png" alt="logo"> 
+   <h1>Flaskr</h1> 
+   <ul> 
+    <li><a href="/auth/register">Register</a></li> 
+    <li><a href="/auth/login">Log In</a></li> 
+   </ul> 
+  </nav> 
+  <section class="content"> 
+   <header> 
+    <h1>Login</h1> 
+   </header> 
+   <form method="post"> <label for="username">Username</label> 
+    <input name="username" id="username" required> <label for="password">Password</label> 
+    <input type="password" name="password" id="password" required> 
+    <input type="submit" value="Log In"> 
+   </form> 
+  </section>
+ </body>
+</html>
