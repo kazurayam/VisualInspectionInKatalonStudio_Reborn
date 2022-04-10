@@ -33,6 +33,7 @@
     - [(3) The "store" directory](#3-the-store-directory)
     - [(4) making Chronological diff](#4-making-chronological-diff)
     - [(5) The report generated](#5-the-report-generated)
+    - [(6) Memorizing ignorable differences](#6-memorizing-ignorable-differences)
 - [Sample3: Visual Inspection in Twins mode](#sample3-visual-inspection-in-twins-mode)
     - [(1) Test Case](#1-test-case-2)
     - [(2) Execution Profile](#2-execution-profile-1)
