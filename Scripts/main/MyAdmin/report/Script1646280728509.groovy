@@ -22,6 +22,7 @@ WebUI.comment("report started; criteria=${criteria}, mProductGroup=${mProductGro
 String fileName = jobName.toString()+ "-index.html"
 
 Inspector inspector = Inspector.newInstance(store)
+println mProductGroup.toJson(true);
 Path report = inspector.report(mProductGroup, criteria, fileName)
 
 assert Files.exists(report)

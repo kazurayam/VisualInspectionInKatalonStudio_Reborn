@@ -1,6 +1,0 @@
-dccf18f92cf37e464a4a758f0e15237831c35364	html	{"URL.fragment":"appointment", "URL.host":"katalon-demo-cura.herokuapp.com", "URL.path":"/", "URL.port":"80", "URL.protocol":"https"}
-ba8a36907a5326f2166263adf1341bc2c8387d7e	png	{"URL.fragment":"appointment", "URL.host":"katalon-demo-cura.herokuapp.com", "URL.path":"/", "URL.port":"80", "URL.protocol":"https"}
-47c567c0aeac0c0231853b5dff6d185c2b896713	html	{"URL.fragment":"summary", "URL.host":"katalon-demo-cura.herokuapp.com", "URL.path":"/appointment.php", "URL.port":"80", "URL.protocol":"https"}
-5d54c30ce4b47eff9838e501b9c21fc105580008	png	{"URL.fragment":"summary", "URL.host":"katalon-demo-cura.herokuapp.com", "URL.path":"/appointment.php", "URL.port":"80", "URL.protocol":"https"}
-d432ee56edad936208f089bc13bb8390f24056fe	html	{"URL.host":"demoaut-mimic.kazurayam.com", "URL.path":"/", "URL.port":"80", "URL.protocol":"http"}
-fd7c3767d32b4e06ef432ab8ff5bf17e7c3fa5f0	png	{"URL.host":"demoaut-mimic.kazurayam.com", "URL.path":"/", "URL.port":"80", "URL.protocol":"http"}

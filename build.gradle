@@ -1,18 +1,10 @@
 // VisualInspectionInKatalonStudio_Reborn/build.gradle
 // $ gradle drivers
 
-
-version = '0.6.0'
+version = '0.7.0'
 
 ext {
     AUTO_IMPORTED_JAR_PREFIX = 'AUTOIMPORTED_'
-    ExecutionProfilesLoaderVersion = "1.2.1"
-    ashotVersion = '1.5.4'
-    javadiffutilsVersion = '4.9'
-    jsoupVersion = '1.7.2'
-    subprocessjVersion = '0.3.3'
-    freemarkerVersion = '2.3.31'
-
     UITESTJAVA_PROJECT_DIR = '../../github/MyPythonProjectTemplate/uitestjava'
 }
 
@@ -26,23 +18,14 @@ configurations {
 }
 
 dependencies {
-    myconf group: 'com.kazurayam', name: 'materialstore',
-                    version: "0.6.2"
-    myconf group: 'com.kazurayam', name: 'kazurayam_FreeMarker_directives', 
-                    version: "0.2.0"
-    myconf group: 'com.kazurayam', name: 'ExecutionProfilesLoader',
-                    version: "${ExecutionProfilesLoaderVersion}"
-    myconf group: 'com.kazurayam', name: 'subprocessj',
-                    version: "${subprocessjVersion}"
-    myconf group: 'ru.yandex.qatools.ashot', name: 'ashot',
-                    version: "${ashotVersion}"
-    myconf group: 'io.github.java-diff-utils', name: 'java-diff-utils',
-                    version: "${javadiffutilsVersion}"
-    myconf group: 'org.jsoup', name: 'jsoup', version: "${jsoupVersion}"
-
-    myconf group: 'org.freemarker', name: 'freemarker', 
-                    version: "${freemarkerVersion}"
-
+    myconf group: 'com.kazurayam', name: 'materialstore', version: "0.7.0"
+    myconf group: 'com.kazurayam', name: 'kazurayam_FreeMarker_directives', version: "0.2.0"
+    myconf group: 'com.kazurayam', name: 'ExecutionProfilesLoader', version: '1.2.1'
+    myconf group: 'com.kazurayam', name: 'subprocessj', version: '0.3.3'
+    myconf group: 'ru.yandex.qatools.ashot', name: 'ashot', version: '1.5.4'
+    myconf group: 'io.github.java-diff-utils', name: 'java-diff-utils', version: '4.9'
+    myconf group: 'org.jsoup', name: 'jsoup', version: '1.7.2'
+    myconf group: 'org.freemarker', name: 'freemarker', version: "2.3.31"
 }
 
 task drivers {
