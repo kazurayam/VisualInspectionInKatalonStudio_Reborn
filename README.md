@@ -424,7 +424,7 @@ Now I have got
 
 *I have zero warnings! Congrat! I have finished inspecting this web application!*
 
-The checkbox status toggled ON/OFF by human is persisted into [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) of browser. Therefore your decisions (which entities to be ignored) will be retained across browser sessions. You can reload the report, close and reopen the report. The checkboxes in the report will keep the status you put previously. 
+The status checkbox toggled ON/OFF by human is persisted into [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) of browser. Therefore your decisions (which entities to be ignored) will be retained across browser sessions. You can reload the report, close and reopen the report. The checkboxes in the report will keep the status you put previously. 
 
 `2w 0i 6t` => `1w 1i 6t` => `0w 2i 6t` --- I would name this display as WIT --- makes my inspection task spirally upward. It helps me gradually improve the target system through executing Visual Inspection repeatedly.
 
