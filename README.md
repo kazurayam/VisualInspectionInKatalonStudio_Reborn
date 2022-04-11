@@ -424,7 +424,7 @@ Now I have got
 
 *I have zero warnings! Congrat! I have finished inspecting this web application!*
 
-The checkbox status toggled ON/OFF by human is persisted into [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) of browser. Therefore your decisions (which entities to be ignored) will be retained across browser sessions. You can reload the report, close and reopen the report. The checkboxes in the report will keep the status you put previously. Interactively memorizing ignorable diffs makes my inspection task spirally upward. It helps me improve the target system through multiple times of Visual Inspection execution.
+The checkbox status toggled ON/OFF by human is persisted into [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) of browser. Therefore your decisions (which entities to be ignored) will be retained across browser sessions. You can reload the report, close and reopen the report. The checkboxes in the report will keep the status you put previously. Interactively memorizing ignorable diffs makes my inspection task spirally upward. It helps me gradually improve the target system through multiple times of Visual Inspection execution.
 
 
 ## Sample3: Visual Inspection in Twins mode
