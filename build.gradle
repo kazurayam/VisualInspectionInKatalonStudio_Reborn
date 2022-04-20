@@ -1,7 +1,7 @@
 // VisualInspectionInKatalonStudio_Reborn/build.gradle
 // $ gradle drivers
 
-version = '0.7.2-SNAPSHOT'
+version = '0.7.2'
 
 ext {
     AUTO_IMPORTED_JAR_PREFIX = 'AUTOIMPORTED_'
