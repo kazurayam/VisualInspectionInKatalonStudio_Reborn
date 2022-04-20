@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>reduce</name>
+   <name>reduceChronos</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>e113e59c-964c-48a3-b1fd-953a09aa04f2</testCaseGuid>
+   <testCaseGuid>1abf18c6-3a3a-41e6-9ce9-0bc254211bc2</testCaseGuid>
 </TestCaseEntity>

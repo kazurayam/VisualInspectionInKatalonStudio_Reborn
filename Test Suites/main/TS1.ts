@@ -19,13 +19,6 @@
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>16c40fea-1f81-47d9-8d4f-9118eff9c07c</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/main/Flaskr/Main_Twins</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
-   <testCaseLink>
       <guid>200a2e3b-b40b-4bf5-9c9e-bb7d3deb19c2</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>

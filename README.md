@@ -1,7 +1,7 @@
 # Visual Inspection in Katalon Studio - Reborn
 
 - @date Aug 2021
-- @update April 2022
+- @update 20 April 2022
 - @author kazurayam
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -184,15 +184,12 @@ You have resolved external dependencies. Now you can start writing a Test Case.
 | Sample1 Google | [GoogleSearch/ScrapeGoogleSearch](./Test%20Cases/main/GoogleSearch/ScrapeGoogleSearch.tc) | https://www.google.com/ |
 | Sample2 CURA   | [CURA/VisualInspectionChronos](Test%20Cases/main/CURA/VisualInspectionChronos.tc) | http://demoaut-mimic.kazurayam.com/ | http://demoaut-mimic.kazurayam.com/ |
 | Sample3 MyAdmin | [MyAdmin/VisualInspectionTwins](Scripts/main/MyAdmin/VisualInspectionTwins/Script1629114780778.groovy) | http://myadmin.kazurayam.com/ | http://devadmin.kazurayam.com/ |
-| Sample4 Flaskr | [Flaskr/VisualInspectionTwins](Scripts/main/Flaskr/VisualInspectionTwins/Script1642595597544.groovy) | http://127.0.0.1:3080 | http://127.0.0.1:3090 | 
 
 The **Sample1** opens the Google search page, makes search with keyword "katalon", takes screenshots, saves HTML sources.
 
 As for the **Sample2**, the URL is provided by kazurayam.com (it's me!), publicly available on the Internet. The test visits a single URL twice with a few tempos of intermission.
 
 As for the **Sample3**, both URLs are provided by kazurayam.com, publicly available on the Internet. The 2 pages have slight difference visually.
-
-As for the **Sample4**, the 2 URLs are private ones on the localhost. The URLs are provided by a Docker container which runs on your PC. You need "Docker" installed on your PC to try the Sample4. The URL has multiple pages, requires fairly complex user interactions. In order to implement a automated UI test for this target, I employed the design pattern "Page Object Model" in Java.
 
 
 ### External Dependencies
@@ -546,171 +543,6 @@ Also you can see the diff of HTML page source.
 
 ![Twins_HTML](docs/images/Twins_HTML.png)
 
-## Sample4: Navigating multiple URLs in Twins mode
-
-The sample3 showed how to compare just a single pair of URLs. The next sample4 shows how to compare multiple pairs of URLs. The sample4 shows how to navigate though a site for 7 pages while taking screenshots and HTML sources.
-
-#### (1) What the test case does?
-
-The test case [Flaskr/VisualInspectionTwins](Scripts/main/Flaskr/VisualInspectionTwins/Script1642595597544.groovy) does the following:
-
-1. It compares 2 web sites visually: `http://127.0.0.1` and `http://127.0.0.1:3090`. 
-- (You can setup these URLs on your PC locally. I will explain how to later in this document.)
-2. A web application named **Flakr** run in the URLs. Let me call them "Flaskr *Prod env*" and "Flaskr *Dev env*". These 2 URLs have just the same functionality. But the pages look slightly different. The production environment has no site logo, but the development environment has a small site logo. <img alt="logo" src="docs/images/Sample4_Flaskr/site_logo.png" width="22pt">.
-- the Prod env
-![Prod](docs/store/Flaskr_VisualInspectionTwins/20220122_101200/objects/4646385252b24fdbca95b1ef3413ce6367588388.png)
-- the Dev env
-![Dev](docs/store/Flaskr_VisualInspectionTwins/20220122_101212/objects/4640bfb0825cafa44dd85f9fc9fc1515bf0a0f9a.png)
-
-3. The test case starts visiting the index page, then navigates through pages by clicking menu anchors, typing texts, clicking buttons, etc.
-
-| Step | description          | Prod env URL      | Dev env URL |
-|:-----|:---------------------|:------------------|:------------|
-|step1 | index page           | http&#58;//127.0.0.1/ | http&#58;//127.0.0.1:3090/ |
-|step2 | register credential  | http&#58;//127.0.0.1/auth/register | http&#58;//127.0.0.1:3090/auth/register |
-|step3 | log in               | http&#58;//127.0.0.1/auth/login | http&#58;//127.0.0.1:3090/auth/login |
-|step4 | posting - blank      | http&#58;//127.0.0.1/create | http&#58;//127.0.0.1:3090/create |
-|step5 | posting - text typed | http&#58;//127.0.0.1/create | http&#58;//127.0.0.1:3090/create |
-|step6 | list of blogs        | http&#58;//127.0.0.1/ | http&#58;//127.0.0.1:3090/ |
-|step7 | log out              | http&#58;//127.0.0.1/ | http&#58;//127.0.0.1:3090/ |
-
-4. The test case compares each pairs of URLs and generates diff images. The following is an example of a diff image. Please find the section on the top-left side <span style="color:red;">painted red</span>, which is the diff. ![diff](docs/store/Flaskr_VisualInspectionTwins/20220122_101212/objects/27e09bdfcfc014b102f1e74b61a428514fbd6cc8.png)
-
-5. The test case generates a HTML report which shows a list all of the materials (screenshot images and HTML page sources) attached with detail diff information. You can find an example [here](https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/Flaskr_VisualInspectionTwins-index.html).
-
-![report](docs/images/Sample4_Flaskr/Flaskr_VisualInspectionTwins.png)
-
-
-#### (2) How to run the test
-
-Just open the "Test Cases/Flaskr/VisualInspectionTwins" and run it. As default Chrome Headless browser git will be used, but you can choose any browser. You can choose any Execution Profile. The test won't be affected by the profile you chose.
-
-The test case will take approximately 30 seconds to finish.
-
-The test case will write the report in the `<projectDir>/store/Flaskr_VisualInspectionTwins-index.html` file.
-
-#### (3) What is Flaskr?
-
-Flaskr is coded in Python language on top of the "Flask" web application framework. I learned the Flaskr web app at the [Flask Tutorial](https://flask.palletsprojects.com/en/2.0.x/tutorial/) authored and published by the Pallets project.
-
->This tutorial will walk you through creating a basic blog application called Flaskr. Users will be able to register, log in, create posts, and edit or delete their own posts. 
-
-I used the source code 99% as is. I amended it slightly to diplay the site logo in the Dev env only.
-
-#### (4) How the test is coded
-
-You can read the sources
-- [Test Cases/Flaskr/VisualInspectionTwins](Scripts/main/Flaskr/VisualInspectionTwins/Script1642595597544.groovy)
-- [Test Cases/Flaskr/navigate_through_the_site](Scripts/main/Flaskr/navigate_through_the_site/Script1642812095057.groovy)
-
-and a lot of related Groovy classes
-
-- [Keywords/flaskrtest/actions/LoginAction.groovy](Keywords/flaskrtest/actions/LoginAction.groovy)
-- [Keywords/flaskrtest/actions/LogoutAction.groovy](Keywords/flaskrtest/actions/LogoutAction.groovy)
-- [Keywords/flaskrtest/actions/PostAction.groovy](Keywords/flaskrtest/actions/PostAction.groovy)
-- [Keywords/flaskrtest/data/Song.groovy](Keywords/flaskrtest/data/Song.groovy)
-- [Keywords/flaskrtest/data/Songs.groovy](Keywords/flaskrtest/data/Songs.groovy)
-- [Keywords/flaskrtest/data/User.groovy](Keywords/flaskrtest/data/User.groovy)
-- [Keywords/flaskrtest/pages/auth/LoginPage.groovy](Keywords/flaskrtest/pages/auth/LogInPage.groovy)
-- [Keywords/flaskrtest/pages/auth/RegisterCredentialPage.groovy](Keywords/flaskrtest/pages/auth/RegisterCredentialPage.groovy)
-- [Keywords/flaskrtest/pages/blog/CreatePostPage.groovy](Keywords/flaskrtest/pages/blog/CreatePostPage.groovy)
-- [Keywords/flaskrtest/pages/blog/IndexPage.groovy](Keywords/flaskrtest/pages/blog/IndexPage.groovy)
-- [Keywords/flaskrtest/pages/blog/Post.groovy](Keywords/flaskrtest/pages/blog/Post.groovy)
-
-Why do I have these Groovy classes? --- It is because I employed the ["Page Object Model"](https://www.guru99.com/page-object-model-pom-page-factory-in-selenium-ultimate-guide.html). The Page Object Model helped me in writing compact and readable codes.
-
-The sample4 is highly extensible while avoiding code publications. It would be a foundation of large scale Visual Inspection projects.
-
-
-## Setup Docker & Flaskr on your PC
-
-In the sample4, we need 2 URLs available on our own PC.
-
-- http://127.0.0.1/
-- http://127.0.0.1:3090 
-
-You can make it work on your PC. You need [Docker](https://www.docker.com/) installed into your PC.
-
-### Installing Docker Desktop
-
-On my MacBook Air, I installed [Docker Desktop](https://www.docker.com/products/docker-desktop). Docker Desktop for Windows is also available.
-
-### Command Line Interface
-
-Here I assume you work on a Command Line Interface. I use the Terminal.app of macOS. For Windows user, install [Git for Windows](https://gitforwindows.org/) which bundles "Git Bash".
-
-### Starting up Flaskr
-
-Open a window of Command Line Interface, then execute:
-
-```
-$ cd $VisualInspectionInKatalonStudio_Reborn
-$ ./startup-flaskr-prod.sh
-```
-
-This shell script will emit 2 lines of messages and will block:
-```
-you can visit http://127.0.0.1/
-Serving on http://0.0.0.0:8080
-```
-
-Next, you want to open one more window of Command Line Interface, then execute:
-
-```
-$ cd $VisualInspectionInKatalonStudio_Reborn
-$ ./startup-flaskr-dev.sh
-```
-
-This will emit 2 lines of messages and will block:
-
-```
-$ ./startup-flaskr-dev.sh
-you can visit http://127.0.0.1:3090/
-Serving on http://0.0.0.0:8080
-```
-
-By `lsof` command, you can make sure that 2 processes are listening to the IP port #80 and #3090 on your localhost.
-
-```
-$  lsof -i -P | grep LISTEN | grep com.docke
-com.docke   709 kazuakiurayama  107u  IPv6 0x84f53716e8d7cb33      0t0  TCP *:3090 (LISTEN)
-com.docke   709 kazuakiurayama  111u  IPv6 0x84f53716e8d771d3      0t0  TCP *:80 (LISTEN)
-```
-
-### Shutting down Flaskr gracefully
-
-You can stop the docker process gracefully by typing CTRL + C.
-
-You should NEVER close the window of Command Line Interface without stopping the docker process by CTLR + C.
-
-If you forced to close the window, then IP Port #80 and #3090 might be left *USED* status. In that case you would fail to start a new process of Flaskr again. When it occurred, you need to stop & restart your PC/OS to release the ports.
-
-
-
-
-### Initializing Database in the web app
-
-The Flaskr has a backend database where credentials and blog posts are stored. After you repeated running tests several times you will find many blog posts are stored, and you would feel like to clean the database out.
-
-Just type CTRL + C to stop the docker process and restart it. The start-up script will automatically initialize the Flaskr's internal database and make it empty.
-
-### How I used Docker
-
-Hava a look at the code of [startup-flaskr-prod.sh](startup-flaskr-prod.sh):
-
-```
-CWD=$(pwd)
-cd $(mktemp -d)
-
-echo you can visit http://127.0.0.1/
-
-docker run -it -p 80:8080 kazurayam/flaskr-kazurayam:1.1.0
-
-cd $CWD
-```
-
-As you see, it runs `docker run` command with a docker image `kazurayam/flaskr-kazurayam:1.1.0`. I created this docker image and published at the [Docker Hub](https://hub.docker.com/repository/docker/kazurayam/flaskr-kazurayam).
-
 
 ## Notes on Extensibility
 
@@ -727,6 +559,14 @@ The `materialstore` library can be used by a [Apache HttpClient](https://hc.apac
 ## Conclusion
 
 The [Visual Testing In Katalon Studio](https://github.com/kazurayam/VisualTestingInKatalonStudio) project is now superseded by this [Visual Inspection In Katalon Studio - Reborn](https://github.com/kazurayam/VisualInspectionInKatalonStudio_Reborn) project backed by the [materialstore](https://github.com/kazurayam/materialstore) library.
+
+## Visual Inspection with Page Object Model in Katlaon Studio
+
+I have made another GitHub project
+
+- https://github.com/kazurayam/VisualInspection_with_PageObjectModel_in_KatalonStudio
+
+This project shows how to navigate through multiple URLs of a Web App by clicking manu, typing text and bushing buttons; plust perform Visual Inspectin of the Prod env and Dev env. It employed "Page Object Model" to minimize code duplication, to maximize the maintainability.
 
 
 ## Appendix

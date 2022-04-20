@@ -55,7 +55,7 @@ WebUI.comment("Execution Profile ${profile} was loaded")
 MaterialList currentMaterialList = store.select(jobName, currentTimestamp, QueryOnMetadata.ANY)
 
 MProductGroup reduced =
-	WebUI.callTestCase(findTestCase("main/CURA/reduce"),
+	WebUI.callTestCase(findTestCase("main/CURA/reduceChronos"),
 		["store": store, "currentMaterialList": currentMaterialList])
 
 

@@ -69,7 +69,7 @@ WebUI.comment("left=${left.toString()}")
 WebUI.comment("right=${right.toString()}")
 
 MProductGroup reduced =
-	WebUI.callTestCase(findTestCase("main/MyAdmin/reduce"),
+	WebUI.callTestCase(findTestCase("main/MyAdmin/reduceTwins"),
 		["store": store,
 			"leftMaterialList": left,
 			"rightMaterialList": right
