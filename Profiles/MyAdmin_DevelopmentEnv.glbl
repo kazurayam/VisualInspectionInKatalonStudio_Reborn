@@ -6,7 +6,7 @@
    <defaultProfile>false</defaultProfile>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'http://devadmin.kazurayam.com'</initValue>
-      <name>URL</name>
+      <initValue>'Include/data/MyAdmin/targetList.Dev.csv'</initValue>
+      <name>CSV</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

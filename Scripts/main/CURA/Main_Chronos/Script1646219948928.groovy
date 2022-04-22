@@ -16,26 +16,28 @@ import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 /**
- * Test Cases/CURA/VisualInspection_Chronos
+ * Test Cases/main/CURA/Main_Chronos
  *
  */
 Path projectDir = Paths.get(RunConfiguration.getProjectDir())
 Path root = projectDir.resolve("store")
 Store store = Stores.newInstance(root)
-JobName jobName = new JobName("CURA_VisualInspectionChronos")
-
-JobTimestamp currentTimestamp = JobTimestamp.now()
-ExecutionProfilesLoader profilesLoader = new ExecutionProfilesLoader()
+JobName jobName = new JobName("CURA_Main_Chronos")
 
 //---------------------------------------------------------------------
 /*
  * Materialize stage
  */
+ExecutionProfilesLoader profilesLoader = new ExecutionProfilesLoader()
+
+// visit the site
 String profile = "CURA_DevelopmentEnv"
 profilesLoader.loadProfile(profile)
 WebUI.comment("Execution Profile ${profile} was loaded")
 
 // visit "http://demoaut-mimic.katalon.com", take screenshots and page source
+JobTimestamp currentTimestamp = JobTimestamp.now()
+
  WebUI.callTestCase(
 	findTestCase("main/CURA/materialize"),
 		[ "store": store, "jobName": jobName, "jobTimestamp": currentTimestamp ])
