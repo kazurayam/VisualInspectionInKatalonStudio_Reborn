@@ -1,7 +1,9 @@
+import com.kazurayam.materialstore.dot.MPGVisualizer
 import com.kazurayam.materialstore.Inspector
+import com.kazurayam.materialstore.filesystem.JobTimestamp
 import com.kazurayam.materialstore.filesystem.MaterialList
 import com.kazurayam.materialstore.reduce.MProductGroup
-import com.kazurayam.materialstore.reduce.MProductGroupBuilder
+import com.kazurayam.materialstore.reduce.Reducer
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import java.util.function.BiFunction
 
@@ -29,10 +31,16 @@ BiFunction<MaterialList, MaterialList, MProductGroup> func = {
 }
 
 MProductGroup prepared =
-	MProductGroupBuilder.twins(store,
+	Reducer.twins(store,
 		leftMaterialList, rightMaterialList, func)
 	
 Inspector inspector = Inspector.newInstance(store)
 MProductGroup reduced = inspector.reduce(prepared)
+
+if (reduced.getNumberOfBachelors() > 0) {
+	// if any bachelor found, generate diagram of MProductGroup object
+	MPGVisualizer visualizer = new MPGVisualizer(store)
+	visualizer.visualize(reduced.getJobName(), JobTimestamp.now(), reduced);
+}
 
 return reduced

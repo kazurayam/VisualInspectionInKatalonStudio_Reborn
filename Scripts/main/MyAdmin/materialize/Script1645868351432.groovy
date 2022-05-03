@@ -2,13 +2,15 @@ import java.nio.file.Files
 
 import org.openqa.selenium.WebDriver
 
+import com.kazurayam.materialstore.dot.MPGVisualizer
 import com.kazurayam.materialstore.filesystem.Material
 import com.kazurayam.materialstore.materialize.MaterializingPageFunctions
 import com.kazurayam.materialstore.materialize.StorageDirectory
 import com.kazurayam.materialstore.materialize.Target
-import com.kazurayam.materialstore.materialize.TargetCSVReader
+import com.kazurayam.materialstore.materialize.TargetCSVParser
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import java.util.stream.Collectors
 
 /**
  * Test Cases/main/MyAdmin/materialize
@@ -21,7 +23,12 @@ Objects.requireNonNull(store)
 Objects.requireNonNull(jobName)
 Objects.requireNonNull(jobTimestamp)
 
-List<Target> targetList = TargetCSVReader.parse(targetFile, ["profile":profile])
+//List<Target> targetList = TargetCSVReader.parse(targetFile, ["profile":profile])
+TargetCSVParser parser = TargetCSVParser.newSimpleParser();
+List<Target> targetList = 
+	parser.parse(targetFile).stream()
+		.map({t -> t.copyWith(["profile": profile])})
+		.collect(Collectors.toList())
 
 WebUI.openBrowser('')
 WebUI.setViewPortSize(1024, 800)
