@@ -17,26 +17,15 @@ assert currentMaterialList != null
 WebUI.comment("reduce started; store=${store}")
 WebUI.comment("reduce started; currentMaterialList=${currentMaterialList}")
 
-MProductGroup prepared = Reducer.chronos(store, currentMaterialList)
+MProductGroup reduced = Reducer.chronos(store, currentMaterialList)
 
 Inspector inspector = Inspector.newInstance(store)
-MProductGroup reduced = inspector.reduce(prepared)
+MProductGroup processed = inspector.process(reduced)
 
-if (reduced.getNumberOfBachelors() > 0) {
+if (processed.getNumberOfBachelors() > 0) {
 	// if any bachelor found, generate diagram of MProductGroup object
 	MPGVisualizer visualizer = new MPGVisualizer(store)
-	visualizer.visualize(reduced.getJobName(), JobTimestamp.now(), reduced);
+	visualizer.visualize(processed.getJobName(), JobTimestamp.now(), processed);
 }
 
-return reduced
-
-/*
- BiFunction<MaterialList, MaterialList, MProductGroup> func = {
-	 MaterialList left, MaterialList right ->
-		 MProductGroup.builder(left, right)
-			 .build()
- }
- MProductGroup reduced = MProductGroupBuilder.chronos(store, currentMaterialList, func)
- return reduced
-  */
- 
+return processed
