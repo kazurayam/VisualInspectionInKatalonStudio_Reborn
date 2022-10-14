@@ -10,7 +10,8 @@ import com.kazurayam.materialstore.filesystem.MaterialList
 import com.kazurayam.materialstore.filesystem.QueryOnMetadata
 import com.kazurayam.materialstore.filesystem.Store
 import com.kazurayam.materialstore.filesystem.Stores
-import com.kazurayam.materialstore.reduce.MProductGroup
+import com.kazurayam.materialstore.filesystem.metadata.SortKeys
+import com.kazurayam.materialstore.reduce.MaterialProductGroup
 import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
@@ -72,15 +73,18 @@ MaterialList left = store.select(jobName, timestampP,
 MaterialList right = store.select(jobName, timestampD,
 			QueryOnMetadata.builder([ "profile": profileD ]).build()
 			)
+SortKeys sortKeys = new SortKeys()
 
 WebUI.comment("left=${left.toString()}")
 WebUI.comment("right=${right.toString()}")
+WebUI.comment("sortKeys=${sortKeys}")
 
-MProductGroup reduced =
+MaterialProductGroup reduced =
 	WebUI.callTestCase(findTestCase("main/MyAdmin/reduceTwins"),
 		["store": store,
 			"leftMaterialList": left,
-			"rightMaterialList": right
+			"rightMaterialList": right,
+			"sortKeys": sortKeys
 			])
 
 
@@ -91,7 +95,7 @@ MProductGroup reduced =
 // compile a human-readable report
 int warnings =
 	WebUI.callTestCase(findTestCase("main/MyAdmin/report"),
-		["store": store, "mProductGroup": reduced, "criteria": 0.0d])
+		["store": store, "mProductGroup": reduced, "sortKeys": sortKeys, "criteria": 0.0d])
 
 
 

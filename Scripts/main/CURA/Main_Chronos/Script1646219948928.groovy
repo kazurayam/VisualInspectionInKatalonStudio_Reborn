@@ -10,7 +10,8 @@ import com.kazurayam.materialstore.filesystem.MaterialList
 import com.kazurayam.materialstore.filesystem.QueryOnMetadata
 import com.kazurayam.materialstore.filesystem.Store
 import com.kazurayam.materialstore.filesystem.Stores
-import com.kazurayam.materialstore.reduce.MProductGroup
+import com.kazurayam.materialstore.filesystem.metadata.SortKeys
+import com.kazurayam.materialstore.reduce.MaterialProductGroup
 import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
@@ -56,9 +57,11 @@ JobTimestamp currentTimestamp = JobTimestamp.now()
 
 MaterialList currentMaterialList = store.select(jobName, currentTimestamp, QueryOnMetadata.ANY)
 
-MProductGroup reduced =
+SortKeys sortKeys = new SortKeys("step", "URL.host", "URL.path", "URL.fragment")
+
+MaterialProductGroup reduced =
 	WebUI.callTestCase(findTestCase("main/CURA/reduceChronos"),
-		["store": store, "currentMaterialList": currentMaterialList])
+		["store": store, "currentMaterialList": currentMaterialList, "sortKeys": sortKeys])
 
 
 
@@ -69,7 +72,7 @@ MProductGroup reduced =
 // compile a human-readable report
 int warnings =
 	WebUI.callTestCase(findTestCase("main/CURA/report"),
-		["store": store, "mProductGroup": reduced, "criteria": 1.0d])
+		["store": store, "mProductGroup": reduced, "sortKeys": sortKeys, "criteria": 1.0d])
 
 
 //---------------------------------------------------------------------

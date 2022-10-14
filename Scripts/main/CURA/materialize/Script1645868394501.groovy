@@ -43,7 +43,7 @@ WebUI.verifyElementPresent(findTestObject('CURA/Page_CURA Healthcare Service/top
 
 // take the screenshot and the page source, save them into the store; using the Katalon keyword
 URL url = new URL(WebUI.getUrl())
-Target target = Target.builder(url).put("step", "1").build()
+Target target = Target.builder(url).put("step", "1").put("profile", "ProductionEnv").build()
 Material screenshot1 = MaterializingPageFunctions.storeEntirePageScreenshot.accept(target, driver, sd)
 Material html1 = MaterializingPageFunctions.storeHTMLSource.accept(target, driver, sd)
 
@@ -87,7 +87,7 @@ WebUI.setText(findTestObject('CURA/Page_CURA Healthcare Service/appointment/text
 
 // take the screenshot and the page source, save them into the store
 url = new URL(WebUI.getUrl())
-Target target2 = Target.builder(url).put("step", "2").build()
+Target target2 = Target.builder(url).put("step", "2").put("profile", "ProductionEnv").build()
 Material screenshot2 = MaterializingPageFunctions.storeEntirePageScreenshot.accept(target2, driver, sd)
 Material html2 = MaterializingPageFunctions.storeHTMLSource.accept(target2, driver, sd)
 
@@ -101,7 +101,7 @@ WebUI.verifyElementPresent(findTestObject('CURA/Page_CURA Healthcare Service/sum
 
 // take the screenshot and the page source, save them into the store
 url = new URL(WebUI.getUrl())
-Target target3 = Target.builder(url).put("step", "3").build()
+Target target3 = Target.builder(url).put("step", "3").put("profile", "ProductionEnv").build()
 Material screenshot3 = MaterializingPageFunctions.storeEntirePageScreenshot.accept(target3, driver, sd)
 Material html3 = MaterializingPageFunctions.storeHTMLSource.accept(target3, driver, sd)
 

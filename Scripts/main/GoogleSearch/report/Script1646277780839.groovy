@@ -1,7 +1,8 @@
 import java.nio.file.Path
 
 import com.kazurayam.materialstore.filesystem.JobName
-import com.kazurayam.materialstore.Inspector
+import com.kazurayam.materialstore.filesystem.metadata.SortKeys
+import com.kazurayam.materialstore.inspector.Inspector
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 /**
@@ -21,6 +22,8 @@ WebUI.comment("report started; materialList=${materialList.toString()}, jobName=
 String fileName = jobName.toString() + "-list.html"
 
 Inspector inspector = Inspector.newInstance(store)
+SortKeys sortKeys = new SortKeys("step","URL.host", "URL.path")
+inspector.setSortKeys(sortKeys)
 Path report = inspector.report(materialList, fileName)
 
 return report

@@ -1,7 +1,7 @@
 # Visual Inspection in Katalon Studio - Reborn
 
 - @date Aug 2021
-- @update 20 April 2022
+- @update 15 Oct 2022, ver 0.10.1
 - @author kazurayam
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -44,7 +44,7 @@
   - [for Mobile](#for-mobile)
   - [for Web Service](#for-web-service)
 - [Conclusion](#conclusion)
-- [Visual Inspection with Page Object Model in Katlaon Studio](#visual-inspection-with-page-object-model-in-katlaon-studio)
+- [Visual Inspection with Page Object Model in Katalon Studio](#visual-inspection-with-page-object-model-in-katlaon-studio)
 - [Appendix](#appendix)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -266,7 +266,7 @@ In the test Case script, the code created  *metadata* for each objects. Typicall
 
 - `http://www.google.com/`
 
-will be digested to form a metadata 
+will be digested to form a metadata
 
 - `{"URL.host":"www.google.com", "URL.path":"/", "URL.protocol":"https"}`
 
@@ -384,7 +384,7 @@ This means:
 - There are 0 diff entities that have a diff-ratio greater than the criteria given, and is "checked to be ignorable"
 - There are 6 diff entities in total.
 
-In other words, I created 6 materials (PNG screenshot and HTML source saved). I set `1.0%` as the criteria of evaluating the diffRatio; if an entity has a diffRatio greather than 1.0, it will be marked *warning*, hence the figure `46.66%` is highlighted with the background color of yellow.
+In other words, I created 6 materials (PNG screenshot and HTML source saved). I set `1.0%` as the criteria of evaluating the diffRatio; if an entity has a diffRatio greater than 1.0, it will be marked *warning*, hence the figure `46.66%` is highlighted with the background color of yellow.
 
 A large diffRatio indicates to me that there must be some reason that caused significant visual differences; therefore I should look into the system. Definitely I will do for every entities warned. I would find some reason why the diffRatio is as large as `46.66%`. No matter what the reason is, I would decide whether the entity is **ignorable** or not.
 
@@ -410,7 +410,7 @@ Now I have got
 
 *I have zero warnings! Congrat! I have finished inspecting this web application!*
 
-The status checkbox toggled ON/OFF by human is persisted into [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) of browser. Therefore your decisions (which entities to be ignored) will be retained across browser sessions. You can reload the report, close and reopen the report. The checkboxes in the report will keep the status you put previously. 
+The status checkbox toggled ON/OFF by human is persisted into [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) of browser. Therefore your decisions (which entities to be ignored) will be retained across browser sessions. You can reload the report, close and reopen the report. The checkboxes in the report will keep the status you put previously.
 
 `2w 0i 6t` => `1w 1i 6t` => `0w 2i 6t` --- I would name this display as WIT --- makes my inspection task spirally upward. It helps me gradually improve the target system through executing Visual Inspection repeatedly.
 
@@ -475,7 +475,7 @@ The Test Case looks up 2 set of materials and compare them.
 
 1. Amongst the stored materials, select 2 (a screenshot and a HTML) of the *Development environment* to make a List.
 2. Also select 2 of the *Projection environment* to make a Liist.
-3. do take differences between the two lists. 
+3. do take differences between the two lists.
 4. will insert files into the "store", which contains the diff information.
 5. generate a HTML report, where you can view the detail with diff information.
 
