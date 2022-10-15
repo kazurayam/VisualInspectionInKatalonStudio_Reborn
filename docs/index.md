@@ -6,4 +6,4 @@
 
 -   [MyAdmin](https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/MyAdmin_Main_Twins-index.html)
 
--   [Google Search](https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/scrapeGoogleSearch.html)
+-   [Google Search](https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/GoogleSearch_scrape-list.html)
