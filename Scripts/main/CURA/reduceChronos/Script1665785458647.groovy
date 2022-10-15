@@ -2,7 +2,7 @@ import com.kazurayam.materialstore.inspector.Inspector
 import com.kazurayam.materialstore.dot.MPGVisualizer
 import com.kazurayam.materialstore.filesystem.MaterialList
 import com.kazurayam.materialstore.filesystem.QueryOnMetadata
-import com.kazurayam.materialstore.filesystem.metadata.SortKeys
+import com.kazurayam.materialstore.filesystem.SortKeys
 import com.kazurayam.materialstore.reduce.MaterialProductGroup
 import com.kazurayam.materialstore.reduce.Reducer
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI

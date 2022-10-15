@@ -8,9 +8,9 @@ import com.kazurayam.materialstore.filesystem.JobName
 import com.kazurayam.materialstore.filesystem.JobTimestamp
 import com.kazurayam.materialstore.filesystem.MaterialList
 import com.kazurayam.materialstore.filesystem.QueryOnMetadata
+import com.kazurayam.materialstore.filesystem.SortKeys
 import com.kazurayam.materialstore.filesystem.Store
 import com.kazurayam.materialstore.filesystem.Stores
-import com.kazurayam.materialstore.filesystem.metadata.SortKeys
 import com.kazurayam.materialstore.reduce.MaterialProductGroup
 import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.util.KeywordUtil
@@ -57,7 +57,7 @@ JobTimestamp currentTimestamp = JobTimestamp.now()
 
 MaterialList currentMaterialList = store.select(jobName, currentTimestamp, QueryOnMetadata.ANY)
 
-SortKeys sortKeys = new SortKeys("step", "URL.host", "URL.path", "URL.fragment")
+SortKeys sortKeys = new SortKeys("step", "profile", "URL.host", "URL.path", "URL.fragment")
 
 MaterialProductGroup reduced =
 	WebUI.callTestCase(findTestCase("main/CURA/reduceChronos"),
