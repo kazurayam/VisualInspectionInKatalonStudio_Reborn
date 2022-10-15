@@ -2,10 +2,8 @@
 
 ## Demos
 
--   [CURA](https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/CURA_VisualInspectionChronos-index.html)
+-   [CURA](https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/CURA_Main_Chronos-index.html)
 
--   [Flaskr](https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/Flaskr_VisualInspectionTwins-index.html)
+-   [MyAdmin](https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/MyAdmin_Main_Twins-index.html)
 
--   [MyAdmin](https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/MyAdmin_VisualInspectionTwins-index.html)
-
--   [scrapeGoogleSearch](https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/scrapeGoogleSearch.html)
+-   [Google Search](https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/scrapeGoogleSearch.html)
