@@ -1,7 +1,7 @@
 # Visual Inspection in Katalon Studio - Reborn
 
 - @date Aug 2021
-- @update 15 Oct 2022, ver 0.10.1
+- @update 15 Oct 2022, ver 0.10.3
 - @author kazurayam
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -55,21 +55,21 @@ Sep 2018, I published a project named "Visual Testing in Katalon Studio" at
 
 - https://github.com/kazurayam/VisualTestingInKatalonStudio
 
-Please have a look at the "Motivation" section in its README document to know why I made it. I tried to implement what I called "Visual Testing" in Katalon Studio. The project worked for me.
+Please have a look at the "Motivation" section in its README document to know why I made it. I tried to implement what I called "Visual Testing" in Katalon Studio. That project worked for me.
 
 But I wasn't satisfied with it. Why? I would enumerate 3 problems about that project.
 
 1. The codeset of [Visual Testing In katalon Studio](https://github.com/kazurayam/VisualTestingInKatalonStudio) project is too complicated. The project contains 28 Test Cases, 7 Test Suites, 4 Test Suite Collections, 1 Test Listener, 12 Keywords. After 3 years, I forgot them and unable to maintain them any longer.
-2. The project enables me to compare a pair of 2 screenshots of Web pages in PNG image format. That's all. Not enough. Often I wanted to compare 2 texts scraped from web. E.g, 2 HTML files as Web Page source; 2 JSON files downloaded from a Web Service.
-3. The project isn't distributable to others easily because it isn't packaged. It's too hard for people to reuse the codeset of the project to achieve their own "Visual Testing" for their custom targets.
+2. The project enabled me to compare a pair of 2 screenshots of Web pages in PNG image format. I found that it is not enough. Often I wanted to compare 2 texts scraped from web. For example, I wanted to compare 2 HTML files. Also I wanted to compare 2 JSON files downloaded from a Web Service.
+3. The project wasn't distributable to others easily because it wasn't packaged as "jar". It was too hard for people to reuse the code set of the project to achieve their own "Visual Testing" for their custom targets.
 
 ## My new development
 
-In 2021 July-August, I have developed a new project named [`materialstore`](https://github.com/kazurayam/materialstore). It is a domain-specifc file system written in Groovy. In this project I have re-designed and re-implemented my idea from scratch. I have achieved the followings.
+In 2021 July-August, I have developed a new project named [`materialstore`](https://github.com/kazurayam/materialstore). It is a domain-specific file system written in Groovy, accompanied with a set of utility class that implements "Visual Testing". In this project I have re-designed and re-implemented my idea from scratch. In the materialstore library, I have achieved the followings.
 
 ### (1) Simpler codeset
 
-The `materialstore` provides a self-contained API in Groovy, which encapsulates all of the useful functionalities of the previous [Visual Testing In katalon Studio](https://github.com/kazurayam/VisualTestingInKatalonStudio) project. A single Test Case in Katalon Studio empowered by the `materialstore` library can achieve whole job equivalent to the previous one. No need to struggle with that many components (28 Test Cases + 7 Test Suites + 4 Test Suite Collections + 1 Test Listener + 12 Keywords).
+The `materialstore` provides a self-contained API in Java8, which encapsulates all of the useful functionalities of the previous [Visual Testing In katalon Studio](https://github.com/kazurayam/VisualTestingInKatalonStudio) project. A single Test Case in Katalon Studio empowered by the `materialstore` library can achieve whole job equivalent to the previous one. No need to struggle with that many components (28 Test Cases + 7 Test Suites + 4 Test Suite Collections + 1 Test Listener + 12 Keywords).
 
 ### (2) Domain-specific file system indexed by metadata
 
@@ -77,19 +77,28 @@ By the word *material* I mean any type of files downloaded from Web applications
 
 The `materialstore` provides capability of materializing (storing) files downloaded from web sites in a pre-designed directory structure (I call it the *store*).
 
-An application writes files into the *"store"* associating *"metadata"*. The *"materials"* in the "store" are indexed by the associcated *metadata*. An application retrieves files from the store by *metadata* as key. An application does not look up files by name (Path). The application is no longer responsible for deciding and remembering the path of physical files.
+An application writes files into the *"store"* associating *"metadata"*. The *"materials"* in the "store" are indexed by the associated *metadata*. An application retrieves files from the store by querying for *metadata*. An application does not look up files by physical name. The application is no longer responsible for deciding and remembering the path of physical files.
 
- A *metadata* of a material in the store is merely an instance of `java.util.Map<String, String>` with arbitrary key=value pairs. You can programme any kind of *metadata* and associate it to each materials so that the materials are well described and clearly identified. For example, you can associate the URL from which the web resource was retrieved; or you can associate the name of browser ("Chrome", "FireFox", "Safari", etc) which you used to take the screenshots; or you can associate the name of "Execution Profile" in Katalon Studio which you applied when you executed your Test Case.
+A *metadata* of a material in the store is merely an instance of `java.util.Map<String, String>` with arbitrary key=value pairs. You can programme any kind of *metadata* and associate it to each materials so that the materials are well described.
 
-Metadata composition is entirely up to the user application. Composing metadata is a bit difficult part of the `materialstore` library. It looks similar to designing database table in SQL-backed application.
+For example, you can associate the URL from which the web resource was retrieved; or you can associate the name of browser ("Chrome", "FireFox", "Safari", etc) which you used to take the screenshots; or you can associate the name of "Execution Profile" in Katalon Studio which you applied when you executed your Test Case.
+
+And you are responsible for creating metadata that clearly and uniquely identifies a material amongst a set of materials created a single run of test.
+
+Metadata composition is entirely up to the user application. Composing metadata is difficult part of the `materialstore` library. It looks similar to designing database table in SQL-backed application.
+
 
 ### (3) Packaged in a jar
 
-The artifact of `materialstore` is distributed as a single jar file. The jar file is available at the [Maven Central Repository](https://mvnrepository.com/artifact/com.kazurayam/materialstore). Any Java/Groovy-based application can automate downloading the `materialstore-x.x.x.jar` to resolve dependency using the build tools (Gradle, Maven, Ant).
+The artifact of `materialstore` is distributed as a single jar file. The jar file is available at the [Maven Central Repository](https://mvnrepository.com/artifact/com.kazurayam/materialstore). Any Java/Groovy-based application can automate downloading the `materialstore-x.x.x.jar` to resolve the dependency using the build tools (Gradle, Maven, Ant).
 
 ### (4) Usable outside Katalon Studio
 
-The `materialstore`'s jar has no immediate dependency on the Katalon Studio API. It is not dependent even on the Selenium Webdriver API. So the `materialstore` library can be used in any Java/Groovy project, not only in Katalon Studio. I can use it in a plain [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/)-based automated test project for Web UI on Gradle. I can use it in a plain [Appium Java Client](https://github.com/appium/java-client)-based automated test project for Mobile UI on Maven. I can use it in a plain [Apache HttpClient](https://hc.apache.org/httpcomponents-client-5.1.x/)-based automated test project for Web Services on Ant.
+The `materialstore` library is a set of Plain Old Java Objects, which has no immediate dependency on the Katalon Studio API. It has no dependency on the Selenium WebDriver API either.
+
+So the `materialstore` library can be used in any Java/Groovy project outside Katalon Studio. I can use it in a plain [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/)-based automated test project for Web UI on Gradle. I can use it in a plain [Appium Java Client](https://github.com/appium/java-client)-based automated test project for Mobile UI on Maven. I can use it in a plain [Apache HttpClient](https://hc.apache.org/httpcomponents-client-5.1.x/)-based automated test project for Web Services on Ant.
+
+This "VisualTestingInKatalonStudio_Reborn" project is a mere demonstration how to utilize the `materialstore` library in Katalon Studio.
 
 ## Inspection, not Test
 
@@ -99,16 +108,9 @@ Now I want to name my new project as **Visual Inspection**. I think it is a bett
 
 
 
-## The documentation of "materialstore"
-
-The following repository contains sample codes and documentation of the `materialstore` API. The sample codes are written in Java, run on Gradle + Selenium WebDriver + Apache HttpClient.
-
-- [materialstore-examples](https://kazurayam.github.io/materialstore-examples/)
-
-
 ## Examples in Katalon Studio
 
-Here I will present 3 examples which show how to use the `materialstore` library in Katalon Studio. I intend these will supersede my previous ["Visual Testing in Katalon Studio"](https://github.com/kazurayam/VisualTestingInKatalonStudio) project.
+In this "VisualInspectionInKatalonStudio_Reborn", I will present 3 examples which show how to use the `materialstore` library in Katalon Studio. I intend these will supersede my previous ["Visual Testing in Katalon Studio"](https://github.com/kazurayam/VisualTestingInKatalonStudio) project.
 
 ### Creating a project, resolving external dependencies
 
@@ -144,22 +146,22 @@ BUILD SUCCESSFUL in 1s
 
 ```
 $ tree Drivers
+
 Drivers
 ├── AUTOIMPORTED_ExecutionProfilesLoader-1.2.1.jar
 ├── AUTOIMPORTED_ashot-1.5.4.jar
-├── AUTOIMPORTED_java-diff-utils-4.9.jar
-├── AUTOIMPORTED_jsoup-1.13.1.jar
-├── AUTOIMPORTED_materialstore-0.3.5.jar
-└── AUTOIMPORTED_subprocessj-0.3.3.jar
+├── AUTOIMPORTED_freemarker-2.3.31.jar
+├── AUTOIMPORTED_java-diff-utils-4.11.jar
+├── AUTOIMPORTED_jsoup-1.14.3.jar
+├── AUTOIMPORTED_materialstore-0.10.3-SNAPSHOT.jar
+└── AUTOIMPORTED_subprocessj-0.3.4.jar
 ```
 
 >The exact version number of the jars may change in future. Please regard this as an example.
 
+All of these jar files are downloaded from the [Maven Central Repository](https://mvnrepository.com/).
 
-
-All of these jar files are downloaded from the [Maven Central Repositry](https://mvnrepository.com/). These are required to run the "Visual Testing" code in your new project in Katalon Studio locally.
-
->If you are going to push your new project into Git repository, you should write `.gitignore` file so that it ignores the `Drivers/` directory.
+>If you are going to push your new project into Git repository, you should write the `.gitignore` file so that it ignores the `Drivers/` directory.
 
 7. Stop Katalon Studio, restart it and re-open the project.
 
@@ -192,22 +194,23 @@ The following table shows by which code these external dependencies are used
 | [java-diff-utils](https://mvnrepository.com/artifact/io.github.java-diff-utils/java-diff-utils) |✔︎|✔︎|✔︎|✔︎|✔︎|
 | [jsoup](https://mvnrepository.com/artifact/org.jsoup/jsoup) |✔︎|✔︎|✔︎|✔︎|✔︎|
 | [materialstore](https://mvnrepository.com/artifact/com.kazurayam/materialstore) |✔︎|✔︎|✔︎|✔︎|✔︎|
+| [FreeMarker](https://freemarker.apache.org/) |✔︎|✔︎|✔︎|✔︎|✔︎|
 | [subprocess](https://mvnrepository.com/artifact/com.kazurayam/subprocessj) | | | | |✔︎|
 | [Docker](https://www.docker.com/products/docker-desktop) | | | | |✔︎  |
 
 
 
-## Sample1: simply visit a URL and scrape
+## Sample1: simply visit a web site to take screenshots
 
-First example. We will write a Test Case in Katalon Studio that visits the [Google Search page](https://www.google.com/). We will take screenshots and HTML page sources of the Web page. We will store PNG files and HTML files into the `store` directory using the `materialstore` library. We will finally generate a HTML file in which we can view the stored files.
+First example. We will write a Test Case in Katalon Studio that visits the [Google Search page](https://www.google.com/). We will take screenshots and HTML page sources of the Web page. We will store PNG files and HTML files into the `store` directory using the `materialstore` library. We will finally generate a HTML file in which we can view the stored PNG and HTML files.
 
 #### (1) Test Case
 
 You want to newly create a Test Case `Test Cases/main/GoogleSearch/scrapeGoogleSearch` in your project. Copy and paste the following sample source:
 
-- [`Test Cases/main/GoogleSearch/searchGoogleSearch`](Scripts/main/GoogleSearch/scrapeGoogleSearch/Script1628518694544.groovy)
+- [`Test Cases/main/GoogleSearch/searchGoogleSearch`](https://github.com/kazurayam/VisualInspectionInKatalonStudio_Reborn/blob/master/Scripts/main/GoogleSearch/Main/Script1646909950671.groovy)
 
-Once you have created the Test Case, you want to run it as usual by clicking the green button ![run button](docs/images/run_katalon_test.png) in Katalon Studio GUI.
+You want to run it by clicking the green button ![run button](docs/images/run_katalon_test.png) in Katalon Studio GUI.
 
 #### (2) The report generated
 
@@ -289,7 +292,8 @@ Second example. We will write a Test Case in Katalon Studio that visits the [htt
 
 In your project, you want to copy&paste the following Test Case code.
 
-- [`Test Cases/main/CURA/VisualInspectionChronos`](Scripts/main/CURA/VisualInspectionChronos/Script1629114744842.groovy)
+- [`Test Cases/main/CURA/VisualInspectionChronos`](
+  https://github.com/kazurayam/VisualInspectionInKatalonStudio_Reborn/blob/master/Scripts/main/CURA/Main_Chronos/Script1646219948928.groovy)
 
 You will execute the Test Case two times. You run it once; wait for some period (seconds, minuits, hours, or days, ... up to you); then run it again. The Test Case will preserve the output of previous runs.
 
@@ -429,7 +433,7 @@ The former URL is meant to represent a *Production environment* of a web system,
 
 In your project, you want to copy the followiing Test Case code.
 
-- [`Test Cases/main/MyAdmin/VisualInspectionTwins`](Scripts/main/MyAdmin/VisualInspectionTwins/Script1629114780778.groovy)
+- [`Test Cases/main/MyAdmin/VisualInspectionTwins`](https://github.com/kazurayam/VisualInspectionInKatalonStudio_Reborn/blob/master/Scripts/main/MyAdmin/Main_Twins/Script1646272006678.groovy)
 
 You will execute the Test Case only once. The Test Case will visit the 2 URLs as one batch. And it creates a HTML report.
 

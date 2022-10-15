@@ -1,0 +1,2211 @@
+<!doctype html>
+<html lang="en"> 
+  <head> 
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Bootstrap --> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"> 
+    <style>.container {
+  font-family: ui-monospace, SFMono-Regular, SZ Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font-size: 12px;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+.container dl dd {
+  margin-left: 40px;
+}
+
+.container .title {
+  margin-left: 54px;
+}
+
+.container .title button {
+  float: right;
+  margin-top: 6px;
+}
+
+#count {
+  position: fixed;
+  top: 16px;
+  left: 10px;
+}
+#count .warnings {
+  font-size: xx-large;
+  color: #e0ae00;
+}
+#count .ignorable {
+  font-size: x-large;
+  color: #0c63e4;
+}
+#count .total {
+  font-size: large;
+}
+
+.container .header {
+  padding: 16px 20px;
+}
+.container .identified-value {
+  background-color: #FA98FA;
+}
+.container .semantic-version {
+  border: #FA98FA solid;
+}
+.container .ignored-key {
+  background-color: #CCC;
+}
+.container .matched-value {
+  background-color: #98FB98;
+}
+.container .accordion .accordion-header button .ratio {
+  padding: 4px 20px 4px 4px;
+  text-align: left;
+  font-size: 16px;
+  line-height: 24px;
+  flex-basis: 10%;
+}
+.container .accordion .accordion-header button .fileType {
+  padding: 4px 20px 4px 4px;
+  text-align: left;
+  font-size: 16px;
+  line-height: 24px;
+  flex-basis: 10%;
+}
+.container .accordion .accordion-header button .metadata {
+  padding: 4px 20px 4px 4px;
+  text-align: left;
+  font-size: 16px;
+  line-height: 24px;
+  flex-basis: 90%;
+}
+.container .accordion .accordion-header button .description {
+  padding: 4px 20px 4px 4px;
+  text-align: left;
+  font-size: 16px;
+  line-height: 24px;
+  flex-basis: 80%;
+}
+.container .accordion .accordion-header button .warning {
+  background-color: #e0ae00;
+}
+.container .accordion .accordion-header button .ignored {
+  background-color: #ffffff;
+  border: #e0ae00 solid;
+}
+.container .accordion .accordion-body .show-diff .modal .modal-body iframe {
+  position: absolute;
+  border: none;
+  height: 100%;
+  width: 100%;
+}
+.container .accordion .accordion-body .show-diff .modal .modal-body .carousel .carousel-inner {
+  background-color: #efefef;
+}
+.container .accordion .accordion-body .show-diff .modal .modal-body .carousel .carousel-inner .centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.container .accordion .accordion-body .show-diff .modal .modal-body .carousel .carousel-control-prev, .container .accordion .accordion-body .show-diff .modal .modal-body .carousel .carousel-control-next {
+  width: 12.5%;
+}
+.container .accordion .accordion-body .show-detail {
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+/*# sourceMappingURL=style.css.map */
+</style> 
+    <style>/* https://stackoverflow.com/questions/71480478/bootstrap-5-accordion-with-an-inline-checkbox */
+.accordion--custom .accordion-header {
+    display: flex; /* make flex element */
+    align-items: center; /* aligning child items */
+    column-gap: 0.6rem; /* adding gap between items in row */
+    padding-left: 0.5rem;
+}
+</style> 
+    <title>CURA_Main_Chronos</title> 
+  </head> 
+  <body> 
+    <div class="container"> 
+      <p id="count"><span class="warnings">1</span>w <span class="ignorable">0</span>i <span class="total">6</span>t</p> 
+      <h1 class="title">CURA_Main_Chronos-index <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapsingHeader" aria-expanded="false" aria-controls="collapsingHeader">About</button> </h1> 
+      <div id="collapsingHeader" class="collapse header"> 
+        <dl> 
+          <dt>
+            Root path :
+          </dt> 
+          <dd>
+            /Users/kazuakiurayama/katalon-workspace/VisualInspectionInKatalonStudio_Reborn/store
+          </dd> 
+          <dt>
+            JobName :
+          </dt> 
+          <dd>
+            CURA_Main_Chronos
+          </dd> 
+          <dt>
+            Left MaterialList specification
+          </dt> 
+          <dd> 
+            <dl> 
+              <dt>
+                JobTimestamp :
+              </dt> 
+              <dd>
+                20221015_130629
+              </dd> 
+              <dt>
+                QueryOnMetadata :
+              </dt> 
+              <dd> <span>{</span><span>"*":</span><span>"re:.*"</span><span>}</span> 
+              </dd> 
+            </dl> 
+          </dd> 
+          <dt>
+            Right MaterialList specification
+          </dt> 
+          <dd> 
+            <dl> 
+              <dt>
+                JobTimestamp :
+              </dt> 
+              <dd>
+                20221015_140003
+              </dd> 
+              <dt>
+                QueryOnMetadata :
+              </dt> 
+              <dd> <span>{</span><span>"*":</span><span>"re:.*"</span><span>}</span> 
+              </dd> 
+            </dl> 
+          </dd> 
+          <dt>
+            IgnoreMetadataKeys
+          </dt> 
+          <dd> <span>[</span><span>]</span> 
+          </dd> 
+          <dt>
+            criteria
+          </dt> 
+          <dd>
+             1.00 
+          </dd> 
+          <dt>
+            Sort keys :
+          </dt> 
+          <dd>
+            ["step", "profile", "URL.host", "URL.path", "URL.fragment"]
+          </dd> 
+        </dl> 
+      </div> 
+      <div class="accordion accordion--custom" id="diff-contents"> 
+        <div id="accordion0" class="accordion-item"> 
+          <h2 id="heading0" class="accordion-header"> <input class="form-check-input" type="checkbox" id="ignorable0" value="" data-index="0"> <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse0" area-expanded="false" aria-controls="collapse0"> <span class="ratio warning">1.24%</span> <span class="fileType">png</span> <span class="identification">{"step":"01", "profile":"ProductionEnv", "URL.host":"demoaut-mimic.kazurayam.com", "URL.path":"/", "URL.port":"80", "URL.protocol":"http"}</span> </button> </h2> 
+          <div id="collapse0" class="according-collapse collapse" aria-labelledby="heading0" data-bs-parent="#diff-contents"> 
+            <div class="accordion-body"> 
+              <div class="show-diff"> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#imageModal0">Show diff in Modal</button><!-- Modal to show 3 images: Left/Diff/Right --> 
+                <div class="modal fade" id="imageModal0" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true"> 
+                  <div class="modal-dialog modal-fullscreen"> 
+                    <div class="modal-content"> 
+                      <div class="modal-header"> 
+                        <h5 class="modal-title" id="imageModalLabel0"> <span>1.24% png {"step":"01", "profile":"ProductionEnv", "URL.host":"demoaut-mimic.kazurayam.com", "URL.path":"/", "URL.port":"80", "URL.protocol":"http"}</span> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> </h5> 
+                      </div> 
+                      <div class="modal-body"> 
+                        <div id="carouselControl0" class="carousel slide" data-bs-ride="carousel"> 
+                          <div class="carousel-inner"> 
+                            <div class="carousel-item"> 
+                              <h3 class="centered">Left</h3> 
+                              <img class="img-fluid d-block w-75 centered" alt="left" src="CURA_Main_Chronos/20221015_130629/objects/53d58dca2b6b759370e2e4fda450318e221cd3c8.png"> 
+                            </div> 
+                            <div class="carousel-item active"> 
+                              <h3 class="centered">Diff</h3> 
+                              <img class="img-fluid d-block w-75 centered" alt="diff" src="CURA_Main_Chronos/20221015_140031/objects/e6d0ef4354e0611eb8adbf8b1c10609063e9def7.png"> 
+                            </div> 
+                            <div class="carousel-item"> 
+                              <h3 class="centered">Right</h3> 
+                              <img class="img-fluid d-block w-75 centered" alt="right" src="CURA_Main_Chronos/20221015_140003/objects/6bb6020dc31787aab29f70911db4e6b4d2e498c8.png"> 
+                            </div> 
+                          </div> <button class="carousel-control-prev" type="button" data-bs-target="#carouselControl0" data-bs-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="visually-hidden">Previous</span> </button> <button class="carousel-control-next" type="button" data-bs-target="#carouselControl0" data-bs-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="visually-hidden">Next</span> </button> 
+                        </div> 
+                      </div> 
+                      <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> 
+                      </div> 
+                    </div> 
+                  </div> 
+                </div> 
+              </div> 
+              <div class="show-detail"> 
+                <h2>left</h2> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="CURA_Main_Chronos/20221015_130629/objects/53d58dca2b6b759370e2e4fda450318e221cd3c8.png" target="left">CURA_Main_Chronos/20221015_130629/objects/53d58dca2b6b759370e2e4fda450318e221cd3c8.png</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    png
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"profile":</span><span class="matched-value">"ProductionEnv"</span><span>, </span><span>"step":</span><span class="matched-value">"01"</span><span>, </span><span>"URL.host":</span><span class="matched-value">"demoaut-mimic.kazurayam.com"</span><span>, </span><span>"URL.path":</span><span class="matched-value">"/"</span><span>, </span><span>"URL.port":</span><span class="matched-value">"80"</span><span>, </span><span>"URL.protocol":</span><span class="matched-value">"http"</span><span>}</span> 
+                  </dd> 
+                  <dt>
+                    Source URL
+                  </dt> 
+                  <dd> <a href="http://demoaut-mimic.kazurayam.com/" target="source">http://demoaut-mimic.kazurayam.com/</a> 
+                  </dd> 
+                </dl> 
+              </div> 
+              <div class="show-detail"> 
+                <h2>right</h2> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="CURA_Main_Chronos/20221015_140003/objects/6bb6020dc31787aab29f70911db4e6b4d2e498c8.png" target="right">CURA_Main_Chronos/20221015_140003/objects/6bb6020dc31787aab29f70911db4e6b4d2e498c8.png</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    png
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"profile":</span><span class="matched-value">"ProductionEnv"</span><span>, </span><span>"step":</span><span class="matched-value">"01"</span><span>, </span><span>"URL.host":</span><span class="matched-value">"demoaut-mimic.kazurayam.com"</span><span>, </span><span>"URL.path":</span><span class="matched-value">"/"</span><span>, </span><span>"URL.port":</span><span class="matched-value">"80"</span><span>, </span><span>"URL.protocol":</span><span class="matched-value">"http"</span><span>}</span> 
+                  </dd> 
+                  <dt>
+                    Source URL
+                  </dt> 
+                  <dd> <a href="http://demoaut-mimic.kazurayam.com/" target="source">http://demoaut-mimic.kazurayam.com/</a> 
+                  </dd> 
+                </dl> 
+              </div> 
+              <div class="show-detail"> 
+                <h2>diff</h2> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="CURA_Main_Chronos/20221015_140031/objects/e6d0ef4354e0611eb8adbf8b1c10609063e9def7.png" target="diff">CURA_Main_Chronos/20221015_140031/objects/e6d0ef4354e0611eb8adbf8b1c10609063e9def7.png</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    png
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"category":</span><span>"diff"</span><span>, </span><span>"left":</span><span>"53d58dca2b6b759370e2e4fda450318e221cd3c8"</span><span>, </span><span>"ratio":</span><span>"1.24%"</span><span>, </span><span>"right":</span><span>"6bb6020dc31787aab29f70911db4e6b4d2e498c8"</span><span>}</span> 
+                  </dd> 
+                  <dt>
+                    Source URL
+                  </dt> 
+                  <dd> <a href="file://null_object" target="source">file://null_object</a> 
+                  </dd> 
+                </dl> 
+              </div> 
+            </div> 
+          </div> 
+        </div> 
+        <div id="accordion1" class="accordion-item"> 
+          <h2 id="heading1" class="accordion-header"> <input class="form-check-input" type="checkbox" id="ignorable1" value="" data-index="1" disabled> <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" area-expanded="false" aria-controls="collapse1"> <span class="ratio ">0.93%</span> <span class="fileType">html</span> <span class="identification">{"step":"01", "profile":"ProductionEnv", "URL.host":"demoaut-mimic.kazurayam.com", "URL.path":"/", "URL.port":"80", "URL.protocol":"http"}</span> </button> </h2> 
+          <div id="collapse1" class="according-collapse collapse" aria-labelledby="heading1" data-bs-parent="#diff-contents"> 
+            <div class="accordion-body"> 
+              <div class="show-diff"> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#textModal1">Show diff in Modal</button><!-- Modal to show texts diff --> 
+                <div class="modal fade" id="textModal1" tabindex="-1" aria-labelledby="textModalLabel" aria-hidden="true"> 
+                  <div class="modal-dialog modal-fullscreen"> 
+                    <div class="modal-content"> 
+                      <div class="modal-header"> 
+                        <h5 class="modal-title" id="textModalLabel1"> <span>0.93% html {"step":"01", "profile":"ProductionEnv", "URL.host":"demoaut-mimic.kazurayam.com", "URL.path":"/", "URL.port":"80", "URL.protocol":"http"}</span> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> </h5> 
+                      </div> 
+                      <div class="modal-body"> <iframe src="CURA_Main_Chronos/20221015_140031/objects/3d38803a880a2272111fd549dc7125b0c8eeb0d4.html" title="TextDiff"></iframe> 
+                      </div> 
+                      <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> 
+                      </div> 
+                    </div> 
+                  </div> 
+                </div> 
+              </div> 
+              <div class="show-detail"> 
+                <h2>left</h2> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="CURA_Main_Chronos/20221015_130629/objects/155355a1f674338098b3f67f7b0151b0c68ee951.html" target="left">CURA_Main_Chronos/20221015_130629/objects/155355a1f674338098b3f67f7b0151b0c68ee951.html</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    html
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"profile":</span><span class="matched-value">"ProductionEnv"</span><span>, </span><span>"step":</span><span class="matched-value">"01"</span><span>, </span><span>"URL.host":</span><span class="matched-value">"demoaut-mimic.kazurayam.com"</span><span>, </span><span>"URL.path":</span><span class="matched-value">"/"</span><span>, </span><span>"URL.port":</span><span class="matched-value">"80"</span><span>, </span><span>"URL.protocol":</span><span class="matched-value">"http"</span><span>}</span> 
+                  </dd> 
+                  <dt>
+                    Source URL
+                  </dt> 
+                  <dd> <a href="http://demoaut-mimic.kazurayam.com/" target="source">http://demoaut-mimic.kazurayam.com/</a> 
+                  </dd> 
+                </dl> 
+              </div> 
+              <div class="show-detail"> 
+                <h2>right</h2> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="CURA_Main_Chronos/20221015_140003/objects/60d56f703b5fe2cd9a40198bbc824c3219617f71.html" target="right">CURA_Main_Chronos/20221015_140003/objects/60d56f703b5fe2cd9a40198bbc824c3219617f71.html</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    html
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"profile":</span><span class="matched-value">"ProductionEnv"</span><span>, </span><span>"step":</span><span class="matched-value">"01"</span><span>, </span><span>"URL.host":</span><span class="matched-value">"demoaut-mimic.kazurayam.com"</span><span>, </span><span>"URL.path":</span><span class="matched-value">"/"</span><span>, </span><span>"URL.port":</span><span class="matched-value">"80"</span><span>, </span><span>"URL.protocol":</span><span class="matched-value">"http"</span><span>}</span> 
+                  </dd> 
+                  <dt>
+                    Source URL
+                  </dt> 
+                  <dd> <a href="http://demoaut-mimic.kazurayam.com/" target="source">http://demoaut-mimic.kazurayam.com/</a> 
+                  </dd> 
+                </dl> 
+              </div> 
+              <div class="show-detail"> 
+                <h2>diff</h2> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="CURA_Main_Chronos/20221015_140031/objects/3d38803a880a2272111fd549dc7125b0c8eeb0d4.html" target="diff">CURA_Main_Chronos/20221015_140031/objects/3d38803a880a2272111fd549dc7125b0c8eeb0d4.html</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    html
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"category":</span><span>"diff"</span><span>, </span><span>"left":</span><span>"155355a1f674338098b3f67f7b0151b0c68ee951"</span><span>, </span><span>"ratio":</span><span>"0.93%"</span><span>, </span><span>"right":</span><span>"60d56f703b5fe2cd9a40198bbc824c3219617f71"</span><span>}</span> 
+                  </dd> 
+                  <dt>
+                    Source URL
+                  </dt> 
+                  <dd> <a href="file://null_object" target="source">file://null_object</a> 
+                  </dd> 
+                </dl> 
+              </div> 
+            </div> 
+          </div> 
+        </div> 
+        <div id="accordion2" class="accordion-item"> 
+          <h2 id="heading2" class="accordion-header"> <input class="form-check-input" type="checkbox" id="ignorable2" value="" data-index="2" disabled> <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" area-expanded="false" aria-controls="collapse2"> <span class="ratio ">0.00%</span> <span class="fileType">png</span> <span class="identification">{"step":"02", "profile":"ProductionEnv", "URL.host":"katalon-demo-cura.herokuapp.com", "URL.path":"/", "URL.fragment":"appointment", "URL.port":"80", "URL.protocol":"https"}</span> </button> </h2> 
+          <div id="collapse2" class="according-collapse collapse" aria-labelledby="heading2" data-bs-parent="#diff-contents"> 
+            <div class="accordion-body"> 
+              <div class="show-diff"> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#imageModal2">Show diff in Modal</button><!-- Modal to show 3 images: Left/Diff/Right --> 
+                <div class="modal fade" id="imageModal2" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true"> 
+                  <div class="modal-dialog modal-fullscreen"> 
+                    <div class="modal-content"> 
+                      <div class="modal-header"> 
+                        <h5 class="modal-title" id="imageModalLabel2"> <span>0.00% png {"step":"02", "profile":"ProductionEnv", "URL.host":"katalon-demo-cura.herokuapp.com", "URL.path":"/", "URL.fragment":"appointment", "URL.port":"80", "URL.protocol":"https"}</span> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> </h5> 
+                      </div> 
+                      <div class="modal-body"> 
+                        <div id="carouselControl2" class="carousel slide" data-bs-ride="carousel"> 
+                          <div class="carousel-inner"> 
+                            <div class="carousel-item"> 
+                              <h3 class="centered">Left</h3> 
+                              <img class="img-fluid d-block w-75 centered" alt="left" src="CURA_Main_Chronos/20221015_130629/objects/e86c39545a993670a7deeb4b31cdb44d69ca8f90.png"> 
+                            </div> 
+                            <div class="carousel-item active"> 
+                              <h3 class="centered">Diff</h3> 
+                              <img class="img-fluid d-block w-75 centered" alt="diff" src="CURA_Main_Chronos/20221015_140031/objects/e86c39545a993670a7deeb4b31cdb44d69ca8f90.png"> 
+                            </div> 
+                            <div class="carousel-item"> 
+                              <h3 class="centered">Right</h3> 
+                              <img class="img-fluid d-block w-75 centered" alt="right" src="CURA_Main_Chronos/20221015_140003/objects/e86c39545a993670a7deeb4b31cdb44d69ca8f90.png"> 
+                            </div> 
+                          </div> <button class="carousel-control-prev" type="button" data-bs-target="#carouselControl2" data-bs-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="visually-hidden">Previous</span> </button> <button class="carousel-control-next" type="button" data-bs-target="#carouselControl2" data-bs-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="visually-hidden">Next</span> </button> 
+                        </div> 
+                      </div> 
+                      <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> 
+                      </div> 
+                    </div> 
+                  </div> 
+                </div> 
+              </div> 
+              <div class="show-detail"> 
+                <h2>left</h2> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="CURA_Main_Chronos/20221015_130629/objects/e86c39545a993670a7deeb4b31cdb44d69ca8f90.png" target="left">CURA_Main_Chronos/20221015_130629/objects/e86c39545a993670a7deeb4b31cdb44d69ca8f90.png</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    png
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"profile":</span><span class="matched-value">"ProductionEnv"</span><span>, </span><span>"step":</span><span class="matched-value">"02"</span><span>, </span><span>"URL.fragment":</span><span class="matched-value">"appointment"</span><span>, </span><span>"URL.host":</span><span class="matched-value">"katalon-demo-cura.herokuapp.com"</span><span>, </span><span>"URL.path":</span><span class="matched-value">"/"</span><span>, </span><span>"URL.port":</span><span class="matched-value">"80"</span><span>, </span><span>"URL.protocol":</span><span class="matched-value">"https"</span><span>}</span> 
+                  </dd> 
+                  <dt>
+                    Source URL
+                  </dt> 
+                  <dd> <a href="https://katalon-demo-cura.herokuapp.com/#appointment" target="source">https://katalon-demo-cura.herokuapp.com/#appointment</a> 
+                  </dd> 
+                </dl> 
+              </div> 
+              <div class="show-detail"> 
+                <h2>right</h2> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="CURA_Main_Chronos/20221015_140003/objects/e86c39545a993670a7deeb4b31cdb44d69ca8f90.png" target="right">CURA_Main_Chronos/20221015_140003/objects/e86c39545a993670a7deeb4b31cdb44d69ca8f90.png</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    png
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"profile":</span><span class="matched-value">"ProductionEnv"</span><span>, </span><span>"step":</span><span class="matched-value">"02"</span><span>, </span><span>"URL.fragment":</span><span class="matched-value">"appointment"</span><span>, </span><span>"URL.host":</span><span class="matched-value">"katalon-demo-cura.herokuapp.com"</span><span>, </span><span>"URL.path":</span><span class="matched-value">"/"</span><span>, </span><span>"URL.port":</span><span class="matched-value">"80"</span><span>, </span><span>"URL.protocol":</span><span class="matched-value">"https"</span><span>}</span> 
+                  </dd> 
+                  <dt>
+                    Source URL
+                  </dt> 
+                  <dd> <a href="https://katalon-demo-cura.herokuapp.com/#appointment" target="source">https://katalon-demo-cura.herokuapp.com/#appointment</a> 
+                  </dd> 
+                </dl> 
+              </div> 
+              <div class="show-detail"> 
+                <h2>diff</h2> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="CURA_Main_Chronos/20221015_140031/objects/e86c39545a993670a7deeb4b31cdb44d69ca8f90.png" target="diff">CURA_Main_Chronos/20221015_140031/objects/e86c39545a993670a7deeb4b31cdb44d69ca8f90.png</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    png
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"category":</span><span>"diff"</span><span>, </span><span>"left":</span><span>"e86c39545a993670a7deeb4b31cdb44d69ca8f90"</span><span>, </span><span>"ratio":</span><span>"0.00%"</span><span>, </span><span>"right":</span><span>"e86c39545a993670a7deeb4b31cdb44d69ca8f90"</span><span>}</span> 
+                  </dd> 
+                  <dt>
+                    Source URL
+                  </dt> 
+                  <dd> <a href="file://null_object" target="source">file://null_object</a> 
+                  </dd> 
+                </dl> 
+              </div> 
+            </div> 
+          </div> 
+        </div> 
+        <div id="accordion3" class="accordion-item"> 
+          <h2 id="heading3" class="accordion-header"> <input class="form-check-input" type="checkbox" id="ignorable3" value="" data-index="3" disabled> <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" area-expanded="false" aria-controls="collapse3"> <span class="ratio ">0.33%</span> <span class="fileType">html</span> <span class="identification">{"step":"02", "profile":"ProductionEnv", "URL.host":"katalon-demo-cura.herokuapp.com", "URL.path":"/", "URL.fragment":"appointment", "URL.port":"80", "URL.protocol":"https"}</span> </button> </h2> 
+          <div id="collapse3" class="according-collapse collapse" aria-labelledby="heading3" data-bs-parent="#diff-contents"> 
+            <div class="accordion-body"> 
+              <div class="show-diff"> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#textModal3">Show diff in Modal</button><!-- Modal to show texts diff --> 
+                <div class="modal fade" id="textModal3" tabindex="-1" aria-labelledby="textModalLabel" aria-hidden="true"> 
+                  <div class="modal-dialog modal-fullscreen"> 
+                    <div class="modal-content"> 
+                      <div class="modal-header"> 
+                        <h5 class="modal-title" id="textModalLabel3"> <span>0.33% html {"step":"02", "profile":"ProductionEnv", "URL.host":"katalon-demo-cura.herokuapp.com", "URL.path":"/", "URL.fragment":"appointment", "URL.port":"80", "URL.protocol":"https"}</span> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> </h5> 
+                      </div> 
+                      <div class="modal-body"> <iframe src="CURA_Main_Chronos/20221015_140031/objects/bff67dc144ed7a82f584d2b224b75469c9b516de.html" title="TextDiff"></iframe> 
+                      </div> 
+                      <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> 
+                      </div> 
+                    </div> 
+                  </div> 
+                </div> 
+              </div> 
+              <div class="show-detail"> 
+                <h2>left</h2> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="CURA_Main_Chronos/20221015_130629/objects/bf43f25cdb7bcb99ee88df0d929916baf07d2744.html" target="left">CURA_Main_Chronos/20221015_130629/objects/bf43f25cdb7bcb99ee88df0d929916baf07d2744.html</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    html
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"profile":</span><span class="matched-value">"ProductionEnv"</span><span>, </span><span>"step":</span><span class="matched-value">"02"</span><span>, </span><span>"URL.fragment":</span><span class="matched-value">"appointment"</span><span>, </span><span>"URL.host":</span><span class="matched-value">"katalon-demo-cura.herokuapp.com"</span><span>, </span><span>"URL.path":</span><span class="matched-value">"/"</span><span>, </span><span>"URL.port":</span><span class="matched-value">"80"</span><span>, </span><span>"URL.protocol":</span><span class="matched-value">"https"</span><span>}</span> 
+                  </dd> 
+                  <dt>
+                    Source URL
+                  </dt> 
+                  <dd> <a href="https://katalon-demo-cura.herokuapp.com/#appointment" target="source">https://katalon-demo-cura.herokuapp.com/#appointment</a> 
+                  </dd> 
+                </dl> 
+              </div> 
+              <div class="show-detail"> 
+                <h2>right</h2> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="CURA_Main_Chronos/20221015_140003/objects/d3152fe6cee794784303706789675242decf8258.html" target="right">CURA_Main_Chronos/20221015_140003/objects/d3152fe6cee794784303706789675242decf8258.html</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    html
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"profile":</span><span class="matched-value">"ProductionEnv"</span><span>, </span><span>"step":</span><span class="matched-value">"02"</span><span>, </span><span>"URL.fragment":</span><span class="matched-value">"appointment"</span><span>, </span><span>"URL.host":</span><span class="matched-value">"katalon-demo-cura.herokuapp.com"</span><span>, </span><span>"URL.path":</span><span class="matched-value">"/"</span><span>, </span><span>"URL.port":</span><span class="matched-value">"80"</span><span>, </span><span>"URL.protocol":</span><span class="matched-value">"https"</span><span>}</span> 
+                  </dd> 
+                  <dt>
+                    Source URL
+                  </dt> 
+                  <dd> <a href="https://katalon-demo-cura.herokuapp.com/#appointment" target="source">https://katalon-demo-cura.herokuapp.com/#appointment</a> 
+                  </dd> 
+                </dl> 
+              </div> 
+              <div class="show-detail"> 
+                <h2>diff</h2> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="CURA_Main_Chronos/20221015_140031/objects/bff67dc144ed7a82f584d2b224b75469c9b516de.html" target="diff">CURA_Main_Chronos/20221015_140031/objects/bff67dc144ed7a82f584d2b224b75469c9b516de.html</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    html
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"category":</span><span>"diff"</span><span>, </span><span>"left":</span><span>"bf43f25cdb7bcb99ee88df0d929916baf07d2744"</span><span>, </span><span>"ratio":</span><span>"0.33%"</span><span>, </span><span>"right":</span><span>"d3152fe6cee794784303706789675242decf8258"</span><span>}</span> 
+                  </dd> 
+                  <dt>
+                    Source URL
+                  </dt> 
+                  <dd> <a href="file://null_object" target="source">file://null_object</a> 
+                  </dd> 
+                </dl> 
+              </div> 
+            </div> 
+          </div> 
+        </div> 
+        <div id="accordion4" class="accordion-item"> 
+          <h2 id="heading4" class="accordion-header"> <input class="form-check-input" type="checkbox" id="ignorable4" value="" data-index="4" disabled> <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" area-expanded="false" aria-controls="collapse4"> <span class="ratio ">0.00%</span> <span class="fileType">png</span> <span class="identification">{"step":"03", "profile":"ProductionEnv", "URL.host":"katalon-demo-cura.herokuapp.com", "URL.path":"/appointment.php", "URL.fragment":"summary", "URL.port":"80", "URL.protocol":"https"}</span> </button> </h2> 
+          <div id="collapse4" class="according-collapse collapse" aria-labelledby="heading4" data-bs-parent="#diff-contents"> 
+            <div class="accordion-body"> 
+              <div class="show-diff"> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#imageModal4">Show diff in Modal</button><!-- Modal to show 3 images: Left/Diff/Right --> 
+                <div class="modal fade" id="imageModal4" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true"> 
+                  <div class="modal-dialog modal-fullscreen"> 
+                    <div class="modal-content"> 
+                      <div class="modal-header"> 
+                        <h5 class="modal-title" id="imageModalLabel4"> <span>0.00% png {"step":"03", "profile":"ProductionEnv", "URL.host":"katalon-demo-cura.herokuapp.com", "URL.path":"/appointment.php", "URL.fragment":"summary", "URL.port":"80", "URL.protocol":"https"}</span> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> </h5> 
+                      </div> 
+                      <div class="modal-body"> 
+                        <div id="carouselControl4" class="carousel slide" data-bs-ride="carousel"> 
+                          <div class="carousel-inner"> 
+                            <div class="carousel-item"> 
+                              <h3 class="centered">Left</h3> 
+                              <img class="img-fluid d-block w-75 centered" alt="left" src="CURA_Main_Chronos/20221015_130629/objects/632e1207243f11166db1989e4a856c6d93030366.png"> 
+                            </div> 
+                            <div class="carousel-item active"> 
+                              <h3 class="centered">Diff</h3> 
+                              <img class="img-fluid d-block w-75 centered" alt="diff" src="CURA_Main_Chronos/20221015_140031/objects/632e1207243f11166db1989e4a856c6d93030366.png"> 
+                            </div> 
+                            <div class="carousel-item"> 
+                              <h3 class="centered">Right</h3> 
+                              <img class="img-fluid d-block w-75 centered" alt="right" src="CURA_Main_Chronos/20221015_140003/objects/632e1207243f11166db1989e4a856c6d93030366.png"> 
+                            </div> 
+                          </div> <button class="carousel-control-prev" type="button" data-bs-target="#carouselControl4" data-bs-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="visually-hidden">Previous</span> </button> <button class="carousel-control-next" type="button" data-bs-target="#carouselControl4" data-bs-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="visually-hidden">Next</span> </button> 
+                        </div> 
+                      </div> 
+                      <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> 
+                      </div> 
+                    </div> 
+                  </div> 
+                </div> 
+              </div> 
+              <div class="show-detail"> 
+                <h2>left</h2> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="CURA_Main_Chronos/20221015_130629/objects/632e1207243f11166db1989e4a856c6d93030366.png" target="left">CURA_Main_Chronos/20221015_130629/objects/632e1207243f11166db1989e4a856c6d93030366.png</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    png
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"profile":</span><span class="matched-value">"ProductionEnv"</span><span>, </span><span>"step":</span><span class="matched-value">"03"</span><span>, </span><span>"URL.fragment":</span><span class="matched-value">"summary"</span><span>, </span><span>"URL.host":</span><span class="matched-value">"katalon-demo-cura.herokuapp.com"</span><span>, </span><span>"URL.path":</span><span class="matched-value">"/appointment.php"</span><span>, </span><span>"URL.port":</span><span class="matched-value">"80"</span><span>, </span><span>"URL.protocol":</span><span class="matched-value">"https"</span><span>}</span> 
+                  </dd> 
+                  <dt>
+                    Source URL
+                  </dt> 
+                  <dd> <a href="https://katalon-demo-cura.herokuapp.com/appointment.php#summary" target="source">https://katalon-demo-cura.herokuapp.com/appointment.php#summary</a> 
+                  </dd> 
+                </dl> 
+              </div> 
+              <div class="show-detail"> 
+                <h2>right</h2> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="CURA_Main_Chronos/20221015_140003/objects/632e1207243f11166db1989e4a856c6d93030366.png" target="right">CURA_Main_Chronos/20221015_140003/objects/632e1207243f11166db1989e4a856c6d93030366.png</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    png
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"profile":</span><span class="matched-value">"ProductionEnv"</span><span>, </span><span>"step":</span><span class="matched-value">"03"</span><span>, </span><span>"URL.fragment":</span><span class="matched-value">"summary"</span><span>, </span><span>"URL.host":</span><span class="matched-value">"katalon-demo-cura.herokuapp.com"</span><span>, </span><span>"URL.path":</span><span class="matched-value">"/appointment.php"</span><span>, </span><span>"URL.port":</span><span class="matched-value">"80"</span><span>, </span><span>"URL.protocol":</span><span class="matched-value">"https"</span><span>}</span> 
+                  </dd> 
+                  <dt>
+                    Source URL
+                  </dt> 
+                  <dd> <a href="https://katalon-demo-cura.herokuapp.com/appointment.php#summary" target="source">https://katalon-demo-cura.herokuapp.com/appointment.php#summary</a> 
+                  </dd> 
+                </dl> 
+              </div> 
+              <div class="show-detail"> 
+                <h2>diff</h2> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="CURA_Main_Chronos/20221015_140031/objects/632e1207243f11166db1989e4a856c6d93030366.png" target="diff">CURA_Main_Chronos/20221015_140031/objects/632e1207243f11166db1989e4a856c6d93030366.png</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    png
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"category":</span><span>"diff"</span><span>, </span><span>"left":</span><span>"632e1207243f11166db1989e4a856c6d93030366"</span><span>, </span><span>"ratio":</span><span>"0.00%"</span><span>, </span><span>"right":</span><span>"632e1207243f11166db1989e4a856c6d93030366"</span><span>}</span> 
+                  </dd> 
+                  <dt>
+                    Source URL
+                  </dt> 
+                  <dd> <a href="file://null_object" target="source">file://null_object</a> 
+                  </dd> 
+                </dl> 
+              </div> 
+            </div> 
+          </div> 
+        </div> 
+        <div id="accordion5" class="accordion-item"> 
+          <h2 id="heading5" class="accordion-header"> <input class="form-check-input" type="checkbox" id="ignorable5" value="" data-index="5" disabled> <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" area-expanded="false" aria-controls="collapse5"> <span class="ratio ">0.90%</span> <span class="fileType">html</span> <span class="identification">{"step":"03", "profile":"ProductionEnv", "URL.host":"katalon-demo-cura.herokuapp.com", "URL.path":"/appointment.php", "URL.fragment":"summary", "URL.port":"80", "URL.protocol":"https"}</span> </button> </h2> 
+          <div id="collapse5" class="according-collapse collapse" aria-labelledby="heading5" data-bs-parent="#diff-contents"> 
+            <div class="accordion-body"> 
+              <div class="show-diff"> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#textModal5">Show diff in Modal</button><!-- Modal to show texts diff --> 
+                <div class="modal fade" id="textModal5" tabindex="-1" aria-labelledby="textModalLabel" aria-hidden="true"> 
+                  <div class="modal-dialog modal-fullscreen"> 
+                    <div class="modal-content"> 
+                      <div class="modal-header"> 
+                        <h5 class="modal-title" id="textModalLabel5"> <span>0.90% html {"step":"03", "profile":"ProductionEnv", "URL.host":"katalon-demo-cura.herokuapp.com", "URL.path":"/appointment.php", "URL.fragment":"summary", "URL.port":"80", "URL.protocol":"https"}</span> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> </h5> 
+                      </div> 
+                      <div class="modal-body"> <iframe src="CURA_Main_Chronos/20221015_140031/objects/3e8679b921b2076d6814b8b6036fb5d0867aa44f.html" title="TextDiff"></iframe> 
+                      </div> 
+                      <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> 
+                      </div> 
+                    </div> 
+                  </div> 
+                </div> 
+              </div> 
+              <div class="show-detail"> 
+                <h2>left</h2> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="CURA_Main_Chronos/20221015_130629/objects/1d6afeffd7854807bfe300d14f5aeeceed7b2462.html" target="left">CURA_Main_Chronos/20221015_130629/objects/1d6afeffd7854807bfe300d14f5aeeceed7b2462.html</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    html
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"profile":</span><span class="matched-value">"ProductionEnv"</span><span>, </span><span>"step":</span><span class="matched-value">"03"</span><span>, </span><span>"URL.fragment":</span><span class="matched-value">"summary"</span><span>, </span><span>"URL.host":</span><span class="matched-value">"katalon-demo-cura.herokuapp.com"</span><span>, </span><span>"URL.path":</span><span class="matched-value">"/appointment.php"</span><span>, </span><span>"URL.port":</span><span class="matched-value">"80"</span><span>, </span><span>"URL.protocol":</span><span class="matched-value">"https"</span><span>}</span> 
+                  </dd> 
+                  <dt>
+                    Source URL
+                  </dt> 
+                  <dd> <a href="https://katalon-demo-cura.herokuapp.com/appointment.php#summary" target="source">https://katalon-demo-cura.herokuapp.com/appointment.php#summary</a> 
+                  </dd> 
+                </dl> 
+              </div> 
+              <div class="show-detail"> 
+                <h2>right</h2> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="CURA_Main_Chronos/20221015_140003/objects/a7181edd36f5c6804a83a66857a058fed5b54665.html" target="right">CURA_Main_Chronos/20221015_140003/objects/a7181edd36f5c6804a83a66857a058fed5b54665.html</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    html
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"profile":</span><span class="matched-value">"ProductionEnv"</span><span>, </span><span>"step":</span><span class="matched-value">"03"</span><span>, </span><span>"URL.fragment":</span><span class="matched-value">"summary"</span><span>, </span><span>"URL.host":</span><span class="matched-value">"katalon-demo-cura.herokuapp.com"</span><span>, </span><span>"URL.path":</span><span class="matched-value">"/appointment.php"</span><span>, </span><span>"URL.port":</span><span class="matched-value">"80"</span><span>, </span><span>"URL.protocol":</span><span class="matched-value">"https"</span><span>}</span> 
+                  </dd> 
+                  <dt>
+                    Source URL
+                  </dt> 
+                  <dd> <a href="https://katalon-demo-cura.herokuapp.com/appointment.php#summary" target="source">https://katalon-demo-cura.herokuapp.com/appointment.php#summary</a> 
+                  </dd> 
+                </dl> 
+              </div> 
+              <div class="show-detail"> 
+                <h2>diff</h2> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="CURA_Main_Chronos/20221015_140031/objects/3e8679b921b2076d6814b8b6036fb5d0867aa44f.html" target="diff">CURA_Main_Chronos/20221015_140031/objects/3e8679b921b2076d6814b8b6036fb5d0867aa44f.html</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    html
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"category":</span><span>"diff"</span><span>, </span><span>"left":</span><span>"1d6afeffd7854807bfe300d14f5aeeceed7b2462"</span><span>, </span><span>"ratio":</span><span>"0.90%"</span><span>, </span><span>"right":</span><span>"a7181edd36f5c6804a83a66857a058fed5b54665"</span><span>}</span> 
+                  </dd> 
+                  <dt>
+                    Source URL
+                  </dt> 
+                  <dd> <a href="file://null_object" target="source">file://null_object</a> 
+                  </dd> 
+                </dl> 
+              </div> 
+            </div> 
+          </div> 
+        </div> 
+      </div> 
+    </div><!-- Bootstrap --> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.js"></script> 
+    <script type="text/javascript">
+        const model = {
+  "jobName": "CURA_Main_Chronos",
+  "criteria": 1.0,
+  "isReadyToReport": true,
+  "ignoreMetadataKeys": [],
+  "materialList0": {
+    "jobTimestamp": "20221015_130629",
+    "queryOnMetadata": {
+      "*": "re:.*"
+    },
+    "size": 6.0
+  },
+  "materialList1": {
+    "jobTimestamp": "20221015_140003",
+    "queryOnMetadata": {
+      "*": "re:.*"
+    },
+    "size": 6.0
+  },
+  "materialProductList": [
+    {
+      "checked": false,
+      "isBachelor": false,
+      "diffRatio": 1.24,
+      "fileTypeExtension": "png",
+      "queryOnMetadata": {
+        "URL.host": "demoaut-mimic.kazurayam.com",
+        "URL.path": "/",
+        "URL.port": "80",
+        "URL.protocol": "http",
+        "profile": "ProductionEnv",
+        "step": "01"
+      },
+      "identification": "{\"URL.host\":\"demoaut-mimic.kazurayam.com\", \"URL.path\":\"/\", \"URL.port\":\"80\", \"URL.protocol\":\"http\", \"profile\":\"ProductionEnv\", \"step\":\"01\"}",
+      "left": {
+        "jobName": "CURA_Main_Chronos",
+        "jobTimestamp": "20221015_130629",
+        "id": "53d58dca2b6b759370e2e4fda450318e221cd3c8",
+        "fileType": "png",
+        "metadata": {
+          "profile": {
+            "key": "profile",
+            "value": "ProductionEnv",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "step": {
+            "key": "step",
+            "value": "01",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.host": {
+            "key": "URL.host",
+            "value": "demoaut-mimic.kazurayam.com",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "http",
+            "matchedByAster": true,
+            "paired": true
+          }
+        },
+        "identification": "{\"profile\":\"ProductionEnv\", \"step\":\"01\", \"URL.host\":\"demoaut-mimic.kazurayam.com\", \"URL.path\":\"/\", \"URL.port\":\"80\", \"URL.protocol\":\"http\"}",
+        "metadataURL": "http://demoaut-mimic.kazurayam.com/",
+        "relativeUrl": "CURA_Main_Chronos/20221015_130629/objects/53d58dca2b6b759370e2e4fda450318e221cd3c8.png",
+        "diffability": "AS_IMAGE"
+      },
+      "right": {
+        "jobName": "CURA_Main_Chronos",
+        "jobTimestamp": "20221015_140003",
+        "id": "6bb6020dc31787aab29f70911db4e6b4d2e498c8",
+        "fileType": "png",
+        "metadata": {
+          "profile": {
+            "key": "profile",
+            "value": "ProductionEnv",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "step": {
+            "key": "step",
+            "value": "01",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.host": {
+            "key": "URL.host",
+            "value": "demoaut-mimic.kazurayam.com",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "http",
+            "matchedByAster": true,
+            "paired": true
+          }
+        },
+        "identification": "{\"profile\":\"ProductionEnv\", \"step\":\"01\", \"URL.host\":\"demoaut-mimic.kazurayam.com\", \"URL.path\":\"/\", \"URL.port\":\"80\", \"URL.protocol\":\"http\"}",
+        "metadataURL": "http://demoaut-mimic.kazurayam.com/",
+        "relativeUrl": "CURA_Main_Chronos/20221015_140003/objects/6bb6020dc31787aab29f70911db4e6b4d2e498c8.png",
+        "diffability": "AS_IMAGE"
+      },
+      "diff": {
+        "jobName": "CURA_Main_Chronos",
+        "jobTimestamp": "20221015_140031",
+        "id": "e6d0ef4354e0611eb8adbf8b1c10609063e9def7",
+        "fileType": "png",
+        "metadata": {
+          "category": {
+            "key": "category",
+            "value": "diff"
+          },
+          "left": {
+            "key": "left",
+            "value": "53d58dca2b6b759370e2e4fda450318e221cd3c8"
+          },
+          "ratio": {
+            "key": "ratio",
+            "value": "1.24%"
+          },
+          "right": {
+            "key": "right",
+            "value": "6bb6020dc31787aab29f70911db4e6b4d2e498c8"
+          }
+        },
+        "identification": "{\"category\":\"diff\", \"left\":\"53d58dca2b6b759370e2e4fda450318e221cd3c8\", \"ratio\":\"1.24%\", \"right\":\"6bb6020dc31787aab29f70911db4e6b4d2e498c8\"}",
+        "metadataURL": "file://null_object",
+        "relativeUrl": "CURA_Main_Chronos/20221015_140031/objects/e6d0ef4354e0611eb8adbf8b1c10609063e9def7.png",
+        "diffability": "AS_IMAGE"
+      }
+    },
+    {
+      "checked": false,
+      "isBachelor": false,
+      "diffRatio": 0.93,
+      "fileTypeExtension": "html",
+      "queryOnMetadata": {
+        "URL.host": "demoaut-mimic.kazurayam.com",
+        "URL.path": "/",
+        "URL.port": "80",
+        "URL.protocol": "http",
+        "profile": "ProductionEnv",
+        "step": "01"
+      },
+      "identification": "{\"URL.host\":\"demoaut-mimic.kazurayam.com\", \"URL.path\":\"/\", \"URL.port\":\"80\", \"URL.protocol\":\"http\", \"profile\":\"ProductionEnv\", \"step\":\"01\"}",
+      "left": {
+        "jobName": "CURA_Main_Chronos",
+        "jobTimestamp": "20221015_130629",
+        "id": "155355a1f674338098b3f67f7b0151b0c68ee951",
+        "fileType": "html",
+        "metadata": {
+          "profile": {
+            "key": "profile",
+            "value": "ProductionEnv",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "step": {
+            "key": "step",
+            "value": "01",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.host": {
+            "key": "URL.host",
+            "value": "demoaut-mimic.kazurayam.com",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "http",
+            "matchedByAster": true,
+            "paired": true
+          }
+        },
+        "identification": "{\"profile\":\"ProductionEnv\", \"step\":\"01\", \"URL.host\":\"demoaut-mimic.kazurayam.com\", \"URL.path\":\"/\", \"URL.port\":\"80\", \"URL.protocol\":\"http\"}",
+        "metadataURL": "http://demoaut-mimic.kazurayam.com/",
+        "relativeUrl": "CURA_Main_Chronos/20221015_130629/objects/155355a1f674338098b3f67f7b0151b0c68ee951.html",
+        "diffability": "AS_TEXT"
+      },
+      "right": {
+        "jobName": "CURA_Main_Chronos",
+        "jobTimestamp": "20221015_140003",
+        "id": "60d56f703b5fe2cd9a40198bbc824c3219617f71",
+        "fileType": "html",
+        "metadata": {
+          "profile": {
+            "key": "profile",
+            "value": "ProductionEnv",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "step": {
+            "key": "step",
+            "value": "01",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.host": {
+            "key": "URL.host",
+            "value": "demoaut-mimic.kazurayam.com",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "http",
+            "matchedByAster": true,
+            "paired": true
+          }
+        },
+        "identification": "{\"profile\":\"ProductionEnv\", \"step\":\"01\", \"URL.host\":\"demoaut-mimic.kazurayam.com\", \"URL.path\":\"/\", \"URL.port\":\"80\", \"URL.protocol\":\"http\"}",
+        "metadataURL": "http://demoaut-mimic.kazurayam.com/",
+        "relativeUrl": "CURA_Main_Chronos/20221015_140003/objects/60d56f703b5fe2cd9a40198bbc824c3219617f71.html",
+        "diffability": "AS_TEXT"
+      },
+      "diff": {
+        "jobName": "CURA_Main_Chronos",
+        "jobTimestamp": "20221015_140031",
+        "id": "3d38803a880a2272111fd549dc7125b0c8eeb0d4",
+        "fileType": "html",
+        "metadata": {
+          "category": {
+            "key": "category",
+            "value": "diff"
+          },
+          "left": {
+            "key": "left",
+            "value": "155355a1f674338098b3f67f7b0151b0c68ee951"
+          },
+          "ratio": {
+            "key": "ratio",
+            "value": "0.93%"
+          },
+          "right": {
+            "key": "right",
+            "value": "60d56f703b5fe2cd9a40198bbc824c3219617f71"
+          }
+        },
+        "identification": "{\"category\":\"diff\", \"left\":\"155355a1f674338098b3f67f7b0151b0c68ee951\", \"ratio\":\"0.93%\", \"right\":\"60d56f703b5fe2cd9a40198bbc824c3219617f71\"}",
+        "metadataURL": "file://null_object",
+        "relativeUrl": "CURA_Main_Chronos/20221015_140031/objects/3d38803a880a2272111fd549dc7125b0c8eeb0d4.html",
+        "diffability": "AS_TEXT"
+      }
+    },
+    {
+      "checked": false,
+      "isBachelor": false,
+      "diffRatio": 0.0,
+      "fileTypeExtension": "png",
+      "queryOnMetadata": {
+        "URL.fragment": "appointment",
+        "URL.host": "katalon-demo-cura.herokuapp.com",
+        "URL.path": "/",
+        "URL.port": "80",
+        "URL.protocol": "https",
+        "profile": "ProductionEnv",
+        "step": "02"
+      },
+      "identification": "{\"URL.fragment\":\"appointment\", \"URL.host\":\"katalon-demo-cura.herokuapp.com\", \"URL.path\":\"/\", \"URL.port\":\"80\", \"URL.protocol\":\"https\", \"profile\":\"ProductionEnv\", \"step\":\"02\"}",
+      "left": {
+        "jobName": "CURA_Main_Chronos",
+        "jobTimestamp": "20221015_130629",
+        "id": "e86c39545a993670a7deeb4b31cdb44d69ca8f90",
+        "fileType": "png",
+        "metadata": {
+          "profile": {
+            "key": "profile",
+            "value": "ProductionEnv",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "step": {
+            "key": "step",
+            "value": "02",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.fragment": {
+            "key": "URL.fragment",
+            "value": "appointment",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.host": {
+            "key": "URL.host",
+            "value": "katalon-demo-cura.herokuapp.com",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "https",
+            "matchedByAster": true,
+            "paired": true
+          }
+        },
+        "identification": "{\"profile\":\"ProductionEnv\", \"step\":\"02\", \"URL.fragment\":\"appointment\", \"URL.host\":\"katalon-demo-cura.herokuapp.com\", \"URL.path\":\"/\", \"URL.port\":\"80\", \"URL.protocol\":\"https\"}",
+        "metadataURL": "https://katalon-demo-cura.herokuapp.com/#appointment",
+        "relativeUrl": "CURA_Main_Chronos/20221015_130629/objects/e86c39545a993670a7deeb4b31cdb44d69ca8f90.png",
+        "diffability": "AS_IMAGE"
+      },
+      "right": {
+        "jobName": "CURA_Main_Chronos",
+        "jobTimestamp": "20221015_140003",
+        "id": "e86c39545a993670a7deeb4b31cdb44d69ca8f90",
+        "fileType": "png",
+        "metadata": {
+          "profile": {
+            "key": "profile",
+            "value": "ProductionEnv",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "step": {
+            "key": "step",
+            "value": "02",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.fragment": {
+            "key": "URL.fragment",
+            "value": "appointment",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.host": {
+            "key": "URL.host",
+            "value": "katalon-demo-cura.herokuapp.com",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "https",
+            "matchedByAster": true,
+            "paired": true
+          }
+        },
+        "identification": "{\"profile\":\"ProductionEnv\", \"step\":\"02\", \"URL.fragment\":\"appointment\", \"URL.host\":\"katalon-demo-cura.herokuapp.com\", \"URL.path\":\"/\", \"URL.port\":\"80\", \"URL.protocol\":\"https\"}",
+        "metadataURL": "https://katalon-demo-cura.herokuapp.com/#appointment",
+        "relativeUrl": "CURA_Main_Chronos/20221015_140003/objects/e86c39545a993670a7deeb4b31cdb44d69ca8f90.png",
+        "diffability": "AS_IMAGE"
+      },
+      "diff": {
+        "jobName": "CURA_Main_Chronos",
+        "jobTimestamp": "20221015_140031",
+        "id": "e86c39545a993670a7deeb4b31cdb44d69ca8f90",
+        "fileType": "png",
+        "metadata": {
+          "category": {
+            "key": "category",
+            "value": "diff"
+          },
+          "left": {
+            "key": "left",
+            "value": "e86c39545a993670a7deeb4b31cdb44d69ca8f90"
+          },
+          "ratio": {
+            "key": "ratio",
+            "value": "0.00%"
+          },
+          "right": {
+            "key": "right",
+            "value": "e86c39545a993670a7deeb4b31cdb44d69ca8f90"
+          }
+        },
+        "identification": "{\"category\":\"diff\", \"left\":\"e86c39545a993670a7deeb4b31cdb44d69ca8f90\", \"ratio\":\"0.00%\", \"right\":\"e86c39545a993670a7deeb4b31cdb44d69ca8f90\"}",
+        "metadataURL": "file://null_object",
+        "relativeUrl": "CURA_Main_Chronos/20221015_140031/objects/e86c39545a993670a7deeb4b31cdb44d69ca8f90.png",
+        "diffability": "AS_IMAGE"
+      }
+    },
+    {
+      "checked": false,
+      "isBachelor": false,
+      "diffRatio": 0.33,
+      "fileTypeExtension": "html",
+      "queryOnMetadata": {
+        "URL.fragment": "appointment",
+        "URL.host": "katalon-demo-cura.herokuapp.com",
+        "URL.path": "/",
+        "URL.port": "80",
+        "URL.protocol": "https",
+        "profile": "ProductionEnv",
+        "step": "02"
+      },
+      "identification": "{\"URL.fragment\":\"appointment\", \"URL.host\":\"katalon-demo-cura.herokuapp.com\", \"URL.path\":\"/\", \"URL.port\":\"80\", \"URL.protocol\":\"https\", \"profile\":\"ProductionEnv\", \"step\":\"02\"}",
+      "left": {
+        "jobName": "CURA_Main_Chronos",
+        "jobTimestamp": "20221015_130629",
+        "id": "bf43f25cdb7bcb99ee88df0d929916baf07d2744",
+        "fileType": "html",
+        "metadata": {
+          "profile": {
+            "key": "profile",
+            "value": "ProductionEnv",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "step": {
+            "key": "step",
+            "value": "02",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.fragment": {
+            "key": "URL.fragment",
+            "value": "appointment",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.host": {
+            "key": "URL.host",
+            "value": "katalon-demo-cura.herokuapp.com",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "https",
+            "matchedByAster": true,
+            "paired": true
+          }
+        },
+        "identification": "{\"profile\":\"ProductionEnv\", \"step\":\"02\", \"URL.fragment\":\"appointment\", \"URL.host\":\"katalon-demo-cura.herokuapp.com\", \"URL.path\":\"/\", \"URL.port\":\"80\", \"URL.protocol\":\"https\"}",
+        "metadataURL": "https://katalon-demo-cura.herokuapp.com/#appointment",
+        "relativeUrl": "CURA_Main_Chronos/20221015_130629/objects/bf43f25cdb7bcb99ee88df0d929916baf07d2744.html",
+        "diffability": "AS_TEXT"
+      },
+      "right": {
+        "jobName": "CURA_Main_Chronos",
+        "jobTimestamp": "20221015_140003",
+        "id": "d3152fe6cee794784303706789675242decf8258",
+        "fileType": "html",
+        "metadata": {
+          "profile": {
+            "key": "profile",
+            "value": "ProductionEnv",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "step": {
+            "key": "step",
+            "value": "02",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.fragment": {
+            "key": "URL.fragment",
+            "value": "appointment",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.host": {
+            "key": "URL.host",
+            "value": "katalon-demo-cura.herokuapp.com",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "https",
+            "matchedByAster": true,
+            "paired": true
+          }
+        },
+        "identification": "{\"profile\":\"ProductionEnv\", \"step\":\"02\", \"URL.fragment\":\"appointment\", \"URL.host\":\"katalon-demo-cura.herokuapp.com\", \"URL.path\":\"/\", \"URL.port\":\"80\", \"URL.protocol\":\"https\"}",
+        "metadataURL": "https://katalon-demo-cura.herokuapp.com/#appointment",
+        "relativeUrl": "CURA_Main_Chronos/20221015_140003/objects/d3152fe6cee794784303706789675242decf8258.html",
+        "diffability": "AS_TEXT"
+      },
+      "diff": {
+        "jobName": "CURA_Main_Chronos",
+        "jobTimestamp": "20221015_140031",
+        "id": "bff67dc144ed7a82f584d2b224b75469c9b516de",
+        "fileType": "html",
+        "metadata": {
+          "category": {
+            "key": "category",
+            "value": "diff"
+          },
+          "left": {
+            "key": "left",
+            "value": "bf43f25cdb7bcb99ee88df0d929916baf07d2744"
+          },
+          "ratio": {
+            "key": "ratio",
+            "value": "0.33%"
+          },
+          "right": {
+            "key": "right",
+            "value": "d3152fe6cee794784303706789675242decf8258"
+          }
+        },
+        "identification": "{\"category\":\"diff\", \"left\":\"bf43f25cdb7bcb99ee88df0d929916baf07d2744\", \"ratio\":\"0.33%\", \"right\":\"d3152fe6cee794784303706789675242decf8258\"}",
+        "metadataURL": "file://null_object",
+        "relativeUrl": "CURA_Main_Chronos/20221015_140031/objects/bff67dc144ed7a82f584d2b224b75469c9b516de.html",
+        "diffability": "AS_TEXT"
+      }
+    },
+    {
+      "checked": false,
+      "isBachelor": false,
+      "diffRatio": 0.0,
+      "fileTypeExtension": "png",
+      "queryOnMetadata": {
+        "URL.fragment": "summary",
+        "URL.host": "katalon-demo-cura.herokuapp.com",
+        "URL.path": "/appointment.php",
+        "URL.port": "80",
+        "URL.protocol": "https",
+        "profile": "ProductionEnv",
+        "step": "03"
+      },
+      "identification": "{\"URL.fragment\":\"summary\", \"URL.host\":\"katalon-demo-cura.herokuapp.com\", \"URL.path\":\"/appointment.php\", \"URL.port\":\"80\", \"URL.protocol\":\"https\", \"profile\":\"ProductionEnv\", \"step\":\"03\"}",
+      "left": {
+        "jobName": "CURA_Main_Chronos",
+        "jobTimestamp": "20221015_130629",
+        "id": "632e1207243f11166db1989e4a856c6d93030366",
+        "fileType": "png",
+        "metadata": {
+          "profile": {
+            "key": "profile",
+            "value": "ProductionEnv",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "step": {
+            "key": "step",
+            "value": "03",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.fragment": {
+            "key": "URL.fragment",
+            "value": "summary",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.host": {
+            "key": "URL.host",
+            "value": "katalon-demo-cura.herokuapp.com",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/appointment.php",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "https",
+            "matchedByAster": true,
+            "paired": true
+          }
+        },
+        "identification": "{\"profile\":\"ProductionEnv\", \"step\":\"03\", \"URL.fragment\":\"summary\", \"URL.host\":\"katalon-demo-cura.herokuapp.com\", \"URL.path\":\"/appointment.php\", \"URL.port\":\"80\", \"URL.protocol\":\"https\"}",
+        "metadataURL": "https://katalon-demo-cura.herokuapp.com/appointment.php#summary",
+        "relativeUrl": "CURA_Main_Chronos/20221015_130629/objects/632e1207243f11166db1989e4a856c6d93030366.png",
+        "diffability": "AS_IMAGE"
+      },
+      "right": {
+        "jobName": "CURA_Main_Chronos",
+        "jobTimestamp": "20221015_140003",
+        "id": "632e1207243f11166db1989e4a856c6d93030366",
+        "fileType": "png",
+        "metadata": {
+          "profile": {
+            "key": "profile",
+            "value": "ProductionEnv",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "step": {
+            "key": "step",
+            "value": "03",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.fragment": {
+            "key": "URL.fragment",
+            "value": "summary",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.host": {
+            "key": "URL.host",
+            "value": "katalon-demo-cura.herokuapp.com",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/appointment.php",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "https",
+            "matchedByAster": true,
+            "paired": true
+          }
+        },
+        "identification": "{\"profile\":\"ProductionEnv\", \"step\":\"03\", \"URL.fragment\":\"summary\", \"URL.host\":\"katalon-demo-cura.herokuapp.com\", \"URL.path\":\"/appointment.php\", \"URL.port\":\"80\", \"URL.protocol\":\"https\"}",
+        "metadataURL": "https://katalon-demo-cura.herokuapp.com/appointment.php#summary",
+        "relativeUrl": "CURA_Main_Chronos/20221015_140003/objects/632e1207243f11166db1989e4a856c6d93030366.png",
+        "diffability": "AS_IMAGE"
+      },
+      "diff": {
+        "jobName": "CURA_Main_Chronos",
+        "jobTimestamp": "20221015_140031",
+        "id": "632e1207243f11166db1989e4a856c6d93030366",
+        "fileType": "png",
+        "metadata": {
+          "category": {
+            "key": "category",
+            "value": "diff"
+          },
+          "left": {
+            "key": "left",
+            "value": "632e1207243f11166db1989e4a856c6d93030366"
+          },
+          "ratio": {
+            "key": "ratio",
+            "value": "0.00%"
+          },
+          "right": {
+            "key": "right",
+            "value": "632e1207243f11166db1989e4a856c6d93030366"
+          }
+        },
+        "identification": "{\"category\":\"diff\", \"left\":\"632e1207243f11166db1989e4a856c6d93030366\", \"ratio\":\"0.00%\", \"right\":\"632e1207243f11166db1989e4a856c6d93030366\"}",
+        "metadataURL": "file://null_object",
+        "relativeUrl": "CURA_Main_Chronos/20221015_140031/objects/632e1207243f11166db1989e4a856c6d93030366.png",
+        "diffability": "AS_IMAGE"
+      }
+    },
+    {
+      "checked": false,
+      "isBachelor": false,
+      "diffRatio": 0.9,
+      "fileTypeExtension": "html",
+      "queryOnMetadata": {
+        "URL.fragment": "summary",
+        "URL.host": "katalon-demo-cura.herokuapp.com",
+        "URL.path": "/appointment.php",
+        "URL.port": "80",
+        "URL.protocol": "https",
+        "profile": "ProductionEnv",
+        "step": "03"
+      },
+      "identification": "{\"URL.fragment\":\"summary\", \"URL.host\":\"katalon-demo-cura.herokuapp.com\", \"URL.path\":\"/appointment.php\", \"URL.port\":\"80\", \"URL.protocol\":\"https\", \"profile\":\"ProductionEnv\", \"step\":\"03\"}",
+      "left": {
+        "jobName": "CURA_Main_Chronos",
+        "jobTimestamp": "20221015_130629",
+        "id": "1d6afeffd7854807bfe300d14f5aeeceed7b2462",
+        "fileType": "html",
+        "metadata": {
+          "profile": {
+            "key": "profile",
+            "value": "ProductionEnv",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "step": {
+            "key": "step",
+            "value": "03",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.fragment": {
+            "key": "URL.fragment",
+            "value": "summary",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.host": {
+            "key": "URL.host",
+            "value": "katalon-demo-cura.herokuapp.com",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/appointment.php",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "https",
+            "matchedByAster": true,
+            "paired": true
+          }
+        },
+        "identification": "{\"profile\":\"ProductionEnv\", \"step\":\"03\", \"URL.fragment\":\"summary\", \"URL.host\":\"katalon-demo-cura.herokuapp.com\", \"URL.path\":\"/appointment.php\", \"URL.port\":\"80\", \"URL.protocol\":\"https\"}",
+        "metadataURL": "https://katalon-demo-cura.herokuapp.com/appointment.php#summary",
+        "relativeUrl": "CURA_Main_Chronos/20221015_130629/objects/1d6afeffd7854807bfe300d14f5aeeceed7b2462.html",
+        "diffability": "AS_TEXT"
+      },
+      "right": {
+        "jobName": "CURA_Main_Chronos",
+        "jobTimestamp": "20221015_140003",
+        "id": "a7181edd36f5c6804a83a66857a058fed5b54665",
+        "fileType": "html",
+        "metadata": {
+          "profile": {
+            "key": "profile",
+            "value": "ProductionEnv",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "step": {
+            "key": "step",
+            "value": "03",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.fragment": {
+            "key": "URL.fragment",
+            "value": "summary",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.host": {
+            "key": "URL.host",
+            "value": "katalon-demo-cura.herokuapp.com",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/appointment.php",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80",
+            "matchedByAster": true,
+            "paired": true
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "https",
+            "matchedByAster": true,
+            "paired": true
+          }
+        },
+        "identification": "{\"profile\":\"ProductionEnv\", \"step\":\"03\", \"URL.fragment\":\"summary\", \"URL.host\":\"katalon-demo-cura.herokuapp.com\", \"URL.path\":\"/appointment.php\", \"URL.port\":\"80\", \"URL.protocol\":\"https\"}",
+        "metadataURL": "https://katalon-demo-cura.herokuapp.com/appointment.php#summary",
+        "relativeUrl": "CURA_Main_Chronos/20221015_140003/objects/a7181edd36f5c6804a83a66857a058fed5b54665.html",
+        "diffability": "AS_TEXT"
+      },
+      "diff": {
+        "jobName": "CURA_Main_Chronos",
+        "jobTimestamp": "20221015_140031",
+        "id": "3e8679b921b2076d6814b8b6036fb5d0867aa44f",
+        "fileType": "html",
+        "metadata": {
+          "category": {
+            "key": "category",
+            "value": "diff"
+          },
+          "left": {
+            "key": "left",
+            "value": "1d6afeffd7854807bfe300d14f5aeeceed7b2462"
+          },
+          "ratio": {
+            "key": "ratio",
+            "value": "0.90%"
+          },
+          "right": {
+            "key": "right",
+            "value": "a7181edd36f5c6804a83a66857a058fed5b54665"
+          }
+        },
+        "identification": "{\"category\":\"diff\", \"left\":\"1d6afeffd7854807bfe300d14f5aeeceed7b2462\", \"ratio\":\"0.90%\", \"right\":\"a7181edd36f5c6804a83a66857a058fed5b54665\"}",
+        "metadataURL": "file://null_object",
+        "relativeUrl": "CURA_Main_Chronos/20221015_140031/objects/3e8679b921b2076d6814b8b6036fb5d0867aa44f.html",
+        "diffability": "AS_TEXT"
+      }
+    }
+  ],
+  "countWarning": 1.0,
+  "countIgnorable": 0.0,
+  "countTotal": 6.0
+};
+    </script> 
+    <script type="text/javascript">/* onLoad driven by jQuery */
+$(document).ready(function() {
+    /* try to restore the model from localStorage */
+    let loaded = loadModel();
+    if (loaded === null || !('materialProductList' in loaded)) {
+        console.log("The model was not restored from localStorage. Use the given model as is.");
+    } else {
+        // restore the MaterialProducts as "model" with the loaded one.
+        loaded.materialProductList.forEach(storedMProduct => {
+            model.materialProductList.forEach(currentMProduct => {
+                if (currentMProduct.fileTypeExtension === storedMProduct.fileTypeExtension &&
+                    currentMProduct.description === storedMProduct.description) {
+                    // restore the status
+                    currentMProduct.checked = storedMProduct.checked;
+                    console.log(currentMProduct.fileTypeExtension + " " +
+                        currentMProduct.description + " restored the checked status to be " +
+                        currentMProduct.checked
+                    );
+                }
+            });
+        });
+    }
+
+    /* iterate over the sequence of MaterialProduct to display
+     * the <span class="ratio"> with appropriate class ("warning", "ignored" or none)
+     * in sync with the current model
+     */
+    $("input[id^='ignorable']").each(function(index, value) {
+        const id = $(this).prop("id");
+        const checked   = model.materialProductList[index].checked;
+        const diffRatio = model.materialProductList[index].diffRatio;   // NOTE THIS!
+        console.log("* " + id + " with data-index=" + index + " with checked=" + checked);
+        $(this).prop("checked", checked);
+        classifyRatioSpan($(this), index, id, checked, diffRatio);
+    });
+
+    //
+    updateCountDisplay(model);
+
+    /* Register onclick event handler to the <input id="ignorableX"> elements */
+    $("input[id^='ignorable']").on("click", function () {
+        const index = $(this).attr("data-index");
+        const id = $(this).prop("id");
+        const checked = $(this).prop("checked");
+        const diffRatio = model.materialProductList[index].diffRatio;
+        console.log(id + " with data-index=" + index + " with checked="  + checked);
+        classifyRatioSpan($(this), index, id, checked, diffRatio);
+        //
+        storeModel(model);
+        //
+        updateCountDisplay(model);
+    });
+});
+
+/* store the model into the localStorage as a JSON string */
+function storeModel(mdl) {
+    const ttl = 24 * 60 * 60 * 1000; // 24 hours in millisecond
+    setWithExpiry('model', mdl, ttl);
+    console.log("stored the model into localStorage");
+}
+
+/* load the model as a JSON string from the localStorage.
+ * parse the string to create a object, and return it.
+ * This may return null
+ */
+function loadModel() {
+    console.log("loading the model from localStorage");
+    const model = getWithExpiry('model');
+    if (model !== null) {
+        if ('materialProductList' in model) {
+            console.log("getWithExpiry('model') returned a valid model");
+            return model;
+        } else {
+            console.log("getWithEntry('model') returned something non-null but not a valid model")
+            return null;
+        }
+    } else {
+        console.log("getWithExpiry('model') returned null. ");
+        return null;
+    }
+}
+
+function setChecked(model, index, checked) {
+    model.materialProductList[index].checked = checked;
+    console.log("set model.materialProductList[" + index + "].checked to be " + checked);
+}
+
+function classifyRatioSpan(input, index, id, checked, diffRatio) {
+    const ratioSpan = input.next("button").find("span.ratio")
+    if (diffRatio > model.criteria) {
+        if (checked) {
+            console.log(id + " is ignored. The diffRatio(" +
+                diffRatio + ") is larger than the criteria(" +
+                model.criteria + ") but is checked.");
+            ratioSpan.removeClass("warning");
+            ratioSpan.addClass("ignored");
+            setChecked(model, index, true);
+            updateCountDisplay(model);
+        } else {
+            console.log(id + " is warned. The diffRatio(" +
+                diffRatio + ") is larger than the criteria(" +
+                model.criteria + ") and is unchecked.");
+            ratioSpan.removeClass("ignored");
+            ratioSpan.addClass("warning");
+            setChecked(model, index, false);
+            updateCountDisplay(model);
+        }
+    } else {
+        console.log(id + " is no problem The diffRatio(" +
+            diffRatio + ") is smaller than or equal to the criteria(" +
+            model.criteria + ").");
+    }
+}
+
+function updateCountDisplay(mdl) {
+    console.log("updating the display of count");
+    //
+    model.countWarning =
+        model.materialProductList
+            .filter(mp => mp.diffRatio > model.criteria && ! mp.checked).length;
+    model.countIgnorable =
+        model.materialProductList
+            .filter(mp => mp.diffRatio > model.criteria && mp.checked).length;
+    //
+    $(document).find("#count .warnings").text(mdl.countWarning.toFixed());
+    $(document).find("#count .ignorable").text(mdl.countIgnorable.toFixed());
+}
+
+/**
+ * https://www.sohamkamani.com/blog/javascript-localstorage-with-ttl-expiry/
+ */
+function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    // `item` is an object which contains the original value
+    // as well as the time when it's supposed to expire
+    const item = {
+        value: value,
+        expiry: now.getTime() + ttl,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+}
+function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+    // if the item doesn't exist, return null
+    if (!itemStr) {
+        return null
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+    // compare the expiry time of the item with the current time
+    if (!item.expiry || now.getTime() > item.expiry) {
+        // If the item is expired, delete the item from storage
+        // and return null
+        localStorage.removeItem(key)
+        return null
+    }
+    return item.value
+}
+
+/**
+ * mProductGroup example
+ *
+ {
+  "jobName": "MyAdmin_Main_Twins",
+  "resultTimestamp": "20220409_101751",
+  "criteria": 0.0,
+  "isReadyToReport": true,
+  "ignoreMetadataKeys": [
+    "URL.host",
+    "URL.port",
+    "profile"
+  ],
+  "materialList0": {
+    "jobTimestamp": "20220409_101728",
+    "queryOnMetadata": {
+      "profile": "MyAdmin_ProductionEnv"
+    },
+    "size": 2.0
+  },
+  "materialList1": {
+    "jobTimestamp": "20220409_101742",
+    "queryOnMetadata": {
+      "profile": "MyAdmin_DevelopmentEnv"
+    },
+    "size": 2.0
+  },
+  "materialProductList": [
+    {
+      "reducedTimestamp": "20220409_101751",
+      "checked": false,
+      "diffRatio": 15.7,
+      "fileTypeExtension": "png",
+      "queryOnMetadata": {
+        "URL.path": "/",
+        "URL.protocol": "http",
+        "selector": "body"
+      },
+      "description": "{\"URL.path\":\"/\", \"URL.protocol\":\"http\", \"selector\":\"body\"}",
+      "left": {
+        "jobName": "MyAdmin_Main_Twins",
+        "jobTimestamp": "20220409_101728",
+        "id": "3e334c05a4be69ad5bcb3b145d78ca19d6c5fc62",
+        "fileType": "png",
+        "metadata": {
+          "URL.host": {
+            "key": "URL.host",
+            "value": "myadmin.kazurayam.com",
+            "ignoredByKey": true
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/",
+            "paired": true
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80",
+            "ignoredByKey": true
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "http",
+            "paired": true
+          },
+          "profile": {
+            "key": "profile",
+            "value": "MyAdmin_ProductionEnv",
+            "ignoredByKey": true,
+            "matchedIndividually": true
+          },
+          "selector": {
+            "key": "selector",
+            "value": "body",
+            "paired": true
+          }
+        },
+        "metadataText": "{\"URL.host\":\"myadmin.kazurayam.com\", \"URL.path\":\"/\", \"URL.port\":\"80\", \"URL.protocol\":\"http\", \"profile\":\"MyAdmin_ProductionEnv\", \"selector\":\"body\"}",
+        "metadataURL": "http://myadmin.kazurayam.com/",
+        "relativeUrl": "MyAdmin_Main_Twins/20220409_101728/objects/3e334c05a4be69ad5bcb3b145d78ca19d6c5fc62.png",
+        "diffability": "AS_IMAGE"
+      },
+      "right": {
+        "jobName": "MyAdmin_Main_Twins",
+        "jobTimestamp": "20220409_101742",
+        "id": "1b4797af1b8bae75209fe890fb1538849a561059",
+        "fileType": "png",
+        "metadata": {
+          "URL.host": {
+            "key": "URL.host",
+            "value": "devadmin.kazurayam.com",
+            "ignoredByKey": true
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/",
+            "paired": true
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80",
+            "ignoredByKey": true
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "http",
+            "paired": true
+          },
+          "profile": {
+            "key": "profile",
+            "value": "MyAdmin_DevelopmentEnv",
+            "ignoredByKey": true,
+            "matchedIndividually": true
+          },
+          "selector": {
+            "key": "selector",
+            "value": "body",
+            "paired": true
+          }
+        },
+        "metadataText": "{\"URL.host\":\"devadmin.kazurayam.com\", \"URL.path\":\"/\", \"URL.port\":\"80\", \"URL.protocol\":\"http\", \"profile\":\"MyAdmin_DevelopmentEnv\", \"selector\":\"body\"}",
+        "metadataURL": "http://devadmin.kazurayam.com/",
+        "relativeUrl": "MyAdmin_Main_Twins/20220409_101742/objects/1b4797af1b8bae75209fe890fb1538849a561059.png",
+        "diffability": "AS_IMAGE"
+      },
+      "diff": {
+        "jobName": "MyAdmin_Main_Twins",
+        "jobTimestamp": "20220409_101751",
+        "id": "0862eaf93aa921703b1b1c961abbe905b74eeebf",
+        "fileType": "png",
+        "metadata": {
+          "category": {
+            "key": "category",
+            "value": "diff"
+          },
+          "left": {
+            "key": "left",
+            "value": "3e334c05a4be69ad5bcb3b145d78ca19d6c5fc62"
+          },
+          "ratio": {
+            "key": "ratio",
+            "value": "15.70%"
+          },
+          "right": {
+            "key": "right",
+            "value": "1b4797af1b8bae75209fe890fb1538849a561059"
+          }
+        },
+        "metadataText": "{\"category\":\"diff\", \"left\":\"3e334c05a4be69ad5bcb3b145d78ca19d6c5fc62\", \"ratio\":\"15.70%\", \"right\":\"1b4797af1b8bae75209fe890fb1538849a561059\"}",
+        "metadataURL": "file://null_object",
+        "relativeUrl": "MyAdmin_Main_Twins/20220409_101751/objects/0862eaf93aa921703b1b1c961abbe905b74eeebf.png",
+        "diffability": "AS_IMAGE"
+      }
+    },
+    {
+      "reducedTimestamp": "20220409_101751",
+      "checked": false,
+      "diffRatio": 31.04,
+      "fileTypeExtension": "html",
+      "queryOnMetadata": {
+        "URL.path": "/",
+        "URL.protocol": "http",
+        "selector": "body"
+      },
+      "description": "{\"URL.path\":\"/\", \"URL.protocol\":\"http\", \"selector\":\"body\"}",
+      "left": {
+        "jobName": "MyAdmin_Main_Twins",
+        "jobTimestamp": "20220409_101728",
+        "id": "26b487d4b1b1eb52d18fc0df4ac9384275cf3fd9",
+        "fileType": "html",
+        "metadata": {
+          "URL.host": {
+            "key": "URL.host",
+            "value": "myadmin.kazurayam.com",
+            "ignoredByKey": true
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/",
+            "paired": true
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80",
+            "ignoredByKey": true
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "http",
+            "paired": true
+          },
+          "profile": {
+            "key": "profile",
+            "value": "MyAdmin_ProductionEnv",
+            "ignoredByKey": true,
+            "matchedIndividually": true
+          },
+          "selector": {
+            "key": "selector",
+            "value": "body",
+            "paired": true
+          }
+        },
+        "metadataText": "{\"URL.host\":\"myadmin.kazurayam.com\", \"URL.path\":\"/\", \"URL.port\":\"80\", \"URL.protocol\":\"http\", \"profile\":\"MyAdmin_ProductionEnv\", \"selector\":\"body\"}",
+        "metadataURL": "http://myadmin.kazurayam.com/",
+        "relativeUrl": "MyAdmin_Main_Twins/20220409_101728/objects/26b487d4b1b1eb52d18fc0df4ac9384275cf3fd9.html",
+        "diffability": "AS_TEXT"
+      },
+      "right": {
+        "jobName": "MyAdmin_Main_Twins",
+        "jobTimestamp": "20220409_101742",
+        "id": "63afd374b90b1292ae011b83a26d78a77dc34287",
+        "fileType": "html",
+        "metadata": {
+          "URL.host": {
+            "key": "URL.host",
+            "value": "devadmin.kazurayam.com",
+            "ignoredByKey": true
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/",
+            "paired": true
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80",
+            "ignoredByKey": true
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "http",
+            "paired": true
+          },
+          "profile": {
+            "key": "profile",
+            "value": "MyAdmin_DevelopmentEnv",
+            "ignoredByKey": true,
+            "matchedIndividually": true
+          },
+          "selector": {
+            "key": "selector",
+            "value": "body",
+            "paired": true
+          }
+        },
+        "metadataText": "{\"URL.host\":\"devadmin.kazurayam.com\", \"URL.path\":\"/\", \"URL.port\":\"80\", \"URL.protocol\":\"http\", \"profile\":\"MyAdmin_DevelopmentEnv\", \"selector\":\"body\"}",
+        "metadataURL": "http://devadmin.kazurayam.com/",
+        "relativeUrl": "MyAdmin_Main_Twins/20220409_101742/objects/63afd374b90b1292ae011b83a26d78a77dc34287.html",
+        "diffability": "AS_TEXT"
+      },
+      "diff": {
+        "jobName": "MyAdmin_Main_Twins",
+        "jobTimestamp": "20220409_101751",
+        "id": "c918a10a5357a45c605dd1cfdec822b6c9224025",
+        "fileType": "html",
+        "metadata": {
+          "category": {
+            "key": "category",
+            "value": "diff"
+          },
+          "left": {
+            "key": "left",
+            "value": "26b487d4b1b1eb52d18fc0df4ac9384275cf3fd9"
+          },
+          "ratio": {
+            "key": "ratio",
+            "value": "31.04%"
+          },
+          "right": {
+            "key": "right",
+            "value": "63afd374b90b1292ae011b83a26d78a77dc34287"
+          }
+        },
+        "metadataText": "{\"category\":\"diff\", \"left\":\"26b487d4b1b1eb52d18fc0df4ac9384275cf3fd9\", \"ratio\":\"31.04%\", \"right\":\"63afd374b90b1292ae011b83a26d78a77dc34287\"}",
+        "metadataURL": "file://null_object",
+        "relativeUrl": "MyAdmin_Main_Twins/20220409_101751/objects/c918a10a5357a45c605dd1cfdec822b6c9224025.html",
+        "diffability": "AS_TEXT"
+      }
+    }
+  ]
+}
+ */
+</script>  
+  </body>
+</html>
