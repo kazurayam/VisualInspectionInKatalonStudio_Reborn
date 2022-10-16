@@ -20,7 +20,6 @@ configurations {
 dependencies {
     myconf group: 'com.kazurayam', name: 'materialstore', version: "0.10.3"
     myconf group: 'com.kazurayam', name: 'ExecutionProfilesLoader', version: '1.2.1'
-    myconf group: 'com.kazurayam', name: 'subprocessj', version: '0.3.4'
     myconf group: 'ru.yandex.qatools.ashot', name: 'ashot', version: '1.5.4'
     myconf group: 'io.github.java-diff-utils', name: 'java-diff-utils', version: '4.11'
     myconf group: 'org.jsoup', name: 'jsoup', version: '1.14.3'
@@ -42,7 +41,6 @@ task drivers {
                     "**/materialstore*.jar",
                     "**/kazurayam_FreeMarker_directives*.jar",
                     "**/ExecutionProfilesLoader*.jar",
-                    "**/subprocessj*.jar",
                     "**/ashot*.jar",
                     "**/jsoup*.jar",
                     "**/java-diff-utils*.jar",

@@ -153,7 +153,6 @@ Drivers
 ├── AUTOIMPORTED_java-diff-utils-4.11.jar
 ├── AUTOIMPORTED_jsoup-1.14.3.jar
 ├── AUTOIMPORTED_materialstore-0.10.3-SNAPSHOT.jar
-└── AUTOIMPORTED_subprocessj-0.3.4.jar
 ```
 
 >The exact version number of the jars may change in future. Please regard this as an example.
@@ -181,22 +180,9 @@ As for the **Sample2**, the URL is provided by kazurayam.com (it's me!), publicl
 
 As for the **Sample3**, both URLs are provided by kazurayam.com, publicly available on the Internet. The 2 pages have slight difference visually.
 
+### Demo outputs
 
-### External Dependencies
-
-The following table shows by which code these external dependencies are used
-
-| External tools/libraries | the framework | Sample1 | Sample2 | Sample3 MyAdmin | Sample4 Flaskr |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| [ExecutionProfilesLoader](ExecutionProfilesLoader) | | |✔︎| ✔︎ |✔︎|
-| [ashot](https://mvnrepository.com/artifact/ru.yandex.qatools.ashot/ashot) | |✔︎|✔︎|✔︎|✔︎|
-| [java-diff-utils](https://mvnrepository.com/artifact/io.github.java-diff-utils/java-diff-utils) |✔︎|✔︎|✔︎|✔︎|✔︎|
-| [jsoup](https://mvnrepository.com/artifact/org.jsoup/jsoup) |✔︎|✔︎|✔︎|✔︎|✔︎|
-| [materialstore](https://mvnrepository.com/artifact/com.kazurayam/materialstore) |✔︎|✔︎|✔︎|✔︎|✔︎|
-| [FreeMarker](https://freemarker.apache.org/) |✔︎|✔︎|✔︎|✔︎|✔︎|
-| [subprocess](https://mvnrepository.com/artifact/com.kazurayam/subprocessj) | | | | |✔︎|
-| [Docker](https://www.docker.com/products/docker-desktop) | | | | |✔︎  |
-
+- https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/
 
 
 ## Sample1: simply visit a web site to take screenshots
@@ -213,9 +199,9 @@ You want to run it by clicking the green button ![run button](docs/images/run_ka
 
 #### (2) The report generated
 
-Once the Test Case finished, a HTML file will be created at `store/scrapeGoogleSearch.html`. Please open it in any web browser. It renders a view of the stored 6 files. You can see an working example here: [pls. click here](https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/scrapeGoogleSearch.html).
+Once the Test Case finished, a HTML file will be created at `store/scrapeGoogleSearch.html`. Please open it in any web browser. It renders a view of the stored 6 files. You can see an working example here: [pls. click here](https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/GoogleSearch_scrape-list.html).
 
-![scrapeGoogleSearch.html](docs/images/scrapeGoogleSearch.html.png)
+![GoogleSearch_scrape-list.html](docs/images/GoogleSearch_scrape.png)
 
 
 #### (3) The "store" directory structure
@@ -225,33 +211,38 @@ When the Test Case finished, you will find a new directory `$projectDir/store` i
 ```
 $ tree store
 store
-├── scrapeGoogleSearch
-│   └── 20210813_221052
+...
+├── GoogleSearch_scrape
+│   └── 20221016_084617
 │       ├── index
 │       └── objects
-│           ├── 01014deef318115a75ac1c3ab0f9844832c81c86.html
-│           ├── 02625f7607199d99ca58b803d6fe51b7c94835e7.html
-│           ├── 2563a225cb7bcd438ae12a6126b2091eb8e09e7d.png
-│           ├── 5c002fbe44438341d3d92832d1e004198153976b.png
-│           ├── 8370ecd0081e1fb9ce8aaecb1618ee0fc16b6924.html
-│           └── efaed8443417a62faf35ee9d9b858592cd67bbae.png
-└── scrapeGoogleSearch.html
+│           ├── 09be6ef6ef37f04bf34977fcce96088195a0cd76.html
+│           ├── 1ae20a4dc1fce5fdec3ee457b1af1106e632880b.png
+│           ├── 63cc4d50d6140aa3db07ed1da6477f528ede9fa6.png
+│           ├── 7203b58eba10f9b7d9220532b72990f0732ce673.png
+│           └── d331434cb6bfed9772c54727bdaaed4ac3fdeefa.html
+├── GoogleSearch_scrape-list.html
+...
+17 directories, 39 files
 ```
 
 #### (4) The objects/ directory
 
-- Under the `store/scrapeGoogleSearch/yyyyMMdd_hhmmss/objects/` directory, there are 6 files. Among them you will find 3 files with postfix `png`. These are the screenshot of web pages in PNG image format. Also you will find 3 files with postfix `html`. These are HTML sources of web pages.
+- Under the `store/GoogleSearch_scrape/yyyyMMdd_hhmmss/objects/` directory, there are 5 files. Among them you will find 3 files with postfix `png`. These are the screenshot of web pages in PNG image format. Also you will find 2 files with postfix `html`. These are HTML sources of web pages.
 
 - The file name comprises with 40 hex-decimal characters appended with extension (`.png`, `.html`). The hex-decimal string (I call this "ID") is derived from the file content without compression by [SHA1 Secure Hash algorithm](https://docs.oracle.com/javase/7/docs/api/java/security/MessageDigest.html).
 
 #### (5) The index file
 
-- The `store/scrapeGoogleSearch/yyyyMMdd_hhmmss/index` file would be interesting. An example of the `index` file is like [this](docs/store/scrapeGoogleSearch/20210813_221052/index):
+- The `store/GoogleSearch_scrape/yyyyMMdd_hhmmss/index` file would be interesting. An example of the `index` file is like [this](docs/store/GoogleSearch_/20221016_084617/index):
 
 ```
-8370ecd0081e1fb9ce8aaecb1618ee0fc16b6924	html	{"URL.host":"www.google.com", "URL.path":"/", "URL.protocol":"https"}
-2563a225cb7bcd438ae12a6126b2091eb8e09e7d	png	{"URL.host":"www.google.com", "URL.path":"/", "URL.protocol":"https"}
-...
+09be6ef6ef37f04bf34977fcce96088195a0cd76	html	{"q":"katalon", "step":"03", "URL.host":"www.google.com", "URL.path":"/search", "URL.port":"80", "URL.protocol":"https", "URL.query":"q=katalon&source=hp&ei=TkZLY9meB6O12roPw5-SmAU&iflsig=AJiK0e8AAAAAY0tUXrwBwDKRE8CXoRWoDezm2LZ9PhlV&ved=0ahUKEwjZ_ZXMteP6AhWjmlYBHcOPBFMQ4dUDCAk&uact=5&oq=katalon&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEOg0IABAEEIAEELEDEIMBOgcIABAEEIAEOgcIABCABBAKUABYIGD2G2gAcAB4AIABxAGIAaAFkgEDMS4zmAEAoAEB&sclient=gws-wiz"}
+7203b58eba10f9b7d9220532b72990f0732ce673	png	{"q":"katalon", "step":"03", "URL.host":"www.google.com", "URL.path":"/search", "URL.port":"80", "URL.protocol":"https", "URL.query":"q=katalon&source=hp&ei=TkZLY9meB6O12roPw5-SmAU&iflsig=AJiK0e8AAAAAY0tUXrwBwDKRE8CXoRWoDezm2LZ9PhlV&ved=0ahUKEwjZ_ZXMteP6AhWjmlYBHcOPBFMQ4dUDCAk&uact=5&oq=katalon&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEOg0IABAEEIAEELEDEIMBOgcIABAEEIAEOgcIABCABBAKUABYIGD2G2gAcAB4AIABxAGIAaAFkgEDMS4zmAEAoAEB&sclient=gws-wiz"}
+d331434cb6bfed9772c54727bdaaed4ac3fdeefa	html	{"step":"01", "URL.host":"www.google.com", "URL.path":"/", "URL.port":"80", "URL.protocol":"https"}
+63cc4d50d6140aa3db07ed1da6477f528ede9fa6	png	{"step":"01", "URL.host":"www.google.com", "URL.path":"/", "URL.port":"80", "URL.protocol":"https"}
+09be6ef6ef37f04bf34977fcce96088195a0cd76	html	{"step":"02", "URL.host":"www.google.com", "URL.path":"/search", "URL.port":"80", "URL.protocol":"https", "URL.query":"q=katalon&source=hp&ei=TkZLY9meB6O12roPw5-SmAU&iflsig=AJiK0e8AAAAAY0tUXrwBwDKRE8CXoRWoDezm2LZ9PhlV&ved=0ahUKEwjZ_ZXMteP6AhWjmlYBHcOPBFMQ4dUDCAk&uact=5&oq=katalon&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEOg0IABAEEIAEELEDEIMBOgcIABAEEIAEOgcIABCABBAKUABYIGD2G2gAcAB4AIABxAGIAaAFkgEDMS4zmAEAoAEB&sclient=gws-wiz"}
+1ae20a4dc1fce5fdec3ee457b1af1106e632880b	png	{"step":"02", "URL.host":"www.google.com", "URL.path":"/search", "URL.port":"80", "URL.protocol":"https", "URL.query":"q=katalon&source=hp&ei=TkZLY9meB6O12roPw5-SmAU&iflsig=AJiK0e8AAAAAY0tUXrwBwDKRE8CXoRWoDezm2LZ9PhlV&ved=0ahUKEwjZ_ZXMteP6AhWjmlYBHcOPBFMQ4dUDCAk&uact=5&oq=katalon&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEOg0IABAEEIAEELEDEIMBOgcIABAEEIAEOgcIABCABBAKUABYIGD2G2gAcAB4AIABxAGIAaAFkgEDMS4zmAEAoAEB&sclient=gws-wiz"}
 ```
 
 The `index` file is a plain text file. Each lines corresponds to each files stored in the `objects` directory.
@@ -270,16 +261,33 @@ In the test Case script, the code created  *metadata* for each objects. Typicall
 
 will be digested to form a metadata
 
-- `{"URL.host":"www.google.com", "URL.path":"/", "URL.protocol":"https"}`
+- `{"URL.host":"www.google.com", "URL.path":"/", "URL.port":"80", "URL.protocol":"https"}`
 
-Plus, you can add any key-value pair into the metadata as you like.
+You can add any key-value pair into the metadata as you like. For example, you would want to add some sequential numbering like `"step":"01"`, `"step":"02"` and `"step":"03"`. This will enable to sort the entities in the file report sorted in the order you like.
 
 In the `index` file, lines are sorted by the ascending order of *metadata* text.
 
 The `materialstore` API restricts that *metadata* texts in a `index` file MUST be unique. Your application can not create multiple objects (= multiple lines in the `index` file) with the same *metadata* value.
 
+#### (7) How to sort the entries in the report
 
+In the report, the entries are sorted by the ascending order of the "Identification" string. The "Identification" is the portion highlighted in the following image:
 
+![Identification](docs/images/Identification.png)
+
+If you want to sort multiple screenshots in the order as they were taken, then you would want to do two things:
+
+1. while your script takes screenshots, you want to add an Metadata attribute that represents the sequence. For example, add `"step":"01"`, `"step":"02"` and `"step":"03"`. See the Line#46 of [Test Cases/main/GoogleSearch/materialize](https://github.com/kazurayam/VisualInspectionInKatalonStudio_Reborn/blob/master/Scripts/main/GoogleSearch/materialize/Script1646277768963.groovy)
+```
+Metadata metadata1 = Metadata.builder(searchPageURL).put("step", "01").build()
+```
+2. when your script generates a report, specify attribute names as SortKeys. The attribute specified as SortKeys will come left-most of each Identification string, so that will have higher priority of sorting order. See the Line#25 of [Test Cases/main/GoogleSearch/report](https://github.com/kazurayam/VisualInspectionInKatalonStudio_Reborn/blob/master/Scripts/main/GoogleSearch/report/Script1646277780839.groovy)
+```
+Inspector inspector = Inspector.newInstance(store)
+SortKeys sortKeys = new SortKeys("step","URL.host", "URL.path")
+inspector.setSortKeys(sortKeys)
+Path report = inspector.report(materialList, fileName)
+```
 
 ## Sample2: Visual Inspection in Chronos mode
 
@@ -294,7 +302,7 @@ In your project, you want to copy&paste the following Test Case code.
 - [`Test Cases/main/CURA/VisualInspectionChronos`](
   https://github.com/kazurayam/VisualInspectionInKatalonStudio_Reborn/blob/master/Scripts/main/CURA/Main_Chronos/Script1646219948928.groovy)
 
-You will execute the Test Case two times. You run it once; wait for some period (seconds, minuits, hours, or days, ... up to you); then run it again. The Test Case will preserve the output of previous runs.
+You will execute the Test Case two times. You run it once; wait for some period (seconds, minutes, hours, or days, ... up to you); then run it again. The Test Case will preserve the output of previous runs.
 
 #### (2) Execution Profile
 
@@ -314,54 +322,56 @@ You will get 2 directories named in the format of  `yyyyMMdd_hhmmss`. The direct
 ```
 $ tree store
 store
-├── CURA_VisualInspectionChronos
-│   ├── 20210814_143440
+├── CURA_Main_Chronos
+│   ├── 20221016_084722
 │   │   ├── index
 │   │   └── objects
-│   │       ├── 081a2a3e3174f13f60a9707f9464d1d73339d0e3.html
-│   │       ├── 4d671f2cd14839164840a520cb185c2d1bb68586.png
-│   │       ├── 504259db4e6562f62f8f70a6991fbce42aa55407.html
-│   │       ├── 668b2a28455d9524fc1da35317f44d3797ea5344.html
-│   │       ├── 6b82ac13ae98ca3c055d28469b75c8f377c1d8b1.png
-│   │       ├── 6b8a699d921520c10b9e7e61cf62e528bf263fa8.html
-│   │       ├── 8dd629a5d1b542b80bebc571c1ee35d27157ea1e.html
-│   │       ├── a11357d7fbc475f7fefabd50f468b9b4fd4e8b35.png
-│   │       ├── ed401b9bff2a687e41cedd9a63b3dd15880964eb.png
-│   │       └── f8664dfa1c3a3af60914c4c90ddfaf0286910133.html
-│   └── 20210814_143722
+│   │       ├── 3e7cfb9128556d0f5bca16af1c7be00396f15d8b.png
+│   │       ├── 46bd12e0dbfeb39bbbbc67c1996395b0ea666c20.png
+│   │       ├── 61ed7eeb5d1bc3388808e4f747537a599768acc6.html
+│   │       ├── 919580be9a8fb2e195ffe40bfe687caf4718d312.html
+│   │       ├── d85de77a8e6df464d89a3d8501e243f53ac527c3.png
+│   │       └── f3de4cfcf448606fa7b15250d88f792dacb62e6c.html
+│   ├── 20221016_084759
+│   │   ├── index
+│   │   └── objects
+│   │       ├── 5ce9b37a8632a97a7355fb3a09014a7105854927.png
+│   │       ├── 9835d49d33407bfe0cd7f9ef41e69c151a4ee3d3.html
+│   │       ├── a3e78a6b3ed0005dcef5f8419da3ce7f0d151f13.png
+│   │       ├── d85de77a8e6df464d89a3d8501e243f53ac527c3.png
+│   │       ├── d9e7abf1d048e4f0e512a0f499db98dd01e4620a.html
+│   │       └── e62bda5328f450387273668749cc7ca525988da5.html
+│   └── 20221016_084824
 │       ├── index
 │       └── objects
-│           ├── 01746787bffa40e2ae0997da12e66c3f6ed50a87.png
-│           ├── 25e752bc500be3a94fad9a4e6fc3ebc25431b558.png
-│           ├── 3d56d836f5c778d0ec31f72fd74fcc5d3cb348fd.html
-│           ├── 4d671f2cd14839164840a520cb185c2d1bb68586.png
-│           ├── 582791931452081590447c71d8769ae185ff7cb9.html
-│           ├── 668b2a28455d9524fc1da35317f44d3797ea5344.html
-│           ├── 6b82ac13ae98ca3c055d28469b75c8f377c1d8b1.png
-│           ├── e18882a39ba9632e9b0018e642d90a289fd1bcb7.html
-│           ├── f6b51712f25ba02a5b39eedb30a57b31d455eafc.html
-│           └── f8664dfa1c3a3af60914c4c90ddfaf0286910133.html
-└── CURA_VisualInspectionChronos-index.html
+│           ├── 06bf1cdb8d3778092dcc488403a909463bd8c987.html
+│           ├── 15a6cdaad19f4c2f22b4722f33717d625f33a550.html
+│           ├── 1e865231bdc6a6cc6570d05a82f17e429995e049.png
+│           ├── 2af8aef025af08139ab96dbc71378279c775af6d.png
+│           ├── b716d42df3912f11c350edcad74221b90bd41e83.html
+│           └── d85de77a8e6df464d89a3d8501e243f53ac527c3.png
+├── CURA_Main_Chronos-index.html
+...
 ```
 
 #### (4) making Chronological diff
 
 The Test Case compares takes materials at chronologically different timings, and then compare the 2 sets.
 
-`Test Cases/CURA/VisualInspectionChronos` does the followng processing:
+`Test Cases/CURA/VisualInspectionChronos` does the following processing:
 
-1. make a List of materials in the current timestmp directory
+1. make a List of materials in the current timestamp directory
 2. make another List of materials in the previous timestamp directory
 3. make differences between the two lists, store the diff info into the store as well
 4. generate a HTML report, where you can view the detail with diff information.
 
 #### (5) The report generated
 
-Once the Test Case finished, a HTML file will be generated at `store/CURA_VisualInspectionChronos-index.html`. Please open it in any web browser. It renders a view of the stored 6 files. You can see an working example here: [pls. click here](https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/CURA_VisualInspectionChronos-index.html).
+Once the Test Case finished, a HTML file will be generated at `store/CURA_VisualInspectionChronos-index.html`. Please open it in any web browser. It renders a view of the stored 6 files. You can see an working example here: [pls. click here](https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/CURA_Main_Chronos-index.html).
 
 You can see examples of screenshot comparison result: Previous screenshot - diff image - current screenshot.
 
-![Chronos Left](docs/images/Chronos_List.png)
+![Chronos List](docs/images/Chronos_List.png)
 
 ![Chronos Left](docs/images/Chronos_Left.png)
 
@@ -383,11 +393,11 @@ You can interact with the report generated by the Visual Inspection. See the top
 
 This means:
 
-- There are 2 diff entities that have a diff-ratio greater than the criteria given.
-- There are 0 diff entities that have a diff-ratio greater than the criteria given, and is "checked to be ignorable"
-- There are 6 diff entities in total.
+- There are 2 diff entities as **W**arnings that have a diff-ratio greater than the criteria given.
+- There are 0 diff entities as **I**gnored that have a diff-ratio greater than the criteria given, and is "checked to be ignorable"
+- There are 6 diff entities in **T**otal.
 
-In other words, I created 6 materials (PNG screenshot and HTML source saved). I set `1.0%` as the criteria of evaluating the diffRatio; if an entity has a diffRatio greater than 1.0, it will be marked *warning*, hence the figure `46.66%` is highlighted with the background color of yellow.
+In this sample case, I created 6 materials (PNG screenshot and HTML source saved). I set `1.0%` as the criteria of evaluating the diffRatio; if an entity has a diffRatio greater than 1.0, it will be marked *warning*, hence the figure `46.66%` is highlighted with the background color of yellow.
 
 A large diffRatio indicates to me that there must be some reason that caused significant visual differences; therefore I should look into the system. Definitely I will do for every entities warned. I would find some reason why the diffRatio is as large as `46.66%`. No matter what the reason is, I would decide whether the entity is **ignorable** or not.
 
@@ -419,18 +429,18 @@ The status checkbox toggled ON/OFF by human is persisted into [localStorage](htt
 
 ## Sample3: Visual Inspection in Twins mode
 
-The 3rd example visits 2 URLs. These are useless pages solely for this example.
+The 3rd example visits 2 URLs at almost the same timing.
 
 - [http://mydmin.kazurayam.com/](http://myadmin.kazurayam.com/)
 - [http://devadmin.kazurayam.com/](http://devadmin.kazurayam.com/)
 
-The former URL is meant to represent a *Production environment* of a web system, the latter URL is meant to represent a *Development environment*. The pages look similar at a glance, but are different in detail.
+The former URL is meant to represent a *Production environment* of a web system, the latter URL is meant to represent a *Development environment*. The pages look similar at a glance, but in fact these are different in detail.
 
 *How the pages of 2 environments differ now?* --- the 3rd example will show you.
 
 #### (1) Test Case
 
-In your project, you want to copy the followiing Test Case code.
+In your project, you want to copy the following Test Case code.
 
 - [`Test Cases/main/MyAdmin/VisualInspectionTwins`](https://github.com/kazurayam/VisualInspectionInKatalonStudio_Reborn/blob/master/Scripts/main/MyAdmin/Main_Twins/Script1646272006678.groovy)
 
@@ -455,65 +465,80 @@ Once finished, the Test Case creates a directory named in the format of `yyyyMMd
 ```
 $ tree store
 store
-├── MyAdmin_VisualInspectionTwins
-│   └── 20210814_224127
+...
+├── MyAdmin_Main_Twins
+│   ├── 20221016_084837
+│   │   ├── index
+│   │   └── objects
+│   │       ├── 1f2f0176d802db36521219ce281432dc0e67d920.png
+│   │       └── 4419c44062177d8cb12a839169bc63b53cba003b.html
+│   ├── 20221016_084846
+│   │   ├── index
+│   │   └── objects
+│   │       ├── b59bdac875b80dc47fe3345b4dbe8968db48188d.png
+│   │       └── b95fe452b63a6a9b5d5c4329ffaab6945e414943.html
+│   └── 20221016_084853
 │       ├── index
 │       └── objects
-│           ├── 2cf3afe9ff4104e4055f0dc2bff53b9166e80a0c.html
-│           ├── 4cbd1ac3812a5251325202f86a8dfe76bc82dbdc.png
-│           ├── 5e3ff331ef4ff3feb3222f0d2951aed284e47ac2.png
-│           ├── adb4c03ac0f0928a4dff3328845c4db460fc72b5.html
-│           ├── b0456c0ae964825a1508b28ac1042340b29c9357.html
-│           └── e911ce587553fc42f24bf18279ee3f5214eb75ba.png
-└── MyAdmin_VisualInspectionTwins-index.html
+│           ├── 5c75382c591698c749db0e03850135ddc72310fb.html
+│           └── 843303409b05d859e8af8617c347fe19f88290f3.png
+└── MyAdmin_Main_Twins-index.html
+
 ```
 
 
 
-#### (4) makiing diffs of Twins
+#### (4) making diffs of Twins
 
-The Test Case looks up 2 set of materials and compare them.
+The Test Case looks up 2 sets of materials and compare them.
 
 `Test Cases/main/MyAdmin/VisualInspectionTwins` does the following processing:
 
 1. Amongst the stored materials, select 2 (a screenshot and a HTML) of the *Development environment* to make a List.
-2. Also select 2 of the *Projection environment* to make a Liist.
-3. do take differences between the two lists.
+2. Also select 2 of the *Production environment* to make a List.
+3. compare the two Lists and find differences between them.
 4. will insert files into the "store", which contains the diff information.
 5. generate a HTML report, where you can view the detail with diff information.
 
-----
+##### Selection algorithm
 
-How can I select materials amongst many appropriately and make pairs to compare?
+How can I select 2 materials to compare out of the set of many materials?
 
-Well, it is difficult to explain. I wonder if I could describe it in English, but let me try.
+*Well, it is very difficult to explain. Possibly the current design is not as good as it should be. I wonder if I could describe it in English, but let me try.*
 
-In the `objects` directory, there are 6 files. These are a mixture of materials downloaded from 2 URLs. How can I tell which file is from which URL? --- The `index` file keeps enough information. The content of `index` file is as follows:
+The following file records the metadata of files taken out of the "Production environment":
 
-- [store/MyAdmin_VisualInspectionTwins/20210814_224127/index](docs/store/MyAdmin_VisualInspectionTwins/20210814_224127/index)
-
-In there you can find the following 2 lines. These lines point to the PNG screenshots of the 2 environments. I call the 3 column delimited by \t (`{"URL.host": ... :"body"}`) as *metadata*.
+`store/MyAdmin_Main_Twins/20221016_084837/index` :
 
 ```
-...
-5e3ff331ef4ff3feb3222f0d2951aed284e47ac2	png	{"URL.host":"devadmin.kazurayam.com", "URL.path":"/", "URL.protocol":"http", "profile":"MyAdmin_DevelopmentEnv", "selector":"body"}
-...
-4cbd1ac3812a5251325202f86a8dfe76bc82dbdc	png	{"URL.host":"myadmin.kazurayam.com", "URL.path":"/", "URL.protocol":"http", "profile":"MyAdmin_ProductionEnv", "selector":"body"}
-...
+4419c44062177d8cb12a839169bc63b53cba003b	html	{"profile":"MyAdmin_ProductionEnv", "URL.host":"myadmin.kazurayam.com", "URL.path":"/", "URL.port":"80", "URL.protocol":"http"}
+1f2f0176d802db36521219ce281432dc0e67d920	png	{"profile":"MyAdmin_ProductionEnv", "URL.host":"myadmin.kazurayam.com", "URL.path":"/", "URL.port":"80", "URL.protocol":"http"}
 ```
 
-These 2 lines have a common portion in the *metadata*:
+Another file records the metadata of files taken out of the "Development environment":
+
+`store/MyAdmin_Main_Twins/20221016_084837/index` :
 
 ```
-{"URL.path":"/", "selector":"body"}
+b95fe452b63a6a9b5d5c4329ffaab6945e414943	html	{"profile":"MyAdmin_DevelopmentEnv", "URL.host":"devadmin.kazurayam.com", "URL.path":"/", "URL.port":"80", "URL.protocol":"http"}
+b59bdac875b80dc47fe3345b4dbe8968db48188d	png	{"profile":"MyAdmin_DevelopmentEnv", "URL.host":"devadmin.kazurayam.com", "URL.path":"/", "URL.port":"80", "URL.protocol":"http"}
 ```
 
-Also they have a different portion:
+If you look at these 2 files carefully, you can identify 2 pairs of lines by common portion in the *metadata*.
+
+One pair can be identified by:
 
 ```
-{{"URL.host":"devadmin.kazurayam.com", "profile":"MyAdmin_DevelopmentEnv"}
-{{"URL.host":"myadmin.kazurayam.com", "profile":"MyAdmin_ProductionEnv"}
+html { ... "URL.path":"/" ... }
 ```
+
+Another pair can be identified by:
+
+```
+png { ... "URL.path":"/" ... }
+```
+
+Here we will abstract several attributes with different values: `"URL.host"` and `"profile"`.
 
 The Test Case script can select 2 lines as a pair amongst others by looking at their *metadata*. I would ignore the known different portions in the *metadata* resulting a common portion. Taking the common portion as a key of lookup, I could find a pair or materials to compare.
 
@@ -547,6 +572,7 @@ The `materialstore` library can be used by a [Appium](https://appium.io/)-based 
 ### for Web Service
 
 The `materialstore` library can be used by a [Apache HttpClient](https://hc.apache.org/httpcomponents-client-5.1.x/)-based Web Service testing in Java. Using Katalon Studio's [sendRequest](https://docs.katalon.com/katalon-studio/docs/ws-send-request.html) keyword, you can get a response. Then your script extract the response body (JSON, XML) and save them into the `store`.
+
 
 ## Conclusion
 
