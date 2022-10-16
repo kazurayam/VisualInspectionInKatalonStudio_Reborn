@@ -15,7 +15,7 @@ Please have a look at the "Motivation" section in its README document to know wh
 
 But I wasn't satisfied with it. Why? I would enumerate 3 problems about that project.
 
-1. The codeset of [Visual Testing In katalon Studio](https://github.com/kazurayam/VisualTestingInKatalonStudio) project is too complicated. The project contains 28 Test Cases, 7 Test Suites, 4 Test Suite Collections, 1 Test Listener, 12 Keywords. After 3 years, I forgot them and unable to maintain them any longer.
+1. The code set of [Visual Testing In katalon Studio](https://github.com/kazurayam/VisualTestingInKatalonStudio) project is too complicated. The project contains 28 Test Cases, 7 Test Suites, 4 Test Suite Collections, 1 Test Listener, 12 Keywords. After 3 years, I forgot them and unable to maintain them any longer.
 2. The project enabled me to compare a pair of 2 screenshots of Web pages in PNG image format. I found that it is not enough. Often I wanted to compare 2 texts scraped from web. For example, I wanted to compare 2 HTML files. Also I wanted to compare 2 JSON files downloaded from a Web Service.
 3. The project wasn't distributable to others easily because it wasn't packaged as "jar". It was too hard for people to reuse the code set of the project to achieve their own "Visual Testing" for their custom targets.
 
@@ -23,7 +23,7 @@ But I wasn't satisfied with it. Why? I would enumerate 3 problems about that pro
 
 In 2021 July-August, I have developed a new project named [`materialstore`](https://github.com/kazurayam/materialstore). It is a domain-specific file system written in Groovy, accompanied with a set of utility class that implements "Visual Testing". In this project I have re-designed and re-implemented my idea from scratch. In the materialstore library, I have achieved the followings.
 
-### (1) Simpler codeset
+### (1) Simpler code set
 
 The `materialstore` provides a self-contained API in Java8, which encapsulates all of the useful functionalities of the previous [Visual Testing In katalon Studio](https://github.com/kazurayam/VisualTestingInKatalonStudio) project. A single Test Case in Katalon Studio empowered by the `materialstore` library can achieve whole job equivalent to the previous one. No need to struggle with that many components (28 Test Cases + 7 Test Suites + 4 Test Suite Collections + 1 Test Listener + 12 Keywords).
 
@@ -65,8 +65,6 @@ Now I want to name my new project as **Visual Inspection**. I think it is a bett
 
 
 ## Examples in Katalon Studio
-
-In this "VisualInspectionInKatalonStudio_Reborn", I will present 3 examples which show how to use the `materialstore` library in Katalon Studio. I intend these will supersede my previous ["Visual Testing in Katalon Studio"](https://github.com/kazurayam/VisualTestingInKatalonStudio) project.
 
 ### Creating a project, resolving external dependencies
 
@@ -121,21 +119,6 @@ All of these jar files are downloaded from the [Maven Central Repository](https:
 7. Stop Katalon Studio, restart it and re-open the project.
 
 You have resolved external dependencies. Now you can start writing a Test Case.
-
-
-### Overview of samples
-
-| sample name | Test Case | URL accessed 1st | URL accessed 2nd |
-| :---------- | :-------------- | :--------------- | :--------------- |
-| Sample1 Google | [GoogleSearch/ScrapeGoogleSearch](./Test%20Cases/main/GoogleSearch/ScrapeGoogleSearch.tc) | https://www.google.com/ |
-| Sample2 CURA   | [CURA/VisualInspectionChronos](Test%20Cases/main/CURA/VisualInspectionChronos.tc) | http://demoaut-mimic.kazurayam.com/ | http://demoaut-mimic.kazurayam.com/ |
-| Sample3 MyAdmin | [MyAdmin/VisualInspectionTwins](Scripts/main/MyAdmin/VisualInspectionTwins/Script1629114780778.groovy) | http://myadmin.kazurayam.com/ | http://devadmin.kazurayam.com/ |
-
-The **Sample1** opens the Google search page, makes search with keyword "katalon", takes screenshots, saves HTML sources.
-
-As for the **Sample2**, the URL is provided by kazurayam.com (it's me!), publicly available on the Internet. The test visits a single URL twice with a few tempos of intermission.
-
-As for the **Sample3**, both URLs are provided by kazurayam.com, publicly available on the Internet. The 2 pages have slight difference visually.
 
 ### Demo outputs
 
