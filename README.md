@@ -580,17 +580,3 @@ The `materialstore` library can be used by a [Apache HttpClient](https://hc.apac
 
 The [Visual Testing In Katalon Studio](https://github.com/kazurayam/VisualTestingInKatalonStudio) project is now superseded by this [Visual Inspection In Katalon Studio - Reborn](https://github.com/kazurayam/VisualInspectionInKatalonStudio_Reborn) project backed by the [materialstore](https://github.com/kazurayam/materialstore) library.
 
-## Visual Inspection with Page Object Model in Katlaon Studio
-
-I have made another GitHub project
-
-- https://github.com/kazurayam/VisualInspection_with_PageObjectModel_in_KatalonStudio
-
-This project shows how to navigate through multiple URLs of a Web App by clicking manu, typing text and bushing buttons; plust perform Visual Inspectin of the Prod env and Dev env. It employed "Page Object Model" to minimize code duplication, to maximize the maintainability.
-
-
-## Appendix
-
-- [materialstore API javadoc](https://kazurayam.github.io/materialstore/api/)
-- [materialstore-mapper API javadoc](https://kazurayam.github.io/materialstore-mapper/api/)
-
