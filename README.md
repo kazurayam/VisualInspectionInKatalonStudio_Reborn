@@ -9,7 +9,6 @@
     - [(2) Domain-specific file system indexed by metadata](#2-domain-specific-file-system-indexed-by-metadata)
     - [(3) Packaged in a jar](#3-packaged-in-a-jar)
     - [(4) Usable outside Katalon Studio](#4-usable-outside-katalon-studio)
-  - [Inspection, not Test](#inspection-not-test)
   - [Examples in Katalon Studio](#examples-in-katalon-studio)
     - [Creating a project, resolving external dependencies](#creating-a-project-resolving-external-dependencies)
     - [Demo outputs](#demo-outputs)
