@@ -101,14 +101,6 @@ So the `materialstore` library can be used in any Java/Groovy project outside Ka
 
 This "VisualTestingInKatalonStudio_Reborn" project is a mere demonstration how to utilize the `materialstore` library in Katalon Studio.
 
-## Inspection, not Test
-
-I named my previous project as "Visual Testing". I think that this naming was not very good. To me, a word *testing* means to check if a system behaves as I expect. On the other hand, *inspection* means looking around a system for anything unexpected observed. This project does not really *test it*, but it does help me to *inspect it*.
-
-Now I want to name my new project as **Visual Inspection**. I think it is a better naming.
-
-
-
 ## Examples in Katalon Studio
 
 ### Creating a project, resolving external dependencies
@@ -222,12 +214,12 @@ store
 - The `store/GoogleSearch_scrape/yyyyMMdd_hhmmss/index` file would be interesting. An example of the `index` file is like [this](docs/store/GoogleSearch_/20221016_084617/index):
 
 ```
-09be6ef6ef37f04bf34977fcce96088195a0cd76	html	{"q":"katalon", "step":"03", "URL.host":"www.google.com", "URL.path":"/search", "URL.port":"80", "URL.protocol":"https", "URL.query":"q=katalon&source=hp&ei=TkZLY9meB6O12roPw5-SmAU&iflsig=AJiK0e8AAAAAY0tUXrwBwDKRE8CXoRWoDezm2LZ9PhlV&ved=0ahUKEwjZ_ZXMteP6AhWjmlYBHcOPBFMQ4dUDCAk&uact=5&oq=katalon&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEOg0IABAEEIAEELEDEIMBOgcIABAEEIAEOgcIABCABBAKUABYIGD2G2gAcAB4AIABxAGIAaAFkgEDMS4zmAEAoAEB&sclient=gws-wiz"}
-7203b58eba10f9b7d9220532b72990f0732ce673	png	{"q":"katalon", "step":"03", "URL.host":"www.google.com", "URL.path":"/search", "URL.port":"80", "URL.protocol":"https", "URL.query":"q=katalon&source=hp&ei=TkZLY9meB6O12roPw5-SmAU&iflsig=AJiK0e8AAAAAY0tUXrwBwDKRE8CXoRWoDezm2LZ9PhlV&ved=0ahUKEwjZ_ZXMteP6AhWjmlYBHcOPBFMQ4dUDCAk&uact=5&oq=katalon&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEOg0IABAEEIAEELEDEIMBOgcIABAEEIAEOgcIABCABBAKUABYIGD2G2gAcAB4AIABxAGIAaAFkgEDMS4zmAEAoAEB&sclient=gws-wiz"}
+09be6ef6ef37f04bf34977fcce96088195a0cd76	html	{"q":"katalon", "step":"03", "URL.host":"www.google.com", "URL.path":"/search", "URL.port":"80", "URL.protocol":"https", "URL.query":"q=katalon"}
+7203b58eba10f9b7d9220532b72990f0732ce673	png	{"q":"katalon", "step":"03", "URL.host":"www.google.com", "URL.path":"/search", "URL.port":"80", "URL.protocol":"https", "URL.query":"q=katalon"}
 d331434cb6bfed9772c54727bdaaed4ac3fdeefa	html	{"step":"01", "URL.host":"www.google.com", "URL.path":"/", "URL.port":"80", "URL.protocol":"https"}
 63cc4d50d6140aa3db07ed1da6477f528ede9fa6	png	{"step":"01", "URL.host":"www.google.com", "URL.path":"/", "URL.port":"80", "URL.protocol":"https"}
-09be6ef6ef37f04bf34977fcce96088195a0cd76	html	{"step":"02", "URL.host":"www.google.com", "URL.path":"/search", "URL.port":"80", "URL.protocol":"https", "URL.query":"q=katalon&source=hp&ei=TkZLY9meB6O12roPw5-SmAU&iflsig=AJiK0e8AAAAAY0tUXrwBwDKRE8CXoRWoDezm2LZ9PhlV&ved=0ahUKEwjZ_ZXMteP6AhWjmlYBHcOPBFMQ4dUDCAk&uact=5&oq=katalon&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEOg0IABAEEIAEELEDEIMBOgcIABAEEIAEOgcIABCABBAKUABYIGD2G2gAcAB4AIABxAGIAaAFkgEDMS4zmAEAoAEB&sclient=gws-wiz"}
-1ae20a4dc1fce5fdec3ee457b1af1106e632880b	png	{"step":"02", "URL.host":"www.google.com", "URL.path":"/search", "URL.port":"80", "URL.protocol":"https", "URL.query":"q=katalon&source=hp&ei=TkZLY9meB6O12roPw5-SmAU&iflsig=AJiK0e8AAAAAY0tUXrwBwDKRE8CXoRWoDezm2LZ9PhlV&ved=0ahUKEwjZ_ZXMteP6AhWjmlYBHcOPBFMQ4dUDCAk&uact=5&oq=katalon&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEOg0IABAEEIAEELEDEIMBOgcIABAEEIAEOgcIABCABBAKUABYIGD2G2gAcAB4AIABxAGIAaAFkgEDMS4zmAEAoAEB&sclient=gws-wiz"}
+09be6ef6ef37f04bf34977fcce96088195a0cd76	html	{"step":"02", "URL.host":"www.google.com", "URL.path":"/search", "URL.port":"80", "URL.protocol":"https", "URL.query":"q=katalon"}
+1ae20a4dc1fce5fdec3ee457b1af1106e632880b	png	{"step":"02", "URL.host":"www.google.com", "URL.path":"/search", "URL.port":"80", "URL.protocol":"https", "URL.query":"q=katalon"}
 ```
 
 The `index` file is a plain text file. Each lines corresponds to each files stored in the `objects` directory.
