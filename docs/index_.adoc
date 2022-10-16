@@ -5,3 +5,48 @@
 - https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/CURA_Main_Chronos-index.html[CURA]
 - https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/MyAdmin_Main_Twins-index.html[MyAdmin]
 - https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/GoogleSearch_scrape-list.html[Google Search]
+
+== Selection alogorithm
+
+How can I select 2 materials to compare out of the set of many materials?
+
+*Well, it is very difficult to explain. Possibly the current design is not as good as it should be. I wonder if I could describe it in English, but let me try.*
+
+The following file records the metadata of files taken out of the "Production environment":
+
+`store/MyAdmin_Main_Twins/20221016_084837/index` :
+
+```
+4419c44062177d8cb12a839169bc63b53cba003b	html	{"profile":"MyAdmin_ProductionEnv", "URL.host":"myadmin.kazurayam.com", "URL.path":"/", "URL.port":"80", "URL.protocol":"http"}
+1f2f0176d802db36521219ce281432dc0e67d920	png	{"profile":"MyAdmin_ProductionEnv", "URL.host":"myadmin.kazurayam.com", "URL.path":"/", "URL.port":"80", "URL.protocol":"http"}
+```
+
+Another file records the metadata of files taken out of the "Development environment":
+
+`store/MyAdmin_Main_Twins/20221016_084837/index` :
+
+```
+b95fe452b63a6a9b5d5c4329ffaab6945e414943	html	{"profile":"MyAdmin_DevelopmentEnv", "URL.host":"devadmin.kazurayam.com", "URL.path":"/", "URL.port":"80", "URL.protocol":"http"}
+b59bdac875b80dc47fe3345b4dbe8968db48188d	png	{"profile":"MyAdmin_DevelopmentEnv", "URL.host":"devadmin.kazurayam.com", "URL.path":"/", "URL.port":"80", "URL.protocol":"http"}
+```
+
+If you look at these 2 files carefully, you can identify 2 pairs of lines by common portion in the *metadata*.
+
+One pair can be identified by:
+
+```
+html { ... "URL.path":"/" ... }
+```
+
+Another pair can be identified by:
+
+```
+png { ... "URL.path":"/" ... }
+```
+
+Here we will abstract several attributes with different values: `"URL.host"` and `"profile"`.
+
+The Test Case script can select 2 lines as a pair amongst others by looking at their *metadata*. I would ignore the known different portions in the *metadata* resulting a common portion. Taking the common portion as a key of lookup, I could find a pair or materials to compare.
+
+Difficult to understand? Well, I agree. But this is the best flexible and expressive method I could develop.
+
