@@ -32,7 +32,6 @@
       - [(2) Execution Profile](#2-execution-profile-1)
       - [(3) The "store" directory](#3-the-store-directory-1)
       - [(4) making diffs of Twins](#4-making-diffs-of-twins)
-        - [Selection algorithm](#selection-algorithm)
       - [(5) The report generated](#5-the-report-generated-1)
   - [Notes on Extensibility](#notes-on-extensibility)
     - [for Mobile](#for-mobile)
