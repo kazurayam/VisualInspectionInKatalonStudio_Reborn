@@ -45,8 +45,6 @@
   - [for Mobile](#for-mobile)
   - [for Web Service](#for-web-service)
 - [Conclusion](#conclusion)
-- [Visual Inspection with Page Object Model in Katlaon Studio](#visual-inspection-with-page-object-model-in-katlaon-studio)
-- [Appendix](#appendix)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
