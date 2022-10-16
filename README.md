@@ -4,51 +4,6 @@
 - @update 15 Oct 2022, ver 0.10.3
 - @author kazurayam
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**
-
-- [My previous work](#my-previous-work)
-- [My new development](#my-new-development)
-  - [(1) Simpler codeset](#1-simpler-codeset)
-  - [(2) Domain-specific file system indexed by metadata](#2-domain-specific-file-system-indexed-by-metadata)
-  - [(3) Packaged in a jar](#3-packaged-in-a-jar)
-  - [(4) Usable outside Katalon Studio](#4-usable-outside-katalon-studio)
-- [Inspection, not Test](#inspection-not-test)
-- [Examples in Katalon Studio](#examples-in-katalon-studio)
-  - [Creating a project, resolving external dependencies](#creating-a-project-resolving-external-dependencies)
-  - [Target Web Application under Sample Tests](#target-web-application-under-sample-tests)
-  - [Demo outputs](#demo-outputs)
-- [Sample1: simply visit a web site to take screenshots](#sample1-simply-visit-a-web-site-to-take-screenshots)
-    - [(1) Test Case](#1-test-case)
-    - [(2) The report generated](#2-the-report-generated)
-    - [(3) The "store" directory structure](#3-the-store-directory-structure)
-    - [(4) The objects/ directory](#4-the-objects-directory)
-    - [(5) The index file](#5-the-index-file)
-    - [(6) The metadata](#6-the-metadata)
-    - [(7) How to sort the entries in the report](#7-how-to-sort-the-entries-in-the-report)
-- [Sample2: Visual Inspection in Chronos mode](#sample2-visual-inspection-in-chronos-mode)
-    - [(1) Test Case](#1-test-case-1)
-    - [(2) Execution Profile](#2-execution-profile)
-    - [(3) The "store" directory](#3-the-store-directory)
-    - [(4) making Chronological diff](#4-making-chronological-diff)
-    - [(5) The report generated](#5-the-report-generated)
-    - [(6) Interactively memorizing ignorable diffs](#6-interactively-memorizing-ignorable-diffs)
-- [Sample3: Visual Inspection in Twins mode](#sample3-visual-inspection-in-twins-mode)
-    - [(1) Test Case](#1-test-case-2)
-    - [(2) Execution Profile](#2-execution-profile-1)
-    - [(3) The "store" directory](#3-the-store-directory-1)
-    - [(4) making diffs of Twins](#4-making-diffs-of-twins)
-      - [Selection algorithm](#selection-algorithm)
-    - [(5) The report generated](#5-the-report-generated-1)
-- [Notes on Extensibility](#notes-on-extensibility)
-  - [for Mobile](#for-mobile)
-  - [for Web Service](#for-web-service)
-- [Conclusion](#conclusion)
-- [Visual Inspection with Page Object Model in Katlaon Studio](#visual-inspection-with-page-object-model-in-katlaon-studio)
-- [Appendix](#appendix)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## My previous work
 
@@ -168,7 +123,7 @@ All of these jar files are downloaded from the [Maven Central Repository](https:
 You have resolved external dependencies. Now you can start writing a Test Case.
 
 
-### Target Web Application under Sample Tests
+### Overview of samples
 
 | sample name | Test Case | URL accessed 1st | URL accessed 2nd |
 | :---------- | :-------------- | :--------------- | :--------------- |
