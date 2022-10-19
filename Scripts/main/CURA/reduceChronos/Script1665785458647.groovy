@@ -1,11 +1,12 @@
-import com.kazurayam.materialstore.inspector.Inspector
 import com.kazurayam.materialstore.dot.MPGVisualizer
-import com.kazurayam.materialstore.filesystem.MaterialList
-import com.kazurayam.materialstore.filesystem.QueryOnMetadata
-import com.kazurayam.materialstore.filesystem.SortKeys
+import com.kazurayam.materialstore.filesystem.JobTimestamp
+import com.kazurayam.materialstore.filesystem.MaterialstoreException
+import com.kazurayam.materialstore.inspector.Inspector
 import com.kazurayam.materialstore.reduce.MaterialProductGroup
 import com.kazurayam.materialstore.reduce.Reducer
+import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+
 //import java.util.function.BiFunction
 
 /**
@@ -20,16 +21,22 @@ WebUI.comment("store=${store}")
 WebUI.comment("currentMaterialList=${currentMaterialList}")
 WebUI.comment("sortKeys=${sortKeys}")
 
-MaterialProductGroup reduced = Reducer.chronos(store, currentMaterialList)
+MaterialProductGroup inspected = null
 
-Inspector inspector = Inspector.newInstance(store)
-inspector.setSortKeys(sortKeys)
-MaterialProductGroup inspected = inspector.reduceAndSort(reduced)
+try {
+	MaterialProductGroup reduced = Reducer.chronos(store, currentMaterialList)
 
-if (inspected.getNumberOfBachelors() > 0) {
-	// if any bachelor found, generate diagram of MProductGroup object
-	MPGVisualizer visualizer = new MPGVisualizer(store)
-	visualizer.visualize(inspected.getJobName(), JobTimestamp.now(), inspected);
+	Inspector inspector = Inspector.newInstance(store)
+	inspector.setSortKeys(sortKeys)
+	inspected = inspector.reduceAndSort(reduced)
+
+	if (inspected.getNumberOfBachelors() > 0) {
+		// if any bachelor found, generate diagram of MProductGroup object
+		MPGVisualizer visualizer = new MPGVisualizer(store)
+		visualizer.visualize(inspected.getJobName(), JobTimestamp.now(), inspected);
+	}
+} catch (MaterialstoreException ex) {
+	KeywordUtil.markWarning(ex.getMessage())
 }
 
 return inspected

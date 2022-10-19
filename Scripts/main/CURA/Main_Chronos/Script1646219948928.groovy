@@ -64,21 +64,22 @@ MaterialProductGroup reduced =
 		["store": store, "currentMaterialList": currentMaterialList, "sortKeys": sortKeys])
 
 
+if (reduced != null) {
+	//---------------------------------------------------------------------
+	/*
+	* Report stage
+	*/
+	// compile a human-readable report
+	int warnings =
+		WebUI.callTestCase(findTestCase("main/CURA/report"),
+			["store": store, "mProductGroup": reduced, "sortKeys": sortKeys, "criteria": 1.0d])
 
-//---------------------------------------------------------------------
-/*
- * Report stage
- */
-// compile a human-readable report
-int warnings =
-	WebUI.callTestCase(findTestCase("main/CURA/report"),
-		["store": store, "mProductGroup": reduced, "sortKeys": sortKeys, "criteria": 1.0d])
 
-
-//---------------------------------------------------------------------
-/*
- * Epilogue
- */
-if (warnings > 0) {
-	KeywordUtil.markWarning("found ${warnings} differences.")
+	//---------------------------------------------------------------------
+	/*
+	 * Epilogue
+	 */
+	if (warnings > 0) {
+		KeywordUtil.markWarning("found ${warnings} differences.")
+	}
 }
