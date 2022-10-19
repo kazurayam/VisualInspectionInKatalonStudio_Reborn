@@ -20,7 +20,7 @@ assert metadata instanceof Metadata
 
 // take a screenshot and save the image into a temporary file using Katalon's built-in keyword
 Path tempFile = Files.createTempFile(null, null);
-WebUI.takeFullPageScreenshot(tempFile.toAbsolutePath().toFile().toString(), [])
+WebUI.takePageScreenshot(tempFile.toAbsolutePath().toFile().toString(), [])
 
 // copy the image file into the materialstore
 Material image = store.write(jobName, jobTimestamp, FileType.PNG, metadata, tempFile)
