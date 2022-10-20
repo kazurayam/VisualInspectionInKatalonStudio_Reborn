@@ -5,7 +5,6 @@ version = '0.11.0-SNAPSHOT'
 
 ext {
     AUTO_IMPORTED_JAR_PREFIX = 'AUTOIMPORTED_'
-    UITESTJAVA_PROJECT_DIR = '../../github/MyPythonProjectTemplate/uitestjava'
 }
 
 repositories {
@@ -53,20 +52,3 @@ task drivers {
     }
 }
 
-/**
- * This task mports the Java source code from the [MyPythonProjectTemplate/uitestjava](https://github.com/kazurayam/MyPythonProjectTemplate/tree/develop/uitestjava) project.
- * The java code includes the "Page Object Model" to test the Falskr web app.
- */
-task importSourceOfFlaskrPOM {
-    doLast {
-        delete files("Include/scripts/groovy/com/kazurayam/uitestjava")
-        copy { copySpec ->
-            copySpec
-                .from("${UITESTJAVA_PROJECT_DIR}/src/main/java")
-                .into("Include/scripts/groovy")
-                .include(
-                    "com/kazurayam/uitestjava/**/*"
-                )
-        }
-    }
-}
