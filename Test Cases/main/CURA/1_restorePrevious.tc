@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>materialize</name>
+   <name>1_restorePrevious</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>b7483ff2-fe49-47c6-aff4-c26b8c535ff5</testCaseGuid>
+   <testCaseGuid>15d72694-c85a-4c9d-8291-67b334ac76bc</testCaseGuid>
 </TestCaseEntity>

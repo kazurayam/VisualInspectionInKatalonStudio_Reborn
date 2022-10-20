@@ -40,7 +40,7 @@ WebUI.comment("Execution Profile ${profile} was loaded")
 JobTimestamp currentTimestamp = JobTimestamp.now()
 
  WebUI.callTestCase(
-	findTestCase("main/CURA/materialize"),
+	findTestCase("main/CURA/2_materialize"),
 		[ "store": store, "jobName": jobName, "jobTimestamp": currentTimestamp ])
 
 
@@ -60,7 +60,7 @@ MaterialList currentMaterialList = store.select(jobName, currentTimestamp, Query
 SortKeys sortKeys = new SortKeys("step", "profile", "URL.host", "URL.path", "URL.fragment")
 
 MaterialProductGroup reduced =
-	WebUI.callTestCase(findTestCase("main/CURA/reduceChronos"),
+	WebUI.callTestCase(findTestCase("main/CURA/3_reduceChronos"),
 		["store": store, "currentMaterialList": currentMaterialList, "sortKeys": sortKeys])
 
 
@@ -71,7 +71,7 @@ if (reduced != null) {
 	*/
 	// compile a human-readable report
 	int warnings =
-		WebUI.callTestCase(findTestCase("main/CURA/report"),
+		WebUI.callTestCase(findTestCase("main/CURA/4_report"),
 			["store": store, "mProductGroup": reduced, "sortKeys": sortKeys, "criteria": 1.0d])
 
 

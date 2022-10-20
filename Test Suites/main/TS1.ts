@@ -15,7 +15,7 @@
       <guid>75a0a28a-1d0c-40df-9283-a8201322b4a9</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/main/CURA/Main_Chronos</testCaseId>
+      <testCaseId>Test Cases/main/CURA/0_Main_Chronos</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>

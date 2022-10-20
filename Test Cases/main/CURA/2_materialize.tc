@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>reduceChronos</name>
+   <name>2_materialize</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>1abf18c6-3a3a-41e6-9ce9-0bc254211bc2</testCaseGuid>
+   <testCaseGuid>b7483ff2-fe49-47c6-aff4-c26b8c535ff5</testCaseGuid>
 </TestCaseEntity>

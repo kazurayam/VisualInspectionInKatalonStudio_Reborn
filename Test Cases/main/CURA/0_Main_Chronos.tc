@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>cleanup</name>
+   <name>0_Main_Chronos</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>4f6d9e05-b0d8-4ae4-a454-7789fa1a8a93</testCaseGuid>
+   <testCaseGuid>56a59e4a-a044-4b86-8bd8-43738be6f5ad</testCaseGuid>
 </TestCaseEntity>

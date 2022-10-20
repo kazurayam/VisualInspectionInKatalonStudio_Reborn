@@ -29,7 +29,7 @@ JobTimestamp jobTimestamp = JobTimestamp.now()
  * materialize stage
  */
 MaterialList materialList = WebUI.callTestCase(
-	findTestCase("main/DuckDuckGo/materialize"),
+	findTestCase("main/DuckDuckGo/2_materialize"),
 	["store": store, "jobName": jobName, "jobTimestamp": jobTimestamp])
 
 
@@ -39,7 +39,7 @@ MaterialList materialList = WebUI.callTestCase(
  * report stage
  */
 Path report =
-	WebUI.callTestCase(findTestCase("main/DuckDuckGo/report"),
+	WebUI.callTestCase(findTestCase("main/DuckDuckGo/4_report"),
 		["store": store, "materialList": materialList])
 
 	
