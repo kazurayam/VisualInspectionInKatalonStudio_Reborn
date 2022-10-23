@@ -6,5 +6,5 @@ import com.kazurayam.materialstore.filesystem.JobTimestamp
 Objects.requireNonNull(store);
 Objects.requireNonNull(jobName);
 
-JobTimestamp oldestJobTimestampToRetain = store.findNthJobTimestamp(jobName, 3)
+JobTimestamp oldestJobTimestampToRetain = store.findNthJobTimestamp(jobName, 5)
 return store.deleteStuffOlderThanExclusive(jobName, oldestJobTimestampToRetain)
