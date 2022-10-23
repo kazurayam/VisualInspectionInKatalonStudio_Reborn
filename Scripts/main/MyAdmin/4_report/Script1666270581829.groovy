@@ -2,12 +2,12 @@ import java.nio.file.Files
 import java.nio.file.Path
 
 import com.kazurayam.materialstore.filesystem.JobName
-import com.kazurayam.materialstore.filesystem.JobTimestamp
 import com.kazurayam.materialstore.inspector.Inspector
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 /**
- * Test Cases/main/CURA/4_report
+ * Test Cases/main/MyAdmin/report
+ * 
  */
 assert store != null
 assert mProductGroup != null
@@ -16,10 +16,9 @@ assert sortKeys != null
 assert criteria != null
 
 JobName jobName = mProductGroup.getJobName()
-JobTimestamp jobTimestamp = mProductGroup.getJobTimestampRight()
 
 WebUI.comment("report started; store=${store}")
-println "mProductGroup=${mProductGroup.toSummary()}" 
+println "mProductGroup=${mProductGroup.toSummary()}"
 
 Inspector inspector = Inspector.newInstance(store)
 inspector.setSortKeys(sortKeys)

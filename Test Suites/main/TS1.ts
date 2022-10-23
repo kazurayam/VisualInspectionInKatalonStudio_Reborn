@@ -22,14 +22,14 @@
       <guid>200a2e3b-b40b-4bf5-9c9e-bb7d3deb19c2</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/main/GoogleSearch/Main</testCaseId>
+      <testCaseId>Test Cases/main/GoogleSearch/0_Main</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
       <guid>7496fe0b-e1df-45a3-9e35-2840d7819280</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/main/MyAdmin/Main_Twins</testCaseId>
+      <testCaseId>Test Cases/main/MyAdmin/0_Main_Twins</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
 </TestSuiteEntity>

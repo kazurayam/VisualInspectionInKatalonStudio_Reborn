@@ -1,13 +1,12 @@
 import java.nio.file.Path
 
 import com.kazurayam.materialstore.filesystem.JobName
-import com.kazurayam.materialstore.filesystem.JobTimestamp
 import com.kazurayam.materialstore.filesystem.SortKeys
 import com.kazurayam.materialstore.inspector.Inspector
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 /**
- * Test Cases/main/DuckDuckGo/4_report
+ * Test Cases/main/GoogleSearch/report
  *
  */
 
@@ -15,7 +14,6 @@ assert store != null
 assert materialList != null
 
 JobName jobName = materialList.getJobName()
-JobTimestamp jobTimestamp = materialList.getJobTimestamp()
 
 WebUI.comment("report started; materialList=${materialList.toString()}, jobName=${jobName}, store=${store}")
 

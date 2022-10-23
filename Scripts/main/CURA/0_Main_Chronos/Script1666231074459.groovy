@@ -23,7 +23,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 Path projectDir = Paths.get(RunConfiguration.getProjectDir())
 Path root = projectDir.resolve("store")
 Store store = Stores.newInstance(root)
-JobName jobName = new JobName("CURA_Main_Chronos")
+JobName jobName = new JobName("CURA")
 
 //---------------------------------------------------------------------
 /*
@@ -67,14 +67,14 @@ MaterialProductGroup reduced =
 if (reduced != null) {
 	//---------------------------------------------------------------------
 	/*
-	* Report stage
-	*/
+	 * Report stage
+	 */
 	// compile a human-readable report
 	int warnings =
 		WebUI.callTestCase(findTestCase("main/CURA/4_report"),
 			["store": store, "mProductGroup": reduced, "sortKeys": sortKeys, "criteria": 1.0d])
 
-
+			
 	//---------------------------------------------------------------------
 	/*
 	 * Epilogue
@@ -82,4 +82,21 @@ if (reduced != null) {
 	if (warnings > 0) {
 		KeywordUtil.markWarning("found ${warnings} differences.")
 	}
+	
+	//-------------------------------------------------------------------------
+	/*
+	 * clean up the old stuff of the CURA job in the store
+	 */
+	int deletedStuff =
+	    WebUI.callTestCase(findTestCase("main/CURA/6_cleanup"),
+			["store": store, "jobName": jobName])
+	
+	//---------------------------------------------------------------------
+	/*
+	 * create store/index.html
+	 */
+	Path index =
+		WebUI.callTestCase(findTestCase("main/CURA/7_index"),
+			["store": store])
+	
 }
