@@ -19,4 +19,9 @@
       <initValue>''</initValue>
       <name>CURRENT_TESTCASE_NAME</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'/Users/kazurayam/visual-inspection-storage'</initValue>
+      <name>BACKUP_STORE</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

@@ -102,8 +102,7 @@ int warnings =
 /*
  * clean up the old stuff of the CURA job in the store
  */
-int deletedStuff =
-	WebUI.callTestCase(findTestCase("main/MyAdmin/6_cleanup"),
+WebUI.callTestCase(findTestCase("main/MyAdmin/6_cleanup"),
 		["store": store, "jobName": jobName])
 	
 	

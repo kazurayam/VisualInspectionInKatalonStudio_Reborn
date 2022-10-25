@@ -1,10 +1,11 @@
 import com.kazurayam.materialstore.filesystem.JobTimestamp
+import com.kazurayam.materialstore.manage.StoreCleaner
 
 /*
- * CURA/6_cleanup
+ * MyAdmin/6_cleanup
  */
 Objects.requireNonNull(store);
 Objects.requireNonNull(jobName);
 
-JobTimestamp oldestJobTimestampToRetain = store.findNthJobTimestamp(jobName, 2)
-return store.deleteStuffOlderThanExclusive(jobName, oldestJobTimestampToRetain)
+StoreCleaner cleaner = StoreCleaner.newInstance(store)
+cleaner.cleanup(jobName)

@@ -1,4 +1,5 @@
 import com.kazurayam.materialstore.filesystem.JobTimestamp
+import com.kazurayam.materialstore.manage.StoreCleaner
 
 /*
  * GoogleSearch/6_cleanup
@@ -6,5 +7,5 @@ import com.kazurayam.materialstore.filesystem.JobTimestamp
 Objects.requireNonNull(store);
 Objects.requireNonNull(jobName);
 
-JobTimestamp oldestJobTimestampToRetain = store.findNthJobTimestamp(jobName, 1)
-return store.deleteStuffOlderThanExclusive(jobName, oldestJobTimestampToRetain)
+StoreCleaner cleaner = StoreCleaner.newInstance(store)
+cleaner.cleanup(jobName)

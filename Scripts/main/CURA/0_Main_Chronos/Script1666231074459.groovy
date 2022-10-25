@@ -87,8 +87,7 @@ if (reduced != null) {
 	/*
 	 * clean up the old stuff of the CURA job in the store
 	 */
-	int deletedStuff =
-	    WebUI.callTestCase(findTestCase("main/CURA/6_cleanup"),
+	WebUI.callTestCase(findTestCase("main/CURA/6_cleanup"),
 			["store": store, "jobName": jobName])
 	
 	//---------------------------------------------------------------------

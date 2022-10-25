@@ -47,8 +47,7 @@ Path report =
 /*
  * cleanup
  */
-int deletedStuff =
-	WebUI.callTestCase(findTestCase("main/DuckDuckGo/6_cleanup"),
+WebUI.callTestCase(findTestCase("main/DuckDuckGo/6_cleanup"),
 		["store": store, "jobName": jobName])
 	
 
