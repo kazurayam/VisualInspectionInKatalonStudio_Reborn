@@ -1,7 +1,7 @@
 // VisualInspectionInKatalonStudio_Reborn/build.gradle
 // $ gradle drivers
 
-version = '0.13.0-SNAPSHOT'
+version = '0.12.1'
 
 ext {
     AUTO_IMPORTED_JAR_PREFIX = 'AUTOIMPORTED_'
@@ -17,7 +17,7 @@ configurations {
 }
 
 dependencies {
-    myconf group: 'com.kazurayam', name: 'materialstore', version: "0.13.0-SNAPSHOT"
+    myconf group: 'com.kazurayam', name: 'materialstore', version: "0.12.1"
     myconf group: 'com.kazurayam', name: 'ExecutionProfilesLoader', version: '1.2.1'
     myconf group: 'ru.yandex.qatools.ashot', name: 'ashot', version: '1.5.4'
     myconf group: 'io.github.java-diff-utils', name: 'java-diff-utils', version: '4.11'
