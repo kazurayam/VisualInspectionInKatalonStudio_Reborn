@@ -1,4 +1,4 @@
-import com.kazurayam.materialstore.report.IndexCreator
+import com.kazurayam.materialstore.base.report.IndexCreator
 
 Objects.requireNonNull(store)
 

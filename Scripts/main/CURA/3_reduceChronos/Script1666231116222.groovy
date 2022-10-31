@@ -1,10 +1,10 @@
-import com.kazurayam.materialstore.inspector.Inspector
-import com.kazurayam.materialstore.dot.MPGVisualizer
-import com.kazurayam.materialstore.filesystem.MaterialList
-import com.kazurayam.materialstore.filesystem.QueryOnMetadata
-import com.kazurayam.materialstore.filesystem.SortKeys
-import com.kazurayam.materialstore.reduce.MaterialProductGroup
-import com.kazurayam.materialstore.reduce.Reducer
+import com.kazurayam.materialstore.base.inspector.Inspector
+import com.kazurayam.materialstore.diagram.dot.MPGVisualizer
+import com.kazurayam.materialstore.core.filesystem.MaterialList
+import com.kazurayam.materialstore.core.filesystem.QueryOnMetadata
+import com.kazurayam.materialstore.core.filesystem.SortKeys
+import com.kazurayam.materialstore.base.reduce.MaterialProductGroup
+import com.kazurayam.materialstore.base.reduce.Reducer
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 //import java.util.function.BiFunction
 

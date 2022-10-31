@@ -1,16 +1,15 @@
 import java.nio.file.Files
+import java.util.stream.Collectors
 
 import org.openqa.selenium.WebDriver
 
-import com.kazurayam.materialstore.dot.MPGVisualizer
-import com.kazurayam.materialstore.filesystem.Material
-import com.kazurayam.materialstore.materialize.MaterializingPageFunctions
-import com.kazurayam.materialstore.materialize.StorageDirectory
-import com.kazurayam.materialstore.materialize.Target
-import com.kazurayam.materialstore.materialize.TargetCSVParser
+import com.kazurayam.materialstore.base.materialize.MaterializingPageFunctions
+import com.kazurayam.materialstore.base.materialize.StorageDirectory
+import com.kazurayam.materialstore.base.materialize.Target
+import com.kazurayam.materialstore.base.materialize.TargetCSVParser
+import com.kazurayam.materialstore.core.filesystem.Material
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import java.util.stream.Collectors
 
 /**
  * Test Cases/main/MyAdmin/materialize

@@ -6,11 +6,10 @@ import java.time.format.DateTimeFormatter
 import org.openqa.selenium.Keys
 import org.openqa.selenium.WebDriver
 
-import com.kazurayam.materialstore.filesystem.Material
-import com.kazurayam.materialstore.materialize.MaterializingPageFunctions
-import com.kazurayam.materialstore.materialize.StorageDirectory
-import com.kazurayam.materialstore.materialize.Target
-import com.kazurayam.materialstore.materialize.Target.Builder
+import com.kazurayam.materialstore.base.materialize.MaterializingPageFunctions
+import com.kazurayam.materialstore.base.materialize.StorageDirectory
+import com.kazurayam.materialstore.base.materialize.Target
+import com.kazurayam.materialstore.core.filesystem.Material
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 

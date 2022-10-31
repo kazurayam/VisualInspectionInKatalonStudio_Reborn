@@ -1,7 +1,7 @@
-import com.kazurayam.materialstore.dot.MPGVisualizer
-import com.kazurayam.materialstore.filesystem.JobTimestamp
-import com.kazurayam.materialstore.inspector.Inspector
-import com.kazurayam.materialstore.reduce.MaterialProductGroup
+import com.kazurayam.materialstore.base.inspector.Inspector
+import com.kazurayam.materialstore.base.reduce.MaterialProductGroup
+import com.kazurayam.materialstore.core.filesystem.JobTimestamp
+import com.kazurayam.materialstore.diagram.dot.MPGVisualizer
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 /**

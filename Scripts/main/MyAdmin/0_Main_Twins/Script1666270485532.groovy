@@ -4,14 +4,14 @@ import java.nio.file.Path
 import java.nio.file.Paths
 
 import com.kazurayam.ks.globalvariable.ExecutionProfilesLoader
-import com.kazurayam.materialstore.filesystem.JobName
-import com.kazurayam.materialstore.filesystem.JobTimestamp
-import com.kazurayam.materialstore.filesystem.MaterialList
-import com.kazurayam.materialstore.filesystem.QueryOnMetadata
-import com.kazurayam.materialstore.filesystem.SortKeys
-import com.kazurayam.materialstore.filesystem.Store
-import com.kazurayam.materialstore.filesystem.Stores
-import com.kazurayam.materialstore.reduce.MaterialProductGroup
+import com.kazurayam.materialstore.core.filesystem.JobName
+import com.kazurayam.materialstore.core.filesystem.JobTimestamp
+import com.kazurayam.materialstore.core.filesystem.MaterialList
+import com.kazurayam.materialstore.core.filesystem.QueryOnMetadata
+import com.kazurayam.materialstore.core.filesystem.SortKeys
+import com.kazurayam.materialstore.core.filesystem.Store
+import com.kazurayam.materialstore.core.filesystem.Stores
+import com.kazurayam.materialstore.base.reduce.MaterialProductGroup
 import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
@@ -24,9 +24,19 @@ import internal.GlobalVariable
  */
 
 Path projectDir = Paths.get(RunConfiguration.getProjectDir())
-Path root = projectDir.resolve("store")
-Store store = Stores.newInstance(root)
+Path local = projectDir.resolve("store")
+Path remote = projectDir.resolve("store-backup")
+Store store = Stores.newInstance(local)
+Store backup = Stores.newInstance(remote)
 JobName jobName = new JobName("MyAdmin")
+
+//---------------------------------------------------------------------
+/*
+ * restorePrevious
+ */
+WebUI.callTestCase(findTestCase("main/MyAdmin/1_restorePrevious"),
+		["backup": backup, "store": store, "jobName": jobName])
+
 
 // --------------------------------------------------------------------
 /*
@@ -97,7 +107,14 @@ int warnings =
 	WebUI.callTestCase(findTestCase("main/MyAdmin/4_report"),
 		["store": store, "mProductGroup": reduced, "sortKeys": sortKeys, "criteria": 0.0d])
 
-
+	
+//---------------------------------------------------------------------
+/*
+ * backupLatest
+ */
+WebUI.callTestCase(findTestCase("main/MyAdmin/5_backupLatest"),
+		["store": store, "backup": backup, "jobName": jobName])
+	
 //-------------------------------------------------------------------------
 /*
  * clean up the old stuff of the CURA job in the store

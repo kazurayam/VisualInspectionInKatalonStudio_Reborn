@@ -5,9 +5,9 @@ import org.jsoup.Jsoup
 import org.jsoup.nodes.Document
 import org.openqa.selenium.WebDriver
 
-import com.kazurayam.materialstore.filesystem.FileType
-import com.kazurayam.materialstore.filesystem.Material
-import com.kazurayam.materialstore.filesystem.Metadata
+import com.kazurayam.materialstore.core.filesystem.FileType
+import com.kazurayam.materialstore.core.filesystem.Material
+import com.kazurayam.materialstore.core.filesystem.Metadata
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 

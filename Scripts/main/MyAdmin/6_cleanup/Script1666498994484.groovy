@@ -1,5 +1,5 @@
-import com.kazurayam.materialstore.filesystem.JobTimestamp
-import com.kazurayam.materialstore.manage.StoreCleaner
+import com.kazurayam.materialstore.core.filesystem.JobTimestamp
+import com.kazurayam.materialstore.base.manage.StoreCleaner
 
 /*
  * MyAdmin/6_cleanup

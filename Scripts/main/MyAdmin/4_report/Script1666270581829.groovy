@@ -1,8 +1,7 @@
 import java.nio.file.Files
 import java.nio.file.Path
 
-import com.kazurayam.materialstore.filesystem.JobName
-import com.kazurayam.materialstore.inspector.Inspector
+import com.kazurayam.materialstore.base.inspector.Inspector
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 /**
@@ -14,8 +13,6 @@ assert mProductGroup != null
 assert mProductGroup.isReadyToReport()
 assert sortKeys != null
 assert criteria != null
-
-JobName jobName = mProductGroup.getJobName()
 
 WebUI.comment("report started; store=${store}")
 println "mProductGroup=${mProductGroup.toSummary()}"

@@ -1,9 +1,8 @@
-
 import com.kazurayam.materialstore.core.filesystem.JobTimestamp
 import com.kazurayam.materialstore.base.manage.StoreImport
 
 /*
- * CURA/1_restorePrevious
+ * MyAdmin/1_restorePrevious
  */
 Objects.requireNonNull(store);
 Objects.requireNonNull(backup);
