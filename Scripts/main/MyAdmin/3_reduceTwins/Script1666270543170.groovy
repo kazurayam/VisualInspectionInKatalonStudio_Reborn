@@ -23,6 +23,8 @@ assert rightMaterialList.size() > 0
 MaterialProductGroup reduced =
 		MaterialProductGroup.builder(leftMaterialList, rightMaterialList)
 			.ignoreKeys("profile", "URL.host", "URL.port")
+			.labelLeft("ProductionEnv")
+			.labelRight("DevelopmentEnv")
 			.sort("step")
 			.build()
 Inspector inspector = Inspector.newInstance(store)
