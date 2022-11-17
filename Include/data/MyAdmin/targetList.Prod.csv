@@ -1,1 +1,3 @@
-http://myadmin.kazurayam.com/,//img[@alt='umineko']
+http://myadmin.kazurayam.com/index.html,//img[@alt='umineko']
+http://myadmin.kazurayam.com/repositories.html,//footer
+http://myadmin.kazurayam.com/proverbs.html,//footer
