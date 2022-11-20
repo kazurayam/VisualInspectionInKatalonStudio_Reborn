@@ -20,16 +20,16 @@ WebUI.comment("store=${store}")
 WebUI.comment("currentMaterialList=${currentMaterialList}")
 WebUI.comment("sortKeys=${sortKeys}")
 
-MaterialProductGroup reduced = Reducer.chronos(store, currentMaterialList)
+MaterialProductGroup mpg = Reducer.chronos(store, currentMaterialList)
 
 Inspector inspector = Inspector.newInstance(store)
 inspector.setSortKeys(sortKeys)
-MaterialProductGroup inspected = inspector.reduceAndSort(reduced)
+MaterialProductGroup reduced = inspector.reduceAndSort(mpg)
 
-if (inspected.getNumberOfBachelors() > 0) {
+if (reduced.getNumberOfBachelors() > 0) {
 	// if any bachelor found, generate diagram of MProductGroup object
 	MPGVisualizer visualizer = new MPGVisualizer(store)
-	visualizer.visualize(inspected.getJobName(), JobTimestamp.now(), inspected);
+	visualizer.visualize(reduced.getJobName(), JobTimestamp.now(), reduced);
 }
 
-return inspected
+return reduced

@@ -119,8 +119,8 @@ WebUI.callTestCase(findTestCase("main/MyAdmin/5_backupLatest"),
 /*
  * clean up the old stuff of the CURA job in the store
  */
-WebUI.callTestCase(findTestCase("main/MyAdmin/6_cleanup"),
-		["store": store, "jobName": jobName])
+//WebUI.callTestCase(findTestCase("main/MyAdmin/6_cleanup"),
+//		["store": store, "jobName": jobName])
 	
 	
 //---------------------------------------------------------------------

@@ -14,27 +14,32 @@ assert rightMaterialList != null
 assert sortKeys != null
 
 WebUI.comment("reduce started; store=${store}")
-WebUI.comment("reduce started; leftMaterialList=${leftMaterialList}")
-WebUI.comment("reduce started; rightMaterialList=${rightMaterialList}")
+//WebUI.comment("reduce started; leftMaterialList=${leftMaterialList}")
+//WebUI.comment("reduce started; rightMaterialList=${rightMaterialList}")
 
 assert leftMaterialList.size() > 0
 assert rightMaterialList.size() > 0
 
-MaterialProductGroup reduced =
+MaterialProductGroup mpg =
 		MaterialProductGroup.builder(leftMaterialList, rightMaterialList)
 			.ignoreKeys("profile", "URL.host", "URL.port")
 			.labelLeft("ProductionEnv")
 			.labelRight("DevelopmentEnv")
 			.sort("step")
 			.build()
+
+WebUI.comment("mpg.getCountTotal()=" + mpg.getCountTotal())
+
 Inspector inspector = Inspector.newInstance(store)
 inspector.setSortKeys(sortKeys)
-MaterialProductGroup inspected = inspector.reduceAndSort(reduced)
+MaterialProductGroup reduced = inspector.reduceAndSort(mpg)
 
-if (inspected.getNumberOfBachelors() > 0) {
+WebUI.comment("inspected.getCountTotal()=" + reduced.getCountTotal())
+
+if (reduced.getNumberOfBachelors() > 0) {
 	// if any bachelor found, generate diagram of MProductGroup object
 	MPGVisualizer visualizer = new MPGVisualizer(store)
-	visualizer.visualize(inspected.getJobName(), JobTimestamp.now(), reduced);
+	visualizer.visualize(reduced.getJobName(), JobTimestamp.now(), reduced);
 }
 
-return inspected
+return reduced

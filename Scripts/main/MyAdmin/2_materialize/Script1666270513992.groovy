@@ -35,17 +35,19 @@ WebUI.setViewPortSize(1024, 800)
 WebDriver driver = DriverFactory.getWebDriver()
 StorageDirectory sd = new StorageDirectory(store, jobName, jobTimestamp)
 
-for (Target target in targetList) {
+targetList.eachWithIndex { target, index ->
 	WebUI.navigateToUrl(target.getUrl().toExternalForm())	
 	
 	// take and store the entire screenshot using AShot
 	Material screenshot =
-		MaterializingPageFunctions.storeEntirePageScreenshot.accept(target, driver, sd)
+		MaterializingPageFunctions.storeEntirePageScreenshot.accept(target, driver, sd, 
+			Collections.singletonMap("step", String.format("%02d", index + 1)))
 	assert Files.exists(screenshot.toPath(store))
 	
 	// take and store the HTML source
 	Material html =
-		MaterializingPageFunctions.storeHTMLSource.accept(target, driver, sd)
+		MaterializingPageFunctions.storeHTMLSource.accept(target, driver, sd,
+			Collections.singletonMap("step", String.format("%02d", index + 1)))
 	assert Files.exists(html.toPath(store))
 }
 
