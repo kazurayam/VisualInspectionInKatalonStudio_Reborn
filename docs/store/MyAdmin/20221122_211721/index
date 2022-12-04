@@ -1,0 +1,6 @@
+0db0532c9deb5c67f165e1ad867f96048f4ab017	html	{"profile":"MyAdmin_ProductionEnv", "step":"01", "URL.host":"myadmin.kazurayam.com", "URL.path":"/index.html", "URL.port":"80", "URL.protocol":"http"}
+93f19f62774550aade8ceb9657405c2624c720a0	png	{"profile":"MyAdmin_ProductionEnv", "step":"01", "URL.host":"myadmin.kazurayam.com", "URL.path":"/index.html", "URL.port":"80", "URL.protocol":"http"}
+03a4cd8c6ad2f6282080b44622628cdbfb84fbb1	html	{"profile":"MyAdmin_ProductionEnv", "step":"02", "URL.host":"myadmin.kazurayam.com", "URL.path":"/repositories.html", "URL.port":"80", "URL.protocol":"http"}
+26559bf754cfc8a7269ac4d7f88ed552b68624ab	png	{"profile":"MyAdmin_ProductionEnv", "step":"02", "URL.host":"myadmin.kazurayam.com", "URL.path":"/repositories.html", "URL.port":"80", "URL.protocol":"http"}
+6bfd6eaa0df57f1c2d349c10f4fa11a475f978b7	html	{"profile":"MyAdmin_ProductionEnv", "step":"03", "URL.host":"myadmin.kazurayam.com", "URL.path":"/proverbs.html", "URL.port":"80", "URL.protocol":"http"}
+b2250fcb54639acf521223ae408fff1da0343126	png	{"profile":"MyAdmin_ProductionEnv", "step":"03", "URL.host":"myadmin.kazurayam.com", "URL.path":"/proverbs.html", "URL.port":"80", "URL.protocol":"http"}

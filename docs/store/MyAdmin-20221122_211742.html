@@ -1,0 +1,2315 @@
+<!doctype html>
+<html lang="en"> 
+  <head> 
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Bootstrap --> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"> 
+    <style>.container {
+  font-family: ui-monospace, SFMono-Regular, SZ Mono, Menlo, Consolas, Liberation Mono, monospace;
+  font-size: 12px;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+.container dl dd {
+  margin-left: 40px;
+}
+
+.container .title {
+  margin-left: 54px;
+}
+
+.container .title button {
+  float: right;
+  margin-top: 6px;
+}
+
+#count {
+  position: fixed;
+  top: 16px;
+  left: 10px;
+}
+#count .warnings {
+  font-size: xx-large;
+  color: #e0ae00;
+}
+#count .ignorable {
+  font-size: x-large;
+  color: #0c63e4;
+}
+#count .total {
+  font-size: large;
+}
+
+.container .header {
+  padding: 16px 20px;
+}
+.container .identified-value {
+  background-color: #FA98FA;
+}
+.container .semantic-version {
+  border: #FA98FA solid;
+}
+.container .ignored-key {
+  background-color: #CCC;
+}
+.container .matched-value {
+  background-color: #98FB98;
+}
+.container .accordion .accordion-header button .ratio {
+  padding: 4px 20px 4px 4px;
+  text-align: left;
+  font-size: 16px;
+  line-height: 24px;
+  flex-basis: 10%;
+}
+.container .accordion .accordion-header button .fileType {
+  padding: 4px 20px 4px 4px;
+  text-align: left;
+  font-size: 16px;
+  line-height: 24px;
+  flex-basis: 10%;
+}
+.container .accordion .accordion-header button .metadata {
+  padding: 4px 20px 4px 4px;
+  text-align: left;
+  font-size: 16px;
+  line-height: 24px;
+  flex-basis: 90%;
+}
+.container .accordion .accordion-header button .description {
+  padding: 4px 20px 4px 4px;
+  text-align: left;
+  font-size: 16px;
+  line-height: 24px;
+  flex-basis: 80%;
+}
+.container .accordion .accordion-header button .warning {
+  background-color: #e0ae00;
+}
+.container .accordion .accordion-header button .ignored {
+  background-color: #ffffff;
+  border: #e0ae00 solid;
+}
+.container .accordion .accordion-body .show-diff .modal .modal-body iframe {
+  position: absolute;
+  border: none;
+  height: 100%;
+  width: 100%;
+}
+.container .accordion .accordion-body .show-diff .modal .modal-body .carousel .carousel-inner {
+  background-color: #efefef;
+}
+.container .accordion .accordion-body .show-diff .modal .modal-body .carousel .carousel-inner .centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.container .accordion .accordion-body .show-diff .modal .modal-body .carousel .carousel-control-prev, .container .accordion .accordion-body .show-diff .modal .modal-body .carousel .carousel-control-next {
+  width: 12.5%;
+}
+.container .accordion .accordion-body .show-detail {
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+/*# sourceMappingURL=style.css.map */
+</style> 
+    <style>/* https://stackoverflow.com/questions/71480478/bootstrap-5-accordion-with-an-inline-checkbox */
+.accordion--custom .accordion-header {
+    display: flex; /* make flex element */
+    align-items: center; /* aligning child items */
+    column-gap: 0.6rem; /* adding gap between items in row */
+    padding-left: 0.5rem;
+}
+</style> 
+    <title>MyAdmin</title> 
+  </head> 
+  <body> 
+    <div class="container"> 
+      <p id="count"><span class="warnings">6</span>w <span class="ignorable">0</span>i <span class="total">8</span>t</p> 
+      <div style="display:flex"> 
+        <h4 class="title" style="padding-top:10px">MyAdmin-20221122_211742</h4> <button style="margin-left:auto" class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapsingHeader" aria-expanded="false" aria-controls="collapsingHeader">About</button> 
+      </div> 
+      <div id="collapsingHeader" class="collapse header"> 
+        <dl> 
+          <dt>
+            Root path :
+          </dt> 
+          <dd>
+            /Users/kazuakiurayama/katalon-workspace/VisualInspectionInKatalonStudio_Reborn/store
+          </dd> 
+          <dt>
+            JobName :
+          </dt> 
+          <dd>
+            MyAdmin
+          </dd> 
+          <dt>
+            Left MaterialList specification
+          </dt> 
+          <dd> 
+            <dl> 
+              <dt>
+                JobTimestamp :
+              </dt> 
+              <dd>
+                20221122_211721
+              </dd> 
+              <dt>
+                QueryOnMetadata :
+              </dt> 
+              <dd> <span>{</span><span>"profile":</span><span>"MyAdmin_ProductionEnv"</span><span>}</span> 
+              </dd> 
+            </dl> 
+          </dd> 
+          <dt>
+            Right MaterialList specification
+          </dt> 
+          <dd> 
+            <dl> 
+              <dt>
+                JobTimestamp :
+              </dt> 
+              <dd>
+                20221122_211732
+              </dd> 
+              <dt>
+                QueryOnMetadata :
+              </dt> 
+              <dd> <span>{</span><span>"profile":</span><span>"MyAdmin_DevelopmentEnv"</span><span>}</span> 
+              </dd> 
+            </dl> 
+          </dd> 
+          <dt>
+            IgnoreMetadataKeys
+          </dt> 
+          <dd> <span>[</span><span class="ignored-key">"URL.host"</span><span>, </span><span class="ignored-key">"URL.port"</span><span>, </span><span class="ignored-key">"profile"</span><span>]</span> 
+          </dd> 
+          <dt>
+            threshold
+          </dt> 
+          <dd>
+             3.00 
+          </dd> 
+          <dt>
+            Sort keys :
+          </dt> 
+          <dd>
+            []
+          </dd> 
+        </dl> 
+      </div> 
+      <div class="accordion accordion--custom" id="diff-contents"> 
+        <div id="accordion0" class="accordion-item"> 
+          <h2 id="heading0" class="accordion-header"> <input class="form-check-input" type="checkbox" id="ignorable0" value="" data-index="0"> <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse0" area-expanded="false" aria-controls="collapse0"> <span class="ratio warning">75.29%</span> <span class="fileType">png</span> <span class="identification">{"URL.path":"/", "URL.protocol":"http", "step":"01"}</span> </button> </h2> 
+          <div id="collapse0" class="according-collapse collapse" aria-labelledby="heading0" data-bs-parent="#diff-contents"> 
+            <div class="accordion-body"> 
+              <div class="show-diff"> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#imageModal0">Show diff in Modal</button><!-- Modal to show 3 images: Left/Diff/Right --> 
+                <div class="modal fade" id="imageModal0" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true"> 
+                  <div class="modal-dialog modal-fullscreen"> 
+                    <div class="modal-content"> 
+                      <h4 style="margin: 12px 0 0 130px">MyAdmin-20221122_211742</h4> 
+                      <div class="modal-header"> 
+                        <h5 class="modal-title" id="imageModalLabel0"> <span>75.29% png {"URL.path":"/", "URL.protocol":"http", "step":"01"}</span> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> </h5> 
+                      </div> 
+                      <div class="modal-body"> 
+                        <div id="carouselControl0" class="carousel slide" data-bs-ride="carousel"> 
+                          <div class="carousel-inner"> 
+                            <div class="carousel-item"> 
+                              <h3 class="centered">Left (ProductionEnv)</h3> 
+                              <img class="img-fluid border d-block w-75 centered" alt="left" src="MyAdmin/20221122_211742/objects/9ff31f11fd00ca5d41cd46fece62618d5ce2bd68.png"> 
+                            </div> 
+                            <div class="carousel-item active"> 
+                              <h3 class="centered">Diff</h3> 
+                              <img class="img-fluid border d-block w-75 centered" alt="diff" src="MyAdmin/20221122_211742/objects/90061e22e17565ccb2b2f2a4ceba6faa79658418.png"> 
+                            </div> 
+                            <div class="carousel-item"> 
+                              <h3 class="centered">Right (DevelopmentEnv)</h3> 
+                              <img class="img-fluid border d-block w-75 centered" alt="right" src="MyAdmin/20221122_211732/objects/b1bff6677ed5fd152af33d24f8f8dd8a37e84ef3.png"> 
+                            </div> 
+                          </div> <button class="carousel-control-prev" type="button" data-bs-target="#carouselControl0" data-bs-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="visually-hidden">Previous</span> </button> <button class="carousel-control-next" type="button" data-bs-target="#carouselControl0" data-bs-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="visually-hidden">Next</span> </button> 
+                        </div> 
+                      </div> 
+                      <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> 
+                      </div> 
+                    </div> 
+                  </div> 
+                </div> 
+              </div> 
+              <div class="show-detail"> 
+                <h4>left (ProductionEnv) </h4> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="MyAdmin/20221122_211742/objects/9ff31f11fd00ca5d41cd46fece62618d5ce2bd68.png" target="left">MyAdmin/20221122_211742/objects/9ff31f11fd00ca5d41cd46fece62618d5ce2bd68.png</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    png
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"category":</span><span>"NoMaterialFound"</span><span>}</span> 
+                  </dd> 
+                </dl> 
+              </div> 
+              <div class="show-detail"> 
+                <h4>right (DevelopmentEnv) </h4> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="MyAdmin/20221122_211732/objects/b1bff6677ed5fd152af33d24f8f8dd8a37e84ef3.png" target="right">MyAdmin/20221122_211732/objects/b1bff6677ed5fd152af33d24f8f8dd8a37e84ef3.png</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    png
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"profile":</span><span class="matched-value">"MyAdmin_DevelopmentEnv"</span><span>, </span><span>"step":</span><span>"01"</span><span>, </span><span>"URL.host":</span><span>"devadmin.kazurayam.com"</span><span>, </span><span>"URL.path":</span><span>"/"</span><span>, </span><span>"URL.port":</span><span>"80"</span><span>, </span><span>"URL.protocol":</span><span>"http"</span><span>}</span> 
+                  </dd> 
+                  <dt>
+                    Source URL
+                  </dt> 
+                  <dd> <a href="http://devadmin.kazurayam.com/" target="source">http://devadmin.kazurayam.com/</a> 
+                  </dd> 
+                </dl> 
+              </div> 
+              <div class="show-detail"> 
+                <h4>diff </h4> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="MyAdmin/20221122_211742/objects/90061e22e17565ccb2b2f2a4ceba6faa79658418.png" target="diff">MyAdmin/20221122_211742/objects/90061e22e17565ccb2b2f2a4ceba6faa79658418.png</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    png
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"category":</span><span>"diff"</span><span>, </span><span>"left":</span><span>"20221122_211742/9ff31f11fd00ca5d41cd46fece62618d5ce2bd68"</span><span>, </span><span>"ratio":</span><span>"75.29%"</span><span>, </span><span>"right":</span><span>"20221122_211732/b1bff6677ed5fd152af33d24f8f8dd8a37e84ef3"</span><span>}</span> 
+                  </dd> 
+                </dl> 
+              </div> 
+            </div> 
+          </div> 
+        </div> 
+        <div id="accordion1" class="accordion-item"> 
+          <h2 id="heading1" class="accordion-header"> <input class="form-check-input" type="checkbox" id="ignorable1" value="" data-index="1"> <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" area-expanded="false" aria-controls="collapse1"> <span class="ratio warning">98.28%</span> <span class="fileType">html</span> <span class="identification">{"URL.path":"/", "URL.protocol":"http", "step":"01"}</span> </button> </h2> 
+          <div id="collapse1" class="according-collapse collapse" aria-labelledby="heading1" data-bs-parent="#diff-contents"> 
+            <div class="accordion-body"> 
+              <div class="show-diff"> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#textModal1">Show diff in Modal</button><!-- Modal to show texts diff --> 
+                <div class="modal fade" id="textModal1" tabindex="-1" aria-labelledby="textModalLabel" aria-hidden="true"> 
+                  <div class="modal-dialog modal-fullscreen"> 
+                    <div class="modal-content"> 
+                      <h4 style="margin: 12px 0 0 130px">MyAdmin-20221122_211742</h4> 
+                      <div class="modal-header"> 
+                        <h5 class="modal-title" id="textModalLabel1"> <span>98.28% html {"URL.path":"/", "URL.protocol":"http", "step":"01"}</span> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> </h5> 
+                      </div> 
+                      <div class="modal-body"> <iframe src="MyAdmin/20221122_211742/objects/668945aa5b240ee9a0c6b45648c26a3c87feb3ed.html" title="TextDiff"></iframe> 
+                      </div> 
+                      <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> 
+                      </div> 
+                    </div> 
+                  </div> 
+                </div> 
+              </div> 
+              <div class="show-detail"> 
+                <h4>left (ProductionEnv) </h4> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="MyAdmin/20221122_211742/objects/13f9e939f8d7c557089165832d630aaf5d1d2450.html" target="left">MyAdmin/20221122_211742/objects/13f9e939f8d7c557089165832d630aaf5d1d2450.html</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    html
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"category":</span><span>"NoMaterialFound"</span><span>}</span> 
+                  </dd> 
+                </dl> 
+              </div> 
+              <div class="show-detail"> 
+                <h4>right (DevelopmentEnv) </h4> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="MyAdmin/20221122_211732/objects/70e0d895dfbc2fe67c4addd42c39c3cb8e388148.html" target="right">MyAdmin/20221122_211732/objects/70e0d895dfbc2fe67c4addd42c39c3cb8e388148.html</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    html
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"profile":</span><span class="matched-value">"MyAdmin_DevelopmentEnv"</span><span>, </span><span>"step":</span><span>"01"</span><span>, </span><span>"URL.host":</span><span>"devadmin.kazurayam.com"</span><span>, </span><span>"URL.path":</span><span>"/"</span><span>, </span><span>"URL.port":</span><span>"80"</span><span>, </span><span>"URL.protocol":</span><span>"http"</span><span>}</span> 
+                  </dd> 
+                  <dt>
+                    Source URL
+                  </dt> 
+                  <dd> <a href="http://devadmin.kazurayam.com/" target="source">http://devadmin.kazurayam.com/</a> 
+                  </dd> 
+                </dl> 
+              </div> 
+              <div class="show-detail"> 
+                <h4>diff </h4> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="MyAdmin/20221122_211742/objects/668945aa5b240ee9a0c6b45648c26a3c87feb3ed.html" target="diff">MyAdmin/20221122_211742/objects/668945aa5b240ee9a0c6b45648c26a3c87feb3ed.html</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    html
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"category":</span><span>"diff"</span><span>, </span><span>"left":</span><span>"20221122_211742/13f9e939f8d7c557089165832d630aaf5d1d2450"</span><span>, </span><span>"ratio":</span><span>"98.28%"</span><span>, </span><span>"right":</span><span>"20221122_211732/70e0d895dfbc2fe67c4addd42c39c3cb8e388148"</span><span>}</span> 
+                  </dd> 
+                </dl> 
+              </div> 
+            </div> 
+          </div> 
+        </div> 
+        <div id="accordion2" class="accordion-item"> 
+          <h2 id="heading2" class="accordion-header"> <input class="form-check-input" type="checkbox" id="ignorable2" value="" data-index="2"> <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" area-expanded="false" aria-controls="collapse2"> <span class="ratio warning">73.95%</span> <span class="fileType">png</span> <span class="identification">{"URL.path":"/index.html", "URL.protocol":"http", "step":"01"}</span> </button> </h2> 
+          <div id="collapse2" class="according-collapse collapse" aria-labelledby="heading2" data-bs-parent="#diff-contents"> 
+            <div class="accordion-body"> 
+              <div class="show-diff"> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#imageModal2">Show diff in Modal</button><!-- Modal to show 3 images: Left/Diff/Right --> 
+                <div class="modal fade" id="imageModal2" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true"> 
+                  <div class="modal-dialog modal-fullscreen"> 
+                    <div class="modal-content"> 
+                      <h4 style="margin: 12px 0 0 130px">MyAdmin-20221122_211742</h4> 
+                      <div class="modal-header"> 
+                        <h5 class="modal-title" id="imageModalLabel2"> <span>73.95% png {"URL.path":"/index.html", "URL.protocol":"http", "step":"01"}</span> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> </h5> 
+                      </div> 
+                      <div class="modal-body"> 
+                        <div id="carouselControl2" class="carousel slide" data-bs-ride="carousel"> 
+                          <div class="carousel-inner"> 
+                            <div class="carousel-item"> 
+                              <h3 class="centered">Left (ProductionEnv)</h3> 
+                              <img class="img-fluid border d-block w-75 centered" alt="left" src="MyAdmin/20221122_211721/objects/93f19f62774550aade8ceb9657405c2624c720a0.png"> 
+                            </div> 
+                            <div class="carousel-item active"> 
+                              <h3 class="centered">Diff</h3> 
+                              <img class="img-fluid border d-block w-75 centered" alt="diff" src="MyAdmin/20221122_211742/objects/7c4e5092195ae018e380b6cb3735ff138590f3d8.png"> 
+                            </div> 
+                            <div class="carousel-item"> 
+                              <h3 class="centered">Right (DevelopmentEnv)</h3> 
+                              <img class="img-fluid border d-block w-75 centered" alt="right" src="MyAdmin/20221122_211742/objects/9ff31f11fd00ca5d41cd46fece62618d5ce2bd68.png"> 
+                            </div> 
+                          </div> <button class="carousel-control-prev" type="button" data-bs-target="#carouselControl2" data-bs-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="visually-hidden">Previous</span> </button> <button class="carousel-control-next" type="button" data-bs-target="#carouselControl2" data-bs-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="visually-hidden">Next</span> </button> 
+                        </div> 
+                      </div> 
+                      <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> 
+                      </div> 
+                    </div> 
+                  </div> 
+                </div> 
+              </div> 
+              <div class="show-detail"> 
+                <h4>left (ProductionEnv) </h4> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="MyAdmin/20221122_211721/objects/93f19f62774550aade8ceb9657405c2624c720a0.png" target="left">MyAdmin/20221122_211721/objects/93f19f62774550aade8ceb9657405c2624c720a0.png</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    png
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"profile":</span><span class="matched-value">"MyAdmin_ProductionEnv"</span><span>, </span><span>"step":</span><span>"01"</span><span>, </span><span>"URL.host":</span><span>"myadmin.kazurayam.com"</span><span>, </span><span>"URL.path":</span><span>"/index.html"</span><span>, </span><span>"URL.port":</span><span>"80"</span><span>, </span><span>"URL.protocol":</span><span>"http"</span><span>}</span> 
+                  </dd> 
+                  <dt>
+                    Source URL
+                  </dt> 
+                  <dd> <a href="http://myadmin.kazurayam.com/index.html" target="source">http://myadmin.kazurayam.com/index.html</a> 
+                  </dd> 
+                </dl> 
+              </div> 
+              <div class="show-detail"> 
+                <h4>right (DevelopmentEnv) </h4> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="MyAdmin/20221122_211742/objects/9ff31f11fd00ca5d41cd46fece62618d5ce2bd68.png" target="right">MyAdmin/20221122_211742/objects/9ff31f11fd00ca5d41cd46fece62618d5ce2bd68.png</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    png
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"category":</span><span class="matched-value">"NoMaterialFound"</span><span>}</span> 
+                  </dd> 
+                </dl> 
+              </div> 
+              <div class="show-detail"> 
+                <h4>diff </h4> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="MyAdmin/20221122_211742/objects/7c4e5092195ae018e380b6cb3735ff138590f3d8.png" target="diff">MyAdmin/20221122_211742/objects/7c4e5092195ae018e380b6cb3735ff138590f3d8.png</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    png
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"category":</span><span>"diff"</span><span>, </span><span>"left":</span><span>"20221122_211721/93f19f62774550aade8ceb9657405c2624c720a0"</span><span>, </span><span>"ratio":</span><span>"73.95%"</span><span>, </span><span>"right":</span><span>"20221122_211742/9ff31f11fd00ca5d41cd46fece62618d5ce2bd68"</span><span>}</span> 
+                  </dd> 
+                </dl> 
+              </div> 
+            </div> 
+          </div> 
+        </div> 
+        <div id="accordion3" class="accordion-item"> 
+          <h2 id="heading3" class="accordion-header"> <input class="form-check-input" type="checkbox" id="ignorable3" value="" data-index="3"> <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" area-expanded="false" aria-controls="collapse3"> <span class="ratio warning">98.25%</span> <span class="fileType">html</span> <span class="identification">{"URL.path":"/index.html", "URL.protocol":"http", "step":"01"}</span> </button> </h2> 
+          <div id="collapse3" class="according-collapse collapse" aria-labelledby="heading3" data-bs-parent="#diff-contents"> 
+            <div class="accordion-body"> 
+              <div class="show-diff"> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#textModal3">Show diff in Modal</button><!-- Modal to show texts diff --> 
+                <div class="modal fade" id="textModal3" tabindex="-1" aria-labelledby="textModalLabel" aria-hidden="true"> 
+                  <div class="modal-dialog modal-fullscreen"> 
+                    <div class="modal-content"> 
+                      <h4 style="margin: 12px 0 0 130px">MyAdmin-20221122_211742</h4> 
+                      <div class="modal-header"> 
+                        <h5 class="modal-title" id="textModalLabel3"> <span>98.25% html {"URL.path":"/index.html", "URL.protocol":"http", "step":"01"}</span> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> </h5> 
+                      </div> 
+                      <div class="modal-body"> <iframe src="MyAdmin/20221122_211742/objects/7e94dadc55401ceffb53fd6e4dd89290b78962c4.html" title="TextDiff"></iframe> 
+                      </div> 
+                      <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> 
+                      </div> 
+                    </div> 
+                  </div> 
+                </div> 
+              </div> 
+              <div class="show-detail"> 
+                <h4>left (ProductionEnv) </h4> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="MyAdmin/20221122_211721/objects/0db0532c9deb5c67f165e1ad867f96048f4ab017.html" target="left">MyAdmin/20221122_211721/objects/0db0532c9deb5c67f165e1ad867f96048f4ab017.html</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    html
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"profile":</span><span class="matched-value">"MyAdmin_ProductionEnv"</span><span>, </span><span>"step":</span><span>"01"</span><span>, </span><span>"URL.host":</span><span>"myadmin.kazurayam.com"</span><span>, </span><span>"URL.path":</span><span>"/index.html"</span><span>, </span><span>"URL.port":</span><span>"80"</span><span>, </span><span>"URL.protocol":</span><span>"http"</span><span>}</span> 
+                  </dd> 
+                  <dt>
+                    Source URL
+                  </dt> 
+                  <dd> <a href="http://myadmin.kazurayam.com/index.html" target="source">http://myadmin.kazurayam.com/index.html</a> 
+                  </dd> 
+                </dl> 
+              </div> 
+              <div class="show-detail"> 
+                <h4>right (DevelopmentEnv) </h4> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="MyAdmin/20221122_211742/objects/13f9e939f8d7c557089165832d630aaf5d1d2450.html" target="right">MyAdmin/20221122_211742/objects/13f9e939f8d7c557089165832d630aaf5d1d2450.html</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    html
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"category":</span><span class="matched-value">"NoMaterialFound"</span><span>}</span> 
+                  </dd> 
+                </dl> 
+              </div> 
+              <div class="show-detail"> 
+                <h4>diff </h4> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="MyAdmin/20221122_211742/objects/7e94dadc55401ceffb53fd6e4dd89290b78962c4.html" target="diff">MyAdmin/20221122_211742/objects/7e94dadc55401ceffb53fd6e4dd89290b78962c4.html</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    html
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"category":</span><span>"diff"</span><span>, </span><span>"left":</span><span>"20221122_211721/0db0532c9deb5c67f165e1ad867f96048f4ab017"</span><span>, </span><span>"ratio":</span><span>"98.25%"</span><span>, </span><span>"right":</span><span>"20221122_211742/13f9e939f8d7c557089165832d630aaf5d1d2450"</span><span>}</span> 
+                  </dd> 
+                </dl> 
+              </div> 
+            </div> 
+          </div> 
+        </div> 
+        <div id="accordion4" class="accordion-item"> 
+          <h2 id="heading4" class="accordion-header"> <input class="form-check-input" type="checkbox" id="ignorable4" value="" data-index="4"> <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" area-expanded="false" aria-controls="collapse4"> <span class="ratio warning">3.10%</span> <span class="fileType">png</span> <span class="identification">{"URL.path":"/proverbs.html", "URL.protocol":"http", "step":"03"}</span> </button> </h2> 
+          <div id="collapse4" class="according-collapse collapse" aria-labelledby="heading4" data-bs-parent="#diff-contents"> 
+            <div class="accordion-body"> 
+              <div class="show-diff"> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#imageModal4">Show diff in Modal</button><!-- Modal to show 3 images: Left/Diff/Right --> 
+                <div class="modal fade" id="imageModal4" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true"> 
+                  <div class="modal-dialog modal-fullscreen"> 
+                    <div class="modal-content"> 
+                      <h4 style="margin: 12px 0 0 130px">MyAdmin-20221122_211742</h4> 
+                      <div class="modal-header"> 
+                        <h5 class="modal-title" id="imageModalLabel4"> <span>3.10% png {"URL.path":"/proverbs.html", "URL.protocol":"http", "step":"03"}</span> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> </h5> 
+                      </div> 
+                      <div class="modal-body"> 
+                        <div id="carouselControl4" class="carousel slide" data-bs-ride="carousel"> 
+                          <div class="carousel-inner"> 
+                            <div class="carousel-item"> 
+                              <h3 class="centered">Left (ProductionEnv)</h3> 
+                              <img class="img-fluid border d-block w-75 centered" alt="left" src="MyAdmin/20221122_211721/objects/b2250fcb54639acf521223ae408fff1da0343126.png"> 
+                            </div> 
+                            <div class="carousel-item active"> 
+                              <h3 class="centered">Diff</h3> 
+                              <img class="img-fluid border d-block w-75 centered" alt="diff" src="MyAdmin/20221122_211742/objects/1b3c0d0ef2df5b451049aa61dd07113bc7cfc3f6.png"> 
+                            </div> 
+                            <div class="carousel-item"> 
+                              <h3 class="centered">Right (DevelopmentEnv)</h3> 
+                              <img class="img-fluid border d-block w-75 centered" alt="right" src="MyAdmin/20221122_211732/objects/83fc345304d0254e1d799176b43f478faab0005b.png"> 
+                            </div> 
+                          </div> <button class="carousel-control-prev" type="button" data-bs-target="#carouselControl4" data-bs-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="visually-hidden">Previous</span> </button> <button class="carousel-control-next" type="button" data-bs-target="#carouselControl4" data-bs-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="visually-hidden">Next</span> </button> 
+                        </div> 
+                      </div> 
+                      <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> 
+                      </div> 
+                    </div> 
+                  </div> 
+                </div> 
+              </div> 
+              <div class="show-detail"> 
+                <h4>left (ProductionEnv) </h4> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="MyAdmin/20221122_211721/objects/b2250fcb54639acf521223ae408fff1da0343126.png" target="left">MyAdmin/20221122_211721/objects/b2250fcb54639acf521223ae408fff1da0343126.png</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    png
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"profile":</span><span class="matched-value">"MyAdmin_ProductionEnv"</span><span>, </span><span>"step":</span><span>"03"</span><span>, </span><span>"URL.host":</span><span>"myadmin.kazurayam.com"</span><span>, </span><span>"URL.path":</span><span>"/proverbs.html"</span><span>, </span><span>"URL.port":</span><span>"80"</span><span>, </span><span>"URL.protocol":</span><span>"http"</span><span>}</span> 
+                  </dd> 
+                  <dt>
+                    Source URL
+                  </dt> 
+                  <dd> <a href="http://myadmin.kazurayam.com/proverbs.html" target="source">http://myadmin.kazurayam.com/proverbs.html</a> 
+                  </dd> 
+                </dl> 
+              </div> 
+              <div class="show-detail"> 
+                <h4>right (DevelopmentEnv) </h4> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="MyAdmin/20221122_211732/objects/83fc345304d0254e1d799176b43f478faab0005b.png" target="right">MyAdmin/20221122_211732/objects/83fc345304d0254e1d799176b43f478faab0005b.png</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    png
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"profile":</span><span class="matched-value">"MyAdmin_DevelopmentEnv"</span><span>, </span><span>"step":</span><span>"03"</span><span>, </span><span>"URL.host":</span><span>"devadmin.kazurayam.com"</span><span>, </span><span>"URL.path":</span><span>"/proverbs.html"</span><span>, </span><span>"URL.port":</span><span>"80"</span><span>, </span><span>"URL.protocol":</span><span>"http"</span><span>}</span> 
+                  </dd> 
+                  <dt>
+                    Source URL
+                  </dt> 
+                  <dd> <a href="http://devadmin.kazurayam.com/proverbs.html" target="source">http://devadmin.kazurayam.com/proverbs.html</a> 
+                  </dd> 
+                </dl> 
+              </div> 
+              <div class="show-detail"> 
+                <h4>diff </h4> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="MyAdmin/20221122_211742/objects/1b3c0d0ef2df5b451049aa61dd07113bc7cfc3f6.png" target="diff">MyAdmin/20221122_211742/objects/1b3c0d0ef2df5b451049aa61dd07113bc7cfc3f6.png</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    png
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"category":</span><span>"diff"</span><span>, </span><span>"left":</span><span>"20221122_211721/b2250fcb54639acf521223ae408fff1da0343126"</span><span>, </span><span>"ratio":</span><span>"3.10%"</span><span>, </span><span>"right":</span><span>"20221122_211732/83fc345304d0254e1d799176b43f478faab0005b"</span><span>}</span> 
+                  </dd> 
+                </dl> 
+              </div> 
+            </div> 
+          </div> 
+        </div> 
+        <div id="accordion5" class="accordion-item"> 
+          <h2 id="heading5" class="accordion-header"> <input class="form-check-input" type="checkbox" id="ignorable5" value="" data-index="5" disabled> <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" area-expanded="false" aria-controls="collapse5"> <span class="ratio ">1.67%</span> <span class="fileType">html</span> <span class="identification">{"URL.path":"/proverbs.html", "URL.protocol":"http", "step":"03"}</span> </button> </h2> 
+          <div id="collapse5" class="according-collapse collapse" aria-labelledby="heading5" data-bs-parent="#diff-contents"> 
+            <div class="accordion-body"> 
+              <div class="show-diff"> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#textModal5">Show diff in Modal</button><!-- Modal to show texts diff --> 
+                <div class="modal fade" id="textModal5" tabindex="-1" aria-labelledby="textModalLabel" aria-hidden="true"> 
+                  <div class="modal-dialog modal-fullscreen"> 
+                    <div class="modal-content"> 
+                      <h4 style="margin: 12px 0 0 130px">MyAdmin-20221122_211742</h4> 
+                      <div class="modal-header"> 
+                        <h5 class="modal-title" id="textModalLabel5"> <span>1.67% html {"URL.path":"/proverbs.html", "URL.protocol":"http", "step":"03"}</span> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> </h5> 
+                      </div> 
+                      <div class="modal-body"> <iframe src="MyAdmin/20221122_211742/objects/0c832b25f8961b5b85776231acd0db256c0d4f53.html" title="TextDiff"></iframe> 
+                      </div> 
+                      <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> 
+                      </div> 
+                    </div> 
+                  </div> 
+                </div> 
+              </div> 
+              <div class="show-detail"> 
+                <h4>left (ProductionEnv) </h4> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="MyAdmin/20221122_211721/objects/6bfd6eaa0df57f1c2d349c10f4fa11a475f978b7.html" target="left">MyAdmin/20221122_211721/objects/6bfd6eaa0df57f1c2d349c10f4fa11a475f978b7.html</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    html
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"profile":</span><span class="matched-value">"MyAdmin_ProductionEnv"</span><span>, </span><span>"step":</span><span>"03"</span><span>, </span><span>"URL.host":</span><span>"myadmin.kazurayam.com"</span><span>, </span><span>"URL.path":</span><span>"/proverbs.html"</span><span>, </span><span>"URL.port":</span><span>"80"</span><span>, </span><span>"URL.protocol":</span><span>"http"</span><span>}</span> 
+                  </dd> 
+                  <dt>
+                    Source URL
+                  </dt> 
+                  <dd> <a href="http://myadmin.kazurayam.com/proverbs.html" target="source">http://myadmin.kazurayam.com/proverbs.html</a> 
+                  </dd> 
+                </dl> 
+              </div> 
+              <div class="show-detail"> 
+                <h4>right (DevelopmentEnv) </h4> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="MyAdmin/20221122_211732/objects/74e4a1c3b26c112495f8013c9cbf370f8078111e.html" target="right">MyAdmin/20221122_211732/objects/74e4a1c3b26c112495f8013c9cbf370f8078111e.html</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    html
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"profile":</span><span class="matched-value">"MyAdmin_DevelopmentEnv"</span><span>, </span><span>"step":</span><span>"03"</span><span>, </span><span>"URL.host":</span><span>"devadmin.kazurayam.com"</span><span>, </span><span>"URL.path":</span><span>"/proverbs.html"</span><span>, </span><span>"URL.port":</span><span>"80"</span><span>, </span><span>"URL.protocol":</span><span>"http"</span><span>}</span> 
+                  </dd> 
+                  <dt>
+                    Source URL
+                  </dt> 
+                  <dd> <a href="http://devadmin.kazurayam.com/proverbs.html" target="source">http://devadmin.kazurayam.com/proverbs.html</a> 
+                  </dd> 
+                </dl> 
+              </div> 
+              <div class="show-detail"> 
+                <h4>diff </h4> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="MyAdmin/20221122_211742/objects/0c832b25f8961b5b85776231acd0db256c0d4f53.html" target="diff">MyAdmin/20221122_211742/objects/0c832b25f8961b5b85776231acd0db256c0d4f53.html</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    html
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"category":</span><span>"diff"</span><span>, </span><span>"left":</span><span>"20221122_211721/6bfd6eaa0df57f1c2d349c10f4fa11a475f978b7"</span><span>, </span><span>"ratio":</span><span>"1.67%"</span><span>, </span><span>"right":</span><span>"20221122_211732/74e4a1c3b26c112495f8013c9cbf370f8078111e"</span><span>}</span> 
+                  </dd> 
+                </dl> 
+              </div> 
+            </div> 
+          </div> 
+        </div> 
+        <div id="accordion6" class="accordion-item"> 
+          <h2 id="heading6" class="accordion-header"> <input class="form-check-input" type="checkbox" id="ignorable6" value="" data-index="6"> <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" area-expanded="false" aria-controls="collapse6"> <span class="ratio warning">3.10%</span> <span class="fileType">png</span> <span class="identification">{"URL.path":"/repositories.html", "URL.protocol":"http", "step":"02"}</span> </button> </h2> 
+          <div id="collapse6" class="according-collapse collapse" aria-labelledby="heading6" data-bs-parent="#diff-contents"> 
+            <div class="accordion-body"> 
+              <div class="show-diff"> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#imageModal6">Show diff in Modal</button><!-- Modal to show 3 images: Left/Diff/Right --> 
+                <div class="modal fade" id="imageModal6" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true"> 
+                  <div class="modal-dialog modal-fullscreen"> 
+                    <div class="modal-content"> 
+                      <h4 style="margin: 12px 0 0 130px">MyAdmin-20221122_211742</h4> 
+                      <div class="modal-header"> 
+                        <h5 class="modal-title" id="imageModalLabel6"> <span>3.10% png {"URL.path":"/repositories.html", "URL.protocol":"http", "step":"02"}</span> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> </h5> 
+                      </div> 
+                      <div class="modal-body"> 
+                        <div id="carouselControl6" class="carousel slide" data-bs-ride="carousel"> 
+                          <div class="carousel-inner"> 
+                            <div class="carousel-item"> 
+                              <h3 class="centered">Left (ProductionEnv)</h3> 
+                              <img class="img-fluid border d-block w-75 centered" alt="left" src="MyAdmin/20221122_211721/objects/26559bf754cfc8a7269ac4d7f88ed552b68624ab.png"> 
+                            </div> 
+                            <div class="carousel-item active"> 
+                              <h3 class="centered">Diff</h3> 
+                              <img class="img-fluid border d-block w-75 centered" alt="diff" src="MyAdmin/20221122_211742/objects/cf6c13999adff13df7c6ad70d4c492e0106a8836.png"> 
+                            </div> 
+                            <div class="carousel-item"> 
+                              <h3 class="centered">Right (DevelopmentEnv)</h3> 
+                              <img class="img-fluid border d-block w-75 centered" alt="right" src="MyAdmin/20221122_211732/objects/33c8dcc0004dd5d49db58d81eb56997aec00a119.png"> 
+                            </div> 
+                          </div> <button class="carousel-control-prev" type="button" data-bs-target="#carouselControl6" data-bs-slide="prev"> <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="visually-hidden">Previous</span> </button> <button class="carousel-control-next" type="button" data-bs-target="#carouselControl6" data-bs-slide="next"> <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="visually-hidden">Next</span> </button> 
+                        </div> 
+                      </div> 
+                      <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> 
+                      </div> 
+                    </div> 
+                  </div> 
+                </div> 
+              </div> 
+              <div class="show-detail"> 
+                <h4>left (ProductionEnv) </h4> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="MyAdmin/20221122_211721/objects/26559bf754cfc8a7269ac4d7f88ed552b68624ab.png" target="left">MyAdmin/20221122_211721/objects/26559bf754cfc8a7269ac4d7f88ed552b68624ab.png</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    png
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"profile":</span><span class="matched-value">"MyAdmin_ProductionEnv"</span><span>, </span><span>"step":</span><span>"02"</span><span>, </span><span>"URL.host":</span><span>"myadmin.kazurayam.com"</span><span>, </span><span>"URL.path":</span><span>"/repositories.html"</span><span>, </span><span>"URL.port":</span><span>"80"</span><span>, </span><span>"URL.protocol":</span><span>"http"</span><span>}</span> 
+                  </dd> 
+                  <dt>
+                    Source URL
+                  </dt> 
+                  <dd> <a href="http://myadmin.kazurayam.com/repositories.html" target="source">http://myadmin.kazurayam.com/repositories.html</a> 
+                  </dd> 
+                </dl> 
+              </div> 
+              <div class="show-detail"> 
+                <h4>right (DevelopmentEnv) </h4> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="MyAdmin/20221122_211732/objects/33c8dcc0004dd5d49db58d81eb56997aec00a119.png" target="right">MyAdmin/20221122_211732/objects/33c8dcc0004dd5d49db58d81eb56997aec00a119.png</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    png
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"profile":</span><span class="matched-value">"MyAdmin_DevelopmentEnv"</span><span>, </span><span>"step":</span><span>"02"</span><span>, </span><span>"URL.host":</span><span>"devadmin.kazurayam.com"</span><span>, </span><span>"URL.path":</span><span>"/repositories.html"</span><span>, </span><span>"URL.port":</span><span>"80"</span><span>, </span><span>"URL.protocol":</span><span>"http"</span><span>}</span> 
+                  </dd> 
+                  <dt>
+                    Source URL
+                  </dt> 
+                  <dd> <a href="http://devadmin.kazurayam.com/repositories.html" target="source">http://devadmin.kazurayam.com/repositories.html</a> 
+                  </dd> 
+                </dl> 
+              </div> 
+              <div class="show-detail"> 
+                <h4>diff </h4> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="MyAdmin/20221122_211742/objects/cf6c13999adff13df7c6ad70d4c492e0106a8836.png" target="diff">MyAdmin/20221122_211742/objects/cf6c13999adff13df7c6ad70d4c492e0106a8836.png</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    png
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"category":</span><span>"diff"</span><span>, </span><span>"left":</span><span>"20221122_211721/26559bf754cfc8a7269ac4d7f88ed552b68624ab"</span><span>, </span><span>"ratio":</span><span>"3.10%"</span><span>, </span><span>"right":</span><span>"20221122_211732/33c8dcc0004dd5d49db58d81eb56997aec00a119"</span><span>}</span> 
+                  </dd> 
+                </dl> 
+              </div> 
+            </div> 
+          </div> 
+        </div> 
+        <div id="accordion7" class="accordion-item"> 
+          <h2 id="heading7" class="accordion-header"> <input class="form-check-input" type="checkbox" id="ignorable7" value="" data-index="7" disabled> <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" area-expanded="false" aria-controls="collapse7"> <span class="ratio ">1.61%</span> <span class="fileType">html</span> <span class="identification">{"URL.path":"/repositories.html", "URL.protocol":"http", "step":"02"}</span> </button> </h2> 
+          <div id="collapse7" class="according-collapse collapse" aria-labelledby="heading7" data-bs-parent="#diff-contents"> 
+            <div class="accordion-body"> 
+              <div class="show-diff"> <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#textModal7">Show diff in Modal</button><!-- Modal to show texts diff --> 
+                <div class="modal fade" id="textModal7" tabindex="-1" aria-labelledby="textModalLabel" aria-hidden="true"> 
+                  <div class="modal-dialog modal-fullscreen"> 
+                    <div class="modal-content"> 
+                      <h4 style="margin: 12px 0 0 130px">MyAdmin-20221122_211742</h4> 
+                      <div class="modal-header"> 
+                        <h5 class="modal-title" id="textModalLabel7"> <span>1.61% html {"URL.path":"/repositories.html", "URL.protocol":"http", "step":"02"}</span> <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> </h5> 
+                      </div> 
+                      <div class="modal-body"> <iframe src="MyAdmin/20221122_211742/objects/350c6b1bead6bf7328f7f2c0e5c60df5bd797ba7.html" title="TextDiff"></iframe> 
+                      </div> 
+                      <div class="modal-footer"> <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> 
+                      </div> 
+                    </div> 
+                  </div> 
+                </div> 
+              </div> 
+              <div class="show-detail"> 
+                <h4>left (ProductionEnv) </h4> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="MyAdmin/20221122_211721/objects/03a4cd8c6ad2f6282080b44622628cdbfb84fbb1.html" target="left">MyAdmin/20221122_211721/objects/03a4cd8c6ad2f6282080b44622628cdbfb84fbb1.html</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    html
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"profile":</span><span class="matched-value">"MyAdmin_ProductionEnv"</span><span>, </span><span>"step":</span><span>"02"</span><span>, </span><span>"URL.host":</span><span>"myadmin.kazurayam.com"</span><span>, </span><span>"URL.path":</span><span>"/repositories.html"</span><span>, </span><span>"URL.port":</span><span>"80"</span><span>, </span><span>"URL.protocol":</span><span>"http"</span><span>}</span> 
+                  </dd> 
+                  <dt>
+                    Source URL
+                  </dt> 
+                  <dd> <a href="http://myadmin.kazurayam.com/repositories.html" target="source">http://myadmin.kazurayam.com/repositories.html</a> 
+                  </dd> 
+                </dl> 
+              </div> 
+              <div class="show-detail"> 
+                <h4>right (DevelopmentEnv) </h4> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="MyAdmin/20221122_211732/objects/161599eb7e32dc884767da83734006c883dc1a56.html" target="right">MyAdmin/20221122_211732/objects/161599eb7e32dc884767da83734006c883dc1a56.html</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    html
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"profile":</span><span class="matched-value">"MyAdmin_DevelopmentEnv"</span><span>, </span><span>"step":</span><span>"02"</span><span>, </span><span>"URL.host":</span><span>"devadmin.kazurayam.com"</span><span>, </span><span>"URL.path":</span><span>"/repositories.html"</span><span>, </span><span>"URL.port":</span><span>"80"</span><span>, </span><span>"URL.protocol":</span><span>"http"</span><span>}</span> 
+                  </dd> 
+                  <dt>
+                    Source URL
+                  </dt> 
+                  <dd> <a href="http://devadmin.kazurayam.com/repositories.html" target="source">http://devadmin.kazurayam.com/repositories.html</a> 
+                  </dd> 
+                </dl> 
+              </div> 
+              <div class="show-detail"> 
+                <h4>diff </h4> 
+                <dl class="detail"> 
+                  <dt>
+                    Material URL
+                  </dt> 
+                  <dd> <a href="MyAdmin/20221122_211742/objects/350c6b1bead6bf7328f7f2c0e5c60df5bd797ba7.html" target="diff">MyAdmin/20221122_211742/objects/350c6b1bead6bf7328f7f2c0e5c60df5bd797ba7.html</a> 
+                  </dd> 
+                  <dt>
+                    fileType
+                  </dt> 
+                  <dd>
+                    html
+                  </dd> 
+                  <dt>
+                    metadata
+                  </dt> 
+                  <dd> <span>{</span><span>"category":</span><span>"diff"</span><span>, </span><span>"left":</span><span>"20221122_211721/03a4cd8c6ad2f6282080b44622628cdbfb84fbb1"</span><span>, </span><span>"ratio":</span><span>"1.61%"</span><span>, </span><span>"right":</span><span>"20221122_211732/161599eb7e32dc884767da83734006c883dc1a56"</span><span>}</span> 
+                  </dd> 
+                </dl> 
+              </div> 
+            </div> 
+          </div> 
+        </div> 
+      </div> 
+    </div><!-- Bootstrap --> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.js"></script> 
+    <script type="text/javascript">
+        const model = {
+  "jobName": "MyAdmin",
+  "threshold": 3.0,
+  "isReadyToReport": true,
+  "ignoreMetadataKeys": [
+    "URL.host",
+    "URL.port",
+    "profile"
+  ],
+  "materialList0": {
+    "jobTimestamp": "20221122_211721",
+    "queryOnMetadata": {
+      "profile": "MyAdmin_ProductionEnv"
+    },
+    "size": 6.0
+  },
+  "materialList1": {
+    "jobTimestamp": "20221122_211732",
+    "queryOnMetadata": {
+      "profile": "MyAdmin_DevelopmentEnv"
+    },
+    "size": 6.0
+  },
+  "materialProductList": [
+    {
+      "checked": false,
+      "isBachelor": false,
+      "diffRatio": 75.29,
+      "fileTypeExtension": "png",
+      "queryOnMetadata": {
+        "URL.path": "/",
+        "URL.protocol": "http",
+        "step": "01"
+      },
+      "identification": "{\"URL.path\":\"/\", \"URL.protocol\":\"http\", \"step\":\"01\"}",
+      "left": {
+        "jobName": "MyAdmin",
+        "jobTimestamp": "20221122_211742",
+        "id": "9ff31f11fd00ca5d41cd46fece62618d5ce2bd68",
+        "fileType": "png",
+        "metadata": {
+          "category": {
+            "key": "category",
+            "value": "NoMaterialFound"
+          }
+        },
+        "identification": "{\"category\":\"NoMaterialFound\"}",
+        "relativeUrl": "MyAdmin/20221122_211742/objects/9ff31f11fd00ca5d41cd46fece62618d5ce2bd68.png",
+        "diffability": "AS_IMAGE"
+      },
+      "right": {
+        "jobName": "MyAdmin",
+        "jobTimestamp": "20221122_211732",
+        "id": "b1bff6677ed5fd152af33d24f8f8dd8a37e84ef3",
+        "fileType": "png",
+        "metadata": {
+          "profile": {
+            "key": "profile",
+            "value": "MyAdmin_DevelopmentEnv",
+            "matchedIndividually": true
+          },
+          "step": {
+            "key": "step",
+            "value": "01"
+          },
+          "URL.host": {
+            "key": "URL.host",
+            "value": "devadmin.kazurayam.com"
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/"
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80"
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "http"
+          }
+        },
+        "identification": "{\"profile\":\"MyAdmin_DevelopmentEnv\", \"step\":\"01\", \"URL.host\":\"devadmin.kazurayam.com\", \"URL.path\":\"/\", \"URL.port\":\"80\", \"URL.protocol\":\"http\"}",
+        "metadataURL": "http://devadmin.kazurayam.com/",
+        "relativeUrl": "MyAdmin/20221122_211732/objects/b1bff6677ed5fd152af33d24f8f8dd8a37e84ef3.png",
+        "diffability": "AS_IMAGE"
+      },
+      "diff": {
+        "jobName": "MyAdmin",
+        "jobTimestamp": "20221122_211742",
+        "id": "90061e22e17565ccb2b2f2a4ceba6faa79658418",
+        "fileType": "png",
+        "metadata": {
+          "category": {
+            "key": "category",
+            "value": "diff"
+          },
+          "left": {
+            "key": "left",
+            "value": "20221122_211742/9ff31f11fd00ca5d41cd46fece62618d5ce2bd68"
+          },
+          "ratio": {
+            "key": "ratio",
+            "value": "75.29%"
+          },
+          "right": {
+            "key": "right",
+            "value": "20221122_211732/b1bff6677ed5fd152af33d24f8f8dd8a37e84ef3"
+          }
+        },
+        "identification": "{\"category\":\"diff\", \"left\":\"20221122_211742/9ff31f11fd00ca5d41cd46fece62618d5ce2bd68\", \"ratio\":\"75.29%\", \"right\":\"20221122_211732/b1bff6677ed5fd152af33d24f8f8dd8a37e84ef3\"}",
+        "relativeUrl": "MyAdmin/20221122_211742/objects/90061e22e17565ccb2b2f2a4ceba6faa79658418.png",
+        "diffability": "AS_IMAGE"
+      }
+    },
+    {
+      "checked": false,
+      "isBachelor": false,
+      "diffRatio": 98.28,
+      "fileTypeExtension": "html",
+      "queryOnMetadata": {
+        "URL.path": "/",
+        "URL.protocol": "http",
+        "step": "01"
+      },
+      "identification": "{\"URL.path\":\"/\", \"URL.protocol\":\"http\", \"step\":\"01\"}",
+      "left": {
+        "jobName": "MyAdmin",
+        "jobTimestamp": "20221122_211742",
+        "id": "13f9e939f8d7c557089165832d630aaf5d1d2450",
+        "fileType": "html",
+        "metadata": {
+          "category": {
+            "key": "category",
+            "value": "NoMaterialFound"
+          }
+        },
+        "identification": "{\"category\":\"NoMaterialFound\"}",
+        "relativeUrl": "MyAdmin/20221122_211742/objects/13f9e939f8d7c557089165832d630aaf5d1d2450.html",
+        "diffability": "AS_TEXT"
+      },
+      "right": {
+        "jobName": "MyAdmin",
+        "jobTimestamp": "20221122_211732",
+        "id": "70e0d895dfbc2fe67c4addd42c39c3cb8e388148",
+        "fileType": "html",
+        "metadata": {
+          "profile": {
+            "key": "profile",
+            "value": "MyAdmin_DevelopmentEnv",
+            "matchedIndividually": true
+          },
+          "step": {
+            "key": "step",
+            "value": "01"
+          },
+          "URL.host": {
+            "key": "URL.host",
+            "value": "devadmin.kazurayam.com"
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/"
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80"
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "http"
+          }
+        },
+        "identification": "{\"profile\":\"MyAdmin_DevelopmentEnv\", \"step\":\"01\", \"URL.host\":\"devadmin.kazurayam.com\", \"URL.path\":\"/\", \"URL.port\":\"80\", \"URL.protocol\":\"http\"}",
+        "metadataURL": "http://devadmin.kazurayam.com/",
+        "relativeUrl": "MyAdmin/20221122_211732/objects/70e0d895dfbc2fe67c4addd42c39c3cb8e388148.html",
+        "diffability": "AS_TEXT"
+      },
+      "diff": {
+        "jobName": "MyAdmin",
+        "jobTimestamp": "20221122_211742",
+        "id": "668945aa5b240ee9a0c6b45648c26a3c87feb3ed",
+        "fileType": "html",
+        "metadata": {
+          "category": {
+            "key": "category",
+            "value": "diff"
+          },
+          "left": {
+            "key": "left",
+            "value": "20221122_211742/13f9e939f8d7c557089165832d630aaf5d1d2450"
+          },
+          "ratio": {
+            "key": "ratio",
+            "value": "98.28%"
+          },
+          "right": {
+            "key": "right",
+            "value": "20221122_211732/70e0d895dfbc2fe67c4addd42c39c3cb8e388148"
+          }
+        },
+        "identification": "{\"category\":\"diff\", \"left\":\"20221122_211742/13f9e939f8d7c557089165832d630aaf5d1d2450\", \"ratio\":\"98.28%\", \"right\":\"20221122_211732/70e0d895dfbc2fe67c4addd42c39c3cb8e388148\"}",
+        "relativeUrl": "MyAdmin/20221122_211742/objects/668945aa5b240ee9a0c6b45648c26a3c87feb3ed.html",
+        "diffability": "AS_TEXT"
+      }
+    },
+    {
+      "checked": false,
+      "isBachelor": false,
+      "diffRatio": 73.95,
+      "fileTypeExtension": "png",
+      "queryOnMetadata": {
+        "URL.path": "/index.html",
+        "URL.protocol": "http",
+        "step": "01"
+      },
+      "identification": "{\"URL.path\":\"/index.html\", \"URL.protocol\":\"http\", \"step\":\"01\"}",
+      "left": {
+        "jobName": "MyAdmin",
+        "jobTimestamp": "20221122_211721",
+        "id": "93f19f62774550aade8ceb9657405c2624c720a0",
+        "fileType": "png",
+        "metadata": {
+          "profile": {
+            "key": "profile",
+            "value": "MyAdmin_ProductionEnv",
+            "matchedIndividually": true
+          },
+          "step": {
+            "key": "step",
+            "value": "01"
+          },
+          "URL.host": {
+            "key": "URL.host",
+            "value": "myadmin.kazurayam.com"
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/index.html"
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80"
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "http"
+          }
+        },
+        "identification": "{\"profile\":\"MyAdmin_ProductionEnv\", \"step\":\"01\", \"URL.host\":\"myadmin.kazurayam.com\", \"URL.path\":\"/index.html\", \"URL.port\":\"80\", \"URL.protocol\":\"http\"}",
+        "metadataURL": "http://myadmin.kazurayam.com/index.html",
+        "relativeUrl": "MyAdmin/20221122_211721/objects/93f19f62774550aade8ceb9657405c2624c720a0.png",
+        "diffability": "AS_IMAGE"
+      },
+      "right": {
+        "jobName": "MyAdmin",
+        "jobTimestamp": "20221122_211742",
+        "id": "9ff31f11fd00ca5d41cd46fece62618d5ce2bd68",
+        "fileType": "png",
+        "metadata": {
+          "category": {
+            "key": "category",
+            "value": "NoMaterialFound",
+            "matchedIndividually": true
+          }
+        },
+        "identification": "{\"category\":\"NoMaterialFound\"}",
+        "relativeUrl": "MyAdmin/20221122_211742/objects/9ff31f11fd00ca5d41cd46fece62618d5ce2bd68.png",
+        "diffability": "AS_IMAGE"
+      },
+      "diff": {
+        "jobName": "MyAdmin",
+        "jobTimestamp": "20221122_211742",
+        "id": "7c4e5092195ae018e380b6cb3735ff138590f3d8",
+        "fileType": "png",
+        "metadata": {
+          "category": {
+            "key": "category",
+            "value": "diff"
+          },
+          "left": {
+            "key": "left",
+            "value": "20221122_211721/93f19f62774550aade8ceb9657405c2624c720a0"
+          },
+          "ratio": {
+            "key": "ratio",
+            "value": "73.95%"
+          },
+          "right": {
+            "key": "right",
+            "value": "20221122_211742/9ff31f11fd00ca5d41cd46fece62618d5ce2bd68"
+          }
+        },
+        "identification": "{\"category\":\"diff\", \"left\":\"20221122_211721/93f19f62774550aade8ceb9657405c2624c720a0\", \"ratio\":\"73.95%\", \"right\":\"20221122_211742/9ff31f11fd00ca5d41cd46fece62618d5ce2bd68\"}",
+        "relativeUrl": "MyAdmin/20221122_211742/objects/7c4e5092195ae018e380b6cb3735ff138590f3d8.png",
+        "diffability": "AS_IMAGE"
+      }
+    },
+    {
+      "checked": false,
+      "isBachelor": false,
+      "diffRatio": 98.25,
+      "fileTypeExtension": "html",
+      "queryOnMetadata": {
+        "URL.path": "/index.html",
+        "URL.protocol": "http",
+        "step": "01"
+      },
+      "identification": "{\"URL.path\":\"/index.html\", \"URL.protocol\":\"http\", \"step\":\"01\"}",
+      "left": {
+        "jobName": "MyAdmin",
+        "jobTimestamp": "20221122_211721",
+        "id": "0db0532c9deb5c67f165e1ad867f96048f4ab017",
+        "fileType": "html",
+        "metadata": {
+          "profile": {
+            "key": "profile",
+            "value": "MyAdmin_ProductionEnv",
+            "matchedIndividually": true
+          },
+          "step": {
+            "key": "step",
+            "value": "01"
+          },
+          "URL.host": {
+            "key": "URL.host",
+            "value": "myadmin.kazurayam.com"
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/index.html"
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80"
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "http"
+          }
+        },
+        "identification": "{\"profile\":\"MyAdmin_ProductionEnv\", \"step\":\"01\", \"URL.host\":\"myadmin.kazurayam.com\", \"URL.path\":\"/index.html\", \"URL.port\":\"80\", \"URL.protocol\":\"http\"}",
+        "metadataURL": "http://myadmin.kazurayam.com/index.html",
+        "relativeUrl": "MyAdmin/20221122_211721/objects/0db0532c9deb5c67f165e1ad867f96048f4ab017.html",
+        "diffability": "AS_TEXT"
+      },
+      "right": {
+        "jobName": "MyAdmin",
+        "jobTimestamp": "20221122_211742",
+        "id": "13f9e939f8d7c557089165832d630aaf5d1d2450",
+        "fileType": "html",
+        "metadata": {
+          "category": {
+            "key": "category",
+            "value": "NoMaterialFound",
+            "matchedIndividually": true
+          }
+        },
+        "identification": "{\"category\":\"NoMaterialFound\"}",
+        "relativeUrl": "MyAdmin/20221122_211742/objects/13f9e939f8d7c557089165832d630aaf5d1d2450.html",
+        "diffability": "AS_TEXT"
+      },
+      "diff": {
+        "jobName": "MyAdmin",
+        "jobTimestamp": "20221122_211742",
+        "id": "7e94dadc55401ceffb53fd6e4dd89290b78962c4",
+        "fileType": "html",
+        "metadata": {
+          "category": {
+            "key": "category",
+            "value": "diff"
+          },
+          "left": {
+            "key": "left",
+            "value": "20221122_211721/0db0532c9deb5c67f165e1ad867f96048f4ab017"
+          },
+          "ratio": {
+            "key": "ratio",
+            "value": "98.25%"
+          },
+          "right": {
+            "key": "right",
+            "value": "20221122_211742/13f9e939f8d7c557089165832d630aaf5d1d2450"
+          }
+        },
+        "identification": "{\"category\":\"diff\", \"left\":\"20221122_211721/0db0532c9deb5c67f165e1ad867f96048f4ab017\", \"ratio\":\"98.25%\", \"right\":\"20221122_211742/13f9e939f8d7c557089165832d630aaf5d1d2450\"}",
+        "relativeUrl": "MyAdmin/20221122_211742/objects/7e94dadc55401ceffb53fd6e4dd89290b78962c4.html",
+        "diffability": "AS_TEXT"
+      }
+    },
+    {
+      "checked": false,
+      "isBachelor": false,
+      "diffRatio": 3.1,
+      "fileTypeExtension": "png",
+      "queryOnMetadata": {
+        "URL.path": "/proverbs.html",
+        "URL.protocol": "http",
+        "step": "03"
+      },
+      "identification": "{\"URL.path\":\"/proverbs.html\", \"URL.protocol\":\"http\", \"step\":\"03\"}",
+      "left": {
+        "jobName": "MyAdmin",
+        "jobTimestamp": "20221122_211721",
+        "id": "b2250fcb54639acf521223ae408fff1da0343126",
+        "fileType": "png",
+        "metadata": {
+          "profile": {
+            "key": "profile",
+            "value": "MyAdmin_ProductionEnv",
+            "matchedIndividually": true
+          },
+          "step": {
+            "key": "step",
+            "value": "03"
+          },
+          "URL.host": {
+            "key": "URL.host",
+            "value": "myadmin.kazurayam.com"
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/proverbs.html"
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80"
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "http"
+          }
+        },
+        "identification": "{\"profile\":\"MyAdmin_ProductionEnv\", \"step\":\"03\", \"URL.host\":\"myadmin.kazurayam.com\", \"URL.path\":\"/proverbs.html\", \"URL.port\":\"80\", \"URL.protocol\":\"http\"}",
+        "metadataURL": "http://myadmin.kazurayam.com/proverbs.html",
+        "relativeUrl": "MyAdmin/20221122_211721/objects/b2250fcb54639acf521223ae408fff1da0343126.png",
+        "diffability": "AS_IMAGE"
+      },
+      "right": {
+        "jobName": "MyAdmin",
+        "jobTimestamp": "20221122_211732",
+        "id": "83fc345304d0254e1d799176b43f478faab0005b",
+        "fileType": "png",
+        "metadata": {
+          "profile": {
+            "key": "profile",
+            "value": "MyAdmin_DevelopmentEnv",
+            "matchedIndividually": true
+          },
+          "step": {
+            "key": "step",
+            "value": "03"
+          },
+          "URL.host": {
+            "key": "URL.host",
+            "value": "devadmin.kazurayam.com"
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/proverbs.html"
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80"
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "http"
+          }
+        },
+        "identification": "{\"profile\":\"MyAdmin_DevelopmentEnv\", \"step\":\"03\", \"URL.host\":\"devadmin.kazurayam.com\", \"URL.path\":\"/proverbs.html\", \"URL.port\":\"80\", \"URL.protocol\":\"http\"}",
+        "metadataURL": "http://devadmin.kazurayam.com/proverbs.html",
+        "relativeUrl": "MyAdmin/20221122_211732/objects/83fc345304d0254e1d799176b43f478faab0005b.png",
+        "diffability": "AS_IMAGE"
+      },
+      "diff": {
+        "jobName": "MyAdmin",
+        "jobTimestamp": "20221122_211742",
+        "id": "1b3c0d0ef2df5b451049aa61dd07113bc7cfc3f6",
+        "fileType": "png",
+        "metadata": {
+          "category": {
+            "key": "category",
+            "value": "diff"
+          },
+          "left": {
+            "key": "left",
+            "value": "20221122_211721/b2250fcb54639acf521223ae408fff1da0343126"
+          },
+          "ratio": {
+            "key": "ratio",
+            "value": "3.10%"
+          },
+          "right": {
+            "key": "right",
+            "value": "20221122_211732/83fc345304d0254e1d799176b43f478faab0005b"
+          }
+        },
+        "identification": "{\"category\":\"diff\", \"left\":\"20221122_211721/b2250fcb54639acf521223ae408fff1da0343126\", \"ratio\":\"3.10%\", \"right\":\"20221122_211732/83fc345304d0254e1d799176b43f478faab0005b\"}",
+        "relativeUrl": "MyAdmin/20221122_211742/objects/1b3c0d0ef2df5b451049aa61dd07113bc7cfc3f6.png",
+        "diffability": "AS_IMAGE"
+      }
+    },
+    {
+      "checked": false,
+      "isBachelor": false,
+      "diffRatio": 1.67,
+      "fileTypeExtension": "html",
+      "queryOnMetadata": {
+        "URL.path": "/proverbs.html",
+        "URL.protocol": "http",
+        "step": "03"
+      },
+      "identification": "{\"URL.path\":\"/proverbs.html\", \"URL.protocol\":\"http\", \"step\":\"03\"}",
+      "left": {
+        "jobName": "MyAdmin",
+        "jobTimestamp": "20221122_211721",
+        "id": "6bfd6eaa0df57f1c2d349c10f4fa11a475f978b7",
+        "fileType": "html",
+        "metadata": {
+          "profile": {
+            "key": "profile",
+            "value": "MyAdmin_ProductionEnv",
+            "matchedIndividually": true
+          },
+          "step": {
+            "key": "step",
+            "value": "03"
+          },
+          "URL.host": {
+            "key": "URL.host",
+            "value": "myadmin.kazurayam.com"
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/proverbs.html"
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80"
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "http"
+          }
+        },
+        "identification": "{\"profile\":\"MyAdmin_ProductionEnv\", \"step\":\"03\", \"URL.host\":\"myadmin.kazurayam.com\", \"URL.path\":\"/proverbs.html\", \"URL.port\":\"80\", \"URL.protocol\":\"http\"}",
+        "metadataURL": "http://myadmin.kazurayam.com/proverbs.html",
+        "relativeUrl": "MyAdmin/20221122_211721/objects/6bfd6eaa0df57f1c2d349c10f4fa11a475f978b7.html",
+        "diffability": "AS_TEXT"
+      },
+      "right": {
+        "jobName": "MyAdmin",
+        "jobTimestamp": "20221122_211732",
+        "id": "74e4a1c3b26c112495f8013c9cbf370f8078111e",
+        "fileType": "html",
+        "metadata": {
+          "profile": {
+            "key": "profile",
+            "value": "MyAdmin_DevelopmentEnv",
+            "matchedIndividually": true
+          },
+          "step": {
+            "key": "step",
+            "value": "03"
+          },
+          "URL.host": {
+            "key": "URL.host",
+            "value": "devadmin.kazurayam.com"
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/proverbs.html"
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80"
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "http"
+          }
+        },
+        "identification": "{\"profile\":\"MyAdmin_DevelopmentEnv\", \"step\":\"03\", \"URL.host\":\"devadmin.kazurayam.com\", \"URL.path\":\"/proverbs.html\", \"URL.port\":\"80\", \"URL.protocol\":\"http\"}",
+        "metadataURL": "http://devadmin.kazurayam.com/proverbs.html",
+        "relativeUrl": "MyAdmin/20221122_211732/objects/74e4a1c3b26c112495f8013c9cbf370f8078111e.html",
+        "diffability": "AS_TEXT"
+      },
+      "diff": {
+        "jobName": "MyAdmin",
+        "jobTimestamp": "20221122_211742",
+        "id": "0c832b25f8961b5b85776231acd0db256c0d4f53",
+        "fileType": "html",
+        "metadata": {
+          "category": {
+            "key": "category",
+            "value": "diff"
+          },
+          "left": {
+            "key": "left",
+            "value": "20221122_211721/6bfd6eaa0df57f1c2d349c10f4fa11a475f978b7"
+          },
+          "ratio": {
+            "key": "ratio",
+            "value": "1.67%"
+          },
+          "right": {
+            "key": "right",
+            "value": "20221122_211732/74e4a1c3b26c112495f8013c9cbf370f8078111e"
+          }
+        },
+        "identification": "{\"category\":\"diff\", \"left\":\"20221122_211721/6bfd6eaa0df57f1c2d349c10f4fa11a475f978b7\", \"ratio\":\"1.67%\", \"right\":\"20221122_211732/74e4a1c3b26c112495f8013c9cbf370f8078111e\"}",
+        "relativeUrl": "MyAdmin/20221122_211742/objects/0c832b25f8961b5b85776231acd0db256c0d4f53.html",
+        "diffability": "AS_TEXT"
+      }
+    },
+    {
+      "checked": false,
+      "isBachelor": false,
+      "diffRatio": 3.1,
+      "fileTypeExtension": "png",
+      "queryOnMetadata": {
+        "URL.path": "/repositories.html",
+        "URL.protocol": "http",
+        "step": "02"
+      },
+      "identification": "{\"URL.path\":\"/repositories.html\", \"URL.protocol\":\"http\", \"step\":\"02\"}",
+      "left": {
+        "jobName": "MyAdmin",
+        "jobTimestamp": "20221122_211721",
+        "id": "26559bf754cfc8a7269ac4d7f88ed552b68624ab",
+        "fileType": "png",
+        "metadata": {
+          "profile": {
+            "key": "profile",
+            "value": "MyAdmin_ProductionEnv",
+            "matchedIndividually": true
+          },
+          "step": {
+            "key": "step",
+            "value": "02"
+          },
+          "URL.host": {
+            "key": "URL.host",
+            "value": "myadmin.kazurayam.com"
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/repositories.html"
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80"
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "http"
+          }
+        },
+        "identification": "{\"profile\":\"MyAdmin_ProductionEnv\", \"step\":\"02\", \"URL.host\":\"myadmin.kazurayam.com\", \"URL.path\":\"/repositories.html\", \"URL.port\":\"80\", \"URL.protocol\":\"http\"}",
+        "metadataURL": "http://myadmin.kazurayam.com/repositories.html",
+        "relativeUrl": "MyAdmin/20221122_211721/objects/26559bf754cfc8a7269ac4d7f88ed552b68624ab.png",
+        "diffability": "AS_IMAGE"
+      },
+      "right": {
+        "jobName": "MyAdmin",
+        "jobTimestamp": "20221122_211732",
+        "id": "33c8dcc0004dd5d49db58d81eb56997aec00a119",
+        "fileType": "png",
+        "metadata": {
+          "profile": {
+            "key": "profile",
+            "value": "MyAdmin_DevelopmentEnv",
+            "matchedIndividually": true
+          },
+          "step": {
+            "key": "step",
+            "value": "02"
+          },
+          "URL.host": {
+            "key": "URL.host",
+            "value": "devadmin.kazurayam.com"
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/repositories.html"
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80"
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "http"
+          }
+        },
+        "identification": "{\"profile\":\"MyAdmin_DevelopmentEnv\", \"step\":\"02\", \"URL.host\":\"devadmin.kazurayam.com\", \"URL.path\":\"/repositories.html\", \"URL.port\":\"80\", \"URL.protocol\":\"http\"}",
+        "metadataURL": "http://devadmin.kazurayam.com/repositories.html",
+        "relativeUrl": "MyAdmin/20221122_211732/objects/33c8dcc0004dd5d49db58d81eb56997aec00a119.png",
+        "diffability": "AS_IMAGE"
+      },
+      "diff": {
+        "jobName": "MyAdmin",
+        "jobTimestamp": "20221122_211742",
+        "id": "cf6c13999adff13df7c6ad70d4c492e0106a8836",
+        "fileType": "png",
+        "metadata": {
+          "category": {
+            "key": "category",
+            "value": "diff"
+          },
+          "left": {
+            "key": "left",
+            "value": "20221122_211721/26559bf754cfc8a7269ac4d7f88ed552b68624ab"
+          },
+          "ratio": {
+            "key": "ratio",
+            "value": "3.10%"
+          },
+          "right": {
+            "key": "right",
+            "value": "20221122_211732/33c8dcc0004dd5d49db58d81eb56997aec00a119"
+          }
+        },
+        "identification": "{\"category\":\"diff\", \"left\":\"20221122_211721/26559bf754cfc8a7269ac4d7f88ed552b68624ab\", \"ratio\":\"3.10%\", \"right\":\"20221122_211732/33c8dcc0004dd5d49db58d81eb56997aec00a119\"}",
+        "relativeUrl": "MyAdmin/20221122_211742/objects/cf6c13999adff13df7c6ad70d4c492e0106a8836.png",
+        "diffability": "AS_IMAGE"
+      }
+    },
+    {
+      "checked": false,
+      "isBachelor": false,
+      "diffRatio": 1.61,
+      "fileTypeExtension": "html",
+      "queryOnMetadata": {
+        "URL.path": "/repositories.html",
+        "URL.protocol": "http",
+        "step": "02"
+      },
+      "identification": "{\"URL.path\":\"/repositories.html\", \"URL.protocol\":\"http\", \"step\":\"02\"}",
+      "left": {
+        "jobName": "MyAdmin",
+        "jobTimestamp": "20221122_211721",
+        "id": "03a4cd8c6ad2f6282080b44622628cdbfb84fbb1",
+        "fileType": "html",
+        "metadata": {
+          "profile": {
+            "key": "profile",
+            "value": "MyAdmin_ProductionEnv",
+            "matchedIndividually": true
+          },
+          "step": {
+            "key": "step",
+            "value": "02"
+          },
+          "URL.host": {
+            "key": "URL.host",
+            "value": "myadmin.kazurayam.com"
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/repositories.html"
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80"
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "http"
+          }
+        },
+        "identification": "{\"profile\":\"MyAdmin_ProductionEnv\", \"step\":\"02\", \"URL.host\":\"myadmin.kazurayam.com\", \"URL.path\":\"/repositories.html\", \"URL.port\":\"80\", \"URL.protocol\":\"http\"}",
+        "metadataURL": "http://myadmin.kazurayam.com/repositories.html",
+        "relativeUrl": "MyAdmin/20221122_211721/objects/03a4cd8c6ad2f6282080b44622628cdbfb84fbb1.html",
+        "diffability": "AS_TEXT"
+      },
+      "right": {
+        "jobName": "MyAdmin",
+        "jobTimestamp": "20221122_211732",
+        "id": "161599eb7e32dc884767da83734006c883dc1a56",
+        "fileType": "html",
+        "metadata": {
+          "profile": {
+            "key": "profile",
+            "value": "MyAdmin_DevelopmentEnv",
+            "matchedIndividually": true
+          },
+          "step": {
+            "key": "step",
+            "value": "02"
+          },
+          "URL.host": {
+            "key": "URL.host",
+            "value": "devadmin.kazurayam.com"
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/repositories.html"
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80"
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "http"
+          }
+        },
+        "identification": "{\"profile\":\"MyAdmin_DevelopmentEnv\", \"step\":\"02\", \"URL.host\":\"devadmin.kazurayam.com\", \"URL.path\":\"/repositories.html\", \"URL.port\":\"80\", \"URL.protocol\":\"http\"}",
+        "metadataURL": "http://devadmin.kazurayam.com/repositories.html",
+        "relativeUrl": "MyAdmin/20221122_211732/objects/161599eb7e32dc884767da83734006c883dc1a56.html",
+        "diffability": "AS_TEXT"
+      },
+      "diff": {
+        "jobName": "MyAdmin",
+        "jobTimestamp": "20221122_211742",
+        "id": "350c6b1bead6bf7328f7f2c0e5c60df5bd797ba7",
+        "fileType": "html",
+        "metadata": {
+          "category": {
+            "key": "category",
+            "value": "diff"
+          },
+          "left": {
+            "key": "left",
+            "value": "20221122_211721/03a4cd8c6ad2f6282080b44622628cdbfb84fbb1"
+          },
+          "ratio": {
+            "key": "ratio",
+            "value": "1.61%"
+          },
+          "right": {
+            "key": "right",
+            "value": "20221122_211732/161599eb7e32dc884767da83734006c883dc1a56"
+          }
+        },
+        "identification": "{\"category\":\"diff\", \"left\":\"20221122_211721/03a4cd8c6ad2f6282080b44622628cdbfb84fbb1\", \"ratio\":\"1.61%\", \"right\":\"20221122_211732/161599eb7e32dc884767da83734006c883dc1a56\"}",
+        "relativeUrl": "MyAdmin/20221122_211742/objects/350c6b1bead6bf7328f7f2c0e5c60df5bd797ba7.html",
+        "diffability": "AS_TEXT"
+      }
+    }
+  ],
+  "countWarning": 6.0,
+  "countIgnorable": 0.0,
+  "countTotal": 8.0,
+  "labelLeft": "ProductionEnv",
+  "labelRight": "DevelopmentEnv"
+};
+    </script> 
+    <script type="text/javascript">/* onLoad driven by jQuery */
+$(document).ready(function() {
+    /* try to restore the model from localStorage */
+    let loaded = loadModel();
+    if (loaded === null || !('materialProductList' in loaded)) {
+        console.log("The model was not restored from localStorage. Use the given model as is.");
+    } else {
+        // restore the MaterialProducts as "model" with the loaded one.
+        loaded.materialProductList.forEach(storedMProduct => {
+            model.materialProductList.forEach(currentMProduct => {
+                if (currentMProduct.fileTypeExtension === storedMProduct.fileTypeExtension &&
+                    currentMProduct.description === storedMProduct.description) {
+                    // restore the status
+                    currentMProduct.checked = storedMProduct.checked;
+                    console.log(currentMProduct.fileTypeExtension + " " +
+                        currentMProduct.description + " restored the checked status to be " +
+                        currentMProduct.checked
+                    );
+                }
+            });
+        });
+    }
+
+    /* iterate over the sequence of MaterialProduct to display
+     * the <span class="ratio"> with appropriate class ("warning", "ignored" or none)
+     * in sync with the current model
+     */
+    $("input[id^='ignorable']").each(function(index, value) {
+        const id = $(this).prop("id");
+        const checked   = model.materialProductList[index].checked;
+        const diffRatio = model.materialProductList[index].diffRatio;   // NOTE THIS!
+        console.log("* " + id + " with data-index=" + index + " with checked=" + checked);
+        $(this).prop("checked", checked);
+        classifyRatioSpan($(this), index, id, checked, diffRatio);
+    });
+
+    //
+    updateCountDisplay(model);
+
+    /* Register onclick event handler to the <input id="ignorableX"> elements */
+    $("input[id^='ignorable']").on("click", function () {
+        const index = $(this).attr("data-index");
+        const id = $(this).prop("id");
+        const checked = $(this).prop("checked");
+        const diffRatio = model.materialProductList[index].diffRatio;
+        console.log(id + " with data-index=" + index + " with checked="  + checked);
+        classifyRatioSpan($(this), index, id, checked, diffRatio);
+        //
+        storeModel(model);
+        //
+        updateCountDisplay(model);
+    });
+});
+
+/* store the model into the localStorage as a JSON string */
+function storeModel(mdl) {
+    const ttl = 24 * 60 * 60 * 1000; // 24 hours in millisecond
+    setWithExpiry('model', mdl, ttl);
+    console.log("stored the model into localStorage");
+}
+
+/* load the model as a JSON string from the localStorage.
+ * parse the string to create a object, and return it.
+ * This may return null
+ */
+function loadModel() {
+    console.log("loading the model from localStorage");
+    const model = getWithExpiry('model');
+    if (model !== null) {
+        if ('materialProductList' in model) {
+            console.log("getWithExpiry('model') returned a valid model");
+            return model;
+        } else {
+            console.log("getWithEntry('model') returned something non-null but not a valid model")
+            return null;
+        }
+    } else {
+        console.log("getWithExpiry('model') returned null. ");
+        return null;
+    }
+}
+
+function setChecked(model, index, checked) {
+    model.materialProductList[index].checked = checked;
+    console.log("set model.materialProductList[" + index + "].checked to be " + checked);
+}
+
+function classifyRatioSpan(input, index, id, checked, diffRatio) {
+    const ratioSpan = input.next("button").find("span.ratio")
+    if (diffRatio > model.threshold) {
+        if (checked) {
+            console.log(id + " is ignored. The diffRatio(" +
+                diffRatio + ") is larger than the threshold(" +
+                model.threshold + ") but is checked.");
+            ratioSpan.removeClass("warning");
+            ratioSpan.addClass("ignored");
+            setChecked(model, index, true);
+            updateCountDisplay(model);
+        } else {
+            console.log(id + " is warned. The diffRatio(" +
+                diffRatio + ") is larger than the threshold(" +
+                model.threshold + ") and is unchecked.");
+            ratioSpan.removeClass("ignored");
+            ratioSpan.addClass("warning");
+            setChecked(model, index, false);
+            updateCountDisplay(model);
+        }
+    } else {
+        console.log(id + " is no problem The diffRatio(" +
+            diffRatio + ") is smaller than or equal to the threshold(" +
+            model.threshold + ").");
+    }
+}
+
+function updateCountDisplay(mdl) {
+    console.log("updating the display of count");
+    //
+    model.countWarning =
+        model.materialProductList
+            .filter(mp => mp.diffRatio > model.threshold && ! mp.checked).length;
+    model.countIgnorable =
+        model.materialProductList
+            .filter(mp => mp.diffRatio > model.threshold && mp.checked).length;
+    //
+    $(document).find("#count .warnings").text(mdl.countWarning.toFixed());
+    $(document).find("#count .ignorable").text(mdl.countIgnorable.toFixed());
+}
+
+/**
+ * https://www.sohamkamani.com/blog/javascript-localstorage-with-ttl-expiry/
+ */
+function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    // `item` is an object which contains the original value
+    // as well as the time when it's supposed to expire
+    const item = {
+        value: value,
+        expiry: now.getTime() + ttl,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+}
+function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+    // if the item doesn't exist, return null
+    if (!itemStr) {
+        return null
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+    // compare the expiry time of the item with the current time
+    if (!item.expiry || now.getTime() > item.expiry) {
+        // If the item is expired, delete the item from storage
+        // and return null
+        localStorage.removeItem(key)
+        return null
+    }
+    return item.value
+}
+
+/**
+ * mProductGroup example
+ *
+ {
+  "jobName": "MyAdmin_Main_Twins",
+  "resultTimestamp": "20220409_101751",
+  "threshold": 0.0,
+  "isReadyToReport": true,
+  "ignoreMetadataKeys": [
+    "URL.host",
+    "URL.port",
+    "environment"
+  ],
+  "materialList0": {
+    "jobTimestamp": "20220409_101728",
+    "queryOnMetadata": {
+      "environment": "MyAdmin_ProductionEnv"
+    },
+    "size": 2.0
+  },
+  "materialList1": {
+    "jobTimestamp": "20220409_101742",
+    "queryOnMetadata": {
+      "environment": "MyAdmin_DevelopmentEnv"
+    },
+    "size": 2.0
+  },
+  "materialProductList": [
+    {
+      "reducedTimestamp": "20220409_101751",
+      "checked": false,
+      "diffRatio": 15.7,
+      "fileTypeExtension": "png",
+      "queryOnMetadata": {
+        "URL.path": "/",
+        "URL.protocol": "http",
+        "selector": "body"
+      },
+      "description": "{\"URL.path\":\"/\", \"URL.protocol\":\"http\", \"selector\":\"body\"}",
+      "left": {
+        "jobName": "MyAdmin_Main_Twins",
+        "jobTimestamp": "20220409_101728",
+        "id": "3e334c05a4be69ad5bcb3b145d78ca19d6c5fc62",
+        "fileType": "png",
+        "metadata": {
+          "URL.host": {
+            "key": "URL.host",
+            "value": "myadmin.kazurayam.com",
+            "ignoredByKey": true
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/",
+            "paired": true
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80",
+            "ignoredByKey": true
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "http",
+            "paired": true
+          },
+          "environment": {
+            "key": "environment",
+            "value": "MyAdmin_ProductionEnv",
+            "ignoredByKey": true,
+            "matchedIndividually": true
+          },
+          "selector": {
+            "key": "selector",
+            "value": "body",
+            "paired": true
+          }
+        },
+        "metadataText": "{\"URL.host\":\"myadmin.kazurayam.com\", \"URL.path\":\"/\", \"URL.port\":\"80\", \"URL.protocol\":\"http\", \"profile\":\"MyAdmin_ProductionEnv\", \"selector\":\"body\"}",
+        "metadataURL": "http://myadmin.kazurayam.com/",
+        "relativeUrl": "MyAdmin_Main_Twins/20220409_101728/objects/3e334c05a4be69ad5bcb3b145d78ca19d6c5fc62.png",
+        "diffability": "AS_IMAGE"
+      },
+      "right": {
+        "jobName": "MyAdmin_Main_Twins",
+        "jobTimestamp": "20220409_101742",
+        "id": "1b4797af1b8bae75209fe890fb1538849a561059",
+        "fileType": "png",
+        "metadata": {
+          "URL.host": {
+            "key": "URL.host",
+            "value": "devadmin.kazurayam.com",
+            "ignoredByKey": true
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/",
+            "paired": true
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80",
+            "ignoredByKey": true
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "http",
+            "paired": true
+          },
+          "environment": {
+            "key": "environment",
+            "value": "MyAdmin_DevelopmentEnv",
+            "ignoredByKey": true,
+            "matchedIndividually": true
+          },
+          "selector": {
+            "key": "selector",
+            "value": "body",
+            "paired": true
+          }
+        },
+        "metadataText": "{\"URL.host\":\"devadmin.kazurayam.com\", \"URL.path\":\"/\", \"URL.port\":\"80\", \"URL.protocol\":\"http\", \"profile\":\"MyAdmin_DevelopmentEnv\", \"selector\":\"body\"}",
+        "metadataURL": "http://devadmin.kazurayam.com/",
+        "relativeUrl": "MyAdmin_Main_Twins/20220409_101742/objects/1b4797af1b8bae75209fe890fb1538849a561059.png",
+        "diffability": "AS_IMAGE"
+      },
+      "diff": {
+        "jobName": "MyAdmin_Main_Twins",
+        "jobTimestamp": "20220409_101751",
+        "id": "0862eaf93aa921703b1b1c961abbe905b74eeebf",
+        "fileType": "png",
+        "metadata": {
+          "category": {
+            "key": "category",
+            "value": "diff"
+          },
+          "left": {
+            "key": "left",
+            "value": "3e334c05a4be69ad5bcb3b145d78ca19d6c5fc62"
+          },
+          "ratio": {
+            "key": "ratio",
+            "value": "15.70%"
+          },
+          "right": {
+            "key": "right",
+            "value": "1b4797af1b8bae75209fe890fb1538849a561059"
+          }
+        },
+        "metadataText": "{\"category\":\"diff\", \"left\":\"3e334c05a4be69ad5bcb3b145d78ca19d6c5fc62\", \"ratio\":\"15.70%\", \"right\":\"1b4797af1b8bae75209fe890fb1538849a561059\"}",
+        "metadataURL": "file://null_object",
+        "relativeUrl": "MyAdmin_Main_Twins/20220409_101751/objects/0862eaf93aa921703b1b1c961abbe905b74eeebf.png",
+        "diffability": "AS_IMAGE"
+      }
+    },
+    {
+      "reducedTimestamp": "20220409_101751",
+      "checked": false,
+      "diffRatio": 31.04,
+      "fileTypeExtension": "html",
+      "queryOnMetadata": {
+        "URL.path": "/",
+        "URL.protocol": "http",
+        "selector": "body"
+      },
+      "description": "{\"URL.path\":\"/\", \"URL.protocol\":\"http\", \"selector\":\"body\"}",
+      "left": {
+        "jobName": "MyAdmin_Main_Twins",
+        "jobTimestamp": "20220409_101728",
+        "id": "26b487d4b1b1eb52d18fc0df4ac9384275cf3fd9",
+        "fileType": "html",
+        "metadata": {
+          "URL.host": {
+            "key": "URL.host",
+            "value": "myadmin.kazurayam.com",
+            "ignoredByKey": true
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/",
+            "paired": true
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80",
+            "ignoredByKey": true
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "http",
+            "paired": true
+          },
+          "environment": {
+            "key": "environment",
+            "value": "MyAdmin_ProductionEnv",
+            "ignoredByKey": true,
+            "matchedIndividually": true
+          },
+          "selector": {
+            "key": "selector",
+            "value": "body",
+            "paired": true
+          }
+        },
+        "metadataText": "{\"URL.host\":\"myadmin.kazurayam.com\", \"URL.path\":\"/\", \"URL.port\":\"80\", \"URL.protocol\":\"http\", \"profile\":\"MyAdmin_ProductionEnv\", \"selector\":\"body\"}",
+        "metadataURL": "http://myadmin.kazurayam.com/",
+        "relativeUrl": "MyAdmin_Main_Twins/20220409_101728/objects/26b487d4b1b1eb52d18fc0df4ac9384275cf3fd9.html",
+        "diffability": "AS_TEXT"
+      },
+      "right": {
+        "jobName": "MyAdmin_Main_Twins",
+        "jobTimestamp": "20220409_101742",
+        "id": "63afd374b90b1292ae011b83a26d78a77dc34287",
+        "fileType": "html",
+        "metadata": {
+          "URL.host": {
+            "key": "URL.host",
+            "value": "devadmin.kazurayam.com",
+            "ignoredByKey": true
+          },
+          "URL.path": {
+            "key": "URL.path",
+            "value": "/",
+            "paired": true
+          },
+          "URL.port": {
+            "key": "URL.port",
+            "value": "80",
+            "ignoredByKey": true
+          },
+          "URL.protocol": {
+            "key": "URL.protocol",
+            "value": "http",
+            "paired": true
+          },
+          "environment": {
+            "key": "environment",
+            "value": "MyAdmin_DevelopmentEnv",
+            "ignoredByKey": true,
+            "matchedIndividually": true
+          },
+          "selector": {
+            "key": "selector",
+            "value": "body",
+            "paired": true
+          }
+        },
+        "metadataText": "{\"URL.host\":\"devadmin.kazurayam.com\", \"URL.path\":\"/\", \"URL.port\":\"80\", \"URL.protocol\":\"http\", \"profile\":\"MyAdmin_DevelopmentEnv\", \"selector\":\"body\"}",
+        "metadataURL": "http://devadmin.kazurayam.com/",
+        "relativeUrl": "MyAdmin_Main_Twins/20220409_101742/objects/63afd374b90b1292ae011b83a26d78a77dc34287.html",
+        "diffability": "AS_TEXT"
+      },
+      "diff": {
+        "jobName": "MyAdmin_Main_Twins",
+        "jobTimestamp": "20220409_101751",
+        "id": "c918a10a5357a45c605dd1cfdec822b6c9224025",
+        "fileType": "html",
+        "metadata": {
+          "category": {
+            "key": "category",
+            "value": "diff"
+          },
+          "left": {
+            "key": "left",
+            "value": "26b487d4b1b1eb52d18fc0df4ac9384275cf3fd9"
+          },
+          "ratio": {
+            "key": "ratio",
+            "value": "31.04%"
+          },
+          "right": {
+            "key": "right",
+            "value": "63afd374b90b1292ae011b83a26d78a77dc34287"
+          }
+        },
+        "metadataText": "{\"category\":\"diff\", \"left\":\"26b487d4b1b1eb52d18fc0df4ac9384275cf3fd9\", \"ratio\":\"31.04%\", \"right\":\"63afd374b90b1292ae011b83a26d78a77dc34287\"}",
+        "metadataURL": "file://null_object",
+        "relativeUrl": "MyAdmin_Main_Twins/20220409_101751/objects/c918a10a5357a45c605dd1cfdec822b6c9224025.html",
+        "diffability": "AS_TEXT"
+      }
+    }
+  ]
+}
+ */
+</script>  
+  </body>
+</html>

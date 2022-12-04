@@ -43,7 +43,7 @@
 # Visual Inspection in Katalon Studio - Reborn
 
 - @date Aug 2021
-- @update 15 Oct 2022, ver 0.10.3
+- @update 24 Nov 2022, ver 0.12.6
 - @author kazurayam
 
 
@@ -57,9 +57,9 @@ Please have a look at the "Motivation" section in its README document to know wh
 
 But I wasn't satisfied with it. Why? I would enumerate 3 problems about that project.
 
-1. The code set of [Visual Testing In katalon Studio](https://github.com/kazurayam/VisualTestingInKatalonStudio) project is too complicated. The project contains 28 Test Cases, 7 Test Suites, 4 Test Suite Collections, 1 Test Listener, 12 Keywords. After 3 years, I forgot them and unable to maintain them any longer.
-2. The project enabled me to compare a pair of 2 screenshots of Web pages in PNG image format. I found that it is not enough. Often I wanted to compare 2 texts scraped from web. For example, I wanted to compare 2 HTML files. Also I wanted to compare 2 JSON files downloaded from a Web Service.
-3. The project wasn't distributable to others easily because it wasn't packaged as "jar". It was too hard for people to reuse the code set of the project to achieve their own "Visual Testing" for their custom targets.
+1. The code set of [Visual Testing In katalon Studio](https://github.com/kazurayam/VisualTestingInKatalonStudio) project is too complicated. This Katalon project contains 28 Test Cases, 7 Test Suites, 4 Test Suite Collections, 1 Test Listener, 12 Keywords. After 3 years, I forgot them and unable to maintain them any longer.
+2. The project enabled me to compare a pair of 2 screenshots of Web pages in PNG image format --- that's all it can. I found that it is not enough. Often I wanted to compare 2 texts scraped from web. For example, I wanted to compare 2 HTML source files of a web page --- one of Production Environment, another of Development Environment. Also I wanted to compare 2 versions of a JSON file downloaded from a Web Service.
+3. The project wasn't distributable to others easily. It exposes too much details which are hard to unserstand. It was too hard for people to reuse the code set of the project to achieve their own "Visual Testing" for their custom targets.
 
 ## My new development
 
@@ -92,7 +92,7 @@ The artifact of `materialstore` is distributed as a single jar file. The jar fil
 
 ### (4) Usable outside Katalon Studio
 
-The `materialstore` library is a set of Plain Old Java Objects, which has no immediate dependency on the Katalon Studio API. It has no dependency on the Selenium WebDriver API either.
+The `materialstore` library is a set of plain old Java objects, which has no immediate dependency on the Katalon Studio API. It has no dependency on the Selenium WebDriver API either.
 
 So the `materialstore` library can be used in any Java/Groovy project outside Katalon Studio. I can use it in a plain [Selenium WebDriver](https://www.selenium.dev/documentation/webdriver/)-based automated test project for Web UI on Gradle. I can use it in a plain [Appium Java Client](https://github.com/appium/java-client)-based automated test project for Mobile UI on Maven. I can use it in a plain [Apache HttpClient](https://hc.apache.org/httpcomponents-client-5.1.x/)-based automated test project for Web Services on Ant.
 
@@ -123,7 +123,7 @@ $ cd $projectDir
 $ gradle drivers
 ```
 
-5. The `gradle driver` will display some lines of messages in 10 seconds, and will finish successfully.
+5. The `"gradle driver"` will display some lines of messages in 10 seconds, and will finish successfully.
 
 ```
 BUILD SUCCESSFUL in 1s
@@ -141,7 +141,8 @@ Drivers
 ├── AUTOIMPORTED_freemarker-2.3.31.jar
 ├── AUTOIMPORTED_java-diff-utils-4.11.jar
 ├── AUTOIMPORTED_jsoup-1.14.3.jar
-├── AUTOIMPORTED_materialstore-0.10.3-SNAPSHOT.jar
+├── AUTOIMPORTED_materialstore-0.12.5.jar
+└── AUTOIMPORTED_subprocessj-0.3.4.jar
 ```
 
 >The exact version number of the jars may change in future. Please regard this as an example.
@@ -161,11 +162,11 @@ You have resolved external dependencies. Now you can start writing a Test Case.
 
 ## Sample1: simply visit a web site to take screenshots
 
-First example. We will write a Test Case in Katalon Studio that visits the [Google Search page](https://www.google.com/). We will take screenshots and HTML page sources of the Web page. We will store PNG files and HTML files into the `store` directory using the `materialstore` library. We will finally generate a HTML file in which we can view the stored PNG and HTML files.
+First example. We will write a Test Case in Katalon Studio that visits the [DuckDuckGo Search page](https://www.dockduckgo.com/). We will take screenshots and HTML page sources of the Web page. We will store PNG files and HTML files into the `store` directory using the `materialstore` library. We will finally generate a HTML file in which we can view the stored PNG and HTML files.
 
 #### (1) Test Case
 
-You want to newly create a Test Case `Test Cases/main/GoogleSearch/scrapeGoogleSearch` in your project. Copy and paste the following sample source:
+You want to newly create a Test Case `Test Cases/main/DuckDuckGo/scrapeGoogleSearch` in your project. Copy and paste the following sample source:
 
 - [`Test Cases/main/GoogleSearch/searchGoogleSearch`](https://github.com/kazurayam/VisualInspectionInKatalonStudio_Reborn/blob/master/Scripts/main/GoogleSearch/Main/Script1646909950671.groovy)
 

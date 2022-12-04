@@ -1,0 +1,674 @@
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>TextDifferToHTML output</title>
+  <style>
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: ui-monospace,SFMono-Regular,SZ Mono,
+    Menlo,Consolas,Liberation Mono,monospace;
+    font-size: 12px;
+    line-height: 20px;
+}
+div#container {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+thead tr {
+    border-bottom: 1px solid #ccc;
+}
+thead tr td {
+    overflow-wrap: break-word;
+}
+td, th {
+    padding: 4px;
+    font-size: 12px;
+    border-right: 1px solid #ccc;
+    display: table-cell;
+}
+th {
+    border-bottom: 1px solid #ccc;
+}
+.blob-code-inner {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+.code-change {
+    background-color: #dbedff;
+}
+.code-delete {
+    background-color: #ffeef0;
+}
+.code-equal {
+    background-color: #ffffff;
+}
+.code-insert {
+    background-color: #e6ffec;
+}
+.deletion {
+    background-color: #ffdce0;
+}
+.insertion {
+    background-color: #ccffd8;
+}
+</style>
+</head>
+<body>
+<div id="container">
+  <div id="decision">
+    <h3>
+          <span>are DIFFERENT</span>
+          <span style="margin-left: 20px;">98.25%</span>
+    </h3>
+    <dl>
+      <dt>rows</dt>
+      <dd>
+        <ul id="rows-stats">
+          <li>
+            <span>total :</span>
+            <span>57</span>
+          </li>
+          <li>
+            <span class="code-insert">inserted :</span>
+            <span class="code-insert">0</span>
+          </li>
+          <li>
+            <span class="code-delete">deleted :</span>
+            <span class="code-delete">52</span>
+          </li>
+          <li>
+            <span class="code-change">changed :</span>
+            <span class="code-change">4</span>
+          </li>
+          <li>
+            <span>equal :</span>
+            <span>1</span>
+          </li>
+        </ul>
+      </dd>
+    </dl>
+  </div>
+  <table id="split-diff">
+    <colgroup>
+      <col width="66">
+      <col />
+      <col />
+    </colgroup>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Left</th>
+        <th>Right</th>
+      </tr>
+      <tr>
+        <th>Material</th>
+        <td>
+          <a href="../../../MyAdmin/20221122_211721/objects/0db0532c9deb5c67f165e1ad867f96048f4ab017.html" target="Left">MyAdmin/20221122_211721/objects/0db0532c9deb5c67f165e1ad867f96048f4ab017.html</a>
+        </td>
+        <td>
+          <a href="../../../MyAdmin/20221122_211742/objects/13f9e939f8d7c557089165832d630aaf5d1d2450.html" target="Right">MyAdmin/20221122_211742/objects/13f9e939f8d7c557089165832d630aaf5d1d2450.html</a>
+        </td>
+      </tr>
+      <tr>
+        <th>FileType</th>
+        <td>
+          <span>html</span>
+        </td>
+        <td>
+          <span>html</span>
+        </td>
+      </tr>
+      <tr>
+        <th>Metadata</th>
+        <td>
+          <span>{&quot;profile&quot;:{&quot;key&quot;:&quot;profile&quot;,&quot;value&quot;:&quot;MyAdmin_ProductionEnv&quot;,&quot;matchedIndividually&quot;:true}, &quot;step&quot;:{&quot;key&quot;:&quot;step&quot;,&quot;value&quot;:&quot;01&quot;}, &quot;URL.host&quot;:{&quot;key&quot;:&quot;URL.host&quot;,&quot;value&quot;:&quot;myadmin.kazurayam.com&quot;}, &quot;URL.path&quot;:{&quot;key&quot;:&quot;URL.path&quot;,&quot;value&quot;:&quot;/index.html&quot;}, &quot;URL.port&quot;:{&quot;key&quot;:&quot;URL.port&quot;,&quot;value&quot;:&quot;80&quot;}, &quot;URL.protocol&quot;:{&quot;key&quot;:&quot;URL.protocol&quot;,&quot;value&quot;:&quot;http&quot;}}</span>
+        </td>
+        <td>
+          <span>{&quot;category&quot;:{&quot;key&quot;:&quot;category&quot;,&quot;value&quot;:&quot;NoMaterialFound&quot;,&quot;matchedIndividually&quot;:true}}</span>
+        </td>
+      </tr>
+      <tr>
+        <th>Source</th>
+        <td>
+            <a href="http://myadmin.kazurayam.com/index.html" target="Left">http://myadmin.kazurayam.com/index.html</a>
+        </td>
+        <td>
+              <a href="" target="Right"></a>
+        </td>
+      </tr>
+      <tr>
+        <th>----</th>
+        <td></td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody>
+            <tr>
+              <th class="code-change">1</th>
+              <td class="code-change">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">&lt;html</span><span class="unchanged"> </span><span class="deletion">lang=&quot;ja&quot;&gt;</span></span></span>
+              </td>
+              <td class="code-change">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="insertion">&lt;html&gt;</span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-change">2</th>
+              <td class="code-change">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged">  &lt;head&gt; </span></span></span>
+              </td>
+              <td class="code-change">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="insertion">&lt;body&gt;</span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-change">3</th>
+              <td class="code-change">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged">    &lt;meta</span><span class="deletion"> </span><span class="unchanged">charset=&quot;utf-8&quot;&gt; </span></span></span>
+              </td>
+              <td class="code-change">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="insertion">&lt;h1&gt;No</span><span class="unchanged"> </span><span class="insertion">Material</span><span class="unchanged"> </span><span class="insertion">is</span><span class="unchanged"> </span><span class="insertion">found&lt;/h1&gt;</span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-change">4</th>
+              <td class="code-change">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged">    &lt;meta</span><span class="deletion"> </span><span class="unchanged">name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt; </span></span></span>
+              </td>
+              <td class="code-change">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="insertion">&lt;/body&gt;</span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">5</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">    &lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot; integrity=&quot;sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We&quot; crossorigin=&quot;anonymous&quot;&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">6</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css&quot;&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">7</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">    &lt;title&gt;My Admin&lt;/title&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">8</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">  &lt;/head&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">9</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">  &lt;body&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">10</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">    &lt;header&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">11</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">      &lt;nav class=&quot;navbar navbar-expand-md navbar-dark bg-primary&quot;&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">12</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">        &lt;div class=&quot;container-fluid&quot;&gt; &lt;a class=&quot;navbar-brand&quot; href=&quot;#&quot;&gt;My Admin&lt;/a&gt; &lt;button class=&quot;navbar-toggler&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#navbarNav&quot; aria-controls=&quot;navbarNav&quot; aria-expanded=&quot;false&quot; aria-label=&quot;Toggle navigation&quot;&gt; &lt;span class=&quot;navbar-toggler-icon&quot;&gt;&lt;/span&gt; &lt;/button&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">13</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">          &lt;div class=&quot;collapse navbar-collapse&quot; id=&quot;navbarNav&quot;&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">14</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">            &lt;ul class=&quot;navbar-nav&quot;&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">15</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">              &lt;li class=&quot;nav-item&quot;&gt;&lt;a class=&quot;nav-link active&quot; aria-current=&quot;page&quot; href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">16</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">              &lt;li class=&quot;nav-item&quot;&gt;&lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;News&lt;/a&gt;&lt;/li&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">17</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">            &lt;/ul&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">18</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">          &lt;/div&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">19</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">        &lt;/div&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">20</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">      &lt;/nav&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">21</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">    &lt;/header&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">22</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">    &lt;div class=&quot;container mt-5&quot;&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">23</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">      &lt;section class=&quot;row&quot;&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">24</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">        &lt;section id=&quot;menu&quot; class=&quot;col-md-4 mb-5&quot;&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">25</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">          &lt;div class=&quot;list-group&quot;&gt;</span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">26</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">            &lt;a href=&quot;./index.html&quot; class=&quot;list-group-item list-group-item-action active&quot; aria-current=&quot;true&quot;&gt;Profile&lt;/a&gt; &lt;a href=&quot;./repositories.html&quot; class=&quot;list-group-item list-group-item-action&quot;&gt;Repositories&lt;/a&gt; &lt;a href=&quot;./proverbs.html&quot; class=&quot;list-group-item list-group-item-action&quot;&gt;Proverbs&lt;/a&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">27</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">          &lt;/div&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">28</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">        &lt;/section&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">29</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">        &lt;section id=&quot;profile&quot; class=&quot;col-md-8 text-center&quot;&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">30</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">          &lt;header class=&quot;border-bottom pb-2 mb-3 d-flex align-items-center&quot;&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">31</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">            &lt;h1 class=&quot;fs-5 m-0&quot;&gt;My Profile&lt;/h1&gt; &lt;button type=&quot;button&quot; class=&quot;btn btn-primary ms-auto&quot;&gt; &lt;i class=&quot;bi bi-envelope-fill me-1&quot;&gt;&lt;/i&gt; &lt;/button&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">32</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">          &lt;/header&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">33</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">          &lt;p&gt;&lt;img src=&quot;umineko-1960x1960.jpg&quot; alt=&quot;umineko&quot; class=&quot;rounded-circle img-fluid ps-5 pe-5&quot;&gt;&lt;/p&gt; &lt;!-- &lt;h2&gt;&lt;span id=&quot;clock&quot;&gt;&lt;/span&gt; UTC&lt;/h2&gt; --&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">34</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">        &lt;/section&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">35</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">      &lt;/section&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">36</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">    &lt;/div&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">37</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">    &lt;footer class=&quot;bg-secondary text-center text-light p-5 mt-5&quot;&gt;</span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">38</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">       (c) kazurayam.com </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">39</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">    &lt;/footer&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">40</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js&quot; integrity=&quot;sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj&quot; crossorigin=&quot;anonymous&quot;&gt;</span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">41</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">&lt;/script&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">42</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">    &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.js&quot;&gt;&lt;/script&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">43</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">    &lt;script&gt;</span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">44</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">    /**</span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">45</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">     * display the current timestamp in the format of &quot;07:22:13&quot;</span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">46</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">     */</span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">47</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">    $(document).ready(function() {</span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">48</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">        var m = new Date();</span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">49</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">        var dateString = m.getUTCFullYear() +&quot;/&quot;+ (m.getUTCMonth()+1) +&quot;/&quot;+</span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">50</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">            m.getUTCDate() + &quot; &quot; + m.getUTCHours() + &quot;:&quot; +</span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">51</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">            m.getUTCMinutes() + &quot;:&quot; + m.getUTCSeconds();</span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">52</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">        console.log(dateString)</span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">53</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">        $(&#39;#clock&#39;).text(dateString);</span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">54</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">    })</span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">55</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">&lt;/script&gt; </span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-delete">56</th>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="deletion">  &lt;/body&gt;</span></span></span>
+              </td>
+              <td class="code-delete">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged"></span></span></span>
+              </td>
+            </tr>
+            <tr>
+              <th class="code-equal">57</th>
+              <td class="code-equal">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged">&lt;/html&gt;</span></span></span>
+              </td>
+              <td class="code-equal">
+                <span class="blob-code-inner"><span class="blob-code-inner"><span class="unchanged">&lt;/html&gt;</span></span></span>
+              </td>
+            </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

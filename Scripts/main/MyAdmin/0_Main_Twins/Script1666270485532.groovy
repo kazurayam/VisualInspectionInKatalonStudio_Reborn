@@ -105,7 +105,7 @@ MaterialProductGroup reduced =
 // compile a human-readable report
 int warnings =
 	WebUI.callTestCase(findTestCase("main/MyAdmin/4_report"),
-		["store": store, "mProductGroup": reduced, "sortKeys": sortKeys, "criteria": 0.0d])
+		["store": store, "mProductGroup": reduced, "sortKeys": sortKeys, "criteria": 3.0d])
 
 	
 //---------------------------------------------------------------------

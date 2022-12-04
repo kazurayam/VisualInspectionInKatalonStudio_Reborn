@@ -1,12 +1,18 @@
-= Visual Inspection in Katalon Studio
+= Visual Inspection in Katalon Studio - Reborn
 
 == Demos
 
-- https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/CURA_Main_Chronos-index.html[CURA]
-- https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/MyAdmin_Main_Twins-index.html[MyAdmin]
-- https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/GoogleSearch_scrape-list.html[Google Search]
+- https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/index.html[store/index]
 
-== Selection alogorithm
+from this index page, you can link to 4 reports.
+
+- https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/CURA-20221122_205328.html[store/CURA]
+- https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/DuckDuckGo-20221122_205136.html[store/DuckDuckGo]
+- https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/GoogleSearch-20221122_205154.html[store/GoogleSearch]
+- https://kazurayam.github.io/VisualInspectionInKatalonStudio_Reborn/store/MyAdmin-20221122_211742.html[MyAdmin]
+
+
+== Selection algorithm
 
 How can I select 2 materials to compare out of the set of many materials?
 
