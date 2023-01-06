@@ -40,6 +40,21 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+I have published a new implementation of "Visual Inspection". Please see
+
+- https://forum.katalon.com/t/automated-visual-inspection/81966
+
+which is backed by the code of
+
+- https://github.com/kazurayam/inspectus4katalon-sample-project
+
+I would not maintain "VisualInspectionInKatalonStudio_Reborn" any longer.
+
+25 Dec 2022
+
+kazurayam
+
+
 # Visual Inspection in Katalon Studio - Reborn
 
 - @date Aug 2021
